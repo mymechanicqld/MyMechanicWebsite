@@ -116,10 +116,12 @@ export default function ToyotaMechanicPage() {
             Mobile Toyota mechanic, Brisbane to Gold Coast.
           </h1>
           <p className="lead mt-6">
-            Camry, Corolla, RAV4, Kluger, Hilux, Prado, Land Cruiser. We service every Toyota
-            model at the customer&apos;s home, office or kerbside. Manufacturer-spec servicing,
-            OEM-spec filters and correct-grade oil. Fixed-price quotes and a workmanship warranty
-            on every job.
+            Camry, Corolla, RAV4, Kluger, Hilux, Prado, Land Cruiser. We service most Toyota
+            models on-site for logbook servicing, brakes, batteries, suspension, cooling-system
+            work and pre-purchase inspections at the customer&apos;s home, office or kerbside.
+            Manufacturer-spec servicing, OEM-spec filters and correct-grade oil. Fixed-price
+            quotes and a workmanship warranty per our terms, plus your Australian Consumer Law
+            rights.
           </p>
           <div className="flex flex-wrap gap-3 mt-7">
             <Link href={"/book/" as `/${string}`} className="btn btn-primary">
@@ -158,7 +160,7 @@ export default function ToyotaMechanicPage() {
             ))}
           </div>
           <p className="text-[0.9375rem] text-muted mt-6">
-            Less common Toyota models (Aurion, 86, Supra, Hiace van, older Tarago) are case by
+            Less common Toyota models (Aurion, 86, Supra, older Tarago) are case by
             case. Call us with the year and model and we will tell you straight.
           </p>
         </div>
@@ -275,9 +277,9 @@ export default function ToyotaMechanicPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
             {[
-              { Icon: Wrench, title: 'Dealership-trained mechanic', body: '15+ years inside Toyota and other dealership workshops before going mobile.' },
+              { Icon: Wrench, title: 'Dealership-trained mechanic', body: 'Years of dealership-workshop experience before going mobile.' },
               { Icon: ShieldCheck, title: 'Genuine or OEM-spec parts', body: 'OEM or quality aftermarket parts and fluids that meet or exceed Toyota Genuine specifications.' },
-              { Icon: Check, title: 'Warranty-safe servicing', body: 'Manufacturer-spec logbook stamping that keeps your new-car warranty intact under Australian Consumer Law.' },
+              { Icon: Check, title: 'Warranty-safe servicing', body: 'Manufacturer-spec logbook stamping so your new-car warranty stays intact, as protected by Australian Consumer Law consumer guarantees.' },
               { Icon: Gauge, title: 'Fixed-price quotes', body: 'In writing before any work begins. No surprise additions on the invoice.' },
             ].map(({ Icon, title, body }) => (
               <div key={title} className="bg-bg border border-hairline rounded-xl p-5">

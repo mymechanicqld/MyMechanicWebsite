@@ -54,6 +54,8 @@ export default function PrivacyPolicyPage() {
               <li>Your suburb or address, so we can come to you</li>
               <li>Details of your vehicle (make, model, year, registration where relevant)</li>
               <li>What you tell us about the symptoms or service required</li>
+              <li>Preferred appointment time when you submit a quote request</li>
+              <li>IP address and browser/user-agent string, captured automatically when you submit a form for security and spam-detection purposes</li>
               <li>Records of the work we have done for you, including dates, parts and prices</li>
               <li>Payment details when you settle an invoice (processed by a third-party payment provider; we do not store card numbers)</li>
             </ul>
@@ -76,10 +78,14 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul>
               <li>Parts suppliers, so we can order the correct part for your vehicle</li>
-              <li>Payment processors (such as Stripe or Square) to handle card payments securely</li>
               <li>Our email and CRM providers, who store contact records on our behalf</li>
               <li>Government agencies or insurers, where we are legally required to disclose</li>
             </ul>
+            <p>
+              We do not currently process payments through the website. If you pay an invoice
+              online in future, the payment would go through a PCI-compliant processor (such as
+              Stripe or Square) and that processor — not us — handles your card details.
+            </p>
             <p>All third-party providers we use are bound to keep your information confidential.</p>
 
             <h2>5. Cookies and website analytics</h2>
@@ -88,6 +94,11 @@ export default function PrivacyPolicyPage() {
               and Microsoft Clarity) to understand how visitors use the site. This helps us improve
               the site over time. The data collected is aggregated and does not identify individual
               users by name. You can disable cookies in your browser if you prefer.
+            </p>
+            <p>
+              These providers store and process data outside Australia, typically in the United
+              States. We rely on their contractual and certification commitments under Australian
+              Privacy Principle 8.
             </p>
 
             <h2>6. How long we keep it</h2>

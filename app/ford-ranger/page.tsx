@@ -28,7 +28,7 @@ const VARIANTS = [
   { name: 'PX2 (2015–2018)', note: '2.2L & 3.2L diesel' },
   { name: 'PX3 (2018–2022)', note: '2.0L Bi-Turbo, 3.2L 5-cyl' },
   { name: 'Next-Gen Ranger (2022+)', note: '2.0L SiT, Bi-Turbo, 3.0L V6' },
-  { name: 'Raptor (2018+)', note: 'High-spec performance' },
+  { name: 'Raptor (2018–2022, 2.0 Bi-Turbo)', note: 'High-spec performance' },
   { name: 'Everest', note: 'Ranger-based 7-seat SUV' },
 ]
 
@@ -43,7 +43,7 @@ const COMMON_ISSUES = [
   },
   {
     title: '6R80 automatic transmission roughness',
-    body: "The ZF-derived 6R80 6-speed auto in PX and PX2 Rangers can develop harsh 2-3 shift behaviour around 120,000 km. Often a fluid drain-and-fill with the correct Mercon LV fluid plus an adaptive learning reset improves it dramatically. We do this on-site.",
+    body: "The ZF-derived 6R80 6-speed auto in PX and PX2 Rangers can develop harsh 2-3 shift behaviour around 120,000 km. Often a fluid drain-and-fill with the correct Ford-spec ATF improves it dramatically. We do this on-site.",
   },
   {
     title: 'Front diff bearing whine (4WD models)',
@@ -51,7 +51,7 @@ const COMMON_ISSUES = [
   },
   {
     title: 'Bi-Turbo timing belt service (2.0L)',
-    body: "The 2.0L Bi-Turbo in PX3 Rangers uses a wet timing belt. Ford specifies replacement at 240,000 km or 10 years. We do not do this on-site (it requires special tools and a clean environment), but we monitor for early signs and refer for the work.",
+    body: "The 2.0L Bi-Turbo in PX3 Rangers uses a wet timing belt. Ford specifies a long replacement interval — check your logbook for the current figure on your year and model. We do not do this on-site (it requires special tools and a clean environment), but we monitor for early signs and refer for the work.",
   },
   {
     title: 'Front brake rotor warping under towing load',
@@ -109,7 +109,8 @@ export default function FordRangerPage() {
           <p className="lead mt-6">
             PX, PX2, PX3, Next-Gen Ranger and Everest. 2.2L and 3.2L 5-cylinder diesels, 2.0L
             Bi-Turbo, 3.0L V6. Mobile servicing and repairs across South East Queensland.
-            Manufacturer-spec parts, Mercon LV for the auto. Workmanship warranty on every job.
+            Manufacturer-spec parts and the correct Ford-spec ATF for your transmission.
+            Workmanship warranty per our terms, plus your Australian Consumer Law rights.
           </p>
           <div className="flex flex-wrap gap-3 mt-7">
             <Link href={"/book/" as `/${string}`} className="btn btn-primary">

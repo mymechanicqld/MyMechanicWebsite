@@ -74,7 +74,7 @@ const CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: 'How much does a logbook service cost?',
-        a: 'Routine servicing in Brisbane typically ranges from $188 to $449 as a general market guide, depending on whether it is a minor or major service and the size of the vehicle, before any extra parts or repairs. We quote a fixed price upfront for your specific make and model.',
+        a: 'As a general guide to the Brisbane market, routine servicing is reported to range from $188 to $449 depending on vehicle and service tier. Your fixed-price quote from us will be specific to your make, model and what the logbook calls for.',
       },
       {
         q: 'How much does a brake job cost?',
@@ -152,7 +152,7 @@ const CATEGORIES: FaqCategory[] = [
       },
       {
         q: 'Are you qualified and insured?',
-        a: 'Yes. Our mechanics hold Cert III in Light Vehicle Mechanical Technology and have 15+ years of dealership experience. The business carries full public liability insurance and a tools-in-transit policy.',
+        a: 'Yes. We work with qualified mechanics with dealership-trained experience, and we carry public liability and tools-in-transit insurance.',
       },
       {
         q: 'Can you do everything a workshop can do?',

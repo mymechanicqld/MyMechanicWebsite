@@ -44,7 +44,7 @@ const CONTACTS = [
   {
     Icon: Clock,
     label: 'Hours',
-    value: 'Mon–Fri 7am–6pm · Sat 8am–5pm',
+    value: 'Mon to Fri 7am to 6pm. Sat 8am to 5pm.',
     hint: 'Closed Sundays. After-hours emergency call-outs case by case.',
   },
   {

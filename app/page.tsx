@@ -37,7 +37,7 @@ const ALL_SERVICES = [
   { slug: 'starter-alternator', label: 'Alternator & starter motor', priceFrom: null, priceLabel: 'Diagnostic', desc: "Won't start? Slow crank? We diagnose all three causes on-site.", Icon: BatteryCharging, priority: true },
   { slug: 'radiator-cooling-system', label: 'Radiator & water pump', priceFrom: null, priceLabel: 'Pressure test', desc: 'Overheating in traffic? Pressure-test plus fix in your driveway.', Icon: ThermometerSun, priority: true },
   { slug: 'logbook-servicing', label: 'Logbook & general servicing', priceFrom: null, desc: 'Manufacturer-spec, warranty-safe under Australian Consumer Law.', Icon: Gauge, priority: true },
-  { slug: 'pre-purchase-inspection', label: 'Pre-purchase inspection', priceFrom: null, desc: 'Comprehensive inspection with a written report before you buy.', Icon: ClipboardCheck, priority: false },
+  { slug: 'pre-purchase-inspection', label: 'Pre-purchase inspection', priceFrom: null, desc: 'Detailed inspection with a written report before you buy.', Icon: ClipboardCheck, priority: false },
   { slug: 'battery-replacement', label: 'Battery replacement', priceFrom: null, desc: 'Heavy-duty replacement, fitted in your driveway, old one recycled.', Icon: Battery, priority: false },
   { slug: 'car-diagnostics', label: 'Warning-light diagnostics', priceFrom: null, desc: 'OBD scan plus physical fault-finding, on-site.', Icon: ScanLine, priority: false },
   { slug: 'steering-suspension', label: 'Steering & suspension', priceFrom: null, desc: 'Clunks, vibrations, uneven tyre wear, ball joints, shocks, bushes.', Icon: MoveVertical, priority: false },
@@ -47,8 +47,8 @@ const ALL_SERVICES = [
 const VALUE_PROPS = [
   {
     Icon: Wrench,
-    title: 'Comprehensive auto services',
-    body: 'From routine logbook servicing to brakes, alternators, radiators and breakdowns. One trusted team for almost everything your car needs.',
+    title: 'Mobile mechanic services',
+    body: 'From routine logbook servicing to brakes, alternators, radiators and breakdowns. One trusted team for the work we do every day.',
   },
   {
     Icon: Truck,
@@ -86,10 +86,10 @@ const PROCESS_STEPS = [
 ] as const
 
 const REGIONS = [
-  { name: 'Brisbane', sub: '16 suburbs · Northside to Bayside', href: '/areas/#brisbane' },
+  { name: 'Brisbane', sub: 'Across the Northside, Inner West and Bayside', href: '/areas/#brisbane' },
   { name: 'Logan', sub: 'Home base · Same-day service available', href: '/areas/#logan' },
   { name: 'Ipswich', sub: 'Springfield, Goodna, Brassall & more', href: '/areas/#ipswich' },
-  { name: 'Gold Coast', sub: 'Coomera, Helensvale, Southport, Robina', href: '/areas/#gold-coast' },
+  { name: 'Gold Coast', sub: 'Coomera, Helensvale, Southport', href: '/areas/#gold-coast' },
 ] as const
 
 const REVIEWS = [
@@ -268,7 +268,7 @@ export default async function HomePage({
         <div className="container grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 items-center">
           {[
             { Icon: Award, label: '15+ years', sub: 'In the trade' },
-            { Icon: Star, label: '5-Star Rated', sub: 'Customer reviews' },
+            { Icon: Star, label: 'Highly rated by customers', sub: 'Google reviews' },
             { Icon: Truck, label: 'Same-day', sub: 'Service available' },
             { Icon: MapPin, label: 'Mobile to you', sub: 'Brisbane, Logan, Ipswich & Gold Coast' },
           ].map(({ Icon, label, sub }) => (
@@ -467,7 +467,7 @@ export default async function HomePage({
               },
               {
                 symptom: "I'm buying a used car",
-                sub: 'Comprehensive pre-purchase inspection',
+                sub: 'Detailed pre-purchase inspection',
                 href: '/pre-purchase-inspection/',
                 Icon: ClipboardCheck,
               },
@@ -673,7 +673,7 @@ export default async function HomePage({
               ))}
             </div>
             <span>
-              <strong className="text-ink">5-Star Rated</strong> across customer reviews
+              <strong className="text-ink">Highly rated by customers</strong> · Google reviews
             </span>
           </div>
         </div>

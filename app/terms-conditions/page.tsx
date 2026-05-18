@@ -72,7 +72,8 @@ export default function TermsConditionsPage() {
               You can reschedule or cancel a booking at no cost up to 24 hours before the scheduled
               time. Cancellations within 24 hours may incur a $50 administration fee to cover van
               preparation and lost slot time. We will always try to work with you to reschedule
-              instead.
+              instead. Nothing in this clause affects your rights under the Australian Consumer
+              Law.
             </p>
 
             <h2>5. Payment</h2>
@@ -86,8 +87,9 @@ export default function TermsConditionsPage() {
             <h2>6. Warranty</h2>
             <p>
               We back our work with a workmanship warranty per these terms. If something we fitted
-              or fixed fails due to faulty workmanship within the warranty terms, we return and put
-              it right at no cost.
+              or fixed fails due to faulty workmanship within the warranty period set out on your
+              invoice, we return and put it right at no cost to you. The applicable
+              workmanship-warranty period is printed on every invoice and varies by job type.
             </p>
             <p>
               Parts we fit carry their own manufacturer warranty (duration and process vary by part).
@@ -127,10 +129,10 @@ export default function TermsConditionsPage() {
 
             <h2>10. Liability</h2>
             <p>
-              To the extent permitted by law, our liability for any claim arising out of services
-              provided is limited to the amount paid for those services. We are not liable for
-              indirect or consequential loss. Nothing in this clause limits any liability that
-              cannot be limited under the Australian Consumer Law.
+              Nothing in this clause limits any liability that cannot be limited under the
+              Australian Consumer Law. Subject to that, our liability for any service is limited to
+              the amount paid for those services. We are not liable for indirect or consequential
+              loss.
             </p>
 
             <h2>11. Changes to these terms</h2>

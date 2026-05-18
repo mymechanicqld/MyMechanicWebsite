@@ -146,17 +146,16 @@ export default function PricingPage() {
           </h2>
           <div className="mt-7 space-y-5 text-[1.0625rem] text-ink/90 leading-[1.75]">
             <p>
-              Routine servicing in Brisbane typically ranges from{' '}
-              <strong className="text-ink">$188 to $449</strong> as a general market guide, depending
-              on whether it is a minor or major service and the size of the vehicle. That range
-              excludes any extra parts or repairs that may be required on top of the standard
-              service.
+              As a general guide to the Brisbane market, routine servicing is reported to range from{' '}
+              <strong className="text-ink">$188 to $449</strong> depending on vehicle and service
+              tier. Your fixed-price quote from us will be specific to your make, model and what the
+              logbook calls for.
             </p>
             <p>
-              Most independent workshops in Brisbane charge labour at{' '}
-              <strong className="text-ink">$120 to $180 per hour</strong>, with dealerships sitting
-              higher. Mobile mechanics often charge less per hour because there is no workshop
-              overhead to recover.
+              Most independent workshops in Brisbane charge labour anywhere from{' '}
+              <strong className="text-ink">$80 to $160 per hour</strong>, with diagnostic work and
+              specialised platforms typically at the upper end. Mobile mechanics often charge less
+              per hour because there is no workshop overhead to recover.
             </p>
             <p>
               Where we sit inside that range depends on your vehicle. A minor service on a Mazda 3

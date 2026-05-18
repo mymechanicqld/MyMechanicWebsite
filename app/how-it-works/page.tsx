@@ -48,7 +48,7 @@ const STEPS = [
     n: 3,
     Icon: Calendar,
     title: 'Pick a time and place',
-    body: 'You choose a day and a location. Home driveway, office car park, kerbside. Most weekdays we have same-day or next-day slots. Bigger jobs (water pumps, suspension overhauls) are usually 2 to 4 days out. We confirm by SMS the day before.',
+    body: 'You choose a day and a location. Home driveway or office car park. Most weekdays we have same-day or next-day slots. Bigger jobs (water pumps, suspension overhauls) are usually 2 to 4 days out. We confirm by SMS the day before.',
     duration: 'Same week typical',
   },
   {
@@ -101,7 +101,7 @@ const FAQS = [
   },
   {
     q: 'What do you actually bring on the van?',
-    a: 'The right parts for the job we quoted, plus the common consumables (oils, fluids, filters, gaskets). Professional-grade diagnostic scan tools. Heavy-duty jack stands and a low-profile trolley jack. A torque wrench, an impact gun, the full hand-tool kit, and the workshop manual for your model. Pretty much everything a workshop has, just on wheels.',
+    a: 'The right parts for the job we quoted, plus the common consumables (oils, fluids, filters, gaskets). A torque wrench and the workshop manual for your model. Pretty much everything a workshop has, just on wheels.',
   },
 ]
 
@@ -124,12 +124,6 @@ export default function HowItWorksPage() {
     name: 'How to book a mobile mechanic with My Mechanic QLD',
     description:
       'The six-step process from the first phone call to keys back in your hand. Fixed-price quote upfront, work done at your driveway, workmanship warranty on every job.',
-    totalTime: 'PT7D',
-    estimatedCost: {
-      '@type': 'MonetaryAmount',
-      currency: 'AUD',
-      value: '189',
-    },
     supply: [
       { '@type': 'HowToSupply', name: 'Vehicle make, model and year' },
       { '@type': 'HowToSupply', name: 'Description of the symptoms or service required' },
@@ -262,7 +256,7 @@ export default function HowItWorksPage() {
               <Detail
                 Icon={Truck}
                 title="What is on the van"
-                body="The right parts for the quoted job (and common consumables), professional-grade scan tools, heavy-duty jack stands, a low-profile trolley jack, torque wrench, impact gun, the full hand-tool kit and the workshop manual for your specific model."
+                body="The right parts for the quoted job (and common consumables) and the workshop manual for your specific model."
               />
               <Detail
                 Icon={ClipboardCheck}

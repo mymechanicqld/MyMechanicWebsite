@@ -110,7 +110,7 @@ export default function AboutPage() {
               room disappeared.
             </p>
             <p>
-              Today we&apos;re a team of qualified mechanics covering South East Queensland.
+              Today the business covers South East Queensland with a qualified mobile mechanic at the wheel of every job.
               Logbook services, brake jobs, charging-system repairs, cooling-system overhauls,
               pre-purchase inspections. Same van. Same standards. Same fixed-price promise.
             </p>
@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { Icon: Award, big: '15+ years', sub: 'In the trade' },
-              { Icon: Star, big: '5-Star', sub: 'Customer reviews' },
+              { Icon: Star, big: 'Highly rated', sub: 'Customer reviews' },
               { Icon: MapPin, big: 'Mobile to you', sub: 'Brisbane, Logan, Ipswich & Gold Coast' },
             ].map(({ Icon, big, sub }) => (
               <div key={sub} className="flex flex-col items-center gap-2">

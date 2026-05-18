@@ -29,7 +29,7 @@ const REGIONS: Region[] = [
   {
     slug: 'brisbane',
     name: 'Brisbane',
-    hint: 'Northside to Bayside, inner west to the Southside. 16 suburbs.',
+    hint: 'Northside to Bayside, inner west to the Southside.',
     image: '/images/coverage-onsite.webp',
     suburbs: [
       'Aspley',
@@ -81,7 +81,7 @@ export default function AreasHubPage() {
         <div className="container max-w-3xl">
           <span className="eyebrow">Where we work</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4">
-            Within an hour of Springwood, in any direction.
+            Within 50 to 60 km of Springwood, in any direction.
           </h1>
           <p className="lead mt-6">
             We&apos;re based in Springwood on Brisbane&apos;s Southside and work a wide

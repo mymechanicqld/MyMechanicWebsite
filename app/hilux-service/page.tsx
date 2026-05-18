@@ -35,7 +35,7 @@ const VARIANTS = [
 const COMMON_ISSUES = [
   {
     title: 'DPF clogging on short-tripped diesels',
-    body: "The 1GD-FTV (2.8L, post-2015) and 2GD-FTV (2.4L) diesels build particulate matter in the DPF that needs a 30-minute highway run every couple of weeks to burn off. Trucks used only for the school run or kerbside trade work clog the filter, trigger a warning light, and need a forced regeneration. We do forced regens on-site.",
+    body: "The 1GD-FTV (2.8L, post-2015) diesel builds particulate matter in the DPF that needs a 30-minute highway run every couple of weeks to burn off. Trucks used only for the school run or kerbside trade work clog the filter, trigger a warning light, and need a forced regeneration. We do forced regens on-site.",
   },
   {
     title: 'EGR cooler and intake manifold carbon buildup',
@@ -55,12 +55,12 @@ const COMMON_ISSUES = [
   },
   {
     title: 'Auto transmission flushes (AB60F)',
-    body: "Hilux auto transmissions (the AB60F 6-speed) need a fluid drain-and-fill every 60,000 km even though the official Toyota schedule is silent on it. We drop the pan, replace the filter, refill with the correct WS spec fluid, and reset the transmission control unit's adaptive learning.",
+    body: "Hilux auto transmissions (the AB60F 6-speed) need a fluid drain-and-fill every 60,000 km even though the official Toyota schedule is silent on it. We drop the pan, replace the filter, and drain-and-fill with the correct WS-spec fluid.",
   },
 ]
 
 const SERVICE_INTERVALS = [
-  { model: 'Hilux 1GD-FTV / 2GD-FTV (2015 onwards)', interval: '15,000 km or 12 months' },
+  { model: 'Hilux 1GD-FTV (2015 onwards)', interval: '15,000 km or 12 months' },
   { model: 'Older Hilux 1KD-FTV / 2KD-FTV (pre-2015 diesel)', interval: '10,000 km or 6 months' },
   { model: 'Hilux petrol (2TR-FE 4-cylinder)', interval: '15,000 km or 12 months' },
   { model: 'Hilux used heavily for towing or off-road', interval: 'Halve the manufacturer interval' },

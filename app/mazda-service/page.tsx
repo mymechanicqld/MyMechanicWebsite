@@ -38,15 +38,15 @@ const MODELS = [
 const COMMON_ISSUES = [
   {
     title: 'SkyActiv-G carbon buildup on intake valves',
-    body: "All direct-injection SkyActiv-G petrol engines (Mazda 3, CX-3, CX-30, CX-5 petrol) build carbon on the intake valves over time. Symptoms appear around 100,000 to 140,000 km: rough idle, slight power loss, occasional misfire on cold start. We do walnut-blast intake cleans on-site for the right vehicles.",
+    body: "All direct-injection SkyActiv-G petrol engines (Mazda 3, CX-3, CX-30, CX-5 petrol) build carbon on the intake valves over time. Symptoms appear around 100,000 to 140,000 km: rough idle, slight power loss, occasional misfire on cold start. We diagnose intake-valve carbon and refer you to a workshop for walnut-blasting where the symptoms call for it.",
   },
   {
     title: 'i-Stop start-stop system battery drain',
-    body: "Mazda's i-Stop system uses a special enhanced flooded battery. A standard replacement battery often triggers a fault code and disables i-Stop. We fit the correct EFB or AGM battery and run the battery management reset procedure.",
+    body: "Mazda's i-Stop system uses a special enhanced flooded battery. A standard replacement battery often triggers a fault code and disables i-Stop. We fit the correct EFB or AGM battery so i-Stop continues to function correctly.",
   },
   {
     title: 'CX-9 torque converter shudder',
-    body: "Early CX-9 (TC platform) automatic transmissions develop a low-speed shudder around 80,000 km, traceable to the torque converter. A transmission fluid drain-and-fill with the correct ATF JWS3324 fluid sometimes resolves it; otherwise the torque converter needs replacement (workshop job).",
+    body: "Early CX-9 (TC platform) automatic transmissions develop a low-speed shudder around 80,000 km, traceable to the torque converter. A transmission fluid drain-and-fill with the correct Mazda-spec ATF sometimes resolves it; otherwise the torque converter needs replacement (workshop job).",
   },
   {
     title: 'CX-5 diesel DPF in city driving',
@@ -113,8 +113,8 @@ export default function MazdaServicePage() {
           <p className="lead mt-6">
             Mazda 3, 6, CX-3, CX-5, CX-30, CX-8, CX-9, BT-50, MX-5. SkyActiv-G and SkyActiv-D
             engines. On-site servicing and repairs across South East Queensland. Manufacturer-spec
-            parts, Mazda Genuine or OEM-spec filters, correct ATF JWS3324 for the automatic.
-            Workmanship warranty on every job.
+            parts, Mazda Genuine or OEM-spec filters, the correct Mazda-spec ATF for the automatic.
+            Workmanship warranty per our terms, plus your Australian Consumer Law rights.
           </p>
           <div className="flex flex-wrap gap-3 mt-7">
             <Link href={"/book/" as `/${string}`} className="btn btn-primary">

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const COVERED = [
   'Workmanship on every job we perform, including diagnosis, fitting, adjustment and final road test',
   'Parts we have sourced and fitted, covered by the part manufacturer warranty (duration and terms vary by part)',
-  'Return visits required to put right any failure caused by the original workmanship, within the warranty terms',
+  'Return visits required to put right any failure caused by the original workmanship, within the warranty period printed on your invoice',
   'Diagnosis time for any return visit under warranty (no diagnostic fee charged twice for the same fault)',
 ]
 
@@ -60,7 +60,7 @@ const STEPS = [
     n: 3,
     Icon: BadgeCheck,
     title: 'We diagnose and rectify',
-    body: 'If the fault is workmanship-related and within the warranty terms, we put it right at no cost to you. If the fault is something separate (a new issue, wear-and-tear, damage from elsewhere), we tell you straight and quote it as a normal repair. You decide whether to proceed.',
+    body: 'If the fault is workmanship-related and within the warranty period printed on your invoice, we put it right at no cost to you. If the fault is something separate (a new issue, wear-and-tear, damage from elsewhere), we tell you straight and quote it as a normal repair. You decide whether to proceed.',
   },
 ]
 
@@ -119,9 +119,16 @@ export default function WarrantyPage() {
             </h1>
             <p className="lead mt-6">
               Every job we do is backed by a workmanship warranty, plus the part manufacturer
-              warranty on every component we fit. If something we fitted or fixed fails because of
-              how we did the job, we come back and put it right within the warranty terms. This
-              page spells out what that means in practice.
+              warranty on every component we fit. If something we fitted or fixed fails due to
+              faulty workmanship within the warranty period printed on your invoice, we come back
+              and put it right at no cost to you. This page spells out what that means in practice.
+            </p>
+            <p className="mt-4 text-[0.9375rem] text-muted leading-relaxed">
+              The workmanship-warranty period is set out on every invoice and varies by job type —
+              typically the more substantial the repair, the longer the period. Parts also carry
+              their own manufacturer warranty (duration and process vary by part). Your statutory
+              rights under the Australian Consumer Law apply in addition to this warranty, not in
+              place of it.
             </p>
             <div className="flex flex-wrap gap-3 mt-7">
               <Link href="/book/" className="btn btn-primary">

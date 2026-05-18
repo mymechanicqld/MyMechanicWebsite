@@ -62,7 +62,7 @@ export default function CheckCoveragePage() {
               </div>
               <h2 className="text-lg font-semibold mb-2">30 to 90 min response</h2>
               <p className="text-[0.9375rem] text-muted leading-relaxed">
-                Fastest in Logan and southern Brisbane (30–45 min). Up to 75–90 min for the
+                Fastest in Logan and southern Brisbane (30 to 45 min). Up to 75 to 90 min for the
                 northern Gold Coast or the outer Brisbane suburbs.
               </p>
             </div>
@@ -72,8 +72,9 @@ export default function CheckCoveragePage() {
               </div>
               <h2 className="text-lg font-semibold mb-2">Borderline? Call us.</h2>
               <p className="text-[0.9375rem] text-muted leading-relaxed">
-                For suburbs just outside the radius (Sunshine Coast fringe, southern Gold Coast),
-                we sometimes stretch with a small travel fee. The phone is the quickest answer.
+                For borderline suburbs (outer Ipswich, far Northside Brisbane, or anywhere a
+                little beyond the standard radius), we sometimes stretch with a small travel fee.
+                The phone is the quickest answer.
               </p>
             </div>
           </div>
