@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: 'About My Mechanic QLD | Mobile Mechanic Brisbane & SEQ',
   description:
-    "Professional mobile mechanics with 15+ years of dealership experience, serving South East Queensland. Fixed-price quotes and a 12-month warranty on every job.",
+    "Professional mobile mechanics with 15+ years of dealership experience, serving South East Queensland. Fixed-price quotes and a workmanship warranty on every job.",
   alternates: { canonical: '/about/' },
   openGraph: {
     title: 'About My Mechanic QLD',
@@ -39,8 +39,8 @@ const PRINCIPLES = [
   },
   {
     Icon: Award,
-    title: 'Real parts, real warranty',
-    body: 'OEM or quality aftermarket parts and fluids that meet or exceed manufacturer specifications. Sized for your vehicle. Backed by a workmanship warranty per our terms.',
+    title: 'Real parts, written warranty',
+    body: 'OEM or quality aftermarket parts and fluids that meet or exceed manufacturer specifications. Sized for your vehicle. Backed by a workmanship warranty per our terms, in addition to your rights under the Australian Consumer Law.',
   },
   {
     Icon: Users,
@@ -62,7 +62,7 @@ export default function AboutPage() {
             </h1>
             <p className="lead mt-6">
               My Mechanic QLD brings 15+ years of dealership-floor experience to your driveway.
-              Workshop-grade diagnostic equipment, OEM parts, fixed-price quotes and a 12-month
+              Workshop-grade diagnostic equipment, OEM parts, fixed-price quotes and a workmanship
               warranty on every job.
             </p>
             <div className="flex flex-wrap gap-3 mt-7">

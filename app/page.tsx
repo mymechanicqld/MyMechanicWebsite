@@ -225,7 +225,7 @@ export default async function HomePage({
               {[
                 'Fixed-price quote before we start the job',
                 'OEM or quality aftermarket parts to manufacturer spec',
-                'Workmanship warranty backed by Australian Consumer Law',
+                'Workmanship warranty per our terms, plus your Australian Consumer Law rights',
                 'Same-day service available',
               ].map((line) => (
                 <li key={line} className="flex items-center gap-3">

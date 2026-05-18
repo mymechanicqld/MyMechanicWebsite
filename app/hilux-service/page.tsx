@@ -111,8 +111,8 @@ export default function HiluxServicePage() {
           <p className="lead mt-6">
             From the work-fleet Workmate to the trail-ready Rogue, we service every Hilux on-site
             across South East Queensland. Diesel DPF work, EGR cleaning, brakes, suspension,
-            logbook services. OEM-spec parts. Workmanship warranty backed by Australian Consumer
-            Law.
+            logbook services. OEM-spec parts. Workmanship warranty per our terms, plus your
+            Australian Consumer Law rights.
           </p>
           <div className="flex flex-wrap gap-3 mt-7">
             <Link href={"/book/" as `/${string}`} className="btn btn-primary">
