@@ -20,7 +20,6 @@ const WHY_US = [
   { label: 'Warranty', href: '/warranty/' },
   { label: 'How it works', href: '/how-it-works/' },
   { label: 'Coverage checker', href: '/check-coverage/' },
-  { label: 'Case studies', href: '/case-studies/' },
   { label: 'FAQ', href: '/faq/' },
 ]
 

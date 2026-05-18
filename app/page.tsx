@@ -95,50 +95,50 @@ const REGIONS = [
 const REVIEWS = [
   {
     quote:
-      "Booked Friday afternoon, was at our place by Tuesday morning. Logbook done in the driveway, every line item explained, paid by tap before he left. Genuinely don't see myself going back to the dealership.",
-    name: 'Sarah W.',
-    place: 'Bulimba',
-    when: '2 weeks ago',
+      'Over the last two weeks I had My Mechanic QLD replace the rear brake pads and rotors and the front control arms on my 2011 Hyundai iX35. Shanty and Norman did an exceptional job. Same-day callout, spot-on pricing and timeframes. I cannot praise Shanty enough — highly recommend.',
+    name: 'Greg Gillham',
+    place: 'Brisbane · Brakes + control arms',
+    when: '4 months ago',
     stars: 5,
   },
   {
     quote:
-      'Quoted upfront for pads and rotors on the front of our Hilux. Came to the work car park, sorted by lunch, paid exactly what was quoted. That used to be normal. Now it feels rare.',
-    name: 'Daniel M.',
-    place: 'Robina',
-    when: '3 weeks ago',
+      "My car wasn't working on Christmas Eve and everywhere was closed. They came out within 2 hours and diagnosed and fixed the issue within 10 minutes. Other places suggested I have the car towed or were closing soon. Definitely paying for convenience, but also great service.",
+    name: 'Holly Wilkinson',
+    place: 'Brisbane · Emergency call-out',
+    when: '4 months ago',
     stars: 5,
   },
   {
     quote:
-      "Found a hairline crack in the radiator during a pre-purchase inspection. The seller swore it wasn't there. Saved me from buying a major hidden problem. Worth every cent of the inspection fee.",
-    name: 'Priya R.',
-    place: 'Carindale',
-    when: '1 month ago',
+      'Car brakes decided to die, one call and they were there within 2 hours all fixed and on our way. Very reasonable pricing for the service they provide. Will definitely use again.',
+    name: 'Jake',
+    place: 'Brisbane · Brake repair',
+    when: '3 months ago',
     stars: 5,
   },
   {
     quote:
-      'Alternator swap on the CX-5, done in the work car park. Cheaper than my usual workshop quoted and I did not lose a day of work. Have already passed the number on to two colleagues.',
-    name: 'Jake T.',
-    place: 'Springfield',
-    when: '1 month ago',
+      'Thank you for a fast and reliable service. Really appreciate your help replacing my new car battery.',
+    name: 'Miriama Tiatia',
+    place: 'Brisbane · Battery replacement',
+    when: '3 months ago',
     stars: 5,
   },
   {
     quote:
-      "Called about an air con issue and they were upfront that they don't do aircon work. Pointed me to a specialist in Slacks Creek instead of wasting my time. Came back to them a week later for a logbook service and it was spot on.",
-    name: 'Mel C.',
-    place: 'Browns Plains',
+      'Shanty was so kind and honest when he came to look at my car. Appreciate the help from the phone calls with the lovely lady in admin organising everything, to Shanty and the other worker being thorough but quick when they arrived. Thank you!',
+    name: 'Soph Denholm',
+    place: 'Brisbane · General service',
     when: '2 months ago',
     stars: 5,
   },
   {
     quote:
-      'Battery died at the office on a 35-degree day. They were out within the hour, tested the alternator as well just to be safe, and had me running again before my next meeting. Fair price, no drama.',
-    name: 'Chris K.',
-    place: 'Mt Gravatt',
-    when: '3 months ago',
+      'Responded to my inquiry within 15 minutes. They had my car back in operation 2 hours later. They were friendly and quick and I will definitely use them again.',
+    name: 'Douglas Woolard',
+    place: 'Brisbane · Repair',
+    when: '2 months ago',
     stars: 5,
   },
 ] as const
@@ -516,7 +516,7 @@ export default async function HomePage({
             </h2>
             <p className="text-white/75 mt-4 max-w-[52ch] text-[1.0625rem] leading-relaxed">
               Putting off the brake noise, the warning light, the slow morning crank gets expensive
-              fast. Get a fixed-price quote in under an hour during business hours.
+              fast. Get a fixed-price quote, usually the same business day.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -647,6 +647,24 @@ export default async function HomePage({
                 </div>
               </div>
             ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 mt-10">
+            <a
+              href="https://www.google.com/maps/place/My+Mechanic+Qld/@-27.6993955,153.0561455,17z/data=!4m8!3m7!1s0x2ad9c25f5ced039d:0x125bb19c4e239265!8m2!3d-27.6993955!4d153.0561455!9m1!1b1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Read more reviews on Google
+            </a>
+            <a
+              href="https://www.google.com/maps/place/My+Mechanic+Qld/@-27.6993955,153.0561455,17z/data=!4m8!3m7!1s0x2ad9c25f5ced039d:0x125bb19c4e239265!8m2!3d-27.6993955!4d153.0561455!9m1!1b1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
+              Leave a review
+            </a>
           </div>
           <div className="mt-10 flex gap-3 items-center text-[0.9375rem] text-muted">
             <div className="text-gold inline-flex gap-px">
