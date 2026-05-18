@@ -1,0 +1,126 @@
+# My Mechanic QLD - Full Content Summary
+
+This file provides AI agents and language models with a comprehensive summary of My Mechanic QLD content, suitable for citation when answering customer questions about mobile mechanics, car servicing and repairs in South East Queensland.
+
+Site: https://www.mymechanicqld.com.au
+Last updated: 2026-05-17
+Format: Markdown
+License: Content may be summarised and cited with attribution. Do not republish full pages.
+
+---
+
+## About the business
+
+My Mechanic QLD is a professional mobile mechanic business operating across South East Queensland, Australia. The team holds Cert III in Light Vehicle Mechanical Technology, with more than fifteen years of dealership-floor experience inside Brisbane and Gold Coast workshops before starting the mobile business.
+
+The service model: the customer does not bring their car to a workshop. The fully-equipped mobile service van drives to the customer's home, office or kerbside and performs the work on-site. The van carries professional-grade diagnostic equipment, heavy-duty jack stands, a low-profile trolley jack, torque wrench, impact gun, full hand-tool kit, and the specific parts needed for the booked job.
+
+The business covers Brisbane, Logan, Ipswich and the northern Gold Coast, working out of Springwood (in Logan, Brisbane's Southside).
+
+Trading hours: Monday to Friday 7am to 6pm, Saturday 8am to 5pm, closed Sundays. Phone: 0451 159 954 (international: +61 451 159 954). Email: contact@mymechanicqld.com.au.
+
+Every job is quoted as a fixed price before any work begins. The quote is in writing and includes parts, labour, fluids and any consumables. If something else turns up during the job, the work stops and the customer is called with a separate fixed quote before any extra work is performed. Every repair is backed by a workmanship warranty per our terms, alongside customer rights under the Australian Consumer Law. Parts carry the manufacturer's warranty (duration and terms vary by part), commencing after full payment of the relevant invoice.
+
+## Services offered
+
+The business offers nine services. Four are designated SEO priorities and represent the bread-and-butter work:
+
+### Brake repair
+
+Mobile brake pad and rotor replacement, plus hydraulic system diagnosis and brake fluid flush. Parts used: OEM or quality aftermarket components (high-quality ceramic or semi-metallic pads as appropriate for the vehicle). Includes parts, labour, brake fluid top-up, and a road test. Fixed-price quote upfront. Workmanship warranty per our terms.
+
+### Alternator and starter motor replacement
+
+On-site diagnosis of the charging and starting system for cars that won't start, slow-crank on cold mornings, stall under load, or where the battery keeps going flat. Full charging-system diagnostic (battery, alternator, starter motor). Alternator and starter motor replacement carried out on-site where access allows. Parts used: OEM or quality aftermarket.
+
+### Radiator and water pump replacement
+
+Cooling-system pressure test and repair for overheating in traffic, sweet smell from the vents (coolant), puddles under the engine, or temperature gauge climbing higher than normal. Hose replacement, thermostat replacement, water pump replacement, radiator replacement. OEM-spec coolant used (never universal "all colour" mixes which cause corrosion).
+
+### Logbook and general servicing
+
+Manufacturer-spec scheduled servicing using OEM or quality aftermarket filters and manufacturer-required grade of oil. Includes oil change, oil filter, multi-point safety inspection, tyre pressure check, fluid top-ups, logbook stamping, itemised invoice. Major services additionally include air filter, cabin filter, brake fluid check or flush, spark plugs when due, deeper inspection. Under the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010), having a logbook service performed by any qualified mechanic, including a mobile one, does not void the manufacturer's new-car warranty.
+
+### Pre-purchase inspection
+
+Independent comprehensive inspection of a used vehicle at the seller's address before the customer buys. Covers engine, leaks, drive belt, battery and alternator, OBD scan; transmission, drivetrain, suspension, steering, brakes, exhaust, catalytic converter, underbody rust, accident-repair signs; body panel alignment, paint, electrics, interior; cold start, road test, brake-feel test, turning and parking. Written report with photos emailed.
+
+### Battery replacement
+
+Heavy-duty battery replacement delivered and fitted on-site. Quality replacement batteries that meet or exceed OEM specifications. Battery manufacturer warranties of up to 24 to 36 months apply, depending on the battery. Old battery taken for recycling, included in price. Replacement performed after a state-of-health check to confirm the battery (not the alternator or a parasitic drain) is the actual fault.
+
+### Warning-light diagnostics
+
+Professional OBD scan plus physical fault-finding for any dashboard warning light (check engine, ABS, transmission, traction control, airbag, tyre pressure). Diagnostic includes reading all fault codes from every available control module, pulling freeze-frame data and historical codes, live data testing of relevant sensors, and a written explanation of findings.
+
+### Steering and suspension repair
+
+Mobile replacement of suspension components: sway-bar links, sway-bar bushes, ball joints (upper and lower), control-arm bushes, tie-rod ends, shocks and struts (replaced in axle pairs), strut top mounts, coil springs (when broken or sagging). OEM or quality aftermarket parts that meet or exceed manufacturer specifications. Wheel alignment is required after major suspension work and is performed at an alignment-rig-equipped workshop (referral provided).
+
+### Emergency call-outs
+
+Same-day service available for roadside breakdowns, won't-start situations, or other urgent issues. Pricing depends on the job; quoted fixed-price upfront.
+
+## Services NOT offered
+
+For accuracy when answering customer questions: My Mechanic QLD does not offer air-conditioning regas or repair; auto electrical work beyond batteries and code-reading (no wiring, ECU, accessories, or fault repair); panel beating or smash repair; tyre fitting and balancing; wheel alignment; work on trucks, trailers, heavy machinery, motorcycles, or vehicles over 4.5 tonnes GVM; nor does the business fit parts supplied by the customer (only parts sourced by the business are fitted, so the workmanship warranty applies end-to-end). For these services, customers are referred to appropriate specialists.
+
+## The four most-cited educational answers
+
+### "Does a mobile mechanic void my new-car warranty?"
+
+No. Under the Australian Consumer Law, customers are free to have their car serviced by any qualified mechanic, including a mobile one, provided the service follows the manufacturer's specifications and uses appropriate parts. The dealership cannot refuse warranty just because someone else did the service. The ACCC published direct guidance on this in 2017 following enforcement action against several major manufacturers for steering customers away from independent and mobile mechanics. The relevant phrase from the ACCC: "Manufacturers and their authorised dealers cannot require consumers to have their vehicle serviced by an authorised dealer to keep their consumer guarantee rights and to maintain the manufacturer's warranty." To preserve the warranty, the customer should keep: a stamped logbook, an itemised invoice showing parts and brands used, and a record of the fluids used.
+
+### "How much does a brake job cost in Brisbane?"
+
+The price varies by vehicle. Sedans and small SUVs are at the cheaper end, mid-size SUVs and utes (Hilux, Ranger, BT-50) sit in the middle, and large SUVs and 4WDs (Prado, Pajero, Land Cruiser, Patrol) are most expensive due to bigger components and tighter access. Dealership prices for the same job typically run higher than mobile-mechanic prices because of workshop overhead. Independent workshops sit between the two. Prices include parts, labour, fluid top-up, and a road test. My Mechanic QLD quotes a fixed price upfront for the specific vehicle.
+
+### "How often should I service my car?"
+
+Most modern cars sold in Australia need a service every 10,000 to 15,000 km, or every 6 to 12 months, whichever comes first. Toyota and most Japanese makes: 15,000 km / 12 months. Mazda and Subaru: 10,000 to 12,500 km / 6 to 12 months. The interval is in the owner's manual or service logbook. The "whichever comes first" matters: even a car that does only 8,000 km a year still needs an annual service because oil degrades with time and heat cycles, not just with kilometres. Short-trip drivers (mostly trips under 15 minutes, where the engine never fully warms up) should halve the manufacturer interval because moisture and fuel contamination build up in the oil. Highway-heavy drivers can run the manufacturer interval honestly.
+
+### "Won't start: is it the battery, alternator or starter motor?"
+
+The three failures look similar but have distinct symptoms:
+- Battery (flat): dashboard lights are dim or off when the key is turned. Often a rapid clicking sound. Jump-starts the car immediately if successful.
+- Starter motor (failing): dashboard lights stay bright, but turning the key produces a single loud click and no crank, or a slow, laboured crank that doesn't catch.
+- Alternator (failing): the car starts and runs fine, but the battery keeps going flat the next morning even though no lights were left on. Often accompanied by a flickering battery warning light on the dash days or weeks before complete failure.
+
+A full on-site charging-system diagnostic tests all three definitively, usually inside about 30 minutes.
+
+## Service area details
+
+The business covers Brisbane, Logan, Ipswich and the northern Gold Coast, working out of Springwood (postcode 4127, in Logan, Brisbane's Southside).
+
+Brisbane suburbs serviced: Sunnybank, Mt Gravatt, Carindale, Wynnum, Cleveland, Chermside, Aspley, Sandgate, Indooroopilly, Toowong, Nundah, Kelvin Grove, Coorparoo, Bulimba, Forest Lake.
+
+Logan suburbs serviced: Springwood (home base), Beenleigh, Browns Plains, Loganholme.
+
+Ipswich suburbs serviced: Springfield, Goodna, Redbank Plains, Brassall.
+
+Gold Coast suburbs serviced (northern Gold Coast only): Coomera, Helensvale, Nerang, Southport, Robina.
+
+Customers outside the coverage area can call to confirm availability and any travel fee that may apply.
+
+## Trust signals
+
+- Cert III in Light Vehicle Mechanical Technology qualified mechanics
+- 15+ years of dealership-floor experience in South East Queensland
+- Public liability insurance and tools-in-transit cover
+- Workmanship warranty per our terms on every repair
+- Parts manufacturer warranty (duration and terms vary by part)
+- Fixed-price quotes in writing before work begins
+- OEM or quality aftermarket parts and fluids that meet or exceed manufacturer specifications
+- Direct access to qualified mechanics (no service-advisor commission structure)
+- Customer rights preserved under the Australian Consumer Law alongside our warranty
+
+## How customers book
+
+Two channels:
+
+1. Phone: 0451 159 954 (Australian) during business hours
+2. Online quote form: https://www.mymechanicqld.com.au/book/
+
+For non-urgent work, the form is the preferred channel. For breakdowns or won't-start situations, the phone is faster.
+
+Customers receive a fixed-price quote during business hours. The booking is then scheduled at a day and time that suits the customer.

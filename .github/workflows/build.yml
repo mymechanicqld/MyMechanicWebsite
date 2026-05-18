@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: next build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check + build
+        run: npm run build
+        env:
+          # Provide harmless placeholders so the build doesn't blow up on
+          # missing env vars in CI. Real values live in Vercel.
+          NEXT_PUBLIC_GA4_MEASUREMENT_ID: G-CI-PLACEHOLDER
+          NEXT_PUBLIC_GSC_VERIFICATION: ci-placeholder

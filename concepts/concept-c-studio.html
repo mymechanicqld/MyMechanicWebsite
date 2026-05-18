@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept C · Studio — My Mechanic QLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  :root{
+    --bg:#F1ECDF;
+    --bg-deep:#E9E2D0;
+    --surface:#F8F4E8;
+    --paper:#FCFAF1;
+    --ink:#171410;
+    --muted:#544D40;
+    --subtle:#7A7060;
+    --hairline:#DDD3B8;
+    --border:#CCC2A6;
+    --accent:#1E3A8A;
+    --accent-hover:#1E40AF;
+    --accent-bright:#2563EB;
+    --accent-tint:#E1E7F8;
+    --gold:#B68B2F;
+    --serif:'Fraunces', ui-serif, Georgia, serif;
+    --sans:'Inter', ui-sans-serif, system-ui, sans-serif;
+    --container: 1280px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; font-family:var(--sans); color:var(--ink); background:var(--bg);
+    -webkit-font-smoothing:antialiased; line-height:1.6;
+    font-feature-settings:"ss01","cv11";
+  }
+  h1,h2,h3,h4{margin:0; color:var(--ink); font-family:var(--serif); font-weight:500; letter-spacing:-0.022em}
+  h1{font-size:clamp(3rem, 7vw, 6rem); line-height:0.96; letter-spacing:-0.04em; font-variation-settings:"opsz" 144}
+  h2{font-size:clamp(2rem, 4vw, 3.25rem); line-height:1.08; letter-spacing:-0.025em; font-variation-settings:"opsz" 96}
+  h3{font-size:1.5rem; line-height:1.2; font-weight:500; font-variation-settings:"opsz" 48}
+  h4{font-family:var(--sans); font-size:0.9375rem; font-weight:600; letter-spacing:-0.005em}
+  p{margin:0}
+  a{color:var(--accent-bright); text-decoration:none}
+  a:hover{color:var(--accent-hover)}
+
+  .container{max-width:var(--container); margin:0 auto; padding:0 1.5rem}
+  @media(min-width:768px){.container{padding:0 2.5rem}}
+  @media(min-width:1280px){.container{padding:0 3.5rem}}
+
+  .eyebrow{font-family:var(--sans); font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); font-weight:600}
+  .lead{font-size:1.25rem; line-height:1.5; color:var(--muted); max-width:42ch}
+  .prose{color:var(--muted); font-size:1.0625rem; line-height:1.7; max-width:62ch}
+
+  [data-lucide]{display:inline-block; vertical-align:middle; width:18px; height:18px; stroke-width:1.75; flex-shrink:0}
+  .icon-lg [data-lucide]{width:22px; height:22px; stroke-width:1.5}
+  .icon-xl [data-lucide]{width:30px; height:30px; stroke-width:1.5}
+
+  .btn{display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--sans); font-weight:500; padding:0.85rem 1.4rem; border-radius:4px; transition:all 180ms; text-decoration:none; font-size:0.9375rem; border:1px solid transparent}
+  .btn-primary{background:var(--ink); color:var(--paper)}
+  .btn-primary:hover{background:var(--accent); color:var(--paper)}
+  .btn-secondary{background:transparent; color:var(--ink); border-color:var(--ink)}
+  .btn-secondary:hover{background:var(--ink); color:var(--paper)}
+  .link-inline{color:var(--accent); font-weight:500; display:inline-flex; align-items:center; gap:0.3rem; font-size:0.9375rem; border-bottom:1px solid currentColor; padding-bottom:0.15rem}
+  .link-inline:hover{color:var(--accent-hover)}
+
+  /* Image placeholder */
+  .img{position:relative; overflow:hidden; background:#D8CFB5; border-radius:2px; isolation:isolate}
+  .img::before{content:""; position:absolute; inset:0; background:
+    linear-gradient(135deg, #D9D0B6 0%, #BFB59B 50%, #A89E84 100%); z-index:-1;
+  }
+  .img::after{content:""; position:absolute; inset:0; background-image:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.2), transparent 35%),
+    radial-gradient(circle at 75% 75%, rgba(23,20,16,0.1), transparent 40%);
+  }
+  .img-label{position:absolute; bottom:10px; left:10px; right:10px; font-family:ui-monospace, 'JetBrains Mono', SFMono-Regular, monospace; font-size:0.6875rem; color:#3a3325; background:rgba(252,250,241,0.93); padding:0.4rem 0.55rem; border-radius:2px; text-align:center; word-break:break-all; line-height:1.3}
+
+  /* Top utility bar */
+  .utility{background:var(--ink); color:#A8A29E; font-size:0.8125rem; padding:0.65rem 0}
+  .utility .container{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center}
+  .utility a{color:var(--paper); display:inline-flex; align-items:center; gap:0.4rem; font-weight:500}
+  .utility a:hover{color:var(--paper)}
+  .utility-left{display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center}
+
+  /* Header */
+  header.site{background:var(--bg); position:sticky; top:0; z-index:60; border-bottom:1px solid var(--hairline)}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1.25rem 0; gap:2rem}
+  .brand{display:inline-flex; align-items:baseline; gap:0.5rem; font-family:var(--serif); font-weight:500; font-size:1.375rem; color:var(--ink); letter-spacing:-0.025em; text-decoration:none}
+  .brand-line{width:18px; height:1px; background:var(--accent); display:inline-block; transform:translateY(-5px)}
+  .nav-links{display:none; gap:2rem; align-items:center}
+  .nav-links a{color:var(--ink); font-size:0.9375rem; font-weight:500; text-decoration:none; display:inline-flex; align-items:center; gap:0.25rem}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{display:none; align-items:center; gap:0.5rem}
+  @media(min-width:1024px){.nav-links{display:flex} .nav-cta{display:inline-flex}}
+
+  /* Hero */
+  .hero{padding:5rem 0 4rem; position:relative}
+  @media(min-width:1024px){.hero{padding:7rem 0 6rem}}
+  .hero h1{max-width:14ch}
+  .hero h1 em{font-style:italic; color:var(--accent)}
+  .hero-foot{display:grid; gap:2.5rem; align-items:end; margin-top:3rem}
+  @media(min-width:768px){.hero-foot{grid-template-columns:1.2fr 0.8fr; gap:4rem}}
+  .hero-cta-row{display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem}
+  .hero-stats{display:grid; gap:1.25rem; grid-template-columns:repeat(3, 1fr); padding-left:0; padding-top:1.5rem; border-top:1px solid var(--border)}
+  .hero-stats div{font-size:0.8125rem; color:var(--subtle)}
+  .hero-stats strong{display:block; font-family:var(--serif); font-weight:500; font-size:2rem; line-height:1; color:var(--ink); margin-bottom:0.35rem; letter-spacing:-0.02em}
+
+  /* Hero image full-bleed */
+  .hero-img-band{margin-top:4rem}
+  .hero-img-band .img{aspect-ratio:21/9; min-height:280px}
+
+  /* Services as alternating bands */
+  .service-band{padding:5rem 0; border-top:1px solid var(--hairline)}
+  @media(min-width:1024px){.service-band{padding:7rem 0}}
+  .service-band:nth-of-type(even){background:var(--surface)}
+  .service-grid{display:grid; gap:3rem; align-items:center}
+  @media(min-width:1024px){.service-grid{grid-template-columns:1fr 1fr; gap:5rem}}
+  .service-band.reverse .service-grid > div:first-child{order:2}
+  .service-num{font-family:var(--serif); font-style:italic; font-weight:400; color:var(--accent); font-size:1.5rem; margin-bottom:0.5rem; letter-spacing:-0.01em}
+  .service-band .tag{font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--subtle); font-weight:600; margin-bottom:0.85rem}
+  .service-band h2{margin-bottom:1.5rem}
+  .service-band p.body{color:var(--muted); font-size:1.0625rem; line-height:1.7; margin-bottom:1.5rem; max-width:56ch}
+  .service-includes{display:grid; gap:0.6rem; margin-bottom:2rem; max-width:48ch}
+  .service-includes li{list-style:none; display:flex; gap:0.7rem; font-size:0.9375rem; color:var(--ink); align-items:flex-start}
+  .service-includes li [data-lucide]{color:var(--accent); width:18px; height:18px; margin-top:0.2rem; stroke-width:2.25}
+  .service-meta{display:flex; gap:2rem; flex-wrap:wrap; align-items:center; padding-top:1.5rem; border-top:1px solid var(--hairline); margin-top:0.5rem}
+  .service-meta .price{font-family:var(--serif); font-weight:500; font-size:1.5rem; color:var(--ink); letter-spacing:-0.01em}
+  .service-meta .price span{font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--subtle); font-family:var(--sans); margin-right:0.4rem; font-weight:600}
+  .service-img{aspect-ratio:4/5; min-height:420px}
+
+  /* Secondary services strip */
+  .also{background:var(--bg-deep); padding:3.5rem 0; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline)}
+  .also-row{display:grid; gap:1.5rem; grid-template-columns:repeat(2, 1fr); align-items:start; margin-top:1.5rem}
+  @media(min-width:768px){.also-row{grid-template-columns:repeat(4, 1fr); gap:2.5rem}}
+  .also-card{display:flex; flex-direction:column; gap:0.5rem; text-decoration:none; color:var(--ink); padding-right:1rem; border-right:1px solid var(--hairline)}
+  .also-row .also-card:last-child{border-right:none}
+  .also-card .ic{color:var(--accent); margin-bottom:0.5rem}
+  .also-card .ic [data-lucide]{width:24px; height:24px; stroke-width:1.5}
+  .also-card h4{font-family:var(--serif); font-size:1.125rem; font-weight:500; letter-spacing:-0.01em}
+  .also-card p{font-size:0.875rem; color:var(--muted); margin-bottom:0.5rem}
+  .also-card span{font-size:0.8125rem; color:var(--accent); font-weight:500; display:inline-flex; align-items:center; gap:0.25rem}
+  .also-card:hover h4{color:var(--accent)}
+
+  /* Owner — full letter */
+  .owner{background:var(--paper); padding:6rem 0; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline)}
+  @media(min-width:1024px){.owner{padding:8rem 0}}
+  .owner-grid{display:grid; gap:4rem; align-items:start}
+  @media(min-width:1024px){.owner-grid{grid-template-columns:0.9fr 1.1fr; gap:6rem}}
+  .owner-img{aspect-ratio:4/5; min-height:520px}
+  .owner-letter .eyebrow{display:block; margin-bottom:1.25rem}
+  .owner-letter h2{margin-bottom:2.5rem; max-width:14ch}
+  .owner-letter h2 em{font-style:italic; color:var(--accent)}
+  .owner-letter p{font-size:1.125rem; line-height:1.75; color:var(--ink); margin-bottom:1.25rem; max-width:58ch}
+  .owner-letter p.kicker{font-family:var(--serif); font-style:italic; font-size:1.375rem; line-height:1.45; color:var(--ink); font-weight:400}
+  .owner-letter p:last-of-type{margin-bottom:0}
+  .owner-foot{margin-top:3rem; padding-top:2rem; border-top:1px solid var(--hairline); display:grid; gap:1.5rem; align-items:center}
+  @media(min-width:640px){.owner-foot{grid-template-columns:1fr auto}}
+  .owner-foot .signature{font-family:var(--serif); font-size:1.5rem; font-weight:500; color:var(--ink); letter-spacing:-0.01em}
+  .owner-foot .role{font-size:0.875rem; color:var(--subtle); margin-top:0.2rem}
+  .owner-foot .direct{display:inline-flex; align-items:center; gap:0.6rem; color:var(--ink); font-weight:500; font-size:0.9375rem; padding:0.7rem 1.1rem; border:1px solid var(--ink); border-radius:4px; text-decoration:none}
+  .owner-foot .direct:hover{background:var(--ink); color:var(--paper)}
+
+  /* Reviews */
+  .reviews{padding:6rem 0}
+  @media(min-width:1024px){.reviews{padding:8rem 0}}
+  .reviews-head{margin-bottom:4rem; max-width:55ch}
+  .reviews-head .eyebrow{display:block; margin-bottom:1rem}
+  .review-rail{display:grid; gap:3rem}
+  @media(min-width:768px){.review-rail{grid-template-columns:repeat(2, 1fr); gap:3rem 4rem}}
+  .review-quote{display:flex; flex-direction:column; gap:1.5rem}
+  .review-quote .marks{color:var(--accent); font-family:var(--serif); font-size:3.5rem; line-height:0.5; height:1.5rem; font-style:italic}
+  .review-quote p{font-family:var(--serif); font-size:clamp(1.25rem, 1.8vw, 1.5rem); line-height:1.4; color:var(--ink); letter-spacing:-0.01em; font-weight:400}
+  .review-quote .meta{display:flex; align-items:center; gap:1rem; padding-top:1.5rem; border-top:1px solid var(--hairline); font-size:0.9375rem; color:var(--muted)}
+  .review-quote .meta strong{color:var(--ink); font-weight:600}
+  .review-quote .stars{color:var(--gold); display:inline-flex; gap:1px}
+  .review-quote .stars [data-lucide]{width:14px; height:14px; fill:currentColor; stroke:currentColor}
+
+  /* Coverage */
+  .coverage{background:var(--bg-deep); padding:5rem 0; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline)}
+  @media(min-width:1024px){.coverage{padding:7rem 0}}
+  .coverage-head{display:grid; gap:2rem; align-items:end; margin-bottom:3rem}
+  @media(min-width:768px){.coverage-head{grid-template-columns:1.1fr 0.9fr; gap:4rem}}
+  .coverage-grid{display:grid; gap:1px; background:var(--hairline); border:1px solid var(--hairline); border-radius:4px; overflow:hidden}
+  @media(min-width:768px){.coverage-grid{grid-template-columns:repeat(2, 1fr)}}
+  @media(min-width:1024px){.coverage-grid{grid-template-columns:repeat(4, 1fr)}}
+  .region{background:var(--bg-deep); padding:2.25rem 2rem; display:flex; flex-direction:column; gap:1rem; text-decoration:none; color:var(--ink); transition:all 220ms}
+  .region:hover{background:var(--paper)}
+  .region .num{font-family:var(--serif); font-style:italic; color:var(--accent); font-size:0.9375rem}
+  .region h3{font-family:var(--serif); font-size:1.75rem; font-weight:500; letter-spacing:-0.015em}
+  .region p{font-size:0.875rem; color:var(--muted); flex:1}
+  .region .more{font-size:0.875rem; color:var(--accent); font-weight:500; display:inline-flex; align-items:center; gap:0.3rem; margin-top:auto}
+
+  /* Process */
+  .process{padding:5rem 0; border-top:1px solid var(--hairline)}
+  @media(min-width:1024px){.process{padding:7rem 0}}
+  .process-head{margin-bottom:4rem; max-width:55ch}
+  .process-head .eyebrow{display:block; margin-bottom:1rem}
+  .process-grid{display:grid; gap:3rem}
+  @media(min-width:768px){.process-grid{grid-template-columns:repeat(3, 1fr); gap:4rem}}
+  .step h3{margin-bottom:0.75rem}
+  .step .num{font-family:var(--serif); font-style:italic; font-weight:400; color:var(--accent); font-size:2.75rem; line-height:1; margin-bottom:1.5rem; letter-spacing:-0.04em}
+  .step p{color:var(--muted); font-size:0.9375rem; line-height:1.65}
+
+  /* Final */
+  .closing{background:var(--ink); color:var(--paper); padding:6rem 0; text-align:center}
+  .closing h2{color:var(--paper); max-width:18ch; margin:0 auto 1.5rem; font-style:italic; font-weight:400}
+  .closing h2 em{color:var(--accent-tint); font-style:normal; font-weight:500}
+  .closing p{color:rgba(248,244,232,0.7); max-width:46ch; margin:0 auto 2.5rem; font-size:1.0625rem}
+  .closing .btn-primary{background:var(--paper); color:var(--ink)}
+  .closing .btn-primary:hover{background:var(--accent-tint); color:var(--ink)}
+  .closing .btn-secondary{color:var(--paper); border-color:rgba(248,244,232,0.4)}
+  .closing .btn-secondary:hover{background:var(--paper); color:var(--ink); border-color:var(--paper)}
+  .closing-row{display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--bg); padding:4rem 0 2rem}
+  .foot-grid{display:grid; gap:2.5rem; grid-template-columns:repeat(2, 1fr)}
+  @media(min-width:768px){.foot-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+  .foot-grid h4{font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--subtle); font-weight:600; margin-bottom:1.25rem}
+  .foot-grid ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.55rem}
+  .foot-grid a{color:var(--ink); font-size:0.9375rem; text-decoration:none}
+  .foot-grid a:hover{color:var(--accent)}
+  .foot-brand p{color:var(--muted); font-size:0.9375rem; margin-top:1rem; max-width:34ch; line-height:1.55}
+  .foot-bottom{margin-top:3rem; padding-top:1.75rem; border-top:1px solid var(--hairline); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-size:0.8125rem; color:var(--subtle)}
+  .foot-bottom a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="utility">
+  <div class="container">
+    <div class="utility-left">
+      <span><i data-lucide="clock"></i> Mon–Fri 7am–6pm · Sat 8am–5pm</span>
+      <span><i data-lucide="map-pin"></i> 50–60 km of Springwood, Logan</span>
+    </div>
+    <a href="tel:0451159954"><i data-lucide="phone"></i> 0451 159 954</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="/"><span class="brand-line"></span>My Mechanic QLD</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/repairs/">Repairs <i data-lucide="chevron-down"></i></a>
+      <a href="/servicing/">Servicing</a>
+      <a href="/pre-purchase-inspection/">Pre-Purchase</a>
+      <a href="/locations/">Locations</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/book/">Get a quote <i data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">A family-run mobile mechanic · South East QLD</span>
+    <h1 style="margin-top:1.75rem">Brakes. Alternators. Water&nbsp;pumps. <em>Driveway.</em></h1>
+
+    <div class="hero-foot">
+      <div>
+        <p class="lead">Workshop-quality repairs and servicing across Brisbane, Logan, Ipswich and the Gold Coast. Fixed-price quotes, 12-month warranty, and a qualified mechanic at your home.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="/book/">Get a fixed-price quote <i data-lucide="arrow-right"></i></a>
+          <a class="btn btn-secondary" href="tel:0451159954"><i data-lucide="phone"></i> 0451 159 954</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div><strong>15+</strong>Years</div>
+        <div><strong>4,000+</strong>Jobs</div>
+        <div><strong>4.9★</strong>Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-img-band">
+  <div class="container">
+    <div class="img" data-src="/public/images/hero/hero-home-primary.webp">
+      <span class="img-label">/public/images/hero/hero-home-primary.webp</span>
+    </div>
+  </div>
+</div>
+
+<section class="service-band">
+  <div class="container service-grid">
+    <div>
+      <p class="tag">Repairs · No. 01</p>
+      <h2>Brake repair, sorted in your driveway.</h2>
+      <p class="body">Squealing on a quiet street. A long pedal that doesn't feel right. A grind that's now louder than the radio. Brakes are the line we replace most often, and we do it on-site in two to three hours for most cars.</p>
+      <ul class="service-includes">
+        <li><i data-lucide="check"></i> New pads and rotors from Bosch, Bendix or Brembo</li>
+        <li><i data-lucide="check"></i> Caliper inspection and clean-up included</li>
+        <li><i data-lucide="check"></i> Brake fluid top-up and full road test</li>
+        <li><i data-lucide="check"></i> 12-month, 20,000 km workmanship warranty</li>
+      </ul>
+      <div class="service-meta">
+        <div class="price"><span>From</span>$249</div>
+        <a class="link-inline" href="/repairs/brake-repair/">Brake repair detail <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="img service-img" data-src="/public/images/services/service-brakes.webp">
+      <span class="img-label">/public/images/services/service-brakes.webp</span>
+    </div>
+  </div>
+</section>
+
+<section class="service-band reverse">
+  <div class="container service-grid">
+    <div>
+      <p class="tag">Repairs · No. 02</p>
+      <h2>Alternator and starter motor.</h2>
+      <p class="body">If the car cranks slow on a cold morning, stalls under load, or refuses to start at all, the fault almost always lives in the charging or starting system. We diagnose with proper test gear before we sell you a part.</p>
+      <ul class="service-includes">
+        <li><i data-lucide="check"></i> Full charging-system test (battery, alternator, starter)</li>
+        <li><i data-lucide="check"></i> On-site replacement with OEM or equivalent parts</li>
+        <li><i data-lucide="check"></i> Honest answer first, then a fixed-price quote</li>
+        <li><i data-lucide="check"></i> 12-month workmanship warranty</li>
+      </ul>
+      <div class="service-meta">
+        <div class="price"><span>From</span>$129 diagnostic</div>
+        <a class="link-inline" href="/repairs/alternator-starter-motor/">Charging &amp; starting detail <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="img service-img" data-src="/public/images/services/service-starter-alternator.webp">
+      <span class="img-label">/public/images/services/service-starter-alternator.webp</span>
+    </div>
+  </div>
+</section>
+
+<section class="service-band">
+  <div class="container service-grid">
+    <div>
+      <p class="tag">Repairs · No. 03</p>
+      <h2>Radiator and water pump.</h2>
+      <p class="body">Overheating in summer traffic, a sweet smell in the cabin, puddles under the engine after a school run. We pressure-test the cooling system in your driveway and replace radiators, hoses, thermostats and water pumps without you waiting on a workshop slot.</p>
+      <ul class="service-includes">
+        <li><i data-lucide="check"></i> Cooling-system pressure test and inspection</li>
+        <li><i data-lucide="check"></i> Radiator, water pump, hoses, thermostat replacement</li>
+        <li><i data-lucide="check"></i> Genuine OEM coolant, no shortcuts</li>
+        <li><i data-lucide="check"></i> System bleed and 30-minute road test before sign-off</li>
+      </ul>
+      <div class="service-meta">
+        <div class="price"><span>From</span>$320</div>
+        <a class="link-inline" href="/repairs/radiator-water-pump/">Cooling system detail <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="img service-img" data-src="/public/images/services/service-cooling.webp">
+      <span class="img-label">/public/images/services/service-cooling.webp</span>
+    </div>
+  </div>
+</section>
+
+<section class="service-band reverse">
+  <div class="container service-grid">
+    <div>
+      <p class="tag">Servicing · No. 04</p>
+      <h2>Logbook and general servicing.</h2>
+      <p class="body">Scheduled servicing to your manufacturer's logbook, using the same OEM filters and proper fluids a dealership uses. We stamp the book, email you an itemised invoice, and your new-car warranty stays intact under Australian Consumer Law.</p>
+      <ul class="service-includes">
+        <li><i data-lucide="check"></i> Manufacturer-spec scheduled service</li>
+        <li><i data-lucide="check"></i> OEM filters (Ryco or original) and correct-grade oil</li>
+        <li><i data-lucide="check"></i> Multi-point safety check on every visit</li>
+        <li><i data-lucide="check"></i> Logbook stamped, invoice emailed</li>
+      </ul>
+      <div class="service-meta">
+        <div class="price"><span>From</span>$189</div>
+        <a class="link-inline" href="/servicing/">Servicing detail <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="img service-img" data-src="/public/images/services/service-logbook.webp">
+      <span class="img-label">/public/images/services/service-logbook.webp</span>
+    </div>
+  </div>
+</section>
+
+<section class="also">
+  <div class="container">
+    <span class="eyebrow">We also do</span>
+    <div class="also-row">
+      <a class="also-card" href="/pre-purchase-inspection/">
+        <div class="ic"><i data-lucide="clipboard-check"></i></div>
+        <h4>Pre-purchase inspections</h4>
+        <p>28-point inspection with a written report before you buy a used car.</p>
+        <span>From $229 <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="also-card" href="/repairs/steering-suspension/">
+        <div class="ic"><i data-lucide="move-vertical"></i></div>
+        <h4>Steering &amp; suspension</h4>
+        <p>Clunks, vibrations, uneven tyre wear, ball joints, shocks and bushes.</p>
+        <span>Get a quote <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="also-card" href="/repairs/battery-replacement/">
+        <div class="ic"><i data-lucide="battery-charging"></i></div>
+        <h4>Battery replacement</h4>
+        <p>Heavy-duty replacement, fitted in your driveway, old battery recycled.</p>
+        <span>From $179 <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="also-card" href="/repairs/diagnostics/">
+        <div class="ic"><i data-lucide="scan-line"></i></div>
+        <h4>Diagnostics</h4>
+        <p>Warning light decoded with professional OBD gear and a physical check.</p>
+        <span>From $129 <i data-lucide="arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="owner">
+  <div class="container owner-grid">
+    <div class="img owner-img" data-src="/public/images/trust/trust-mechanic-portrait.webp">
+      <span class="img-label">/public/images/trust/trust-mechanic-portrait.webp</span>
+    </div>
+    <div class="owner-letter">
+      <span class="eyebrow">A note from the workshop</span>
+      <h2>Why we built this <em>around the customer.</em></h2>
+      <p class="kicker">I spent fifteen years inside dealership workshops, watching the same thing happen most days.</p>
+      <p>A customer drops the car at 8am. Takes an Uber to work. Refreshes their phone all day. Comes back at 5 to a bill that's somehow $400 over the quote, and a service advisor who can't quite explain why.</p>
+      <p>That isn't how I'd want my own family treated. So I bought a van, kitted it out with the same diagnostic gear and the same parts I had in the workshop, and started turning up at people's houses instead.</p>
+      <p>Every job still goes through me or one of my mechanics. The price we quote is the price you pay. We use proper parts, Bosch, Bendix, Ryco, not whatever the wholesaler had on special this week. And we back every repair with a 12-month, 20,000 km workmanship warranty.</p>
+      <p>If something on your car isn't right, you can call me on the number below. That part isn't a marketing line.</p>
+
+      <div class="owner-foot">
+        <div>
+          <div class="signature">[Owner name]</div>
+          <div class="role">Founder &amp; lead mechanic, My Mechanic QLD</div>
+        </div>
+        <a class="direct" href="tel:0451159954"><i data-lucide="phone"></i> 0451 159 954</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <span class="eyebrow">What customers say</span>
+      <h2>Reviewed in driveways from Sandgate to Coomera.</h2>
+    </div>
+    <div class="review-rail">
+      <div class="review-quote">
+        <span class="marks">"</span>
+        <p>Booked Friday afternoon, Toby was at our place by Tuesday morning. Logbook done in the driveway, every line item explained, paid by tap before he left. Won't be going back to the dealership.</p>
+        <div class="meta">
+          <div class="stars" aria-label="5 of 5"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <span><strong>Sarah W.</strong> · Bulimba</span>
+        </div>
+      </div>
+      <div class="review-quote">
+        <span class="marks">"</span>
+        <p>Quoted $310 for pads and rotors on the front of our Hilux. Came to the work car park, sorted by lunch, charged $310. That used to be normal. Now it feels rare.</p>
+        <div class="meta">
+          <div class="stars" aria-label="5 of 5"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <span><strong>Daniel M.</strong> · Robina</span>
+        </div>
+      </div>
+      <div class="review-quote">
+        <span class="marks">"</span>
+        <p>Found a hairline crack in the radiator on a pre-purchase inspection that the seller swore wasn't there. Saved me about $3,200. Worth ten times what they charged.</p>
+        <div class="meta">
+          <div class="stars" aria-label="5 of 5"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <span><strong>Priya R.</strong> · Carindale</span>
+        </div>
+      </div>
+      <div class="review-quote">
+        <span class="marks">"</span>
+        <p>The alternator was the third thing they checked, after the battery and the starter. Could've sold me an alternator on day one. They didn't. Honest blokes.</p>
+        <div class="meta">
+          <div class="stars" aria-label="5 of 5"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <span><strong>Ben H.</strong> · Coomera</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coverage">
+  <div class="container">
+    <div class="coverage-head">
+      <div>
+        <span class="eyebrow">Where we work</span>
+        <h2 style="margin-top:1rem">Within an hour of Springwood, in any direction.</h2>
+      </div>
+      <p class="prose">We're based on Brisbane's Southside, in Springwood. From there we work a 50 to 60 km radius across Brisbane, all of Logan, most of Ipswich, and the northern Gold Coast.</p>
+    </div>
+    <div class="coverage-grid">
+      <a class="region" href="/locations/brisbane/">
+        <span class="num">i</span>
+        <h3>Brisbane</h3>
+        <p>Sixteen suburbs covered, from Northside through Bayside to the inner west.</p>
+        <span class="more">Explore Brisbane <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="region" href="/locations/logan/">
+        <span class="num">ii</span>
+        <h3>Logan</h3>
+        <p>Home base. Forty-five-minute response across Springwood, Beenleigh and Browns Plains.</p>
+        <span class="more">Explore Logan <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="region" href="/locations/ipswich/">
+        <span class="num">iii</span>
+        <h3>Ipswich</h3>
+        <p>Springfield, Goodna, Redbank Plains, Brassall, and the wider Ipswich area.</p>
+        <span class="more">Explore Ipswich <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="region" href="/locations/gold-coast/">
+        <span class="num">iv</span>
+        <h3>Gold Coast</h3>
+        <p>Coomera, Helensvale, Nerang, Southport and Robina across the northern Gold Coast.</p>
+        <span class="more">Explore Gold Coast <i data-lucide="arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div class="process-head">
+      <span class="eyebrow">How it works</span>
+      <h2 style="margin-top:1rem">Three steps, no tow truck.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step">
+        <div class="num">i</div>
+        <h3>Tell us what's happening</h3>
+        <p>Book online in two minutes, or call us. We send a fixed-price quote before any spanners come out.</p>
+      </div>
+      <div class="step">
+        <div class="num">ii</div>
+        <h3>We come to you</h3>
+        <p>Pick a time and a place. Home, office, kerbside. The van is the workshop.</p>
+      </div>
+      <div class="step">
+        <div class="num">iii</div>
+        <h3>Sorted, signed off</h3>
+        <p>We walk you through the job, hand over an itemised invoice, and you pay by tap, transfer or invoice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <h2>The workshop is on its <em>way.</em></h2>
+    <p>Book a fixed-price quote online, or call between 7am and 6pm weekdays. Same-day appointments often available.</p>
+    <div class="closing-row">
+      <a class="btn btn-primary" href="/book/">Get a quote <i data-lucide="arrow-right"></i></a>
+      <a class="btn btn-secondary" href="tel:0451159954"><i data-lucide="phone"></i> 0451 159 954</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><span class="brand-line"></span>My Mechanic QLD</a>
+        <p>Family-owned mobile mechanics serving Brisbane, Logan, Ipswich and the Gold Coast within an hour of Springwood.</p>
+      </div>
+      <div>
+        <h4>Repairs</h4>
+        <ul>
+          <li><a href="/repairs/brake-repair/">Brake repair</a></li>
+          <li><a href="/repairs/alternator-starter-motor/">Alternator &amp; starter</a></li>
+          <li><a href="/repairs/radiator-water-pump/">Radiator &amp; water pump</a></li>
+          <li><a href="/repairs/steering-suspension/">Steering &amp; suspension</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Servicing</h4>
+        <ul>
+          <li><a href="/servicing/">Logbook &amp; general</a></li>
+          <li><a href="/pre-purchase-inspection/">Pre-purchase inspections</a></li>
+          <li><a href="/repairs/diagnostics/">Diagnostics</a></li>
+          <li><a href="/repairs/emergency/">Emergency call-outs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/locations/">Locations</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 My Mechanic QLD · ABN [TBD]</span>
+      <span><a href="/privacy-policy/">Privacy</a> · <a href="/terms-conditions/">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

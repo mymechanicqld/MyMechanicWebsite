@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    line-height: 1.6;
+  }
+
+  body.lock-scroll {
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-ink font-bold tracking-tight;
+  }
+
+  a {
+    @apply text-accent-bright no-underline;
+  }
+  a:hover {
+    @apply text-accent-hover;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 md:px-8;
+    max-width: 1240px;
+  }
+  @media (min-width: 1280px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-accent-bright;
+  }
+
+  .lead {
+    @apply text-lg leading-relaxed text-muted max-w-prose;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center gap-2 font-semibold px-5 py-3 rounded-lg
+           transition-all text-[0.9375rem] leading-none border border-transparent;
+  }
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-hover hover:text-white;
+  }
+  .btn-secondary {
+    @apply bg-surface text-ink border-border hover:bg-soft;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-ink hover:text-accent-bright;
+  }
+
+  /* Prose (for MDX-rendered body) */
+  .prose-mmq {
+    @apply text-ink leading-relaxed;
+  }
+  .prose-mmq h2 {
+    @apply text-2xl md:text-3xl font-bold mt-12 mb-4 tracking-tight;
+  }
+  .prose-mmq h3 {
+    @apply text-xl font-semibold mt-8 mb-3;
+  }
+  .prose-mmq p {
+    @apply text-base md:text-[1.0625rem] leading-[1.75] text-ink/90 my-4;
+  }
+  .prose-mmq strong {
+    @apply font-semibold text-ink;
+  }
+  .prose-mmq ul {
+    @apply list-disc pl-6 my-4 space-y-2;
+  }
+  .prose-mmq ol {
+    @apply list-decimal pl-6 my-4 space-y-2;
+  }
+  .prose-mmq li {
+    @apply text-ink/90;
+  }
+  .prose-mmq a {
+    @apply text-accent-bright underline underline-offset-2 hover:text-accent-hover;
+  }
+  .prose-mmq table {
+    @apply w-full my-6 border-collapse;
+  }
+  .prose-mmq thead {
+    @apply bg-soft;
+  }
+  .prose-mmq th {
+    @apply text-left text-sm font-semibold p-3 border-b border-hairline;
+  }
+  .prose-mmq td {
+    @apply text-sm md:text-base p-3 border-b border-hairline/60;
+  }
+  .prose-mmq tbody tr:hover {
+    @apply bg-soft/50;
+  }
+  .prose-mmq blockquote {
+    @apply border-l-4 border-accent pl-4 my-4 italic text-muted;
+  }
+
+  /* Phone-block in hero */
+  .phone-block {
+    @apply flex items-center gap-2.5 text-ink font-semibold text-[0.9375rem]
+           pl-4 border-l border-border;
+  }
+  @media (max-width: 520px) {
+    .phone-block {
+      @apply pl-0 border-l-0 w-full;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

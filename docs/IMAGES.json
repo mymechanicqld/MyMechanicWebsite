@@ -1,0 +1,429 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Image manifest for My Mechanic QLD website. Every image needed across the site, with file paths, dimensions, alt text, and a photorealistic AI generation prompt. Designed for automated batch generation.",
+  "style_constraints": {
+    "global_style_appended_to_every_prompt": "Photorealistic, highly realistic, shot on Sony A7 IV, 35mm lens, natural daylight, shallow depth of field, professional photography, no text, no logos, no watermarks, no obvious AI artifacts, no extra fingers, anatomically correct hands, Australian suburban setting, Queensland Australia",
+    "negative_prompt": "cartoon, illustration, 3D render, CGI, painting, sketch, anime, low quality, blurry, oversaturated, plastic-looking skin, fake-looking, stock-photo cliche, handshake, finger-pointing, oversized smile, distorted face, extra limbs, missing limbs, watermark, text overlay, branding visible, license plate readable",
+    "aspect_ratios": {
+      "hero": "1920x1080 (16:9)",
+      "service_card": "800x600 (4:3)",
+      "blog_hero": "1200x800 (3:2)",
+      "square_og": "1200x1200 (1:1)",
+      "portrait": "800x1000 (4:5)"
+    },
+    "output_format": "WebP primary, JPG fallback, both < 200KB after compression"
+  },
+  "image_root_path": "/public/images/",
+  "scraped_images_note": "46 images were scraped from the live mymechanicqld.com.au and saved to scraped-images/. See scraped-images/manifest.json for the full list and scraped-images/by-page.json for images grouped by page slug. Prefer the scraped images on a per-page basis. Use the AI prompts below only to fill gaps where no scraped image is good enough.",
+  "images": [
+    {
+      "id": "hero-home-primary",
+      "filename": "hero-home-primary.webp",
+      "path": "/public/images/hero/hero-home-primary.webp",
+      "usage": "Homepage hero — main above-the-fold image. Used on the home page only.",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Mobile mechanic in blue work shirt servicing a silver SUV in a suburban Brisbane driveway on a bright morning",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a professional male mechanic in his late 30s wearing a clean navy-blue work shirt, kneeling next to the open bonnet of a silver mid-size SUV parked in a wide suburban driveway in Brisbane, Australia. Modern brick-and-render single-storey Queenslander home in the background, low-maintenance native landscaping. Mid-morning natural light, soft shadows, blue Queensland sky with a few clouds. The mechanic is focused on his work, holding a diagnostic scan tool, expression calm and competent. A clean white mobile mechanic service van is parked behind the SUV, side door open showing organised tools. No text or branding visible. Shot on Sony A7 IV, 35mm lens, shallow depth of field, professional commercial photography style."
+    },
+    {
+      "id": "hero-home-secondary",
+      "filename": "hero-home-secondary.webp",
+      "path": "/public/images/hero/hero-home-secondary.webp",
+      "usage": "Alternate homepage hero for A/B testing or seasonal swap",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Two mobile mechanics in matching uniforms working on a white Toyota Hilux in a suburban Gold Coast driveway",
+      "ai_prompt": "Photorealistic, highly realistic photograph of two male mechanics, one in his 40s and one in his late 20s, both wearing matching navy-blue mobile mechanic uniforms, working together on a white Toyota Hilux ute in a Gold Coast suburban driveway. One mechanic is checking under the bonnet with a torch, the other is filling out paperwork on a clipboard. Modern coastal home in background, palm trees visible, late-afternoon golden hour light. White service van with the side door open visible at the edge of the frame. Professional, trustworthy atmosphere. Both mechanics focused and competent, no posed smiles. No visible branding or text. Shot with shallow depth of field, 50mm lens, commercial photography quality."
+    },
+    {
+      "id": "trust-mechanic-portrait",
+      "filename": "trust-mechanic-portrait.webp",
+      "path": "/public/images/trust/trust-mechanic-portrait.webp",
+      "usage": "Homepage trust section, About page lead image. Personal, builds rapport.",
+      "dimensions": "800x1000",
+      "aspect_ratio": "4:5",
+      "alt_text": "Portrait of a professional mobile mechanic in his early 40s wearing a navy work shirt, standing in front of his service van",
+      "ai_prompt": "Photorealistic, highly realistic portrait photograph of an experienced Australian male mechanic in his early 40s, short brown hair, slight stubble, wearing a clean navy-blue collared work shirt with sleeves rolled to the elbows, arms relaxed at his sides. Standing in front of a white mobile mechanic service van in a Brisbane suburban driveway. Soft natural overcast daylight, even lighting. Calm, confident, trustworthy expression — slight closed-mouth smile, eye contact with camera. Authentic working-man energy, not a model. Clean hands but with subtle signs of being a real tradesperson. No visible branding on the shirt or van. Shot on 85mm lens, shallow depth of field with background van slightly blurred. Professional editorial portrait style."
+    },
+    {
+      "id": "service-logbook",
+      "filename": "service-logbook.webp",
+      "path": "/public/images/services/service-logbook.webp",
+      "usage": "Service page hero for /services/logbook-servicing/ and on service card grid",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic stamping a vehicle logbook on the bonnet of a customer's car",
+      "ai_prompt": "Photorealistic, highly realistic close-up photograph of a mechanic's hands stamping a vehicle service logbook with a rubber stamp. The logbook is open on the bonnet of a modern sedan. The mechanic wears a clean navy work shirt, sleeves rolled up, mid-task. Hand is steady and precise. Mid-morning soft natural light, suburban Brisbane setting visible softly out of focus in background. Detail focus on the logbook page, stamp, and hands. No text legible on the logbook page. No branding visible. Shot on 50mm macro lens, shallow depth of field, professional documentary-style photography."
+    },
+    {
+      "id": "service-brakes",
+      "filename": "service-brakes.webp",
+      "path": "/public/images/services/service-brakes.webp",
+      "usage": "Service page hero for /services/brake-repairs/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic inspecting new brake pads and rotor on a vehicle with the wheel removed",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic kneeling beside a car with the front wheel removed, holding a new brake pad in one hand and the worn old brake pad in the other for comparison. The brake rotor and caliper are visible on the vehicle. The car is on jack stands in a clean suburban driveway. Mechanic wears clean navy work shirt and nitrile gloves. Bright daylight, sharp detail on the brake components. Toolbox open nearby with clean tools organised. Real Australian residential setting in background, slightly out of focus. No branding or text. Shot on 35mm lens, professional automotive editorial style."
+    },
+    {
+      "id": "service-battery",
+      "filename": "service-battery.webp",
+      "path": "/public/images/services/service-battery.webp",
+      "usage": "Service page hero for /services/battery-replacement/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic installing a new heavy-duty car battery in an engine bay",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic's gloved hands lowering a new black car battery into the engine bay of a modern SUV. The engine bay is clean, components are clearly visible, terminal cables are positioned ready to connect. Mechanic wears navy work shirt. Battery has no readable text or brand markings. Outdoor setting, suburban driveway, mid-morning natural daylight. Close-up composition showing both the new battery and the engine bay context. Professional, technically precise feel. No watermarks, no logos. Shot on 50mm lens with shallow depth of field."
+    },
+    {
+      "id": "service-diagnostics",
+      "filename": "service-diagnostics.webp",
+      "path": "/public/images/services/service-diagnostics.webp",
+      "usage": "Service page hero for /services/car-diagnostics/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic using a professional diagnostic scan tool connected to a vehicle OBD port",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic seated in the driver's seat of a modern car with the door open, holding a professional diagnostic scan tool device with a colour screen, connected via cable to the OBD port under the dashboard. The screen of the diagnostic tool is visible but its content is generic (graphs, data lines, no readable specific text). The mechanic wears a clean navy work shirt, focused expression while reading the diagnostic output. Suburban Brisbane setting visible through the car windscreen, soft natural daylight. Modern, technical, professional feel. No branding on the diagnostic tool. Shot on 35mm lens with the scan tool sharp in focus."
+    },
+    {
+      "id": "service-starter-alternator",
+      "filename": "service-starter-alternator.webp",
+      "path": "/public/images/services/service-starter-alternator.webp",
+      "usage": "Service page hero for /services/starter-alternator/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic testing the alternator on a vehicle with a multimeter under the bonnet",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic under the bonnet of a sedan, holding a digital multimeter with probes touching the alternator terminals. One hand holds the multimeter, the other steadies the probes. Engine bay is clean, alternator visible centre frame. The mechanic wears clean navy work shirt with sleeves rolled up. Bright natural daylight, suburban Brisbane driveway setting. Slight shallow depth of field with the alternator and multimeter sharp in focus. Professional, technically competent feel. No readable text or brand logos. Shot on 50mm lens."
+    },
+    {
+      "id": "service-pre-purchase",
+      "filename": "service-pre-purchase.webp",
+      "path": "/public/images/services/service-pre-purchase.webp",
+      "usage": "Service page hero for /services/pre-purchase-inspection/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic conducting a pre-purchase inspection on a used vehicle with checklist and torch",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic crouching beside a used silver sedan, shining an LED torch under the front quarter panel while holding a clipboard with an inspection checklist. The car is parked in a suburban Brisbane driveway, possibly for-sale context implied subtly. The mechanic wears a clean navy work shirt, thoughtful expression. Mid-morning soft natural daylight. The checklist on the clipboard is detailed but the specific text is not legible. Composition shows the mechanic, the car, and the inspection activity clearly. No branding. Shot on 35mm lens, documentary editorial style."
+    },
+    {
+      "id": "service-steering-suspension",
+      "filename": "service-steering-suspension.webp",
+      "path": "/public/images/services/service-steering-suspension.webp",
+      "usage": "Service page hero for /services/steering-suspension/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic inspecting the front suspension and ball joints of a vehicle on jack stands",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic kneeling beside a vehicle that's safely on jack stands with the front wheel removed, inspecting the front suspension components — strut, control arm, and ball joint — with a pry bar in one hand for checking play. Mechanic wears clean navy work shirt and gloves. Suburban Brisbane driveway, bright natural daylight, the suspension components clearly visible and sharp. Real automotive technical work being performed competently. No branding, no readable text. Shot on 35mm lens with depth of field bringing focus to the suspension assembly."
+    },
+    {
+      "id": "service-cooling",
+      "filename": "service-cooling.webp",
+      "path": "/public/images/services/service-cooling.webp",
+      "usage": "Service page hero for /services/radiator-cooling-system/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic checking the coolant reservoir and radiator hoses on a vehicle",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic's hands and forearms working at the engine bay of a vehicle, checking the coolant reservoir cap and the upper radiator hose. The cooling system components are clearly visible — radiator, hoses, expansion tank. The engine bay is realistic and clean. Mechanic wears navy work shirt, sleeves rolled up. Outdoor suburban setting, bright Australian daylight. Close-up composition emphasises the cooling components. No branding visible. Professional automotive documentary photography. Shot on 50mm macro lens."
+    },
+    {
+      "id": "service-emergency",
+      "filename": "service-emergency.webp",
+      "path": "/public/images/services/service-emergency.webp",
+      "usage": "Service page hero for /services/emergency-call-outs/",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mobile mechanic van arriving to help a stranded driver on the side of a suburban road",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a white mobile mechanic service van parked behind a stranded sedan with its hazard lights on, by the side of a quiet suburban Brisbane street. A mechanic in a navy work shirt is just stepping out of the van carrying a toolbox, approaching the stranded car. The driver of the stranded car (a 35-year-old woman in casual clothes) stands by her car looking relieved. Mid-afternoon natural daylight, soft shadows, the suburban street and surrounding houses provide context. Realistic and reassuring scene. No readable branding on the van. Shot on 35mm lens with wide composition showing the full rescue scenario."
+    },
+    {
+      "id": "service-grid-overview",
+      "filename": "service-grid-overview.webp",
+      "path": "/public/images/services/service-grid-overview.webp",
+      "usage": "Services hub page (/services/) hero",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Organised mobile mechanic van interior showing tools, diagnostic equipment, and spare parts",
+      "ai_prompt": "Photorealistic, highly realistic photograph of the interior of a professional mobile mechanic's service van with the side door slid open. Inside: organised tool drawers, diagnostic equipment mounted on shelves, neatly arranged spare parts (oil filters, batteries, brake pads), a fold-down workbench. Everything is clean, professional, and meticulously organised — a workshop on wheels. Daylight pouring in through the open door. Brisbane suburban driveway visible softly behind. No readable branding or text. Wide-angle composition. Shot on 24mm lens with everything in focus, professional commercial photography quality."
+    },
+    {
+      "id": "process-step-1",
+      "filename": "process-step-1.webp",
+      "path": "/public/images/process/process-step-1.webp",
+      "usage": "Homepage 'How it works' section, step 1",
+      "dimensions": "800x600",
+      "aspect_ratio": "4:3",
+      "alt_text": "Customer making a booking on their phone while sitting at a kitchen bench",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a 35-year-old Australian woman sitting at a modern kitchen bench, holding her smartphone with both hands, looking at the screen. Light streams in from a window behind her. She has a relaxed, focused expression — making a booking online. The kitchen is modern, Australian suburban home interior. No readable content on the phone screen. Natural lighting. Shot on 50mm lens with shallow depth of field. Lifestyle editorial photography."
+    },
+    {
+      "id": "process-step-2",
+      "filename": "process-step-2.webp",
+      "path": "/public/images/process/process-step-2.webp",
+      "usage": "Homepage 'How it works' section, step 2",
+      "dimensions": "800x600",
+      "aspect_ratio": "4:3",
+      "alt_text": "Mobile mechanic van pulling into a suburban driveway",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a clean white mobile mechanic service van pulling into the driveway of a modern Brisbane suburban home. Captured from a slight low angle, the van is mid-arrival. The home has a tidy front garden, native plants. Bright morning natural light. The composition feels welcoming and reliable. No readable branding on the van. Shot on 35mm lens, slight motion sense, commercial photography quality."
+    },
+    {
+      "id": "process-step-3",
+      "filename": "process-step-3.webp",
+      "path": "/public/images/process/process-step-3.webp",
+      "usage": "Homepage 'How it works' section, step 3",
+      "dimensions": "800x600",
+      "aspect_ratio": "4:3",
+      "alt_text": "Customer driving away in their freshly serviced car",
+      "ai_prompt": "Photorealistic, highly realistic photograph from a respectful distance of a sedan reversing out of a suburban Brisbane driveway, mid-morning. The driver visible through the windscreen, a satisfied expression. Empty driveway behind. The scene communicates 'job done, back on the road'. Natural daylight, realistic suburban setting. No readable license plates, no branding. Shot on 50mm lens."
+    },
+    {
+      "id": "about-team",
+      "filename": "about-team.webp",
+      "path": "/public/images/about/about-team.webp",
+      "usage": "About page — main team image",
+      "dimensions": "1600x900",
+      "aspect_ratio": "16:9",
+      "alt_text": "The My Mechanic QLD team standing beside their service vans",
+      "ai_prompt": "Photorealistic, highly realistic group photograph of three Australian mobile mechanics — two men in their 30s-40s and one woman in her late 20s — all wearing matching navy-blue work shirts, standing in front of two white service vans in a suburban Brisbane setting. Relaxed but professional postures, slight natural smiles, not posed-stiff. Mid-morning natural light, Queensland blue sky behind. Each person looks competent and approachable. No visible branding or text on uniforms or vans. Shot on 35mm lens, professional commercial photography style."
+    },
+    {
+      "id": "about-history",
+      "filename": "about-history.webp",
+      "path": "/public/images/about/about-history.webp",
+      "usage": "About page — story/history section",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Vintage tool box and well-worn mechanic's tools on a wooden workbench",
+      "ai_prompt": "Photorealistic, highly realistic still-life photograph of a vintage metal toolbox open on a wooden workbench, surrounded by well-used but well-maintained mechanic's hand tools — spanners, screwdrivers, a torque wrench. Soft warm window light coming from the left. The composition feels nostalgic, communicating heritage and craft. Workshop setting, slightly out of focus background. No branding, no readable text. Shot on 50mm lens with shallow depth of field, editorial documentary style."
+    },
+    {
+      "id": "trust-customer-handover",
+      "filename": "trust-customer-handover.webp",
+      "path": "/public/images/trust/trust-customer-handover.webp",
+      "usage": "Trust/social proof section — used on homepage and various pages",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Mechanic handing keys back to a customer in front of their newly serviced car",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a moment between a mechanic (40s, navy work shirt) and a female customer (40s, smart-casual) in a suburban Brisbane driveway. The mechanic is handing the car keys back to the customer, both looking pleased but in a natural, not-staged way. Their car (a clean SUV) is in the background. The mechanic is briefly explaining something while the customer listens. Mid-afternoon warm natural light. Real, human, trustworthy energy — no fake smiles, no handshake-over-keyboard cliche. Shot on 50mm lens, documentary style."
+    },
+    {
+      "id": "area-brisbane",
+      "filename": "area-brisbane.webp",
+      "path": "/public/images/areas/area-brisbane.webp",
+      "usage": "Brisbane area hub page hero",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Aerial view of suburban Brisbane neighbourhoods with the city skyline in the distance",
+      "ai_prompt": "Photorealistic, highly realistic aerial photograph of suburban Brisbane on a clear morning. Layout of typical Brisbane houses — a mix of Queenslanders, brick-and-tile, and modern infill homes. Streets lined with jacaranda trees (in bloom, purple). Brisbane CBD skyline visible in the distance. Blue Queensland sky. Drone photography style, slightly elevated angle. No readable branding, no obvious landmarks copyrighted. Shot at 24mm equivalent, high detail."
+    },
+    {
+      "id": "area-gold-coast",
+      "filename": "area-gold-coast.webp",
+      "path": "/public/images/areas/area-gold-coast.webp",
+      "usage": "Gold Coast area hub page hero",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Suburban Gold Coast neighbourhood with coastline visible in the distance",
+      "ai_prompt": "Photorealistic, highly realistic aerial photograph of suburban Gold Coast — a mix of modern coastal homes, palm trees, and tropical landscaping. Gold Coast high-rise skyline barely visible in the distance, ocean horizon. Clear blue Queensland sky, bright morning light. Driveways with cars visible in residential streets. Drone-style elevated angle. No readable branding or specific landmarks. Shot at 24mm equivalent, high detail."
+    },
+    {
+      "id": "area-logan",
+      "filename": "area-logan.webp",
+      "path": "/public/images/areas/area-logan.webp",
+      "usage": "Logan area hub page hero",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Logan City suburban streets with family homes and bushland borders",
+      "ai_prompt": "Photorealistic, highly realistic aerial photograph of Logan City suburbs in South East Queensland — family homes on quarter-acre blocks, tree-lined streets, native bushland visible at the edges. Bright Queensland morning, blue sky, scattered clouds. Working-suburb feel. No readable branding or specific landmarks. Drone photography style, shot at 24mm equivalent."
+    },
+    {
+      "id": "area-ipswich",
+      "filename": "area-ipswich.webp",
+      "path": "/public/images/areas/area-ipswich.webp",
+      "usage": "Ipswich area hub page hero",
+      "dimensions": "1920x1080",
+      "aspect_ratio": "16:9",
+      "alt_text": "Ipswich suburban streets with established homes and bushland surrounds",
+      "ai_prompt": "Photorealistic, highly realistic aerial photograph of Ipswich suburban area, South East Queensland — a mix of older Queenslander homes and new estate housing, established trees, quiet streets. Bright morning natural light, blue sky. Suburb feels established and friendly. No readable branding or specific landmarks. Drone-style elevated photography, 24mm lens."
+    },
+    {
+      "id": "blog-category-car-care",
+      "filename": "blog-cat-car-care.webp",
+      "path": "/public/images/blog/blog-cat-car-care.webp",
+      "usage": "Blog category banner for 'Car Care Guides'",
+      "dimensions": "1600x600",
+      "aspect_ratio": "8:3",
+      "alt_text": "Hand checking engine oil dipstick on a modern engine",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a hand holding an engine oil dipstick over an open engine bay, the oil colour clearly visible on the dipstick. Soft natural light, the engine bay is clean and well-maintained. Cropped wide for a banner format. Suburban Brisbane setting just visible at edge. No branding. Shot on 50mm macro lens, shallow depth of field. Editorial automotive photography."
+    },
+    {
+      "id": "blog-category-services-explained",
+      "filename": "blog-cat-services-explained.webp",
+      "path": "/public/images/blog/blog-cat-services-explained.webp",
+      "usage": "Blog category banner for 'Services Explained'",
+      "dimensions": "1600x600",
+      "aspect_ratio": "8:3",
+      "alt_text": "Mechanic explaining vehicle service items to a customer using a clipboard",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic (40s, navy work shirt) and a customer (30s, casual clothes) standing beside an open car bonnet in a suburban driveway. The mechanic is gesturing at the engine while explaining, holding a clipboard. The customer is listening attentively, slight nod. Real consultation moment, not posed. Cropped wide for banner format. Bright natural daylight. No readable text on clipboard, no branding. Shot on 35mm lens."
+    },
+    {
+      "id": "blog-category-local-guides",
+      "filename": "blog-cat-local-guides.webp",
+      "path": "/public/images/blog/blog-cat-local-guides.webp",
+      "usage": "Blog category banner for 'Local Guides'",
+      "dimensions": "1600x600",
+      "aspect_ratio": "8:3",
+      "alt_text": "Quiet suburban Brisbane street lined with jacaranda trees in bloom",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a quiet suburban Brisbane street, jacaranda trees in full purple bloom lining both sides, a row of typical Brisbane homes visible. Late afternoon golden hour light, long shadows. No people, no cars in motion. Calm, Australian suburban character. Cropped wide for banner format. No readable signage or branding. Shot on 35mm lens, slight wide composition."
+    },
+    {
+      "id": "blog-category-diy-tips",
+      "filename": "blog-cat-diy-tips.webp",
+      "path": "/public/images/blog/blog-cat-diy-tips.webp",
+      "usage": "Blog category banner for 'DIY Tips'",
+      "dimensions": "1600x600",
+      "aspect_ratio": "8:3",
+      "alt_text": "Hand checking tyre pressure with a digital gauge on a car tyre",
+      "ai_prompt": "Photorealistic, highly realistic close-up photograph of a hand pressing a digital tyre pressure gauge onto a car tyre valve. The gauge has a clear readout (specific value not readable). Sharp detail on the tyre tread and the gauge. Suburban driveway setting in soft daylight. Cropped wide for banner format. No branding on the gauge or tyre. Shot on 50mm macro lens with shallow depth of field."
+    },
+    {
+      "id": "blog-category-buying-guides",
+      "filename": "blog-cat-buying-guides.webp",
+      "path": "/public/images/blog/blog-cat-buying-guides.webp",
+      "usage": "Blog category banner for 'Buying Guides'",
+      "dimensions": "1600x600",
+      "aspect_ratio": "8:3",
+      "alt_text": "Used car for sale parked in a driveway with a 'for sale' sign in the window",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a clean used silver sedan parked in a suburban Brisbane driveway with a generic 'For Sale' sign in the front windscreen (specific phone number not readable). The car looks well-cared-for. Late-morning natural light. Cropped wide for banner format. Australian suburban setting. No specific brand badges visible, no readable text apart from a generic 'For Sale' sign. Shot on 35mm lens."
+    },
+    {
+      "id": "faq-mechanic-explaining",
+      "filename": "faq-mechanic-explaining.webp",
+      "path": "/public/images/faq/faq-mechanic-explaining.webp",
+      "usage": "FAQ page hero / sidebar image",
+      "dimensions": "800x800",
+      "aspect_ratio": "1:1",
+      "alt_text": "Mechanic explaining a car part to a customer in a friendly, approachable way",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a male mechanic (40s, navy work shirt) holding a car part (a brake pad) up to show a customer (30s, casual clothes). Both are in mid-conversation, the mechanic explaining, the customer attentive. Suburban driveway setting in natural daylight. Square composition. Realistic, conversational, expert-to-novice mood. No branding visible. Shot on 50mm lens."
+    },
+    {
+      "id": "contact-van-driveway",
+      "filename": "contact-van-driveway.webp",
+      "path": "/public/images/contact/contact-van-driveway.webp",
+      "usage": "Contact page hero",
+      "dimensions": "1600x900",
+      "aspect_ratio": "16:9",
+      "alt_text": "Mobile mechanic service van parked in a Brisbane suburban driveway, ready to start work",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a clean white mobile mechanic service van parked in the driveway of a modern Brisbane suburban home, side door open, organised tools visible inside. A mechanic in navy work shirt is just stepping out, toolbox in hand. Early-morning natural light. The composition feels approachable and ready-to-work. No readable branding on the van. Shot on 35mm lens with wide composition."
+    },
+    {
+      "id": "og-default",
+      "filename": "og-default.png",
+      "path": "/public/images/og/og-default.png",
+      "usage": "Default Open Graph image for all pages without a specific OG override",
+      "dimensions": "1200x630",
+      "aspect_ratio": "1.91:1",
+      "alt_text": "My Mechanic QLD branded social share image",
+      "ai_prompt": "Photorealistic, highly realistic photograph cropped to 1200x630 social share dimensions. Mobile mechanic in navy work shirt working on a car in a Brisbane suburban driveway, mid-morning natural light. Composition leaves the left third of the image clean for text overlay (text will be added programmatically). Professional, trustworthy, premium feel. No existing branding or text in the image. Shot on 35mm lens, commercial photography quality. NOTE: brand text and logo will be added in post-processing — do not include text in the AI generation."
+    },
+    {
+      "id": "suburb-generic-residential",
+      "filename": "suburb-generic-residential.webp",
+      "path": "/public/images/suburbs/suburb-generic-residential.webp",
+      "usage": "Generic fallback hero for suburb pages without a unique image yet",
+      "dimensions": "1600x900",
+      "aspect_ratio": "16:9",
+      "alt_text": "Mechanic working on a car in front of a typical Brisbane suburban home",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mechanic (40s, navy work shirt) working on the engine bay of a sedan, parked in the driveway of a generic Australian suburban home. The home is identifiable as Queensland but not as any specific suburb — could be Brisbane, Logan, Ipswich or the Gold Coast. Mid-morning natural light. Composition is wide enough to feel like a hero image. No readable branding on the van or vehicle. Shot on 35mm lens."
+    },
+    {
+      "id": "suburb-apartment-context",
+      "filename": "suburb-apartment-context.webp",
+      "path": "/public/images/suburbs/suburb-apartment-context.webp",
+      "usage": "Suburb pages for apartment-dense areas (Toowong, Bulimba, Indooroopilly, Kelvin Grove, Coorparoo, Southport CBD)",
+      "dimensions": "1600x900",
+      "aspect_ratio": "16:9",
+      "alt_text": "Mobile mechanic servicing a vehicle in an apartment building's underground car park",
+      "ai_prompt": "Photorealistic, highly realistic photograph of a mobile mechanic (navy work shirt) working on a car in an underground apartment car park in Brisbane. Clean, well-lit, modern car park with concrete pillars. The mechanic's white service van parked nearby. Natural fluorescent and ambient lighting. Practical, real-life scenario — mobile mechanic adapting to apartment living. No branding visible. Shot on 35mm lens, slightly wide composition."
+    },
+    {
+      "id": "icon-warranty-safe",
+      "filename": "icon-warranty-safe.svg",
+      "path": "/public/images/badges/icon-warranty-safe.svg",
+      "usage": "Trust badge — 'warranty safe' indicator",
+      "dimensions": "120x120",
+      "aspect_ratio": "1:1",
+      "alt_text": "Warranty safe service badge",
+      "ai_prompt": "NOT AI-GENERATED — vector SVG to be hand-designed. Lucide-style line icon, 1.5px stroke. Shield outline with a checkmark inside. Brand-blue (#2563EB) stroke on transparent background."
+    },
+    {
+      "id": "icon-fixed-price",
+      "filename": "icon-fixed-price.svg",
+      "path": "/public/images/badges/icon-fixed-price.svg",
+      "usage": "Trust badge — 'fixed price quotes' indicator",
+      "dimensions": "120x120",
+      "aspect_ratio": "1:1",
+      "alt_text": "Fixed price quote badge",
+      "ai_prompt": "NOT AI-GENERATED — vector SVG. Lucide-style line icon. A receipt/document with a dollar sign and a checkmark. Brand-blue stroke on transparent."
+    },
+    {
+      "id": "icon-we-come-to-you",
+      "filename": "icon-we-come-to-you.svg",
+      "path": "/public/images/badges/icon-we-come-to-you.svg",
+      "usage": "Trust badge — 'we come to you' indicator",
+      "dimensions": "120x120",
+      "aspect_ratio": "1:1",
+      "alt_text": "We come to you mobile service badge",
+      "ai_prompt": "NOT AI-GENERATED — vector SVG. Lucide-style line icon. A van with a location pin above it. Brand-blue stroke on transparent."
+    },
+    {
+      "id": "icon-15-years-experience",
+      "filename": "icon-15-years-experience.svg",
+      "path": "/public/images/badges/icon-15-years-experience.svg",
+      "usage": "Trust badge — 'years of experience' indicator",
+      "dimensions": "120x120",
+      "aspect_ratio": "1:1",
+      "alt_text": "15+ years experience badge",
+      "ai_prompt": "NOT AI-GENERATED — vector SVG. Lucide-style line icon. A medal or award ribbon with a checkmark. Brand-blue stroke on transparent."
+    },
+    {
+      "id": "404-broken-down",
+      "filename": "404-broken-down.webp",
+      "path": "/public/images/error/404-broken-down.webp",
+      "usage": "404 page illustration",
+      "dimensions": "1200x800",
+      "aspect_ratio": "3:2",
+      "alt_text": "Empty driveway with a tool left on the ground — implying something went missing",
+      "ai_prompt": "Photorealistic, highly realistic photograph of an empty Brisbane suburban driveway with a single mechanic's tool (spanner or torch) left on the ground, suggesting something is missing. Soft natural daylight, slightly melancholic mood, but still clean and professional. No branding. Composition feels intentional and clever as a 404 metaphor. Shot on 50mm lens with shallow depth of field on the tool."
+    },
+    {
+      "id": "blog-author-default",
+      "filename": "blog-author-default.webp",
+      "path": "/public/images/authors/blog-author-default.webp",
+      "usage": "Default author headshot — replace with real author photos as available",
+      "dimensions": "400x400",
+      "aspect_ratio": "1:1",
+      "alt_text": "Professional headshot of an experienced Australian mechanic",
+      "ai_prompt": "Photorealistic, highly realistic professional headshot portrait of an Australian male mechanic in his early 40s, short brown hair, friendly competent expression, wearing a navy collared work shirt against a soft neutral grey-beige background. Natural soft daylight from the left. Square 1:1 composition tightly cropped from chest up. Looks trustworthy and experienced, like a working mechanic not a model. Slight closed-mouth smile. Shot on 85mm lens, shallow depth of field. NOTE: To be replaced with real author photo when available."
+    }
+  ],
+  "generation_workflow": {
+    "step_1": "Run each prompt through the chosen AI image tool (Midjourney v6+, DALL·E 3, Imagen 3, Flux Pro, or similar). Always append the global style constraints and the negative prompt.",
+    "step_2": "Generate 3-4 variations per image. Reject any with: visible text/branding, distorted hands or faces, obvious AI artifacts, stock-photo cliches, oversaturated colours, unrealistic lighting.",
+    "step_3": "Upscale the chosen variation to the target dimensions specified.",
+    "step_4": "Convert to WebP (quality 80) and JPG (quality 85) using sharp or Squoosh. Confirm < 200KB.",
+    "step_5": "Place files at the exact path defined in 'path'. The filename in 'filename' must match.",
+    "step_6": "Verify the alt text in the manifest is still accurate for the chosen image — adjust if needed.",
+    "step_7": "For SVG icons marked NOT AI-GENERATED, hand-design or source from Lucide (https://lucide.dev/) and place at the specified path."
+  },
+  "automation_notes": {
+    "script_idea": "A simple Node.js or Python script can iterate the 'images' array, call the chosen image-gen API per prompt, save outputs to the specified paths, and run sharp for resize/compress. Build this once and reuse across the project lifecycle.",
+    "api_options": [
+      "Midjourney via Discord (manual/semi-automated)",
+      "OpenAI DALL·E 3 via API",
+      "Google Imagen 3 via Vertex AI",
+      "Replicate (Flux, SDXL, etc.) — pay-per-image",
+      "Stability AI API"
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+[
+  {
+    "source": "/Wynnum",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/aspley",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/beenleigh",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/brassall",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/browns-plains",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/bulimba",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/carindale",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/chermside",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/cleveland",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/coomera",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/coorparoo",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/does-a-mobile-logbook-service-void-your-new-car-warranty",
+    "destination": "/blog/does-a-mobile-logbook-service-void-your-new-car-warranty",
+    "permanent": true
+  },
+  {
+    "source": "/forest-lake",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/goodna",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/helensvale",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/home-old",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/indooroopilly",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/ipswich",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/kelvin-grove",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/logan",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/loganholme",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/mt-gravatt",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/nerang",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/nundah",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/redbank-plains",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/redcliffe",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/robina",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/sandgate",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/southport",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/springfield",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/springwood",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/sunnybank",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/toowong",
+    "destination": "/areas/",
+    "permanent": true
+  }
+]
