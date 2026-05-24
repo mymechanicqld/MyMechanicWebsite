@@ -718,7 +718,7 @@ function buildInvoiceDoc(t, A) {
       {
         margin: [0, 22, 0, 0],
         columns: [
-          { text: 'Thank you for your business.', color: COLOR.subtle, italics: true, fontSize: 10 },
+          { text: 'Drive safe — call us if anything comes up.', color: COLOR.subtle, italics: true, fontSize: 10 },
           { text: 'Issued by ' + BUSINESS.name, color: COLOR.subtle, alignment: 'right', fontSize: 10 },
         ],
       },
