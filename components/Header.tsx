@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, BadgeCheck, Phone, ArrowRight } from 'lucide-react'
+import { Clock, Phone, ArrowRight } from 'lucide-react'
 import MobileDrawer from './MobileDrawer'
 
 const NAV_ITEMS = [
@@ -22,10 +22,6 @@ export default function Header() {
             <span className="inline-flex items-center gap-2">
               <Clock className="size-[14px]" strokeWidth={1.75} />
               Mon–Fri 7am–6pm · Sat 8am–5pm
-            </span>
-            <span className="inline-flex items-center gap-2 hidden sm:inline-flex">
-              <BadgeCheck className="size-[14px]" strokeWidth={1.75} />
-              Workmanship warranty on every job
             </span>
           </div>
           <a
