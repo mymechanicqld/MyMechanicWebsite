@@ -706,12 +706,12 @@ function buildInvoiceDoc(t, A) {
           // Totals (right)
           {
             width: 230,
-            stack: totalsStack(t),
+            stack: totalsStack(t, status),
           },
         ],
       },
 
-      /* ─── Status banner + receipts (always rendered if status is set) ─── */
+      /* ─── Receipts table + subtle status pill (only when there are receipts) ─── */
       paymentSection(status, t),
 
       /* ─── Sign-off line ─── */
@@ -741,22 +741,58 @@ function buildInvoiceDoc(t, A) {
 }
 
 function vehicleBullets() {
-  // Compact bullet list under the customer address. Skipped entirely
-  // when the user hasn't filled any vehicle fields.
+  // Compact vehicle card under the customer address. A small navy "rego
+  // plate" sits left, make/model + year stack right, all inside a soft
+  // tinted background. Skipped entirely when no fields are filled.
   const v = state.vehicle || {};
-  const bullets = [];
-  if (v.rego)      bullets.push({ text: 'Rego  ' + v.rego.toUpperCase() });
-  if (v.makeModel) bullets.push({ text: v.makeModel });
-  if (v.year)      bullets.push({ text: 'Year  ' + v.year });
-  if (bullets.length === 0) return [];
+  if (!v.rego && !v.makeModel && !v.year) return [];
+
+  // Build the right-hand stack
+  const rightStack = [];
+  if (v.makeModel) rightStack.push({
+    text: v.makeModel, fontSize: 11.5, bold: true, color: COLOR.ink,
+  });
+  if (v.year) rightStack.push({
+    text: 'Year  ' + v.year, fontSize: 10, color: COLOR.muted, margin: [0, 2, 0, 0],
+  });
+  if (!v.makeModel && !v.year) rightStack.push({
+    text: 'Vehicle on record', fontSize: 10, color: COLOR.subtle, italics: true,
+  });
+
+  // Compose: optional rego plate (left) + details (right)
+  const cells = [];
+  if (v.rego) cells.push({
+    width: 'auto',
+    stack: [
+      { text: 'REGO', fontSize: 7, bold: true, color: 'white', characterSpacing: 1.8, opacity: 0.72 },
+      { text: v.rego.toUpperCase(), fontSize: 13, bold: true, color: 'white', characterSpacing: 1.5, margin: [0, 3, 0, 0] },
+    ],
+    fillColor: COLOR.navy,
+    margin: [12, 7, 12, 7],
+  });
+  cells.push({
+    width: '*',
+    stack: rightStack,
+    margin: [v.rego ? 12 : 14, v.rego ? 8 : 9, 14, 8],
+  });
 
   return [
-    { text: 'VEHICLE', style: 'eyebrow', margin: [0, 12, 0, 4] },
+    { text: 'VEHICLE', style: 'eyebrow', margin: [0, 14, 0, 6] },
     {
-      ul: bullets.map(b => ({ ...b, color: COLOR.ink, fontSize: 10.5 })),
-      color: COLOR.navy,         // bullet marker colour
-      lineHeight: 1.35,
-      margin: [0, 0, 0, 0],
+      table: {
+        widths: v.rego ? ['auto', '*'] : ['*'],
+        body: [[
+          // Cells with their own fill colors — wrap in a single row
+          ...cells.map((c, i) => ({
+            ...c,
+            border: [false, false, false, false],
+            // Soft fill for the right-hand details cell
+            ...(i === cells.length - 1 && v.rego ? { fillColor: COLOR.soft } : {}),
+            ...(!v.rego && i === 0 ? { fillColor: COLOR.soft } : {}),
+          })),
+        ]],
+      },
+      layout: 'noBorders',
     },
   ];
 }
@@ -836,8 +872,29 @@ function notesBlock() {
   return out;
 }
 
-function totalsStack(t) {
+function totalsStack(t, status) {
   const rows = [];
+  // If no receipts recorded but a status is set, the small status pill
+  // rides above the totals so it still appears on the invoice.
+  if (state.receipts.length === 0 && status) {
+    rows.push({
+      alignment: 'right',
+      margin: [0, 0, 0, 6],
+      columns: [
+        { text: '', width: '*' },
+        {
+          width: 'auto',
+          table: { body: [[{
+            text: status.label,
+            color: status.fg, fillColor: status.bg,
+            fontSize: 8.5, bold: true, characterSpacing: 1.1,
+            margin: [9, 3, 9, 3], border: [false, false, false, false],
+          }]] },
+          layout: 'noBorders',
+        },
+      ],
+    });
+  }
   if (state.gstInclusive) {
     rows.push({ columns: [
       { text: 'Subtotal', color: COLOR.muted, fontSize: 10.5 },
@@ -889,22 +946,24 @@ function totalsStack(t) {
 }
 
 function paymentSection(status, t) {
-  // Pairs the big status stamp with the receipts table — the stamp sits
-  // left, the receipts list right. If no receipts are recorded yet, the
-  // stamp still appears on its own (still useful info for the customer).
-  const hasReceipts = state.receipts.length > 0;
-  const statusStamp = {
+  // If there are no receipts, the status pill rides inline with the
+  // totals stack (handled in totalsStack). Nothing to render here.
+  if (state.receipts.length === 0) return { text: '' };
+
+  // Subtle status pill — tiny next to the section heading
+  const statusPill = {
+    width: 'auto',
     table: {
       widths: ['auto'],
       body: [[
         {
           text: status.label,
           color: status.fg,
-          fontSize: 16,
+          fontSize: 8.5,
           bold: true,
-          characterSpacing: 1.6,
+          characterSpacing: 1.1,
           fillColor: status.bg,
-          margin: [16, 12, 16, 12],
+          margin: [9, 3, 9, 3],
           border: [false, false, false, false],
         },
       ]],
@@ -912,16 +971,8 @@ function paymentSection(status, t) {
     layout: 'noBorders',
   };
 
-  if (!hasReceipts) {
-    return {
-      margin: [0, 22, 0, 0],
-      alignment: 'left',
-      stack: [statusStamp],
-    };
-  }
-
   const receiptsTable = {
-    margin: [0, 6, 0, 0],
+    margin: [0, 8, 0, 0],
     table: {
       headerRows: 1,
       widths: [80, '*', 80],
@@ -948,22 +999,16 @@ function paymentSection(status, t) {
   };
 
   return {
-    margin: [0, 22, 0, 0],
-    columns: [
-      // Status stamp (left, fixed width)
+    margin: [0, 24, 0, 0],
+    stack: [
+      // Header row: section label on left, subtle status pill on right
       {
-        width: 'auto',
-        stack: [statusStamp],
-        margin: [0, 8, 18, 0],
-      },
-      // Receipts table (right, fills remaining)
-      {
-        width: '*',
-        stack: [
-          { text: 'PAYMENTS RECEIVED', style: 'eyebrow' },
-          receiptsTable,
+        columns: [
+          { text: 'PAYMENTS RECEIVED', style: 'eyebrow', width: '*', margin: [0, 4, 0, 0] },
+          statusPill,
         ],
       },
+      receiptsTable,
     ],
   };
 }
