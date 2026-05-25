@@ -1557,6 +1557,12 @@ function toast(msg, kind = '') {
 // Helpers
 // ============================================================================
 function vehicle(s) {
+  // Newer rows (May 2026 schema) just have a rego. Older rows have
+  // year/make/model. Render whichever set is available, rego preferred.
+  if (s.vehicle_rego) {
+    const detail = [s.vehicle_year, s.vehicle_make, s.vehicle_model].filter(Boolean).join(' ');
+    return detail ? `${s.vehicle_rego} · ${detail}` : s.vehicle_rego;
+  }
   return [s.vehicle_year, s.vehicle_make, s.vehicle_model].filter(Boolean).join(' ');
 }
 function countByStatus(arr) {

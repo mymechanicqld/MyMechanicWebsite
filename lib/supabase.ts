@@ -27,17 +27,24 @@ export const supabase = createClient(url ?? 'https://placeholder.supabase.co', k
 })
 
 export type QuoteSubmissionInsert = {
-  full_name: string
-  email: string
-  phone?: string | null
-  suburb?: string | null
+  // ── Required public-form fields (May 2026 schema) ──────────────────────
+  full_name: string         // "Name"
+  email: string             // "Email"
+  phone: string             // "Phone number"
+  vehicle_rego: string      // "Rego" — licence plate
+  suburb: string            // "Suburb"
+  symptoms: string          // Stored content of the "How can we help?" textarea
+  consent_privacy: boolean  // True when the privacy-policy box was ticked
+
+  // ── Audit metadata (server-populated) ──────────────────────────────────
+  ip_address?: string | null
+  user_agent?: string | null
+  source?: string
+
+  // ── Legacy columns retained for historical rows (no longer collected) ──
   vehicle_make?: string | null
   vehicle_model?: string | null
   vehicle_year?: number | null
   service_needed?: string | null
-  symptoms?: string | null
   preferred_time?: string | null
-  ip_address?: string | null
-  user_agent?: string | null
-  source?: string
 }

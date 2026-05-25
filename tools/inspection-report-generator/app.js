@@ -1111,9 +1111,7 @@ function imagesPages(A) {
     stack: [
       ...(pi === 0 ? [
         { text: 'APPENDIX', style: 'sectionTag' },
-        { text: 'Inspection images', style: 'sectionTitle', margin: [0, 4, 0, 0] },
-        { text: 'Captured at the time of inspection. Two per row, in the order they were uploaded.',
-          fontSize: 10.5, color: COLOR.muted, italics: true, margin: [0, 6, 0, 14] },
+        { text: 'Inspection images', style: 'sectionTitle', margin: [0, 4, 0, 0] }
       ] : []),
       ...buildImageGrid(batch),
     ],

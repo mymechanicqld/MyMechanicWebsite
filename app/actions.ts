@@ -9,6 +9,9 @@ import { renderQuoteNotificationEmail } from '@/lib/email-templates'
 /**
  * Quote-request submission from the public form.
  *
+ * Form fields (mirroring the original mymechanicqld.com.au site):
+ *   name, phone, email, rego, suburb, message, consent_privacy
+ *
  * Two destinations, run in parallel:
  *   1. Supabase `quote_submissions` table — permanent record + dashboard feed
  *   2. Resend transactional email — notifies the business inbox immediately
@@ -20,9 +23,17 @@ import { renderQuoteNotificationEmail } from '@/lib/email-templates'
 export async function submitQuoteAction(formData: FormData) {
   const submission = parseFormData(formData)
 
-  if (!submission.full_name || !submission.email) {
-    // Required-field validation happens client-side via the `required` attr;
-    // this is just a defensive check.
+  // Server-side guardrails. Client-side `required` attributes cover the
+  // happy path; this is for hardened clients (curl, broken JS, etc.).
+  if (
+    !submission.full_name ||
+    !submission.email ||
+    !submission.phone ||
+    !submission.vehicle_rego ||
+    !submission.suburb ||
+    !submission.symptoms ||
+    !submission.consent_privacy
+  ) {
     console.warn('[quote-request] missing required fields, ignoring', submission)
     redirect('/?submitted=true#quote')
   }
@@ -54,23 +65,18 @@ export async function submitQuoteAction(formData: FormData) {
 function parseFormData(formData: FormData): QuoteSubmissionInsert {
   const get = (k: string) => {
     const v = formData.get(k)
-    return typeof v === 'string' && v.trim() ? v.trim() : null
+    return typeof v === 'string' && v.trim() ? v.trim() : ''
   }
-  const year = get('year')
-  const parsedYear = year ? parseInt(year, 10) : null
 
   return {
-    full_name: get('name') ?? '',
-    email: get('email') ?? '',
-    phone: get('phone'),
-    suburb: get('suburb'),
-    vehicle_make: get('make'),
-    vehicle_model: get('model'),
-    vehicle_year: parsedYear && !isNaN(parsedYear) && parsedYear > 1900 && parsedYear < 2100 ? parsedYear : null,
-    service_needed: get('service'),
-    symptoms: get('message'),
-    preferred_time: get('preferred_time'),
-    source: 'website',
+    full_name:       get('name'),
+    phone:           get('phone'),
+    email:           get('email'),
+    vehicle_rego:    get('rego').toUpperCase(), // normalise plates to upper-case
+    suburb:          get('suburb'),
+    symptoms:        get('message'),            // stored content of "How can we help?"
+    consent_privacy: formData.get('consent_privacy') === 'yes',
+    source:          'website',
   }
 }
 
@@ -87,7 +93,7 @@ async function sendNotificationEmail(submission: QuoteSubmissionInsert) {
   }
 
   const from = process.env.QUOTE_SENDER_EMAIL ?? 'onboarding@resend.dev'
-  const to = process.env.QUOTE_RECIPIENT_EMAIL ?? 'gursahib99888@gmail.com'
+  const to = process.env.QUOTE_RECIPIENT_EMAIL ?? 'mymechanicqld@gmail.com'
 
   const { subject, html, text } = renderQuoteNotificationEmail(submission)
   const replyTo = submission.email
