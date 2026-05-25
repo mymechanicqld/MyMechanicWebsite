@@ -81,12 +81,13 @@ export default function AreasHubPage() {
         <div className="container max-w-3xl">
           <span className="eyebrow">Where we work</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4">
-            Within 50 to 60 km of Springwood, in any direction.
+            Brisbane, Logan, Ipswich and the Gold Coast, at your driveway.
           </h1>
           <p className="lead mt-6">
-            We&apos;re based in Springwood on Brisbane&apos;s Southside and work a wide
-            radius from there. That covers Brisbane city, all of Logan, most of Ipswich, and the
-            northern Gold Coast.
+            We service cars right across South East Queensland. Brisbane city, all
+            of Logan, most of Ipswich, and the northern Gold Coast are on our
+            regular routes. The van is the workshop, so we turn up where the car
+            is, at home or at work.
           </p>
           <div className="flex flex-wrap gap-6 mt-7 text-[0.9375rem] text-muted">
             <span className="inline-flex items-center gap-2">

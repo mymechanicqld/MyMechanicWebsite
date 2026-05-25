@@ -6,7 +6,7 @@ import CoverageChecker from '@/components/CoverageChecker'
 export const metadata: Metadata = {
   title: 'Coverage Checker | Does My Mechanic QLD Cover My Suburb?',
   description:
-    "Enter your suburb or postcode to confirm we cover your area. Mobile mechanic across Brisbane, Logan, Ipswich and the Gold Coast within 50-60 km of Springwood.",
+    "Enter your suburb or postcode to confirm we cover your area. Mobile mechanic across Brisbane, Logan, Ipswich and the Gold Coast.",
   alternates: { canonical: '/check-coverage/' },
   openGraph: {
     title: 'Coverage checker | My Mechanic QLD',
