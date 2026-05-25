@@ -62,3 +62,26 @@ Thumbs.db
 
 # Reference materials kept locally (PDFs, source images for tool builds)
 invoice-report-generator/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Excluded from the published "main website" repo
+# ─────────────────────────────────────────────────────────────────────────────
+# Admin / standalone tools — operational utilities that aren't part of the
+# marketing site bundle. They live in this working tree for the team to use
+# locally; they don't need to ship with the Next.js codebase.
+tools/
+dashboard/
+
+# Early-stage design concepts — one-off HTML mockups that informed the build.
+# Useful local reference, not part of the live site.
+concepts/
+
+# Claude Code workspace (project skill + local launch config). Local dev
+# tooling, not website code.
+.claude/
+
+# Competitor / current-site research scripts — used once during discovery,
+# not needed by the website build.
+crawl_sites.py
+scrape_images.py
+scraped-images-run.log

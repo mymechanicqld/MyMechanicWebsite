@@ -7,7 +7,7 @@ After that, every push to `main` deploys automatically.
 
 ## 0. Prerequisites
 
-- [ ] GitHub account with repo access (`Singh-Gursahib/MyMechanicQLD`)
+- [ ] GitHub account with repo access (`mymechanicqld/MyMechanicWebsite`)
 - [ ] Vercel account (sign up with the same GitHub account that owns the repo)
 - [ ] Supabase project at `https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg`
 - [ ] Resend account at https://resend.com with a real API key (free tier is fine)
@@ -20,14 +20,14 @@ After that, every push to `main` deploys automatically.
 
 ## 1. Push to GitHub
 
-Already done. The repo lives at `https://github.com/Singh-Gursahib/MyMechanicQLD`.
+Already done. The repo lives at `https://github.com/mymechanicqld/MyMechanicWebsite`.
 
 > **Auth note:** the `gh` CLI on this laptop is signed in as the
 > `singhgursahib0007` account, but the SSH key at `~/.ssh/id_ed25519` is
 > registered to `Singh-Gursahib`. Git push works (SSH remote), but
 > `gh pr create` and similar will target the wrong account unless you
 > `gh auth login` as Singh-Gursahib first. The remote is set to
-> `git@github.com:Singh-Gursahib/MyMechanicQLD.git` (SSH) for this reason.
+> `git@github.com:mymechanicqld/MyMechanicWebsite.git` (SSH) for this reason.
 
 ---
 
