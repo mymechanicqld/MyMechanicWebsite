@@ -40,6 +40,8 @@ const NEXT_STEPS = [
   },
 ]
 
+const SITE_URL = 'https://www.mymechanicqld.com.au'
+
 export default async function BookPage({
   searchParams,
 }: {
@@ -47,8 +49,22 @@ export default async function BookPage({
 }) {
   const { submitted } = await searchParams
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Get a quote', item: `${SITE_URL}/book/` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
       {/* Hero + form */}
       <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="container grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">

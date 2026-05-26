@@ -55,6 +55,8 @@ const CONTACTS = [
   },
 ]
 
+const SITE_URL = 'https://www.mymechanicqld.com.au'
+
 export default async function ContactPage({
   searchParams,
 }: {
@@ -62,8 +64,22 @@ export default async function ContactPage({
 }) {
   const { submitted } = await searchParams
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE_URL}/contact/` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
       {/* Hero */}
       <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="container max-w-3xl">

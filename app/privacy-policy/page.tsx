@@ -11,9 +11,25 @@ export const metadata: Metadata = {
 
 const LAST_UPDATED = 'May 2026'
 
+const SITE_URL = 'https://www.mymechanicqld.com.au'
+
 export default function PrivacyPolicyPage() {
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Privacy policy', item: `${SITE_URL}/privacy-policy/` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
       {/* Hero */}
       <section className="py-14 md:py-20 bg-gradient-to-b from-bg to-surface">
         <div className="container max-w-3xl">

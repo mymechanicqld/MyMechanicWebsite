@@ -16,9 +16,25 @@ export const metadata: Metadata = {
   },
 }
 
+const SITE_URL = 'https://www.mymechanicqld.com.au'
+
 export default function CheckCoveragePage() {
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Coverage checker', item: `${SITE_URL}/check-coverage/` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
       {/* Hero + checker */}
       <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="container max-w-3xl">

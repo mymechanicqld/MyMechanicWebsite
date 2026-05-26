@@ -5,12 +5,27 @@
     "permanent": true
   },
   {
+    "source": "/brisbane/",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
     "source": "/does-a-mobile-logbook-service-void-your-new-car-warranty",
-    "destination": "/blog/does-a-mobile-logbook-service-void-your-new-car-warranty",
+    "destination": "/blog/does-a-mobile-logbook-service-void-your-new-car-warranty/",
+    "permanent": true
+  },
+  {
+    "source": "/does-a-mobile-logbook-service-void-your-new-car-warranty/",
+    "destination": "/blog/does-a-mobile-logbook-service-void-your-new-car-warranty/",
     "permanent": true
   },
   {
     "source": "/gold-coast",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast/",
     "destination": "/areas/",
     "permanent": true
   },
@@ -20,7 +35,17 @@
     "permanent": true
   },
   {
+    "source": "/home-old/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
     "source": "/ipswich",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/ipswich/",
     "destination": "/areas/",
     "permanent": true
   },
@@ -30,7 +55,17 @@
     "permanent": true
   },
   {
+    "source": "/logan/",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
     "source": "/mt-gravatt",
+    "destination": "/mount-gravatt/",
+    "permanent": true
+  },
+  {
+    "source": "/mt-gravatt/",
     "destination": "/mount-gravatt/",
     "permanent": true
   },
@@ -40,7 +75,17 @@
     "permanent": true
   },
   {
+    "source": "/Wynnum/",
+    "destination": "/wynnum/",
+    "permanent": true
+  },
+  {
     "source": "/redcliffe",
+    "destination": "/areas/",
+    "permanent": true
+  },
+  {
+    "source": "/redcliffe/",
     "destination": "/areas/",
     "permanent": true
   }
