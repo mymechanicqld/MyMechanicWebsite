@@ -18,11 +18,15 @@ import {
   getAllServices,
   type Service,
 } from '@/lib/services'
+import { getSuburb, getSuburbSlugs } from '@/lib/suburbs'
+import SuburbPageContent from '@/components/SuburbPageContent'
 
 const SITE_URL = 'https://www.mymechanicqld.com.au'
 
 export async function generateStaticParams() {
-  return getServiceSlugs().map((slug) => ({ slug }))
+  const serviceSlugs = getServiceSlugs().map((slug) => ({ slug }))
+  const suburbSlugs = getSuburbSlugs().map((slug) => ({ slug }))
+  return [...serviceSlugs, ...suburbSlugs]
 }
 
 export async function generateMetadata({
@@ -31,46 +35,89 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const service = await getService(slug)
-  if (!service) return {}
 
-  return {
-    title: service.title,
-    description: service.meta_description,
-    alternates: { canonical: service.canonical },
-    openGraph: {
-      title: service.og_title,
-      description: service.og_description,
-      images: [service.og_image],
-      url: service.canonical,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: service.og_title,
-      description: service.og_description,
-      images: [service.og_image],
-    },
+  // Check service first
+  const service = await getService(slug)
+  if (service) {
+    return {
+      title: service.title,
+      description: service.meta_description,
+      alternates: { canonical: service.canonical },
+      openGraph: {
+        title: service.og_title,
+        description: service.og_description,
+        images: [service.og_image],
+        url: service.canonical,
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: service.og_title,
+        description: service.og_description,
+        images: [service.og_image],
+      },
+    }
   }
+
+  // Check suburb
+  const suburb = getSuburb(slug)
+  if (suburb) {
+    const title = `Mobile Mechanic ${suburb.name} | Brake Repair, Servicing & More | My Mechanic QLD`
+    const description = `Mobile mechanic in ${suburb.name}, ${suburb.postcode}. Brake repair, logbook servicing, alternator replacement and more at your driveway. Fixed-price quotes, workmanship warranty on every job.`
+    return {
+      title,
+      description,
+      alternates: { canonical: `/${suburb.slug}/` },
+      openGraph: {
+        title: `Mobile mechanic in ${suburb.name} | My Mechanic QLD`,
+        description,
+        url: `/${suburb.slug}/`,
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `Mobile mechanic in ${suburb.name} | My Mechanic QLD`,
+        description,
+      },
+    }
+  }
+
+  return {}
 }
 
-export default async function ServicePage({
+export default async function SlugPage({
   params,
 }: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const service = await getService(slug)
-  if (!service) notFound()
 
+  // Try service first
+  const service = await getService(slug)
+  if (service) {
+    return <ServicePageContent service={service} />
+  }
+
+  // Try suburb
+  const suburb = getSuburb(slug)
+  if (suburb) {
+    return <SuburbPageContent suburb={suburb} />
+  }
+
+  notFound()
+}
+
+/* ------------------------------------------------------------------ */
+/*  Service page (unchanged from original)                            */
+/* ------------------------------------------------------------------ */
+
+async function ServicePageContent({ service }: { service: Service }) {
   const all = await getAllServices()
   const related = service.related_services
     .map((s) => all.find((x) => x.slug === s))
     .filter((x): x is Service => x !== undefined)
     .slice(0, 3)
 
-  // JSON-LD: Service. We only output an Offer when a real price exists
-  // (price_from > 0), otherwise we omit it rather than publish a fake number.
   const serviceLd: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -93,7 +140,6 @@ export default async function ServicePage({
     }
   }
 
-  // JSON-LD: FAQPage
   const faqLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -104,7 +150,6 @@ export default async function ServicePage({
     })),
   }
 
-  // JSON-LD: BreadcrumbList
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

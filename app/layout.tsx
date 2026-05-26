@@ -1,8 +1,14 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Inter, Fraunces } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
+
+// ── GA4 ──────────────────────────────────────────────────────────────
+// Replace with your real Measurement ID from analytics.google.com
+// Admin > Data Streams > Web > Measurement ID (starts with G-)
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-6YSECEQTDG'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -351,8 +357,26 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body>
+        {/* GA4 — loads after page is interactive so it does not block render */}
+        {GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX' && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}', {
+                  page_path: window.location.pathname,
+                });`}
+            </Script>
+          </>
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

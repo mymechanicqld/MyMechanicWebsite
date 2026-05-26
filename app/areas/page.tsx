@@ -1,81 +1,84 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone, MapPin, Clock } from 'lucide-react'
+import { ArrowRight, Phone, MapPin, Clock, ChevronRight } from 'lucide-react'
+import { getSuburbsByRegion, getRegions } from '@/lib/suburbs'
+
+const SITE_URL = 'https://www.mymechanicqld.com.au'
 
 export const metadata: Metadata = {
   title: 'Service Areas | Mobile Mechanic Brisbane, Logan, Ipswich & Gold Coast | My Mechanic QLD',
   description:
-    "Mobile mechanic coverage across Brisbane, Logan, Ipswich and the northern Gold Coast, working out of Springwood.",
+    'Mobile mechanic covering 160+ suburbs across Brisbane, Logan, Ipswich and the northern Gold Coast, based in Springwood.',
   alternates: { canonical: '/areas/' },
   openGraph: {
     title: 'Where we work | My Mechanic QLD',
     description:
-      'Mobile mechanic coverage across Brisbane, Logan, Ipswich and the northern Gold Coast.',
+      'Mobile mechanic covering 160+ suburbs across Brisbane, Logan, Ipswich and the northern Gold Coast.',
     url: '/areas/',
     type: 'website',
   },
 }
 
-type Region = {
-  slug: string
-  name: string
-  hint: string
-  image: string
-  suburbs: string[]
-}
-
-const REGIONS: Region[] = [
-  {
-    slug: 'brisbane',
-    name: 'Brisbane',
+const REGION_META: Record<
+  string,
+  { hint: string; image: string }
+> = {
+  brisbane: {
     hint: 'Northside to Bayside, inner west to the Southside.',
     image: '/images/coverage-onsite.webp',
-    suburbs: [
-      'Aspley',
-      'Bulimba',
-      'Carindale',
-      'Chermside',
-      'Cleveland',
-      'Coorparoo',
-      'Forest Lake',
-      'Indooroopilly',
-      'Kelvin Grove',
-      'Mt Gravatt',
-      'Nundah',
-      'Redcliffe',
-      'Sandgate',
-      'Sunnybank',
-      'Toowong',
-      'Wynnum',
-    ],
   },
-  {
-    slug: 'logan',
-    name: 'Logan',
+  logan: {
     hint: 'Home base. Fastest response, often same-day.',
     image: '/images/owner-on-job.webp',
-    suburbs: ['Beenleigh', 'Browns Plains', 'Loganholme', 'Springwood'],
   },
-  {
-    slug: 'ipswich',
-    name: 'Ipswich',
+  ipswich: {
     hint: 'Springfield through Brassall and west to Ipswich CBD.',
     image: '/images/hero-van.webp',
-    suburbs: ['Brassall', 'Goodna', 'Redbank Plains', 'Springfield'],
   },
-  {
-    slug: 'gold-coast',
-    name: 'Gold Coast',
+  'gold-coast': {
     hint: 'Northern Gold Coast, from Coomera south to Robina.',
     image: '/images/coverage-onsite.webp',
-    suburbs: ['Coomera', 'Helensvale', 'Nerang', 'Robina', 'Southport'],
   },
-]
+}
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Service Areas', item: SITE_URL + '/areas/' },
+  ],
+}
 
 export default function AreasHubPage() {
+  const regions = getRegions()
+  const totalSuburbs = regions.reduce(
+    (n, r) => n + getSuburbsByRegion(r.id).length,
+    0
+  )
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+
+      {/* Breadcrumb */}
+      <nav
+        aria-label="Breadcrumb"
+        className="bg-bg border-b border-hairline py-3 text-[0.8125rem] text-subtle"
+      >
+        <div className="container flex items-center gap-2 flex-wrap">
+          <Link href="/" className="text-subtle hover:text-accent-bright no-underline">
+            Home
+          </Link>
+          <ChevronRight className="size-3 text-subtle/60" strokeWidth={2} />
+          <span className="text-ink font-medium">Service Areas</span>
+        </div>
+      </nav>
+
       {/* Hero */}
       <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="container max-w-3xl">
@@ -84,10 +87,9 @@ export default function AreasHubPage() {
             Brisbane, Logan, Ipswich and the Gold Coast, at your driveway.
           </h1>
           <p className="lead mt-6">
-            We service cars right across South East Queensland. Brisbane city, all
-            of Logan, most of Ipswich, and the northern Gold Coast are on our
-            regular routes. The van is the workshop, so we turn up where the car
-            is, at home or at work.
+            We service cars right across South East Queensland. {totalSuburbs}{' '}
+            suburbs, four regions, one mobile workshop. Click any suburb below
+            to see what we offer there.
           </p>
           <div className="flex flex-wrap gap-6 mt-7 text-[0.9375rem] text-muted">
             <span className="inline-flex items-center gap-2">
@@ -97,52 +99,68 @@ export default function AreasHubPage() {
             </span>
             <span className="inline-flex items-center gap-2">
               <MapPin className="size-4 text-accent-bright" strokeWidth={2} />
-              <strong className="text-ink font-semibold">Mobile to you</strong>
+              <strong className="text-ink font-semibold">{totalSuburbs} suburbs</strong>
               across SEQ
             </span>
           </div>
         </div>
       </section>
 
-      {/* Region cards */}
+      {/* Region cards with linked suburbs */}
       <section className="pb-14 md:pb-20 lg:pb-24">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-5">
-            {REGIONS.map((r) => (
-              <div
-                key={r.slug}
-                id={r.slug}
-                className="bg-surface border border-hairline rounded-2xl overflow-hidden flex flex-col scroll-mt-28"
-              >
-                <div className="relative aspect-[16/9] border-b border-hairline">
-                  <Image
-                    src={r.image}
-                    alt={`${r.name} service area`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 md:p-7 flex flex-col gap-4 flex-1">
-                  <div>
-                    <h2 className="text-2xl font-bold text-ink mb-1.5">{r.name}</h2>
-                    <p className="text-[0.9375rem] text-muted">{r.hint}</p>
+            {regions.map((r) => {
+              const meta = REGION_META[r.id]
+              const suburbs = getSuburbsByRegion(r.id)
+              return (
+                <div
+                  key={r.id}
+                  id={r.slug}
+                  className="bg-surface border border-hairline rounded-2xl overflow-hidden flex flex-col scroll-mt-28"
+                >
+                  <div className="relative aspect-[16/9] border-b border-hairline">
+                    <Image
+                      src={meta.image}
+                      alt={`${r.name} service area`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-[0.06em] text-subtle font-semibold mb-2.5">
-                      Suburbs we service
+                  <div className="p-6 md:p-7 flex flex-col gap-4 flex-1">
+                    <div>
+                      <h2 className="text-2xl font-bold text-ink mb-1.5">
+                        {r.name}
+                        <span className="text-subtle font-normal text-base ml-2">
+                          {suburbs.length} suburbs
+                        </span>
+                      </h2>
+                      <p className="text-[0.9375rem] text-muted">{meta.hint}</p>
                     </div>
-                    <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-[0.875rem] sm:text-[0.9375rem]">
-                      {r.suburbs.map((s) => (
-                        <li key={s} className="text-ink/90 leading-snug">
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
+                    <div>
+                      <div className="text-xs uppercase tracking-[0.06em] text-subtle font-semibold mb-2.5">
+                        Suburbs we service
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {suburbs.map((s) => (
+                          <Link
+                            key={s.slug}
+                            href={`/${s.slug}/` as `/${string}`}
+                            className="inline-block px-2.5 py-1 rounded-md text-[0.8125rem] sm:text-[0.875rem]
+                                       bg-bg border border-hairline text-ink no-underline
+                                       hover:bg-accent-tint hover:border-accent hover:text-accent
+                                       transition-colors leading-snug"
+                          >
+                            {s.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
