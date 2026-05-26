@@ -9,7 +9,7 @@ After that, every push to `main` deploys automatically.
 
 - [ ] GitHub account with repo access (`mymechanicqld/MyMechanicWebsite`)
 - [ ] Vercel account (sign up with the same GitHub account that owns the repo)
-- [ ] Supabase project at `https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg`
+- [ ] Supabase project at `https://supabase.com/dashboard/project/depduvjclelykqcnhlsm`
 - [ ] Resend account at https://resend.com with a real API key (free tier is fine)
 - [ ] DNS access for `mymechanicqld.com.au` (registrar dashboard)
 - [ ] Owner inputs filled in (see `docs/PROJECT_STRUCTURE.md` — eight `TBD`
@@ -51,8 +51,8 @@ below. Apply to **Production**, **Preview**, and **Development** unless noted.
 
 | Variable                                | Value / where to get it                                                | Required for launch                |
 | --------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------- |
-| `NEXT_PUBLIC_SUPABASE_URL`              | `https://tzxaewbadjursnhsokmg.supabase.co`                             | Yes — quote form storage           |
-| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`  | `sb_publishable_DPG1wxg-sCedbvZdxvSGAQ_hTj9q2m6`                       | Yes — quote form storage           |
+| `NEXT_PUBLIC_SUPABASE_URL`              | `https://depduvjclelykqcnhlsm.supabase.co`                             | Yes — quote form storage           |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`  | `sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr`                       | Yes — quote form storage           |
 | `RESEND_API_KEY`                        | https://resend.com/api-keys (the real `re_...` key)                    | Yes — owner email notification     |
 | `QUOTE_RECIPIENT_EMAIL`                 | `gursahib99888@gmail.com` (or wherever the owner reads quote requests) | Yes                                |
 | `QUOTE_SENDER_EMAIL`                    | `onboarding@resend.dev` initially; `contact@mymechanicqld.com.au` once domain is verified at Resend | Yes |
@@ -75,7 +75,7 @@ below. Apply to **Production**, **Preview**, and **Development** unless noted.
 
 The deployed site won't be able to save quotes until the database tables
 exist. Open the Supabase SQL editor at
-https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg/sql/new and run
+https://supabase.com/dashboard/project/depduvjclelykqcnhlsm/sql/new and run
 each file below in order, top to bottom:
 
 1. `supabase/migrations/20260517_001_quote_submissions.sql` — table, indexes,

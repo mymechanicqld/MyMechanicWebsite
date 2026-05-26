@@ -6,11 +6,15 @@ import { Resend } from 'resend'
 import { supabase, type QuoteSubmissionInsert } from '@/lib/supabase'
 import { renderQuoteNotificationEmail } from '@/lib/email-templates'
 
+/** Pages that are allowed as redirect targets after submission. */
+const ALLOWED_REDIRECTS = ['/', '/book/', '/contact/']
+
 /**
- * Quote-request submission from the public form.
+ * Quote / booking-request submission from the public form.
  *
- * Form fields (mirroring the original mymechanicqld.com.au site):
- *   name, phone, email, rego, suburb, message, consent_privacy
+ * Form fields (May 2026 redesign):
+ *   name, phone, email, suburb, rego, car_make, service_needed,
+ *   message, preferred_date, preferred_time, consent_privacy
  *
  * Two destinations, run in parallel:
  *   1. Supabase `quote_submissions` table — permanent record + dashboard feed
@@ -23,6 +27,14 @@ import { renderQuoteNotificationEmail } from '@/lib/email-templates'
 export async function submitQuoteAction(formData: FormData) {
   const submission = parseFormData(formData)
 
+  // Determine where to send the customer after submission.
+  // Validated against a whitelist to prevent open-redirect attacks.
+  const rawRedirect = formData.get('redirect_to')
+  const redirectPath =
+    typeof rawRedirect === 'string' && ALLOWED_REDIRECTS.includes(rawRedirect)
+      ? rawRedirect
+      : '/'
+
   // Server-side guardrails. Client-side `required` attributes cover the
   // happy path; this is for hardened clients (curl, broken JS, etc.).
   if (
@@ -31,11 +43,11 @@ export async function submitQuoteAction(formData: FormData) {
     !submission.phone ||
     !submission.vehicle_rego ||
     !submission.suburb ||
-    !submission.symptoms ||
+    !submission.service_needed ||
     !submission.consent_privacy
   ) {
     console.warn('[quote-request] missing required fields, ignoring', submission)
-    redirect('/?submitted=true#quote')
+    redirect(`${redirectPath}?submitted=true#quote`)
   }
 
   // Capture request metadata for audit / spam triage
@@ -59,7 +71,7 @@ export async function submitQuoteAction(formData: FormData) {
   // Always redirect the customer to success — internal failures are recovered
   // from the email backup (if Supabase failed) or the Supabase record (if
   // email failed). If both fail, the customer can still call us.
-  redirect('/?submitted=true#quote')
+  redirect(`${redirectPath}?submitted=true#quote`)
 }
 
 function parseFormData(formData: FormData): QuoteSubmissionInsert {
@@ -72,9 +84,13 @@ function parseFormData(formData: FormData): QuoteSubmissionInsert {
     full_name:       get('name'),
     phone:           get('phone'),
     email:           get('email'),
-    vehicle_rego:    get('rego').toUpperCase(), // normalise plates to upper-case
+    vehicle_rego:    get('rego').toUpperCase(),       // normalise plates to upper-case
     suburb:          get('suburb'),
-    symptoms:        get('message'),            // stored content of "How can we help?"
+    service_needed:  get('service_needed'),            // dropdown slug value
+    vehicle_make:    get('car_make') || null,           // optional
+    symptoms:        get('message') || null,            // optional free-text
+    preferred_date:  get('preferred_date') || null,     // YYYY-MM-DD or null
+    preferred_time:  get('preferred_time') || null,     // e.g. "7am-10am" or null
     consent_privacy: formData.get('consent_privacy') === 'yes',
     source:          'website',
   }

@@ -27,14 +27,20 @@ export const supabase = createClient(url ?? 'https://placeholder.supabase.co', k
 })
 
 export type QuoteSubmissionInsert = {
-  // ── Required public-form fields (May 2026 schema) ──────────────────────
-  full_name: string         // "Name"
+  // ── Required public-form fields ────────────────────────────────────────
+  full_name: string         // "Full Name"
   email: string             // "Email"
-  phone: string             // "Phone number"
-  vehicle_rego: string      // "Rego" — licence plate
+  phone: string             // "Phone Number"
+  vehicle_rego: string      // "Registration" — licence plate
   suburb: string            // "Suburb"
-  symptoms: string          // Stored content of the "How can we help?" textarea
+  service_needed: string    // "Service" — dropdown selection (slug value)
   consent_privacy: boolean  // True when the privacy-policy box was ticked
+
+  // ── Optional form fields (May 2026 redesign) ──────────────────────────
+  vehicle_make?: string | null    // "Car Make" — e.g. Toyota Camry
+  symptoms?: string | null        // "Additional details" textarea (optional since service dropdown captures intent)
+  preferred_date?: string | null  // "Preferred date" — YYYY-MM-DD from date picker
+  preferred_time?: string | null  // "Preferred window" — e.g. "7am-10am" from radio buttons
 
   // ── Audit metadata (server-populated) ──────────────────────────────────
   ip_address?: string | null
@@ -42,9 +48,6 @@ export type QuoteSubmissionInsert = {
   source?: string
 
   // ── Legacy columns retained for historical rows (no longer collected) ──
-  vehicle_make?: string | null
   vehicle_model?: string | null
   vehicle_year?: number | null
-  service_needed?: string | null
-  preferred_time?: string | null
 }

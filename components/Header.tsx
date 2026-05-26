@@ -2,15 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Phone, ArrowRight } from 'lucide-react'
 import MobileDrawer from './MobileDrawer'
-
-const NAV_ITEMS = [
-  { label: 'Repairs', href: '/services/' },
-  { label: 'Servicing', href: '/logbook-servicing/' },
-  { label: 'Pre-Purchase', href: '/pre-purchase-inspection/' },
-  { label: 'Locations', href: '/areas/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
-]
+import ServicesDropdown from './ServicesDropdown'
+import { PLAIN_NAV_ITEMS } from '@/lib/navigation'
 
 export default function Header() {
   return (
@@ -56,7 +49,8 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex gap-7 items-center" aria-label="Primary">
-            {NAV_ITEMS.map((item) => (
+            <ServicesDropdown />
+            {PLAIN_NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href as `/${string}`}
@@ -77,7 +71,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <MobileDrawer navItems={NAV_ITEMS} />
+          <MobileDrawer />
         </div>
       </header>
     </>

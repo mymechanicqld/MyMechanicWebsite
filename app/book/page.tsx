@@ -90,7 +90,7 @@ export default async function BookPage({
 
           {/* Right: form */}
           <div className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 lg:p-10">
-            <QuoteForm submitted={!!submitted} />
+            <QuoteForm submitted={!!submitted} redirectTo="/book/" />
           </div>
         </div>
       </section>

@@ -1,10 +1,28 @@
 import type { QuoteSubmissionInsert } from './supabase'
 
 /**
- * Builds the HTML email body for a quote-request notification.
+ * Human-readable labels for service dropdown slug values.
+ * Used in the notification email and anywhere else a slug needs display text.
+ */
+export const SERVICE_LABELS: Record<string, string> = {
+  'brake-repair': 'Brake repair',
+  'alternator-starter': 'Alternator and starter motor',
+  'radiator-water-pump': 'Radiator and water pump',
+  'logbook-servicing': 'Logbook and general servicing',
+  'pre-purchase-inspection': 'Pre-purchase inspection',
+  'battery-replacement': 'Battery replacement',
+  'warning-light-diagnostics': 'Warning-light diagnostics',
+  'steering-suspension': 'Steering and suspension',
+  'emergency-breakdown': 'Emergency / breakdown',
+  'not-sure': 'Not sure / general enquiry',
+}
+
+/**
+ * Builds the HTML email body for a booking-request notification.
  *
- * Fields rendered (matching the public form):
- *   Name, Phone, Email, Rego, Suburb, "How can we help?"
+ * Fields rendered (matching the May 2026 public form):
+ *   Name, Phone, Email, Rego, Suburb, Service, Car Make,
+ *   Preferred Date, Preferred Time, Additional details
  *
  * Inlined styles only — email clients (Gmail, Outlook, Apple Mail) strip
  * <style> blocks and ignore most modern CSS. Tables for layout, hex
@@ -20,9 +38,56 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
   const phoneTel = submission.phone.replace(/\s/g, '')
   const rego     = escape(submission.vehicle_rego).toUpperCase()
   const suburb   = escape(submission.suburb)
-  const message  = escape(submission.symptoms)
+  const message  = submission.symptoms ? escape(submission.symptoms) : ''
+  const carMake  = submission.vehicle_make ? escape(submission.vehicle_make) : ''
+  const service  = submission.service_needed
+    ? escape(SERVICE_LABELS[submission.service_needed] ?? submission.service_needed)
+    : ''
 
-  const subject = `New quote — ${submission.full_name}${rego ? ` (${rego})` : ''} · ${submission.suburb}`
+  // Format preferred date for display (e.g. "Wed 28 May 2026")
+  let dateDisplay = ''
+  if (submission.preferred_date) {
+    try {
+      const d = new Date(submission.preferred_date + 'T00:00:00')
+      dateDisplay = d.toLocaleDateString('en-AU', {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })
+    } catch {
+      dateDisplay = escape(submission.preferred_date)
+    }
+  }
+
+  // Format preferred time window for display
+  const timeLabels: Record<string, string> = {
+    '7am-10am': 'Morning (7am - 10am)',
+    '10am-12pm': 'Late morning (10am - 12pm)',
+    '12pm-3pm': 'Afternoon (12pm - 3pm)',
+    '3pm-6pm': 'Late afternoon (3pm - 6pm)',
+  }
+  const timeDisplay = submission.preferred_time
+    ? escape(timeLabels[submission.preferred_time] ?? submission.preferred_time)
+    : ''
+
+  const subject = `New booking — ${submission.full_name}${rego ? ` (${rego})` : ''}${service ? ` · ${service}` : ''} · ${submission.suburb}`
+
+  // Build optional booking-details rows
+  const detailRows: string[] = []
+
+  if (service) {
+    detailRows.push(detailRow('Service', `<strong style="color:#0C0A09;">${service}</strong>`))
+  }
+  if (carMake) {
+    detailRows.push(detailRow('Car make', carMake))
+  }
+  if (dateDisplay) {
+    detailRows.push(detailRow('Preferred date', dateDisplay))
+  }
+  if (timeDisplay) {
+    detailRows.push(detailRow('Preferred time', timeDisplay))
+  }
 
   const html = `<!doctype html>
 <html lang="en">
@@ -43,7 +108,7 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
 <tr>
 <td style="vertical-align:middle;">
 <span style="display:inline-block;color:#FFFFFF;font-size:16px;font-weight:700;letter-spacing:0.02em;line-height:1;">MY MECHANIC QLD</span>
-<div style="color:#BFDBFE;font-size:12px;font-weight:500;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase;">New quote request</div>
+<div style="color:#BFDBFE;font-size:12px;font-weight:500;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase;">New booking request</div>
 </td>
 <td align="right" style="vertical-align:middle;">
 <span style="display:inline-block;background-color:#FFFFFF;color:#1E3A8A;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Action needed</span>
@@ -80,13 +145,23 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
 </td>
 </tr>
 
-<!-- Message body -->
-<tr>
+<!-- Booking details -->
+${detailRows.length > 0 ? `<tr>
+<td style="padding:24px 28px 0 28px;">
+<div style="font-size:11px;font-weight:600;color:#78716C;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Booking details</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E7E5E4;border-radius:8px;overflow:hidden;">
+${detailRows.join('')}
+</table>
+</td>
+</tr>` : ''}
+
+<!-- Message body (only if provided) -->
+${message ? `<tr>
 <td style="padding:24px 28px 8px 28px;">
-<div style="font-size:11px;font-weight:600;color:#78716C;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">How can we help?</div>
+<div style="font-size:11px;font-weight:600;color:#78716C;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Additional notes</div>
 <div style="font-size:15px;color:#0C0A09;line-height:1.65;white-space:pre-wrap;background-color:#F5F5F4;border-left:3px solid #1E3A8A;border-radius:0 8px 8px 0;padding:14px 16px;">${message}</div>
 </td>
-</tr>
+</tr>` : ''}
 
 <!-- CTA buttons -->
 <tr>
@@ -108,7 +183,7 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
 <tr>
 <td style="border-top:1px solid #E7E5E4;padding:18px 28px;background-color:#FAFAF8;">
 <div style="font-size:12px;color:#78716C;line-height:1.5;">
-${submission.consent_privacy ? '✓ Customer consented to the Privacy Policy.' : '⚠ Consent flag was not set — review before storing data.'}<br/>
+${submission.consent_privacy ? 'Customer consented to the Privacy Policy.' : 'Consent flag was not set. Review before storing data.'}<br/>
 Saved in the operations dashboard. Submitted ${new Date().toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Australia/Brisbane' })} AEST.
 </div>
 </td>
@@ -121,29 +196,49 @@ Saved in the operations dashboard. Submitted ${new Date().toLocaleString('en-AU'
 </body>
 </html>`
 
-  const text = [
-    'NEW QUOTE REQUEST — MY MECHANIC QLD',
-    '─────────────────────────────────',
+  // Plain-text lines — only include fields that have content
+  const lines: string[] = [
+    'NEW BOOKING REQUEST — MY MECHANIC QLD',
+    String.fromCharCode(0x2500).repeat(37),
     '',
     `Name:    ${submission.full_name}`,
     `Phone:   ${submission.phone}`,
     `Email:   ${submission.email}`,
     `Rego:    ${rego || '—'}`,
     `Suburb:  ${submission.suburb}`,
+  ]
+
+  if (service)      lines.push(`Service: ${SERVICE_LABELS[submission.service_needed!] ?? submission.service_needed}`)
+  if (carMake)      lines.push(`Car:     ${submission.vehicle_make}`)
+  if (dateDisplay)  lines.push(`Date:    ${dateDisplay}`)
+  if (timeDisplay)  lines.push(`Time:    ${timeLabels[submission.preferred_time!] ?? submission.preferred_time}`)
+
+  if (message) {
+    lines.push('', 'Additional notes:', submission.symptoms!)
+  }
+
+  lines.push(
     '',
-    'How can we help?',
-    submission.symptoms,
-    '',
-    '─────────────────────────────────',
+    String.fromCharCode(0x2500).repeat(37),
     `Reply: mailto:${submission.email}`,
     `Call:  ${submission.phone}`,
     '',
     submission.consent_privacy
-      ? '✓ Customer consented to the Privacy Policy.'
-      : '⚠ Consent flag NOT set — review before storing data.',
-  ].join('\n')
+      ? 'Customer consented to the Privacy Policy.'
+      : 'Consent flag NOT set. Review before storing data.',
+  )
+
+  const text = lines.join('\n')
 
   return { subject, html, text }
+}
+
+/** Render a single detail row for the HTML booking-details table. */
+function detailRow(label: string, value: string): string {
+  return `<tr>
+<td style="padding:10px 14px;font-size:12px;font-weight:600;color:#78716C;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid #F5F5F4;width:120px;vertical-align:top;">${escape(label)}</td>
+<td style="padding:10px 14px;font-size:14px;color:#0C0A09;border-bottom:1px solid #F5F5F4;vertical-align:top;">${value}</td>
+</tr>`
 }
 
 function escape(s: string | number | null | undefined): string {

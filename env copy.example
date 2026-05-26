@@ -7,8 +7,8 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Supabase (database for quote_submissions)
-NEXT_PUBLIC_SUPABASE_URL=https://tzxaewbadjursnhsokmg.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_DPG1wxg-sCedbvZdxvSGAQ_hTj9q2m6
+NEXT_PUBLIC_SUPABASE_URL=https://depduvjclelykqcnhlsm.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr
 
 # Resend (transactional email for quote-request notifications)
 # Get a key at https://resend.com/api-keys

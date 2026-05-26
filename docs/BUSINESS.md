@@ -201,5 +201,6 @@ Currently underused on the live site. Every page should reach for at least one o
 | 640 service-suburb pages | **Done** | `app/[slug]/[suburb]/page.tsx`. 4 priority services × 160 suburbs. |
 | Areas hub | **Done** | `app/areas/page.tsx`. All 160 suburbs as clickable links, organised by region. |
 | GSC verification | **Done** | Verified via DNS method. Sitemap ready to submit. |
+| Quote form redesign | **Done** | Competitor-inspired 4-section layout (Your details, Vehicle, Additional details, Appointment). Service dropdown with 10 options, date picker, time-window radio cards. Supabase + Resend backend. Redirect-to-originating-page fix. See `components/QuoteForm.tsx`, `app/actions.ts`. |
 | Microsoft Clarity | Pending | Free heatmaps and session recordings. |
 | GA4 conversion events | Pending | Form submission, phone click, quote request events to configure in GA4 admin. |

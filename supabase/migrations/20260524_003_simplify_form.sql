@@ -14,7 +14,7 @@
 --   consent_privacy   boolean  -- whether they ticked the privacy consent
 --
 -- Apply via the Supabase SQL editor at:
---   https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg/sql/new
+--   https://supabase.com/dashboard/project/depduvjclelykqcnhlsm/sql/new
 -- ============================================================================
 
 alter table public.quote_submissions

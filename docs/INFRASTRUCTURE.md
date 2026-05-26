@@ -149,8 +149,8 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 
 | Variable | Value (Production) | Notes |
 |---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | `https://tzxaewbadjursnhsokmg.supabase.co` | Public — exposed in client bundle |
-| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_DPG1wxg-sCedbvZdxvSGAQ_hTj9q2m6` | Public anon key — security is RLS, not key secrecy |
+| `NEXT_PUBLIC_SUPABASE_URL` | `https://depduvjclelykqcnhlsm.supabase.co` | Public — exposed in client bundle |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr` | Public anon key — security is RLS, not key secrecy |
 | `RESEND_API_KEY` | `re_...` (real key) | Server-only — get from [resend.com/api-keys](https://resend.com/api-keys) |
 | `QUOTE_RECIPIENT_EMAIL` | `mymechanicqld@gmail.com` | Where quote notifications land |
 | `QUOTE_SENDER_EMAIL` | `onboarding@resend.dev` | Switch to `contact@mymechanicqld.com.au` once domain is verified at Resend |
@@ -168,9 +168,9 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 
 ## 6. Supabase
 
-**Project:** `tzxaewbadjursnhsokmg` (URL: `https://tzxaewbadjursnhsokmg.supabase.co`)
+**Project:** `depduvjclelykqcnhlsm` (URL: `https://depduvjclelykqcnhlsm.supabase.co`)
 
-**Dashboard:** [supabase.com/dashboard/project/tzxaewbadjursnhsokmg](https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg)
+**Dashboard:** [supabase.com/dashboard/project/depduvjclelykqcnhlsm](https://supabase.com/dashboard/project/depduvjclelykqcnhlsm)
 
 **Region:** Closest Supabase region to Sydney users (set at project creation).
 
@@ -184,7 +184,7 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 | [`20260517_002_crm_policies.sql`](../supabase/migrations/20260517_002_crm_policies.sql) | UPDATE / DELETE policies for the CRM dashboard + `updated_at` trigger | ✅ Applied |
 | [`20260524_003_simplify_form.sql`](../supabase/migrations/20260524_003_simplify_form.sql) | Adds `vehicle_rego` and `consent_privacy` columns to match the simplified form | ✅ Applied |
 
-**To apply a new migration:** paste the SQL into the [Supabase SQL editor](https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg/sql/new) and click Run. There is no CLI deploy step.
+**To apply a new migration:** paste the SQL into the [Supabase SQL editor](https://supabase.com/dashboard/project/depduvjclelykqcnhlsm/sql/new) and click Run. There is no CLI deploy step.
 
 ### Row-Level Security (RLS)
 
@@ -289,7 +289,7 @@ Instant. Doesn't require a new build.
 
 1. Add the SQL file to `supabase/migrations/` (filename: `YYYYMMDD_NNN_description.sql`)
 2. Commit and push
-3. Open [Supabase SQL editor](https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg/sql/new)
+3. Open [Supabase SQL editor](https://supabase.com/dashboard/project/depduvjclelykqcnhlsm/sql/new)
 4. Paste the SQL, click **Run**
 5. Update the migrations table in this doc
 

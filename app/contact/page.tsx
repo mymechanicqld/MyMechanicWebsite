@@ -110,17 +110,7 @@ export default async function ContactPage({
 
           {/* Right: form */}
           <div className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 lg:p-10">
-            <div className="mb-6">
-              <span className="eyebrow">Send us a quote request</span>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-2">
-                Tell us about your car.
-              </h2>
-              <p className="text-muted mt-2 text-[0.9375rem]">
-                The more detail you give us, the more accurate the quote. We come back during
-                business hours.
-              </p>
-            </div>
-            <QuoteForm submitted={!!submitted} />
+            <QuoteForm submitted={!!submitted} redirectTo="/contact/" />
           </div>
         </div>
       </section>

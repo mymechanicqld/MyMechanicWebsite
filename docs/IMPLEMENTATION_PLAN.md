@@ -150,7 +150,7 @@ The existing site already ranks for several of these slugs. We keep them as-is t
 4. **FAQ** — `FAQPage` schema.
 5. **Services hub** (`/services/`).
 6. **Areas hub** (`/areas/`).
-7. **Booking page** (`/book/`) — multi-step quote form, server action emails the owner.
+7. **Booking page** (`/book/`) — **[DONE]** Redesigned quote/booking form with 4 grouped sections (Your details, Vehicle, Additional details, Appointment). Service dropdown (10 options matching the 9 offered services + "Not sure"), car make, date picker, time-window radio cards. Same form component used on homepage (`/#quote`), `/book/`, and `/contact/`. Backend: server action parses all fields, inserts into Supabase `quote_submissions`, sends branded HTML notification email via Resend. Redirect-to-originating-page (whitelist-validated). Migration `20260526_004_form_redesign.sql` adds `preferred_date` column.
 8. **Privacy and T&Cs** — port existing copy, reformat.
 9. **404 and 500** — branded, with route suggestions.
 

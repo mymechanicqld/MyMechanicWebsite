@@ -50,8 +50,8 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Required env vars (`.env.local`)
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://tzxaewbadjursnhsokmg.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_DPG1wxg-sCedbvZdxvSGAQ_hTj9q2m6
+NEXT_PUBLIC_SUPABASE_URL=https://depduvjclelykqcnhlsm.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr
 RESEND_API_KEY=re_xxx                    # https://resend.com/api-keys
 QUOTE_RECIPIENT_EMAIL=gursahib99888@gmail.com
 QUOTE_SENDER_EMAIL=onboarding@resend.dev # switch to contact@mymechanicqld.com.au after domain verified
@@ -106,41 +106,68 @@ QUOTE_SENDER_EMAIL=onboarding@resend.dev # switch to contact@mymechanicqld.com.a
 
 ---
 
-## Quote-request pipeline
+## Booking-request pipeline
 
-The "Get a quote" form on every page submits via a Next.js server action that runs **two writes in parallel**:
+The booking form on every page (`/book/`, `/#quote`, `/contact/`) submits via a Next.js server action that runs **two writes in parallel**:
 
 1. **Supabase** — insert into `quote_submissions` table (permanent record, feeds the dashboard)
 2. **Resend** — branded HTML notification to `QUOTE_RECIPIENT_EMAIL` (currently **`mymechanicqld@gmail.com`**), with `Reply-To` set to the customer's email
 
 Failures in one path do not block the other. If both fail, the customer can still call.
 
-### Form fields
+### Form structure
 
-The public form mirrors the original mymechanicqld.com.au site exactly. All seven fields are required:
+The form (`components/QuoteForm.tsx`) has four grouped sections with icon headers, inspired by a competitor's booking layout but adapted to the My Mechanic QLD brand and quote-first business model.
 
-| # | Label             | Form name           | DB column         | Notes                                               |
-|---|-------------------|---------------------|-------------------|-----------------------------------------------------|
-| 1 | Name              | `name`              | `full_name`       | Full name, single line                              |
-| 2 | Phone number      | `phone`             | `phone`           | Free-text, `tel://` link in the email               |
-| 3 | Email             | `email`             | `email`           | Used as `Reply-To` on the notification email        |
-| 4 | Rego              | `rego`              | `vehicle_rego`    | Normalised to upper-case before storage             |
-| 5 | Suburb            | `suburb`            | `suburb`          |                                                     |
-| 6 | How can we help?  | `message`           | `symptoms`        | Free-text textarea — sometimes called "symptoms" in code for historical reasons |
-| 7 | Privacy consent   | `consent_privacy`   | `consent_privacy` | Checkbox. Sent as `"yes"`, coerced to boolean true  |
+**Section 1 — Your details** (required fields marked with \*)
 
-The server action (`app/actions.ts`) rejects any submission that's missing one of these or where `consent_privacy` is not true. Audit metadata (IP address, user-agent, source) is added server-side.
+| # | Label              | Form name           | DB column         | Notes                                               |
+|---|--------------------|---------------------|-------------------|-----------------------------------------------------|
+| 1 | Full Name \*       | `name`              | `full_name`       | Full name, single line                              |
+| 2 | Phone Number \*    | `phone`             | `phone`           | Free-text, `tel://` link in the email               |
+| 3 | Email \*           | `email`             | `email`           | Used as `Reply-To` on the notification email        |
+| 4 | Suburb \*          | `suburb`            | `suburb`          |                                                     |
 
-Legacy columns (`vehicle_make`, `vehicle_model`, `vehicle_year`, `service_needed`, `preferred_time`) remain in the table as nullable so historical rows still render in the dashboard, but no new form data populates them.
+**Section 2 — Vehicle**
+
+| # | Label                    | Form name         | DB column         | Notes                                               |
+|---|--------------------------|-------------------|-------------------|-----------------------------------------------------|
+| 5 | Car Make                 | `car_make`        | `vehicle_make`    | Optional. e.g. "Toyota Camry"                       |
+| 6 | Registration Number \*   | `rego`            | `vehicle_rego`    | Normalised to upper-case before storage             |
+| 7 | Service \*               | `service_needed`  | `service_needed`  | Dropdown with 10 options (9 services + "Not sure")  |
+
+**Section 3 — Additional details**
+
+| # | Label              | Form name  | DB column  | Notes                                                          |
+|---|--------------------|------------|------------|----------------------------------------------------------------|
+| 8 | (textarea)         | `message`  | `symptoms` | Optional. Free-text for extra detail about the car issue       |
+
+**Section 4 — Appointment**
+
+| # | Label              | Form name        | DB column        | Notes                                                     |
+|---|--------------------|------------------|------------------|-----------------------------------------------------------|
+| 9 | Date               | `preferred_date` | `preferred_date` | Optional. Native date picker, min = today (AEST)          |
+| 10| Preferred window   | `preferred_time` | `preferred_time` | Optional. 4 radio-button cards (Morning / Late morning / Afternoon / Late afternoon) |
+
+**Bottom**
+
+| # | Label              | Form name          | DB column          | Notes                                              |
+|---|--------------------|--------------------|--------------------|-----------------------------------------------------|
+| 11| Privacy consent \* | `consent_privacy`  | `consent_privacy`  | Checkbox. Sent as `"yes"`, coerced to boolean true  |
+
+A hidden `redirect_to` field sends the user back to the originating page after submission (validated against a whitelist to prevent open redirects).
+
+The server action (`app/actions.ts`) rejects any submission that's missing a required field or where `consent_privacy` is not true. Audit metadata (IP address, user-agent, source) is added server-side.
 
 ### One-time database setup
 
-The Supabase project is created and credentials are in `.env.local`. To apply the schema, open the [SQL editor](https://supabase.com/dashboard/project/tzxaewbadjursnhsokmg/sql/new) and run each migration in order:
+The Supabase project is created and credentials are in `.env.local`. To apply the schema, open the [SQL editor](https://supabase.com/dashboard/project/depduvjclelykqcnhlsm/sql/new) and run each migration in order:
 
 1. `supabase/migrations/20260517_001_quote_submissions.sql` — table, indexes, RLS
 2. `supabase/migrations/20260517_002_crm_policies.sql` — UPDATE/DELETE policies + `updated_at` trigger
-3. `supabase/migrations/20260524_003_simplify_form.sql` — adds `vehicle_rego` and `consent_privacy` columns to match the simplified form
-4. (Optional, for testing) `supabase/seed.sql` — 5 dummy inquiries
+3. `supabase/migrations/20260524_003_simplify_form.sql` — adds `vehicle_rego` and `consent_privacy` columns
+4. `supabase/migrations/20260526_004_form_redesign.sql` — adds `preferred_date` column for the appointment section
+5. (Optional, for testing) `supabase/seed.sql` — 5 dummy inquiries
 
 ### Email: domain verification
 
