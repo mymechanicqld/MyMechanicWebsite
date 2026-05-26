@@ -658,7 +658,7 @@ export default async function HomePage({
               Read more reviews on Google
             </a>
             <a
-              href="https://www.google.com/maps/place/My+Mechanic+Qld/@-27.6993955,153.0561455,17z/data=!4m8!3m7!1s0x2ad9c25f5ced039d:0x125bb19c4e239265!8m2!3d-27.6993955!4d153.0561455!9m1!1b1"
+              href="https://g.page/r/CSJT8_It4K0WEAE/review"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"
