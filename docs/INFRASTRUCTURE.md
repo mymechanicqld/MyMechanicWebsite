@@ -183,6 +183,7 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 | [`20260517_001_quote_submissions.sql`](../supabase/migrations/20260517_001_quote_submissions.sql) | Initial table + indexes + RLS (anon insert/select) | ✅ Applied |
 | [`20260517_002_crm_policies.sql`](../supabase/migrations/20260517_002_crm_policies.sql) | UPDATE / DELETE policies for the CRM dashboard + `updated_at` trigger | ✅ Applied |
 | [`20260524_003_simplify_form.sql`](../supabase/migrations/20260524_003_simplify_form.sql) | Adds `vehicle_rego` and `consent_privacy` columns to match the simplified form | ✅ Applied |
+| [`20260526_004_form_redesign.sql`](../supabase/migrations/20260526_004_form_redesign.sql) | Adds `preferred_date` column for the appointment section | ⏳ Pending |
 
 **To apply a new migration:** paste the SQL into the [Supabase SQL editor](https://supabase.com/dashboard/project/depduvjclelykqcnhlsm/sql/new) and click Run. There is no CLI deploy step.
 
@@ -199,8 +200,9 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 
 ### Columns (May 2026 schema)
 
-Current (post-2026-05-24 simplification, matches the public form):
-- `full_name`, `email`, `phone`, `vehicle_rego`, `suburb`, `symptoms`, `consent_privacy`
+Form fields (post-2026-05-26 redesign):
+- `full_name`, `email`, `phone`, `vehicle_rego`, `suburb`, `consent_privacy` (required)
+- `vehicle_make`, `service_needed`, `symptoms`, `preferred_date`, `preferred_time` (optional)
 
 Audit / server-populated:
 - `id`, `created_at`, `updated_at`, `ip_address`, `user_agent`, `source`
@@ -210,7 +212,7 @@ Operational:
 - `notes` (CRM-side notes)
 
 Legacy (nullable, retained for historical rows):
-- `vehicle_make`, `vehicle_model`, `vehicle_year`, `service_needed`, `preferred_time`
+- `vehicle_model`, `vehicle_year`
 
 ---
 
@@ -417,6 +419,10 @@ npx vercel redeploy --prod
 
 Significant infrastructure changes. Append new entries to the top.
 
+- **2026-05-26 — BreadcrumbList schema added to 10 pages.** About, contact, book, check-coverage, blog, faq, pricing, warranty, privacy-policy, terms-conditions. Every non-home page now has BreadcrumbList JSON-LD.
+- **2026-05-26 — Redirects fixed.** Blog redirect destination now has trailing slash. All 9 redirects duplicated with trailing-slash source variants (18 total) for `trailingSlash: true` compatibility.
+- **2026-05-26 — Navigation restructured.** Three separate nav tabs (Repairs, Servicing, Pre-Purchase) merged into a single "Services" mega-menu on desktop (`ServicesDropdown.tsx`). Mobile drawer redesigned with expanded services accordion, Explore/Why Us sections, portal-to-body fix for `backdrop-blur` containing block issue. Shared data layer in `lib/navigation.ts`.
+- **2026-05-26 — Booking form redesigned.** 4-section layout (Your details, Vehicle, Additional details, Appointment). Service dropdown with 10 options, car make, preferred date/time radio cards. Migration `004` adds `preferred_date` column.
 - **2026-05-26 — GA4 env var name tidied.** Fixed mismatch where `.env.example` documented `NEXT_PUBLIC_GA4_MEASUREMENT_ID` but `app/layout.tsx` was reading `NEXT_PUBLIC_GA_ID`. Standardised on `NEXT_PUBLIC_GA_ID`. GA4 tag (`G-6YSECEQTDG`) was already live on every page via the hard-coded fallback in layout.tsx.
 - **2026-05-26 — Vercel DNS recommendation applied.** Updated the `www` CNAME at VentraIP from `cname.vercel-dns.com` to the project-specific `4d49fe13d5422e6f.vercel-dns-017.com.` to use Vercel's expanded IP range.
 - **2026-05-26 — Domain connected.** Apex `mymechanicqld.com.au` A record pointed at `216.198.79.1`; `www` CNAME added; old hosting-provider A records removed at VentraIP. SSL auto-issued.

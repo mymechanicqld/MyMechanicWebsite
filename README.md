@@ -6,7 +6,7 @@ Production Next.js site for [mymechanicqld.com.au](https://www.mymechanicqld.com
 
 ## What's in here
 
-- **Public website** — 38 routes, Next.js App Router, fully prerendered
+- **Public website** — 843+ routes, Next.js App Router, fully prerendered
 - **Quote-request pipeline** — form → Supabase + Resend email (parallel writes)
 - **Operations dashboard** — standalone HTML, live Supabase reads, brand-styled
 - **AI-readable indexes** — `llms.txt` + `llms-full.txt` for citation in ChatGPT, Claude, Perplexity, Gemini
@@ -77,11 +77,13 @@ QUOTE_SENDER_EMAIL=onboarding@resend.dev # switch to contact@mymechanicqld.com.a
 │                                 /case-studies, /check-coverage, /how-it-works,
 │                                 /toyota-mechanic, /hilux-service, /mazda-service,
 │                                 /ford-ranger, /privacy-policy, /terms-conditions, /services
-├── components/                   Header, Footer, MobileDrawer, QuoteForm, CoverageChecker
+├── components/                   Header, Footer, MobileDrawer, ServicesDropdown,
+│                                 ServicesMobileAccordion, QuoteForm, CoverageChecker
 ├── content/
 │   ├── services/                 8 MDX files (brake-repairs, logbook-servicing, etc.)
 │   └── posts/                    11 blog post MDX files
 ├── lib/
+│   ├── navigation.ts             Shared nav data (service groups, plain nav items)
 │   ├── services.ts               MDX loader for service pages
 │   ├── posts.ts                  MDX loader for blog posts
 │   ├── supabase.ts               Supabase client (server-side)
@@ -284,22 +286,23 @@ Vercel dashboard → Deployments → find last known-good → `…` menu → **P
 |---|---|
 | Discovery + competitor crawl | ✅ Done |
 | Design system + concepts | ✅ Done |
-| Core pages (homepage, services, areas, etc.) | ✅ 38 routes live |
+| Core pages (homepage, services, areas, etc.) | ✅ 843+ routes live |
 | MDX content (8 services, 11 blog posts) | ✅ Published |
-| Technical SEO (schema, sitemap, robots, redirects) | ✅ Done |
+| Navigation restructure | ✅ Services mega-menu (desktop) + mobile drawer with portal |
+| Technical SEO (schema, sitemap, robots, redirects) | ✅ Done — BreadcrumbList on every non-home page |
 | AI optimisation (llms.txt, AI-crawler allows) | ✅ Done |
-| Quote form → Supabase + Resend | ✅ Wired, needs DB migration applied |
+| Quote form → Supabase + Resend | ✅ 4-section booking form with service dropdown + appointment |
 | Dashboard | ✅ Built |
 | Image compression | ✅ All heroes under 200 KB WebP |
 | Brand voice + claim audit | ✅ Done (no fabrications remaining) |
 | Mobile responsiveness | ✅ Tested 360 / 640 / 768 / 1024 / 1440 |
 | Vercel deploy config | ✅ `vercel.json` + `.env.example` + `DEPLOY.md` |
+| Production deploy | ✅ Live at mymechanicqld.com.au |
 | **Domain verification (Resend)** | ⏳ Owner action |
-| **Real Resend API key in `.env.local`** | ⏳ Owner action |
-| **GA4 + GSC credentials** | ⏳ Owner action |
 | **Google Business Profile claim** | ⏳ Owner action |
-| **Push to production** | ⏳ Ready when above is done |
+| **Microsoft Clarity** | ⏳ Free heatmaps and session recordings |
+| **GA4 conversion events** | ⏳ Form submission, phone click events |
 
 ---
 
-_Last updated: 2026-05-17_
+_Last updated: 2026-05-26_

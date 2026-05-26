@@ -43,27 +43,38 @@ Coverage anchors:
 
 ---
 
-## Site architecture: nav structure mirrors the competitor
+## Site architecture: navigation structure
 
-Auto King's nav (Home · Roadworthy Certificate · Pre Purchase Inspections · Repairs · Servicing · Contact · More) works for a reason. We adopt a similar shape, leaving out services we do not offer.
+### Top navigation (desktop)
 
-### Top navigation (final structure)
-
-| Item | URL | Contents |
+| Item | URL | Behaviour |
 |---|---|---|
-| Home | `/` | Homepage |
-| Repairs | `/services/` | Existing services hub. Surfaces brake repair, alternator and starter, radiator and water pump, steering and suspension, batteries, diagnostics, emergency. |
-| Servicing | `/servicing/` | Hub. Logbook servicing · General service |
-| Pre-Purchase Inspections | `/pre-purchase-inspection/` | Single service landing |
-| Locations | `/locations/` | Hub. Brisbane · Logan · Ipswich · Gold Coast, plus the suburb pages |
-| About | `/about/` | Owner story, qualifications, the team |
-| Contact | `/contact/` | Phone, email, hours, contact form |
+| Services | `/services/` | Hover opens a 3-column mega-menu (Repairs, Servicing & Inspections, Get Help). Click navigates to `/services/`. |
+| Locations | `/areas/` | Direct link |
+| About | `/about/` | Direct link |
+| Contact | `/contact/` | Direct link |
+| Get a quote | `/book/` | Primary CTA button (right side) |
+
+The mega-menu (`components/ServicesDropdown.tsx`) groups 9 services into 3 columns. Each service links directly to its landing page. The "Get Help" column includes a CTA card ("Not sure which service?") and a "View all services" link.
+
+### Mobile navigation
+
+Full-screen slide-in drawer (`components/MobileDrawer.tsx`) rendered via `createPortal` to escape the header's `backdrop-blur` containing block. Three sections:
+
+1. **Services** (expanded by default via `ServicesMobileAccordion.tsx`) — all 9 services grouped by category with icons and descriptions
+2. **Explore** — Locations, About, Contact with icon-labeled links
+3. **Why us** — 2-column grid: Pricing, Warranty, How it works, Coverage checker, FAQ, Blog
+
+Sticky CTA footer: "Get a quote" + phone number always visible.
+
+Navigation data is centralised in `lib/navigation.ts` (shared between desktop and mobile).
 
 ### Secondary navigation (footer + utility links)
 
-- Blog (`/blog/`) — accessed from the footer and from each service hub's sidebar.
-- FAQ (`/faq/`) — footer.
-- Book a service (`/book/`) — surfaces as the primary CTA in the header, not as a nav item.
+- Blog (`/blog/`) — footer and from service pages.
+- FAQ (`/faq/`) — footer and mobile drawer "Why us" section.
+- Book a service (`/book/`) — primary CTA button in header and mobile drawer footer.
+- Pricing, Warranty, How it works, Coverage checker — footer and mobile drawer.
 - Privacy policy and terms — footer only.
 
 ### Pillar / cluster model

@@ -78,22 +78,28 @@ For dynamic generation, Next.js supports `next/og` routes that render images on 
 
 ## Schema strategy by page type
 
-| Page type | Required schemas |
-|---|---|
-| Homepage | `LocalBusiness` (sitewide), `Organization`, `WebSite` with `SearchAction` |
-| Service page | `Service`, `FAQPage` (when FAQ present), `BreadcrumbList`, plus `LocalBusiness` reference |
-| Suburb page | `LocalBusiness` with `areaServed`, `BreadcrumbList` |
-| Service × suburb | All of the above |
-| Blog post | `BlogPosting`, `Person` (author), `BreadcrumbList` |
-| Pillar guide | `Article`, `BreadcrumbList` |
-| About | `AboutPage`, `Organization` |
-| Contact | `ContactPage`, `LocalBusiness` |
-| Pricing | `FAQPage`, optionally `PriceSpecification` per service |
-| How it works | `HowTo` with each step |
-| Warranty | `FAQPage` |
-| Reviews | `AggregateRating`, `Review` (only with real, verifiable reviews — never fabricate) |
+| Page type | Required schemas | Status |
+|---|---|---|
+| Homepage | `LocalBusiness` (sitewide), `Organization`, `WebSite` with `SearchAction` | ✅ |
+| Service page | `Service`, `FAQPage` (when FAQ present), `BreadcrumbList` | ✅ |
+| Suburb page | `LocalBusiness` with `areaServed`, `BreadcrumbList`, `FAQPage` | ✅ |
+| Service x suburb | `Service`, `BreadcrumbList`, `FAQPage` | ✅ |
+| Blog post | `BlogPosting`, `Person` (author), `BreadcrumbList` | ✅ |
+| Blog index | `BreadcrumbList` | ✅ |
+| About | `BreadcrumbList` | ✅ |
+| Contact | `BreadcrumbList` | ✅ |
+| Book | `BreadcrumbList` | ✅ |
+| Pricing | `FAQPage`, `BreadcrumbList` | ✅ |
+| How it works | `HowTo`, `FAQPage`, `BreadcrumbList` | ✅ |
+| Warranty | `FAQPage`, `BreadcrumbList` | ✅ |
+| FAQ | `FAQPage`, `BreadcrumbList` | ✅ |
+| Check coverage | `BreadcrumbList` | ✅ |
+| Privacy policy | `BreadcrumbList` | ✅ |
+| Terms and conditions | `BreadcrumbList` | ✅ |
+| Areas hub | `BreadcrumbList` | ✅ |
+| Services hub | `ItemList`, `BreadcrumbList` | ✅ |
 
-Every schema must validate cleanly in [Rich Results Test](https://search.google.com/test/rich-results). A failing schema is worse than no schema.
+**BreadcrumbList is now on every non-home page.** Every schema must validate cleanly in [Rich Results Test](https://search.google.com/test/rich-results). A failing schema is worse than no schema.
 
 ---
 

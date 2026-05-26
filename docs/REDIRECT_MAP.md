@@ -70,6 +70,13 @@ Before launch, every old URL in this table must either resolve (preserved) or 30
 | `/terms-conditions` | (same) | Preserved |
 | `/toowong` | `/areas/` | 301 — Suburb page (interim → /areas/) |
 
-## Future work
+## Current state (May 2026)
 
-Several redirects currently funnel into `/areas/` as an interim. When we build dedicated suburb pages (Stage 5 programmatic SEO), update this script's `KNOWN_PAGES` set and re-run to remove the interim redirects.
+Most suburb redirects have been **removed** because those suburbs now have dedicated landing pages (160 suburb pages built). The remaining redirects in `redirects.json` are:
+
+- **Region redirects**: `/brisbane/`, `/gold-coast/`, `/ipswich/`, `/logan/` all 301 to `/areas/`
+- **Slug fixes**: `/mt-gravatt` to `/mount-gravatt/`, `/Wynnum` to `/wynnum/`
+- **Legacy**: `/home-old` to `/`, `/redcliffe` to `/areas/`
+- **Blog**: `/does-a-mobile-logbook-service-void-your-new-car-warranty` to `/blog/does-a-mobile-logbook-service-void-your-new-car-warranty/`
+
+All redirects have both with-slash and without-slash source variants (18 entries total) for `trailingSlash: true` compatibility.

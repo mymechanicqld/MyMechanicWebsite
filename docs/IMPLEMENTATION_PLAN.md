@@ -44,11 +44,13 @@ Staged plan from discovery to launch and ongoing SEO. Every stage lists delivera
 
 **Goal:** Final URL structure, sitemap and wireframes for every page type. Mirrors the competitor's nav at the top level.
 
-**Final top navigation**
+**Final top navigation (desktop)**
 
 ```
-Home (logo)  ·  Repairs  ·  Servicing  ·  Pre-Purchase Inspections  ·  Locations  ·  About  ·  Contact   [Phone CTA]
+Home (logo)  ·  Services ▾  ·  Locations  ·  About  ·  Contact   [Get a quote CTA]
 ```
+
+"Services" opens a 3-column mega-menu on hover (Repairs, Servicing & Inspections, Get Help). Click navigates to `/services/`. Mobile uses a full-screen drawer with the same service groupings expanded by default. Navigation data centralised in `lib/navigation.ts`.
 
 **Final URL structure (preserve existing URLs from `mymechanicqld.com.au`)**
 
@@ -118,7 +120,7 @@ The existing site already ranks for several of these slugs. We keep them as-is t
 
 **Component inventory**
 
-`Header`, `MobileNav`, `Footer`, `Button`, `Section`, `EyebrowLabel`, `PriceAnchor`, `ServiceCard`, `SuburbCard`, `RegionCard`, `TestimonialQuote`, `FoundersNote`, `BookingForm`, `QuickQuoteForm`, `FAQAccordion`, `BlogCard`, `BreadcrumbTrail`, `CtaBanner`, `TrustStrip`, `LucideIcon`.
+`Header`, `MobileDrawer`, `ServicesDropdown`, `ServicesMobileAccordion`, `Footer`, `QuoteForm`, `CoverageChecker`, `SuburbPageContent`, plus shared UI patterns (buttons, sections, eyebrow labels, service cards, trust strips).
 
 **Acceptance:** Wireframes signed off. Sitemap finalised.
 
@@ -258,9 +260,9 @@ Programmatic, one per popular make: `/toyota-mechanic/`, `/mazda-service/`, `/fo
 
 1. ~~`sitemap.xml`, segmented (pages, services, suburbs, blog), submitted to GSC.~~ **[DONE]** `app/sitemap.ts` auto-discovers all pages at build time. Segments: static pages (17), service pages (8), suburb pages (160), service × suburb pages (640), blog index + posts. ~830 URLs total. Submit `https://www.mymechanicqld.com.au/sitemap.xml` in GSC.
 2. `robots.txt`, allow all, pointing to the sitemap.
-3. ~~**301 redirect map** from every URL on the existing Wix site to the new URL.~~ **[DONE]** `redirects.json` cleaned up. Removed 27 suburb-to-`/areas/` redirects that were destroying SEO equity (those suburbs now have dedicated pages). Kept region redirects (`/brisbane/`, `/logan/`, `/ipswich/`, `/gold-coast/` → `/areas/`). Added `/mt-gravatt` → `/mount-gravatt/` and `/Wynnum` → `/wynnum/` for slug/case fixes. `/redcliffe` → `/areas/` kept (owner deselected Redcliffe).
+3. ~~**301 redirect map** from every URL on the existing Wix site to the new URL.~~ **[DONE]** `redirects.json` cleaned up. Removed 27 suburb-to-`/areas/` redirects (those suburbs now have dedicated pages). Kept region redirects (`/brisbane/`, `/logan/`, `/ipswich/`, `/gold-coast/` → `/areas/`). Added `/mt-gravatt` → `/mount-gravatt/` and `/Wynnum` → `/wynnum/` for slug/case fixes. All redirects duplicated with trailing-slash source variants (18 entries total) for `trailingSlash: true` compatibility. Blog redirect destination fixed to include trailing slash.
 4. **Canonical URLs** on every page.
-5. ~~**JSON-LD coverage** as listed in [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md#schema-strategy).~~ **[DONE]** Site-wide `LocalBusiness`/`AutoRepair` + `WebSite` in `app/layout.tsx`. Per-page schemas: suburb pages get `LocalBusiness` + `BreadcrumbList` + `FAQPage`; service-suburb pages get `Service` + `BreadcrumbList` + `FAQPage`; areas hub gets `BreadcrumbList`.
+5. ~~**JSON-LD coverage** as listed in [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md#schema-strategy).~~ **[DONE]** Site-wide `LocalBusiness`/`AutoRepair` + `WebSite` in `app/layout.tsx`. `BreadcrumbList` on every non-home page (added May 2026 to 10 remaining pages: about, contact, book, check-coverage, blog, faq, pricing, warranty, privacy-policy, terms-conditions). Per-page schemas: suburb pages get `LocalBusiness` + `BreadcrumbList` + `FAQPage`; service-suburb pages get `Service` + `BreadcrumbList` + `FAQPage`; services hub gets `ItemList` + `BreadcrumbList`.
 6. **Open Graph and Twitter Card** on every page.
 7. **Google Search Console** verified (DNS method). Sitemap ready to submit.
 8. ~~**GA4** with conversion events.~~ **[DONE]** GA4 installed in `app/layout.tsx` via `next/script` with `afterInteractive` strategy. Measurement ID: `G-6YSECEQTDG` (configurable via `NEXT_PUBLIC_GA_ID` env var). Conversion events (form submission, phone click, quote request) to be configured in GA4 admin.

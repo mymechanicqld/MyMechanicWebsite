@@ -202,5 +202,8 @@ Currently underused on the live site. Every page should reach for at least one o
 | Areas hub | **Done** | `app/areas/page.tsx`. All 160 suburbs as clickable links, organised by region. |
 | GSC verification | **Done** | Verified via DNS method. Sitemap ready to submit. |
 | Quote form redesign | **Done** | Competitor-inspired 4-section layout (Your details, Vehicle, Additional details, Appointment). Service dropdown with 10 options, date picker, time-window radio cards. Supabase + Resend backend. Redirect-to-originating-page fix. See `components/QuoteForm.tsx`, `app/actions.ts`. |
+| Navigation restructure | **Done** | Three nav tabs (Repairs, Servicing, Pre-Purchase) merged into single "Services" mega-menu on desktop (`ServicesDropdown.tsx`). Mobile drawer redesigned with expanded services accordion, icon-labeled page links, "Why us" grid, portal-to-body fix. Shared data layer in `lib/navigation.ts`. |
+| BreadcrumbList schema | **Done** | Every non-home page now has BreadcrumbList JSON-LD. 10 pages added (about, contact, book, check-coverage, blog, faq, pricing, warranty, privacy-policy, terms-conditions). |
+| Redirect trailing-slash fix | **Done** | All redirects duplicated with trailing-slash source variants (18 total). Blog redirect destination fixed to include trailing slash. |
 | Microsoft Clarity | Pending | Free heatmaps and session recordings. |
 | GA4 conversion events | Pending | Form submission, phone click, quote request events to configure in GA4 admin. |
