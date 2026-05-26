@@ -159,7 +159,7 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 
 | Variable | Value | Notes |
 |---|---|---|
-| `NEXT_PUBLIC_GA4_MEASUREMENT_ID` | *(blank or `G-...`)* | Get from [analytics.google.com](https://analytics.google.com) Admin → Data Streams |
+| `NEXT_PUBLIC_GA_ID` | `G-6YSECEQTDG` | GA4 Measurement ID. **Also hard-coded as fallback** in `app/layout.tsx` so the tag still fires if this var is unset. Get from [analytics.google.com](https://analytics.google.com) Admin → Data Streams |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | *(blank or token)* | Google Search Console verification meta tag content |
 
 **Reference template:** [`.env.example`](../.env.example) is the source of truth for what every variable does.
@@ -417,6 +417,7 @@ npx vercel redeploy --prod
 
 Significant infrastructure changes. Append new entries to the top.
 
+- **2026-05-26 — GA4 env var name tidied.** Fixed mismatch where `.env.example` documented `NEXT_PUBLIC_GA4_MEASUREMENT_ID` but `app/layout.tsx` was reading `NEXT_PUBLIC_GA_ID`. Standardised on `NEXT_PUBLIC_GA_ID`. GA4 tag (`G-6YSECEQTDG`) was already live on every page via the hard-coded fallback in layout.tsx.
 - **2026-05-26 — Vercel DNS recommendation applied.** Updated the `www` CNAME at VentraIP from `cname.vercel-dns.com` to the project-specific `4d49fe13d5422e6f.vercel-dns-017.com.` to use Vercel's expanded IP range.
 - **2026-05-26 — Domain connected.** Apex `mymechanicqld.com.au` A record pointed at `216.198.79.1`; `www` CNAME added; old hosting-provider A records removed at VentraIP. SSL auto-issued.
 - **2026-05-25 — Repo split.** Created `mymechanicqld/MyMechanicWebsite` as the primary repo; admin tools (`tools/`, `dashboard/`, `concepts/`, `.claude/`) moved to `.gitignore` to keep the website repo focused.

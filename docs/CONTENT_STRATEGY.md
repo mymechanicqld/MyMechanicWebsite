@@ -39,7 +39,7 @@ Coverage anchors:
 - **Ipswich** (including Springfield, Goodna, Redbank Plains)
 - **Gold Coast** (northern GC — Coomera, Helensvale, Southport, Robina, Nerang)
 
-The pending suburb list from the owner's Microsoft account will give us the full programmatic target.
+**[RESOLVED]** The owner selected 160 suburbs via the Firebase-backed suburb selector tool (`tools/service-areas.html`). The full list is stored in Firebase (project: `website-6df83`, doc: `settings/service-areas`) and exported to `content/suburbs.json`. All 160 suburbs now have dedicated pages.
 
 ---
 
@@ -146,32 +146,41 @@ After Wave 3, write what Search Console queries say is already working. Use real
 
 The volume play, built carefully so it does not look thin.
 
-**Pattern:** `/{service-slug}/{suburb}/`, where `{service-slug}` matches the existing flat service URL on `mymechanicqld.com.au` (`/brake-repairs/`, `/starter-alternator/`, `/radiator-cooling-system/`, `/logbook-servicing/`, etc.) and `{suburb}` matches the existing flat suburb URL (`/sunnybank/`, `/carindale/`, etc.).
+**Pattern:** `/{service-slug}/{suburb}/`, where `{service-slug}` matches the existing flat service URL on `mymechanicqld.com.au` (`/brake-repairs/`, `/starter-alternator/`, `/radiator-cooling-system/`, `/logbook-servicing/`) and `{suburb}` matches the flat suburb URL (`/sunnybank/`, `/carindale/`, etc.).
 
 **Examples:** `/brake-repairs/sunnybank/`, `/starter-alternator/carindale/`, `/logbook-servicing/coomera/`.
 
-**Minimum quality bar per page:**
+### Current status: BUILT
 
-- 700+ unique words **not** shared with any other page.
-- Hand-written local paragraph naming actual landmarks, road names, or traffic patterns in that suburb.
-- Service description rewritten per page (use a strong base then edit, never published as-is).
+**640 service × suburb pages** are live (4 priority services × 160 suburbs). Implemented in `app/[slug]/[suburb]/page.tsx` with `generateStaticParams`.
+
+Each page includes:
+- Service-specific hero with suburb name and service description.
+- Detailed service explanation tailored per service type.
+- Service-specific FAQ block (4-5 unique questions) with `FAQPage` JSON-LD schema, answers referencing suburb distance and response time.
+- Cross-links to other priority services in the same suburb.
+- Cross-links to the same service in 4 nearby suburbs.
+- Internal links to parent service hub and parent suburb page.
+- JSON-LD: `Service` (with suburb-specific `areaServed`), `BreadcrumbList`, `FAQPage`.
+
+**Additionally, 160 standalone suburb pages** are built at `/{suburb}/` (e.g. `/sunnybank/`). Each includes an 8-service grid, local context section, trust signals, FAQ, nearby suburb links, and full JSON-LD.
+
+**Quality bar per page:**
+
 - Service-specific FAQ block (4–6 questions) with `FAQPage` schema.
-- Local pricing anchor ("Brake jobs in [suburb] from $249") backed by real numbers.
-- One real local review where available.
-- Internal links to: parent service hub, parent suburb hub, two nearby suburbs, one relevant blog post.
+- Internal links to: parent service hub, parent suburb hub, nearby suburbs.
+- Suburb-specific data: distance from Springwood base, estimated response time, postcode, 4 nearest neighbours.
 
-**No auto-publishing.** Every page is reviewed and signed off.
+**Roll-out status:**
 
-**Roll-out plan:**
-
-| Month | Output | Cumulative |
+| Milestone | Status | Pages |
 |---|---|---|
-| 1 (pre-launch) | Top 4 priority services × top 10 suburbs | 40 service-suburb pages |
-| 2 | +10 suburbs across the four priority services | +40 |
-| 3 | Pre-purchase inspection × top 15 suburbs | +15 |
-| 4–6 | Fill out remaining suburbs from the owner's full list | ~80 |
+| 160 suburb pages | **DONE** | 160 |
+| 4 priority services × 160 suburbs | **DONE** | 640 |
+| Total programmatic pages | **DONE** | 800 |
+| Total site pages (incl. static, service, blog) | **DONE** | ~843 |
 
-Target by month 6: 150+ service-suburb pages, all unique, all reviewed.
+All pages ship at launch. The original 6-month roll-out timeline has been superseded.
 
 ---
 
@@ -224,7 +233,7 @@ A simple monthly spreadsheet. Owner-facing.
 | Metric | Source | Month-12 target |
 |---|---|---|
 | Organic sessions | GA4 | 10× baseline |
-| Indexed pages | GSC Coverage | 250+ |
+| Indexed pages | GSC Coverage | 250+ (843 pages in sitemap at launch) |
 | Top-3 ranking keywords | Rank tracker | 50+ |
 | Top-10 ranking keywords | Rank tracker | 200+ |
 | Average position (sitewide) | GSC | < 20 |

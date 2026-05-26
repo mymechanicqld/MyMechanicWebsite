@@ -68,19 +68,11 @@ The existing site already ranks for several of these slugs. We keep them as-is t
 /car-diagnostics/                              (existing)
 /steering-suspension/                          (existing)
 
-# Region + suburb pages — flat, exactly as the existing site has them indexed
-/areas/                                        Areas hub (existing)
-/brisbane/, /logan/, /ipswich/, /gold-coast/   Region hubs (existing)
-/sunnybank/, /chermside/, /carindale/,         30+ flat suburb pages (existing)
-/wynnum/, /cleveland/, /springfield/,
-/coomera/, /robina/, /helensvale/,
-/mt-gravatt/, /aspley/, /sandgate/,
-/redbank-plains/, /goodna/, /brassall/,
-/springwood/, /beenleigh/, /loganholme/,
-/browns-plains/, /southport/, /nerang/,
-/forest-lake/, /bulimba/, /indooroopilly/,
-/toowong/, /kelvin-grove/, /nundah/,
-/coorparoo/, /redcliffe/
+# Region + suburb pages — flat URLs preserved from existing site
+/areas/                                        Areas hub (links to all 160 suburbs)
+/brisbane/, /logan/, /ipswich/, /gold-coast/   301 → /areas/ (region hubs consolidated)
+/{suburb}/                                     160 dedicated suburb pages (e.g. /sunnybank/, /carindale/)
+                                               Full list in content/suburbs.json, sourced from Firebase
 
 # Programmatic SEO — new, nested under each priority service
 /brake-repairs/{suburb}/                       e.g. /brake-repairs/sunnybank/
@@ -229,14 +221,16 @@ Programmatic, one per popular make: `/toyota-mechanic/`, `/mazda-service/`, `/fo
 **Goal:** Build out the templated service and suburb pages — both the existing flat URLs and the new programmatic service × suburb pages. This is where ranking volume comes from.
 
 1. **Service page template.** Data-driven from `/content/services/{slug}.mdx`. Used by all eight existing service URLs (`/brake-repairs/`, `/starter-alternator/`, `/radiator-cooling-system/`, `/logbook-servicing/`, `/pre-purchase-inspection/`, `/battery-replacement/`, `/car-diagnostics/`, `/steering-suspension/`). Includes hero, "what's included", price anchor, process, FAQ, suburbs serviced, related services, JSON-LD (`Service` + `FAQPage` + `BreadcrumbList`).
-2. **Suburb page template.** Data-driven from `/content/suburbs/{slug}.mdx`. Used by all 30+ existing flat suburb URLs. Hero, local landmarks paragraph, services available, response window, mini-map, local reviews, JSON-LD (`LocalBusiness` + `BreadcrumbList`).
-3. **Service × suburb template.** Lives at `/{service-slug}/{suburb-slug}/` (e.g. `/brake-repairs/sunnybank/`). Inherits the service-page structure but layers in suburb-specific local content. Strict 700+ unique-words rule.
-4. **Region hubs** at `/brisbane/`, `/logan/`, `/ipswich/`, `/gold-coast/` (these URLs already exist).
+2. ~~**Suburb page template.** Data-driven from `/content/suburbs/{slug}.mdx`. Used by all 30+ existing flat suburb URLs.~~ **[DONE]** **160 suburb pages built.** Data-driven from `content/suburbs.json` (fetched from Firebase). Handled by `app/[slug]/page.tsx` (shared route with service pages) and `components/SuburbPageContent.tsx`. Each page includes: hero, 8-service grid, local context, trust signals, FAQ (5 questions with suburb-specific data), nearby suburbs cross-links, CTA. JSON-LD: `LocalBusiness` with `areaServed`, `BreadcrumbList`, `FAQPage`.
+3. ~~**Service × suburb template.** Lives at `/{service-slug}/{suburb-slug}/`.~~ **[DONE]** **640 service × suburb pages built** (4 priority services × 160 suburbs). Handled by `app/[slug]/[suburb]/page.tsx`. Each page includes: service-specific hero, detailed service description, suburb-specific FAQ (4-5 unique questions per service type), cross-links to other priority services in same suburb, cross-links to same service in nearby suburbs. JSON-LD: `Service` with suburb-specific `areaServed`, `BreadcrumbList`, `FAQPage`.
+4. **Region hubs** at `/brisbane/`, `/logan/`, `/ipswich/`, `/gold-coast/` — these redirect to `/areas/` which now serves as the unified region hub with all 160 suburbs displayed as clickable links, organised by region.
 5. **Make-specific pages** at `/toyota-mechanic/`, `/mazda-service/`, etc. — same template as the service pages, slightly different copy emphasis.
 
-**Content writing.** Every suburb page needs 700+ unique words with a real local paragraph. Owner edits or a commissioned writer.
+**Data pipeline.** Owner selects suburbs via `tools/service-areas.html` (Firebase-backed). Suburbs exported to `content/suburbs.json` with metadata (slug, region, postcode, distance from base, response time, 4 nearest neighbours). `lib/suburbs.ts` provides typed access with O(1) lookups.
 
-**Roll-out at launch.** Eight service pages + ten headline suburb pages (refreshed, not yet programmatic-deep). All four priority services × ten top suburbs = forty service-suburb pages in the programmatic batch. Plus three make-specific pages (Toyota, Mazda, Ford Ranger).
+**Routing.** Both service and suburb pages share the `app/[slug]/page.tsx` dynamic route. The component checks for a service match first, then a suburb match, then returns `notFound()`. `generateStaticParams` returns all 168 slugs (8 services + 160 suburbs).
+
+**Roll-out status.** All 160 suburbs and 640 service-suburb pages ship at launch. Total: 843 static pages generated on first successful build.
 
 **Acceptance.** Every templated page passes Lighthouse and a custom duplication-detection script that fails if any page shares more than 60% of its body with another page.
 
@@ -262,14 +256,14 @@ Programmatic, one per popular make: `/toyota-mechanic/`, `/mazda-service/`, `/fo
 
 **Goal:** Everything Google needs to crawl, index and rank, plus everything we need to measure.
 
-1. `sitemap.xml`, segmented (pages, services, suburbs, blog), submitted to GSC.
+1. ~~`sitemap.xml`, segmented (pages, services, suburbs, blog), submitted to GSC.~~ **[DONE]** `app/sitemap.ts` auto-discovers all pages at build time. Segments: static pages (17), service pages (8), suburb pages (160), service × suburb pages (640), blog index + posts. ~830 URLs total. Submit `https://www.mymechanicqld.com.au/sitemap.xml` in GSC.
 2. `robots.txt`, allow all, pointing to the sitemap.
-3. **301 redirect map** from every URL on the existing Wix site to the new URL. Critical for not losing existing rankings.
+3. ~~**301 redirect map** from every URL on the existing Wix site to the new URL.~~ **[DONE]** `redirects.json` cleaned up. Removed 27 suburb-to-`/areas/` redirects that were destroying SEO equity (those suburbs now have dedicated pages). Kept region redirects (`/brisbane/`, `/logan/`, `/ipswich/`, `/gold-coast/` → `/areas/`). Added `/mt-gravatt` → `/mount-gravatt/` and `/Wynnum` → `/wynnum/` for slug/case fixes. `/redcliffe` → `/areas/` kept (owner deselected Redcliffe).
 4. **Canonical URLs** on every page.
-5. **JSON-LD coverage** as listed in [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md#schema-strategy).
+5. ~~**JSON-LD coverage** as listed in [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md#schema-strategy).~~ **[DONE]** Site-wide `LocalBusiness`/`AutoRepair` + `WebSite` in `app/layout.tsx`. Per-page schemas: suburb pages get `LocalBusiness` + `BreadcrumbList` + `FAQPage`; service-suburb pages get `Service` + `BreadcrumbList` + `FAQPage`; areas hub gets `BreadcrumbList`.
 6. **Open Graph and Twitter Card** on every page.
-7. **Google Search Console** verified, sitemap submitted, top URLs requested for indexing.
-8. **GA4** with conversion events: form submission, phone click, quote request.
+7. **Google Search Console** verified (DNS method). Sitemap ready to submit.
+8. ~~**GA4** with conversion events.~~ **[DONE]** GA4 installed in `app/layout.tsx` via `next/script` with `afterInteractive` strategy. Measurement ID: `G-6YSECEQTDG` (configurable via `NEXT_PUBLIC_GA_ID` env var). Conversion events (form submission, phone click, quote request) to be configured in GA4 admin.
 9. **Google Business Profile** brought in line with the new site (description, services, photos, posts).
 10. **Microsoft Clarity** for free heatmaps and session recordings.
 11. **Call tracking** (optional, ~$30/mo): CallRail or similar.

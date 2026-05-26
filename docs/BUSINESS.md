@@ -38,7 +38,7 @@ That radius reaches:
 - South to Coomera, Helensvale, Nerang, Robina, Southport
 - Within: all of Logan (Springwood, Beenleigh, Browns Plains, Loganholme), Mt Gravatt, Sunnybank, Carindale, Bulimba, Coorparoo, Toowong, Indooroopilly, Kelvin Grove, Forest Lake
 
-**Pending suburb list:** the owner has a full target-suburb list in his Microsoft account. We need access to extract every suburb name we want to rank for. He noted suburb names change every 3 to 4 km in his coverage area, so the list is long. _Action: request the file or paste of suburbs to use as a programmatic SEO seed list._
+**[RESOLVED] Full suburb list confirmed.** The owner selected 160 suburbs across 4 regions via the Firebase-backed suburb selector tool (`tools/service-areas.html`). Data is stored in Firebase (project: `website-6df83`, document: `settings/service-areas`) and exported to `content/suburbs.json`. Each suburb entry includes: slug, name, region, postcode, distance from Springwood base, estimated response time, and 4 nearest neighbours. All 160 suburbs now have dedicated landing pages, and 640 service × suburb pages are built (4 priority services × 160 suburbs).
 
 ## 4. Services we provide
 
@@ -176,11 +176,30 @@ Currently underused on the live site. Every page should reach for at least one o
 
 ## 12. Outstanding items needing the owner
 
-1. Full target-suburb list from his Microsoft account. He flagged this is long because suburb names change every 3–4 km in his radius.
+1. ~~Full target-suburb list from his Microsoft account.~~ **[RESOLVED]** Owner selected 160 suburbs via Firebase tool. Exported to `content/suburbs.json`.
 2. Founding year.
 3. Owner name and short bio for the About page and blog bylines.
 4. Photo of the owner (head-and-shoulders, navy work shirt, plus one wider shot beside his van).
-5. Current Google review count and average rating (we will pull from the live GBP).
+5. Current Google review count and average rating (we will pull from the live GBP). Needed to uncomment `aggregateRating` in `app/layout.tsx` JSON-LD schema.
 6. Indicative starting prices for the four priority services (used as price anchors on the service pages).
 7. Preferred parts brands to name on the site.
 8. Public liability cover amount and any industry memberships (MTAQ, IAME, etc.).
+9. Facebook and Google Maps profile URLs. Needed to uncomment `sameAs` in `app/layout.tsx` JSON-LD schema.
+
+## 13. Technical infrastructure completed
+
+| Item | Status | Details |
+|---|---|---|
+| GA4 tracking | **Done** | Measurement ID `G-6YSECEQTDG` in `app/layout.tsx`. Configurable via `NEXT_PUBLIC_GA_ID` env var. |
+| Sitemap | **Done** | `app/sitemap.ts` auto-generates ~830 URLs (static + services + suburbs + service-suburb + blog). |
+| JSON-LD (site-wide) | **Done** | `LocalBusiness`/`AutoRepair` + `WebSite` with `SearchAction` in `app/layout.tsx`. |
+| JSON-LD (per page) | **Done** | Suburb pages: `LocalBusiness` + `BreadcrumbList` + `FAQPage`. Service-suburb: `Service` + `BreadcrumbList` + `FAQPage`. Areas hub: `BreadcrumbList`. |
+| 301 redirects | **Done** | `redirects.json` cleaned. Removed 27 suburb→/areas/ redirects (suburbs now have pages). Added slug/case fixes. |
+| Suburb selector tool | **Done** | `tools/service-areas.html`. Firebase-backed, two-tab UI (edit + saved view). |
+| Suburb data pipeline | **Done** | Firebase → `content/suburbs.json` → `lib/suburbs.ts` (typed, O(1) lookups). |
+| 160 suburb pages | **Done** | `app/[slug]/page.tsx` + `components/SuburbPageContent.tsx`. |
+| 640 service-suburb pages | **Done** | `app/[slug]/[suburb]/page.tsx`. 4 priority services × 160 suburbs. |
+| Areas hub | **Done** | `app/areas/page.tsx`. All 160 suburbs as clickable links, organised by region. |
+| GSC verification | **Done** | Verified via DNS method. Sitemap ready to submit. |
+| Microsoft Clarity | Pending | Free heatmaps and session recordings. |
+| GA4 conversion events | Pending | Form submission, phone click, quote request events to configure in GA4 admin. |
