@@ -129,3 +129,200 @@
     text-wrap: balance;
   }
 }
+
+/* ── Scroll-reveal animations ───────────────────────────────────────── */
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Pre-reveal state: hidden until Intersection Observer fires */
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Honour prefers-reduced-motion: skip the hidden state entirely */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; }
+  .reveal.is-visible { animation: none !important; }
+}
+
+.reveal.is-visible {
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal--up.is-visible    { animation-name: reveal-up; }
+.reveal--fade.is-visible  { animation-name: reveal-in; }
+.reveal--scale.is-visible { animation-name: reveal-scale; }
+
+/* ── Card hover micro-interactions ──────────────────────────────────── */
+
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 30px rgba(30, 58, 138, 0.10),
+    0 2px 8px rgba(12, 10, 9, 0.05);
+}
+
+/* Icon lift + colour pop inside hovered cards */
+.card-icon {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.35s ease,
+              color 0.35s ease;
+}
+.card-hover:hover .card-icon {
+  transform: translateY(-3px) scale(1.08);
+  background-color: #1E3A8A;
+  color: #fff;
+}
+
+/* Accent arrow nudge inside hovered cards */
+.card-hover:hover .card-arrow {
+  transform: translateX(3px);
+}
+.card-arrow {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Region / list-row hover */
+.row-hover {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+}
+.row-hover:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(30, 58, 138, 0.06);
+}
+
+/* FAQ accordion hover */
+.faq-hover {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease;
+}
+.faq-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.06);
+}
+
+/* ── Trust strip marquee ──────────────────────────────────────────────── */
+
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── CTA shimmer sweep ────────────────────────────────────────────────── */
+
+@keyframes shimmer-sweep {
+  0%, 60%  { transform: translateX(-100%); }
+  100%     { transform: translateX(350%); }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  animation: shimmer-sweep 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Step number pulse ring ───────────────────────────────────────────── */
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.step-pulse {
+  position: relative;
+}
+.step-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: rgba(30, 58, 138, 0.1);
+  animation: pulse-ring 2.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  pointer-events: none;
+}
+
+/* ── Icon gentle float ────────────────────────────────────────────────── */
+
+@keyframes gentle-float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -5px; }
+}
+
+.icon-float {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+/* Pause float when parent card is hovered (card-hover takes over) */
+.card-hover:hover .icon-float {
+  animation-play-state: paused;
+}
+
+/* ── Quote form subtle glow ───────────────────────────────────────────── */
+
+@keyframes subtle-glow {
+  0%, 100% { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); }
+  50%      { box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04); }
+}
+
+.form-glow {
+  animation: subtle-glow 4s ease-in-out infinite;
+}
+
+/* ── Reduced motion: disable all continuous animations ────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .btn-shimmer::after,
+  .step-pulse::before,
+  .icon-float,
+  .form-glow {
+    animation: none !important;
+  }
+}
