@@ -152,7 +152,7 @@ const CATEGORIES: FaqCategory[] = [
       },
       {
         q: 'Are you qualified and insured?',
-        a: 'Yes. We work with qualified mechanics with dealership-trained experience, and we carry public liability and tools-in-transit insurance.',
+        a: 'Yes. Our mechanics are fully qualified with years of hands-on experience across all common makes and models. We carry public liability and tools-in-transit insurance.',
       },
       {
         q: 'Can you do everything a workshop can do?',

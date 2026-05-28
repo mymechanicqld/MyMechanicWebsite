@@ -42,14 +42,14 @@ const SERVICES = [
   {
     slug: 'radiator-cooling-system',
     title: 'Radiator and cooling system',
-    desc: 'Overheating in traffic or losing coolant? Pressure test, diagnose and fix at your location.',
+    desc: 'Overheating or losing coolant? Pressure test, diagnose and fix at your location.',
     image: '/images/service-radiator.webp',
     alt: 'Mechanic performing a cooling system pressure test with gauge',
   },
   {
     slug: 'logbook-servicing',
-    title: 'Logbook servicing',
-    desc: 'Manufacturer-spec service using quality parts. Warranty-safe under Australian Consumer Law.',
+    title: 'Services and maintenance',
+    desc: 'Manufacturer-spec servicing using OEM-quality parts. Warranty-safe under Australian Consumer Law.',
     image: '/images/service-logbook.webp',
     alt: 'Oil being poured during a logbook service with Penrite and Ryco products visible',
   },
@@ -110,7 +110,7 @@ const WHY_US = [
   {
     Icon: Award,
     title: '15+ years in the trade',
-    body: 'Dealership-trained mechanics who have seen every common make and model on Australian roads.',
+    body: 'Experienced mechanics who have worked on every common make and model on Australian roads.',
   },
   {
     Icon: DollarSign,
@@ -125,7 +125,7 @@ const WHY_US = [
   {
     Icon: Truck,
     title: 'We come to you',
-    body: 'Home, office or kerbside. The van is the workshop, fully equipped with diagnostic tools and proper parts.',
+    body: 'Home, office or kerbside. The van is the workshop, fully equipped with diagnostic tools and OEM-quality parts.',
   },
 ] as const
 
@@ -142,8 +142,8 @@ const STEPS = [
   },
   {
     n: 3,
-    title: 'Sorted and signed off',
-    body: 'We walk you through the work, hand over an itemised invoice and you pay by tap, transfer or invoice.',
+    title: 'Back on the road',
+    body: 'We walk you through what was done and make sure everything runs right. You are back on the road with full confidence.',
   },
 ] as const
 
@@ -202,11 +202,11 @@ export default async function HomePage({
           <Reveal variant="up" duration={0.8}>
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tighter">
-                Mobile mechanic Brisbane.<br />
+                Your mobile mechanic.<br />
                 <span className="text-accent-bright">We come to you.</span>
               </h1>
               <p className="text-lg text-white/80 mt-5 max-w-[48ch] leading-relaxed">
-                Qualified mechanics with 15+ years of dealership experience, now mobile across Brisbane and surrounding areas. Fixed-price quotes before we start.
+                Experienced mechanics with 15+ years in the trade, now fully mobile across Brisbane, Logan, Ipswich and the Gold Coast. Fixed-price quotes before we start.
               </p>
 
               {/* Trust badges */}
@@ -285,7 +285,7 @@ export default async function HomePage({
               </h2>
               <p className="lead mx-auto mt-4">
                 Four core services that account for most of our work. Each one done on-site,
-                with proper parts, by qualified mechanics.
+                with OEM-quality parts, by experienced mechanics.
               </p>
             </div>
           </Reveal>
@@ -391,13 +391,13 @@ export default async function HomePage({
                 Buying a used car? Get it checked first.
               </h2>
               <p className="text-[1.0625rem] text-muted leading-relaxed mb-4">
-                We inspect the car at the seller's location before you hand over any money.
-                You get a detailed written report covering the engine, brakes, suspension,
-                electrics and body condition.
+                Before you commit to buying a used car, get an independent inspection.
+                You receive a detailed written report covering the engine, brakes, suspension
+                and body condition.
               </p>
               <p className="text-[1.0625rem] text-muted leading-relaxed mb-6">
-                If something is wrong, we tell you what it will cost to fix. Honest advice
-                so you can make a smart decision.
+                The report highlights what needs attention now and what to budget for later,
+                so you can make an informed decision with confidence.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/book/" className="btn btn-primary">

@@ -1,11 +1,11 @@
 'use client'
 
-import { Award, ShieldCheck, Truck, Star } from 'lucide-react'
+import { Award, ShieldCheck, CreditCard, Star } from 'lucide-react'
 
 const ITEMS = [
   { Icon: Award, text: '15+ years in the trade' },
   { Icon: ShieldCheck, text: 'Warranty-safe servicing' },
-  { Icon: Truck, text: 'Fully mobile across SEQ' },
+  { Icon: CreditCard, text: 'Afterpay available' },
   { Icon: Star, text: 'Highly rated on Google' },
 ] as const
 
@@ -19,7 +19,7 @@ export default function TrustMarquee() {
     <div
       className="bg-surface border-b border-hairline py-3.5 overflow-hidden"
       role="marquee"
-      aria-label="15+ years in the trade, warranty-safe servicing, fully mobile across SEQ, highly rated on Google"
+      aria-label="15+ years in the trade, warranty-safe servicing, Afterpay available, highly rated on Google"
     >
       <div className="marquee-track">
         {all.map(({ Icon, text }, i) => (

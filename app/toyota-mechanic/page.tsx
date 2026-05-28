@@ -277,7 +277,7 @@ export default function ToyotaMechanicPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
             {[
-              { Icon: Wrench, title: 'Dealership-trained mechanic', body: 'Years of dealership-workshop experience before going mobile.' },
+              { Icon: Wrench, title: 'Experienced mechanic', body: 'Years of hands-on experience across Toyota models before going mobile.' },
               { Icon: ShieldCheck, title: 'Genuine or OEM-spec parts', body: 'OEM or quality aftermarket parts and fluids that meet or exceed Toyota Genuine specifications.' },
               { Icon: Check, title: 'Warranty-safe servicing', body: 'Manufacturer-spec logbook stamping so your new-car warranty stays intact, as protected by Australian Consumer Law consumer guarantees.' },
               { Icon: Gauge, title: 'Fixed-price quotes', body: 'In writing before any work begins. No surprise additions on the invoice.' },
