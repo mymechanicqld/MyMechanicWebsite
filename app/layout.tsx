@@ -10,6 +10,11 @@ import './globals.css'
 // Admin > Data Streams > Web > Measurement ID (starts with G-)
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-6YSECEQTDG'
 
+// ── Google Ads ────────────────────────────────────────────────────────
+// Conversion-tracking tag from Google Ads (starts with AW-). Runs off the
+// same gtag.js instance as GA4 — we just register a second `config` ID.
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17575487896'
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -373,7 +378,8 @@ export default function RootLayout({
                 gtag('js', new Date());
                 gtag('config', '${GA_MEASUREMENT_ID}', {
                   page_path: window.location.pathname,
-                });`}
+                });
+                gtag('config', '${GOOGLE_ADS_ID}');`}
             </Script>
           </>
         )}
