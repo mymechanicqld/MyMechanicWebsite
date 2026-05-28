@@ -17,7 +17,7 @@ import { submitQuoteAction } from '@/app/actions'
  *   1. Your details    — name, phone, email, suburb
  *   2. Vehicle         — car make, rego, service dropdown
  *   3. Additional details — optional free-text message
- *   4. Appointment     — preferred date + time-window radio cards
+ *   4. Appointment     — preferred date picker
  *
  * On submit, `submitQuoteAction` (server action) writes to Supabase and
  * fires a notification email via Resend. The same submission lands in
@@ -38,13 +38,6 @@ const SERVICES = [
   { value: 'steering-suspension', label: 'Steering and suspension' },
   { value: 'emergency-breakdown', label: 'Emergency / breakdown' },
   { value: 'not-sure', label: 'Not sure / general enquiry' },
-]
-
-const TIME_WINDOWS = [
-  { value: '7am-10am', label: 'Morning', sub: '7am - 10am' },
-  { value: '10am-12pm', label: 'Late morning', sub: '10am - 12pm' },
-  { value: '12pm-3pm', label: 'Afternoon', sub: '12pm - 3pm' },
-  { value: '3pm-6pm', label: 'Late afternoon', sub: '3pm - 6pm' },
 ]
 
 // Minimum date for the date picker (today in AEST)
@@ -150,39 +143,8 @@ export default function QuoteForm({
       {/* ── Section 4: Appointment ──────────────────────────────── */}
       <SectionHeader icon={CalendarDays} title="Appointment" />
       <div className="grid gap-4">
-        <Field label="Date" name="preferred_date" type="date" min={today} />
-
-        {/* Time-window radio cards */}
-        <div>
-          <span className="block text-xs font-semibold text-ink uppercase tracking-[0.05em] mb-2.5">
-            Preferred window
-          </span>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
-            {TIME_WINDOWS.map((tw) => (
-              <label key={tw.value} className="relative cursor-pointer">
-                <input
-                  type="radio"
-                  name="preferred_time"
-                  value={tw.value}
-                  className="peer sr-only"
-                />
-                <div
-                  className={
-                    'rounded-lg border border-border bg-surface px-3 py-3 text-center transition-colors ' +
-                    'hover:border-accent/60 ' +
-                    'peer-checked:border-accent peer-checked:bg-accent-tint peer-checked:ring-1 peer-checked:ring-accent/30 ' +
-                    'peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40 peer-focus-visible:ring-offset-2'
-                  }
-                >
-                  <div className="text-sm font-semibold text-ink peer-checked:text-accent">{tw.label}</div>
-                  <div className="text-xs text-muted mt-0.5">{tw.sub}</div>
-                </div>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <p className="text-xs text-subtle -mt-1">
+        <Field label="Preferred Date" name="preferred_date" type="date" min={today} />
+        <p className="text-xs text-subtle -mt-2">
           We will confirm a precise arrival time when we call you.
         </p>
       </div>

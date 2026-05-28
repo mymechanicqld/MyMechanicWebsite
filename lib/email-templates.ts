@@ -22,7 +22,7 @@ export const SERVICE_LABELS: Record<string, string> = {
  *
  * Fields rendered (matching the May 2026 public form):
  *   Name, Phone, Email, Rego, Suburb, Service, Car Make,
- *   Preferred Date, Preferred Time, Additional details
+ *   Preferred Date, Additional details
  *
  * Inlined styles only — email clients (Gmail, Outlook, Apple Mail) strip
  * <style> blocks and ignore most modern CSS. Tables for layout, hex
@@ -60,17 +60,6 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
     }
   }
 
-  // Format preferred time window for display
-  const timeLabels: Record<string, string> = {
-    '7am-10am': 'Morning (7am - 10am)',
-    '10am-12pm': 'Late morning (10am - 12pm)',
-    '12pm-3pm': 'Afternoon (12pm - 3pm)',
-    '3pm-6pm': 'Late afternoon (3pm - 6pm)',
-  }
-  const timeDisplay = submission.preferred_time
-    ? escape(timeLabels[submission.preferred_time] ?? submission.preferred_time)
-    : ''
-
   const subject = `New booking — ${submission.full_name}${rego ? ` (${rego})` : ''}${service ? ` · ${service}` : ''} · ${submission.suburb}`
 
   // Build optional booking-details rows
@@ -84,9 +73,6 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
   }
   if (dateDisplay) {
     detailRows.push(detailRow('Preferred date', dateDisplay))
-  }
-  if (timeDisplay) {
-    detailRows.push(detailRow('Preferred time', timeDisplay))
   }
 
   const html = `<!doctype html>
@@ -211,7 +197,6 @@ Saved in the operations dashboard. Submitted ${new Date().toLocaleString('en-AU'
   if (service)      lines.push(`Service: ${SERVICE_LABELS[submission.service_needed!] ?? submission.service_needed}`)
   if (carMake)      lines.push(`Car:     ${submission.vehicle_make}`)
   if (dateDisplay)  lines.push(`Date:    ${dateDisplay}`)
-  if (timeDisplay)  lines.push(`Time:    ${timeLabels[submission.preferred_time!] ?? submission.preferred_time}`)
 
   if (message) {
     lines.push('', 'Additional notes:', submission.symptoms!)

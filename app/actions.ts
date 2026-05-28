@@ -90,7 +90,6 @@ function parseFormData(formData: FormData): QuoteSubmissionInsert {
     vehicle_make:    get('car_make') || null,           // optional
     symptoms:        get('message') || null,            // optional free-text
     preferred_date:  get('preferred_date') || null,     // YYYY-MM-DD or null
-    preferred_time:  get('preferred_time') || null,     // e.g. "7am-10am" or null
     consent_privacy: formData.get('consent_privacy') === 'yes',
     source:          'website',
   }

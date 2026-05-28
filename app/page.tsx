@@ -202,7 +202,7 @@ export default async function HomePage({
           <Reveal variant="up" duration={0.8}>
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tighter">
-                Your mobile mechanic.<br />
+                Your Mobile Mechanic.<br />
                 <span className="text-accent-bright">We come to you.</span>
               </h1>
               <p className="text-lg text-white/80 mt-5 max-w-[48ch] leading-relaxed">

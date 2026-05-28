@@ -40,7 +40,9 @@ export type QuoteSubmissionInsert = {
   vehicle_make?: string | null    // "Car Make" — e.g. Toyota Camry
   symptoms?: string | null        // "Additional details" textarea (optional since service dropdown captures intent)
   preferred_date?: string | null  // "Preferred date" — YYYY-MM-DD from date picker
-  preferred_time?: string | null  // "Preferred window" — e.g. "7am-10am" from radio buttons
+
+  // ── Legacy (column retained in DB for historical rows, no longer collected) ─
+  preferred_time?: string | null
 
   // ── Audit metadata (server-populated) ──────────────────────────────────
   ip_address?: string | null
