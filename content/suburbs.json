@@ -10,11 +10,14 @@
       "distanceFromBase": 21,
       "responseTime": "Usually next business day",
       "nearby": [
-        "auchenflower",
-        "bowen-hills",
-        "kelvin-grove",
-        "newstead"
-      ]
+        "hamilton",
+        "clayfield",
+        "newstead",
+        "bowen-hills"
+      ],
+      "landmark": "Crosby Park and the historic Albion Park raceway",
+      "localContext": "Albion is a tight inner-north pocket squeezed between rail lines and Breakfast Creek, with warehouses converting to apartments and cafes. The streets carry a mix of young renters and small-business owners, so you see plenty of European hatches and tradie utes parked outside the old industrial sheds. It sits a couple of minutes from the Inner City Bypass and Kingsford Smith Drive.",
+      "housingNote": "Pre-war workers cottages alongside converted warehouses and new unit blocks"
     },
     {
       "slug": "annerley",
@@ -26,11 +29,15 @@
       "distanceFromBase": 15,
       "responseTime": "Same-day available",
       "nearby": [
-        "camp-hill",
-        "greenslopes",
+        "fairfield",
         "yeronga",
-        "edens-landing"
-      ]
+        "moorooka",
+        "greenslopes",
+        "tarragindi"
+      ],
+      "landmark": "Annerley Junction and the Ekibin Park reserve",
+      "localContext": "Annerley is an established southside suburb built around the old tram junction on Ipswich Road, popular with first-home buyers and students near the hospital precinct. The housing leans toward post-war homes on small blocks, so daily-driver Corollas, Mazda3s and the odd renovated Queenslander dominate the kerbs. It feeds straight onto the M3 and into Woolloongabba.",
+      "housingNote": "Post-war cottages and Queenslanders on compact blocks, some unit infill"
     },
     {
       "slug": "ascot",
@@ -42,11 +49,15 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
-        "clayfield",
-        "forest-lake",
         "hamilton",
-        "hendra"
-      ]
+        "clayfield",
+        "hendra",
+        "albion",
+        "nundah"
+      ],
+      "landmark": "Eagle Farm Racecourse and Ascot State School",
+      "localContext": "Ascot is one of Brisbane's blue-chip suburbs, set on the hill above the racecourse with wide leafy streets and prestige homes. Residents are established families and professionals, and the driveways show European marques, late-model Land Cruisers and luxury SUVs. It is close to the airport link and Kingsford Smith Drive into the city.",
+      "housingNote": "Grand pre-war homes and substantial new builds on large blocks"
     },
     {
       "slug": "ashgrove",
@@ -58,11 +69,15 @@
       "distanceFromBase": 23,
       "responseTime": "Usually next business day",
       "nearby": [
-        "graceville",
-        "kedron",
-        "manly",
-        "newmarket"
-      ]
+        "bardon",
+        "the-gap",
+        "enoggera",
+        "newmarket",
+        "keperra"
+      ],
+      "landmark": "Marist College Ashgrove",
+      "localContext": "Ashgrove is a hilly, tree-lined inner-west suburb known for its character homes and the distinctive Ashgrovian Queenslander. It draws established families and professionals, so school-run SUVs, Subarus and renovated four-wheel drives are common on the winding streets. Waterworks Road carries it toward the city one way and The Gap the other.",
+      "housingNote": "Classic Ashgrovian Queenslanders, many heritage-protected and renovated"
     },
     {
       "slug": "aspley",
@@ -74,11 +89,15 @@
       "distanceFromBase": 28,
       "responseTime": "Usually next business day",
       "nearby": [
-        "the-gap",
-        "zillmere",
-        "redbank-plains",
-        "banyo"
-      ]
+        "geebung",
+        "chermside",
+        "carseldine",
+        "bald-hills",
+        "bracken-ridge"
+      ],
+      "landmark": "Aspley Hypermarket on Gympie Road",
+      "localContext": "Aspley is a large northside family suburb strung along Gympie Road, with a settled mix of retirees and growing households. The brick-and-tile homes on generous blocks mean you see family wagons, Hilux utes and well-kept older sedans in the driveways. The Gympie Arterial and the Bruce Highway on-ramp are close by.",
+      "housingNote": "1960s and 70s brick-and-tile homes on quarter-acre blocks"
     },
     {
       "slug": "auchenflower",
@@ -90,11 +109,15 @@
       "distanceFromBase": 21,
       "responseTime": "Usually next business day",
       "nearby": [
-        "albion",
-        "bowen-hills",
-        "kelvin-grove",
-        "newstead"
-      ]
+        "toowong",
+        "milton",
+        "paddington",
+        "bardon",
+        "st-lucia"
+      ],
+      "landmark": "Wesley Hospital",
+      "localContext": "Auchenflower is a compact inner-west suburb on the river bend near the hospital, popular with medical staff, professionals and students. Steep streets are lined with Queenslanders and unit blocks, so the parking is tight and full of small hatches and commuter sedans. It sits right on the Milton rail line and a short hop from Coronation Drive.",
+      "housingNote": "Hillside Queenslanders interspersed with low-rise apartments"
     },
     {
       "slug": "bald-hills",
@@ -106,11 +129,14 @@
       "distanceFromBase": 32,
       "responseTime": "Usually next business day",
       "nearby": [
-        "booval",
-        "karalee",
         "bracken-ridge",
-        "upper-coomera"
-      ]
+        "carseldine",
+        "aspley",
+        "sandgate"
+      ],
+      "landmark": "Bald Hills railway station and the Pine River",
+      "localContext": "Bald Hills sits at Brisbane's northern edge where the suburbs meet the Pine River, a quieter spot favoured by families and downsizers. The lowset brick homes and acreage fringes mean utes, boat trailers and family four-wheel drives are part of the streetscape. The Gympie Arterial and Bruce Highway run straight through, making it a commuter gateway north.",
+      "housingNote": "Lowset brick homes with some semi-rural blocks near the river"
     },
     {
       "slug": "balmoral",
@@ -122,11 +148,15 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
-        "kangaroo-point",
+        "bulimba",
+        "hawthorne",
         "morningside",
-        "south-brisbane",
-        "tingalpa"
-      ]
+        "cannon-hill",
+        "norman-park"
+      ],
+      "landmark": "Balmoral State High School and Bulimba Creek",
+      "localContext": "Balmoral is a leafy riverside suburb on the eastern reaches, blending heritage Queenslanders with modern executive homes. Established families and professionals live here, so the driveways carry European SUVs, late-model Mazdas and renovated weekend four-wheel drives. Wynnum Road links it to the city and the Gateway Motorway.",
+      "housingNote": "Renovated Queenslanders alongside contemporary architect homes"
     },
     {
       "slug": "banyo",
@@ -138,11 +168,15 @@
       "distanceFromBase": 27,
       "responseTime": "Usually next business day",
       "nearby": [
-        "mitchelton",
-        "collingwood-park",
-        "aspley",
-        "chermside"
-      ]
+        "nundah",
+        "northgate",
+        "virginia",
+        "wavell-heights",
+        "geebung"
+      ],
+      "landmark": "Australian Catholic University Banyo campus",
+      "localContext": "Banyo is a modest northside suburb near the airport corridor, long a working-family area now seeing younger buyers move in. The post-war homes and newer townhouses sit beside light-industrial pockets, so tradie utes, vans and budget commuters are everyday sights. It has its own rail station and quick access to the Gateway Motorway.",
+      "housingNote": "Post-war homes mixed with newer townhouse developments"
     },
     {
       "slug": "bardon",
@@ -154,11 +188,15 @@
       "distanceFromBase": 24,
       "responseTime": "Usually next business day",
       "nearby": [
-        "cleveland",
-        "enoggera",
-        "indooroopilly",
-        "nundah"
-      ]
+        "paddington",
+        "ashgrove",
+        "the-gap",
+        "auchenflower",
+        "toowong"
+      ],
+      "landmark": "Rainworth and the Mt Coot-tha foothills",
+      "localContext": "Bardon is a hilly inner-west suburb climbing toward Mt Coot-tha, prized for its character homes and bushy outlook. It attracts established families and professionals who favour Subarus, family SUVs and the occasional well-loved Queenslander-era ute. Steep streets and leafy gullies define the drive, with the city a short run down Latrobe Terrace.",
+      "housingNote": "Character Queenslanders and split-level homes on sloping blocks"
     },
     {
       "slug": "bowen-hills",
@@ -170,11 +208,14 @@
       "distanceFromBase": 21,
       "responseTime": "Usually next business day",
       "nearby": [
+        "fortitude-valley",
+        "newstead",
         "albion",
-        "auchenflower",
-        "kelvin-grove",
-        "newstead"
-      ]
+        "spring-hill"
+      ],
+      "landmark": "RNA Showgrounds and the Brisbane Exhibition",
+      "localContext": "Bowen Hills is an inner-city suburb dominated by the Showgrounds, media offices and new residential towers. The population skews to young professionals and renters in apartments, so compact cars, rideshare vehicles and delivery vans fill the streets. It sits on the Inner City Bypass and the Clem7 tunnel entrance.",
+      "housingNote": "High-density apartments alongside a few surviving workers cottages"
     },
     {
       "slug": "bracken-ridge",
@@ -187,10 +228,13 @@
       "responseTime": "Usually next business day",
       "nearby": [
         "bald-hills",
-        "carseldine",
-        "keperra",
-        "sandgate"
-      ]
+        "aspley",
+        "sandgate",
+        "carseldine"
+      ],
+      "landmark": "Bracken Ridge Plaza",
+      "localContext": "Bracken Ridge is a sprawling northern family suburb of established estates, popular with families and retirees who have lived here for decades. The lowset brick homes on full blocks mean Hilux utes, family wagons and caravans are common in the driveways. Telegraph Road and the Gateway Motorway extension carry the daily commute.",
+      "housingNote": "1970s and 80s brick-and-tile homes on standard suburban blocks"
     },
     {
       "slug": "brisbane-cbd",
@@ -202,11 +246,15 @@
       "distanceFromBase": 20,
       "responseTime": "Same-day available",
       "nearby": [
+        "spring-hill",
         "fortitude-valley",
-        "milton",
-        "new-farm",
-        "spring-hill"
-      ]
+        "south-brisbane",
+        "kangaroo-point",
+        "west-end"
+      ],
+      "landmark": "Queen Street Mall and Brisbane City Botanic Gardens",
+      "localContext": "The Brisbane CBD is the commercial heart of the city, a grid of office towers, retail and high-rise apartments bounded by the river. Residents are predominantly inner-city professionals and students, and on-street vehicles tend to be compact cars, rideshare fleets and corporate sedans in basement parking. The motorway tunnels and Riverside Expressway ring the edges.",
+      "housingNote": "High-rise apartment towers, very little detached housing"
     },
     {
       "slug": "bulimba",
@@ -218,11 +266,15 @@
       "distanceFromBase": 19,
       "responseTime": "Same-day available",
       "nearby": [
-        "capalaba",
         "hawthorne",
-        "springfield-lakes",
-        "balmoral"
-      ]
+        "balmoral",
+        "morningside",
+        "norman-park",
+        "new-farm"
+      ],
+      "landmark": "Oxford Street and the Bulimba ferry terminal",
+      "localContext": "Bulimba is a sought-after riverside suburb built around the Oxford Street cafe strip and the CityCat terminal. Affluent families and professionals live in restored Queenslanders, so the streets carry European SUVs, prestige hatches and tidy weekend four-wheel drives. The ferry and Wynnum Road give quick links across the river to the city.",
+      "housingNote": "Renovated character Queenslanders close to the river"
     },
     {
       "slug": "camp-hill",
@@ -234,11 +286,15 @@
       "distanceFromBase": 15,
       "responseTime": "Same-day available",
       "nearby": [
-        "annerley",
-        "greenslopes",
-        "yeronga",
-        "edens-landing"
-      ]
+        "carindale",
+        "coorparoo",
+        "holland-park",
+        "cannon-hill",
+        "norman-park"
+      ],
+      "landmark": "Martha Street village shops",
+      "localContext": "Camp Hill is a settled southside-east family suburb on the rise between Coorparoo and Carindale, known for its village shopping pocket. Families and professionals dominate, favouring family SUVs, Mazdas and renovated Queenslander daily drivers. Old Cleveland Road runs through it toward the city and the Gateway.",
+      "housingNote": "Post-war cottages and Queenslanders, many extended underneath"
     },
     {
       "slug": "cannon-hill",
@@ -250,11 +306,15 @@
       "distanceFromBase": 16,
       "responseTime": "Same-day available",
       "nearby": [
-        "coorparoo",
-        "fairfield",
-        "seven-hills",
-        "stones-corner"
-      ]
+        "morningside",
+        "balmoral",
+        "camp-hill",
+        "carindale",
+        "tingalpa"
+      ],
+      "landmark": "Cannon Hill Kmart Plaza",
+      "localContext": "Cannon Hill is an eastern suburb of mixed housing and light industry near the racecourse and rail line, popular with young families and commuters. The streets show a blend of family SUVs, work utes and commuter sedans serving the nearby business parks. Wynnum Road and the Gateway Motorway sit on the doorstep.",
+      "housingNote": "Post-war homes with newer townhouse and apartment infill"
     },
     {
       "slug": "capalaba",
@@ -266,11 +326,14 @@
       "distanceFromBase": 19,
       "responseTime": "Same-day available",
       "nearby": [
-        "bulimba",
-        "hawthorne",
-        "springfield-lakes",
-        "balmoral"
-      ]
+        "cleveland",
+        "wynnum",
+        "tingalpa",
+        "bulimba"
+      ],
+      "landmark": "Capalaba Central shopping centre",
+      "localContext": "Capalaba is a bayside-Redlands hub suburb built around its large shopping centres, home to settled families and tradespeople. The lowset brick homes and acreage fringes mean Hilux and Ranger utes, boats and family four-wheel drives are everywhere. Old Cleveland Road and Mount Cotton Road are the main arteries out.",
+      "housingNote": "1980s brick-and-tile homes with newer estate pockets"
     },
     {
       "slug": "carindale",
@@ -282,11 +345,15 @@
       "distanceFromBase": 14,
       "responseTime": "Same-day available",
       "nearby": [
-        "holland-park",
-        "moorooka",
-        "holmview",
-        "annerley"
-      ]
+        "camp-hill",
+        "mansfield",
+        "mount-gravatt",
+        "wishart",
+        "rochedale"
+      ],
+      "landmark": "Westfield Carindale",
+      "localContext": "Carindale is a large family suburb centred on one of Brisbane's biggest Westfield centres, full of brick homes on tidy blocks. Established families dominate, so the driveways carry SUVs, people-movers and the occasional towing four-wheel drive. The Gateway Motorway and Old Cleveland Road give fast routes north and east.",
+      "housingNote": "1980s and 90s brick homes on well-kept suburban blocks"
     },
     {
       "slug": "carseldine",
@@ -298,11 +365,15 @@
       "distanceFromBase": 30,
       "responseTime": "Usually next business day",
       "nearby": [
-        "keperra",
-        "sandgate",
-        "bundamba",
-        "ripley"
-      ]
+        "aspley",
+        "bald-hills",
+        "bracken-ridge",
+        "zillmere",
+        "geebung"
+      ],
+      "landmark": "Carseldine Markets and the former QUT campus grounds",
+      "localContext": "Carseldine is a quiet northern suburb of newer estates and parkland near the rail line, attracting families and downsizers. Newer brick-and-render homes mean late-model SUVs, family wagons and tradie utes fill the streets. The Gympie Arterial and the rail station make for an easy commute.",
+      "housingNote": "Newer estate homes from the 1990s onward on neat blocks"
     },
     {
       "slug": "chermside",
@@ -314,11 +385,15 @@
       "distanceFromBase": 26,
       "responseTime": "Usually next business day",
       "nearby": [
-        "everton-park",
+        "kedron",
+        "wavell-heights",
+        "aspley",
         "geebung",
-        "redbank",
-        "banyo"
-      ]
+        "stafford"
+      ],
+      "landmark": "Westfield Chermside",
+      "localContext": "Chermside is a major northside centre built around one of the country's largest shopping complexes and the hospital. It is a busy mix of families, renters and apartment dwellers, so the streets carry everything from commuter hatches to family SUVs and trade vans. Gympie Road and Hamilton Road keep traffic constant.",
+      "housingNote": "Post-war homes giving way to mid-rise apartments near the centre"
     },
     {
       "slug": "clayfield",
@@ -331,10 +406,14 @@
       "responseTime": "Usually next business day",
       "nearby": [
         "ascot",
-        "forest-lake",
         "hamilton",
-        "hendra"
-      ]
+        "albion",
+        "hendra",
+        "nundah"
+      ],
+      "landmark": "Clayfield College",
+      "localContext": "Clayfield is an established inner-north suburb of grand homes and private schools on the higher ground near the racecourse. Affluent families and professionals live here, favouring European SUVs, prestige sedans and tidy late-model wagons. Sandgate Road and the rail line link it to the city and the airport.",
+      "housingNote": "Stately pre-war homes alongside character apartment blocks"
     },
     {
       "slug": "cleveland",
@@ -346,11 +425,14 @@
       "distanceFromBase": 24,
       "responseTime": "Usually next business day",
       "nearby": [
+        "capalaba",
         "bardon",
         "enoggera",
-        "indooroopilly",
-        "nundah"
-      ]
+        "indooroopilly"
+      ],
+      "landmark": "Raby Bay Harbour and the Stradbroke ferry terminal",
+      "localContext": "Cleveland is the bayside heart of the Redlands, a marina town with a relaxed coastal feel and the gateway to Stradbroke Island. Families, retirees and boaties live here, so the streets show four-wheel drives, boat trailers and family SUVs. Cleveland-Redland Bay Road and the rail line connect it back to Brisbane.",
+      "housingNote": "Waterfront canal homes and older bayside cottages"
     },
     {
       "slug": "coorparoo",
@@ -362,11 +444,15 @@
       "distanceFromBase": 16,
       "responseTime": "Same-day available",
       "nearby": [
-        "cannon-hill",
-        "fairfield",
-        "seven-hills",
+        "greenslopes",
+        "camp-hill",
+        "holland-park",
+        "norman-park",
         "stones-corner"
-      ]
+      ],
+      "landmark": "Coorparoo Square",
+      "localContext": "Coorparoo is a busy inner-southeast suburb around the Old Cleveland Road junction, blending heritage homes with new apartment precincts. Young professionals and families live here, driving compact SUVs, European hatches and commuter sedans. The suburb feeds straight onto the M3 and the busway into the city.",
+      "housingNote": "Queenslanders and post-war homes with new apartment infill"
     },
     {
       "slug": "eight-mile-plains",
@@ -378,11 +464,15 @@
       "distanceFromBase": 8,
       "responseTime": "Often same-day",
       "nearby": [
-        "kingston",
-        "rochedale-south",
+        "runcorn",
+        "macgregor",
+        "sunnybank",
         "rochedale",
-        "runcorn"
-      ]
+        "wishart"
+      ],
+      "landmark": "Brisbane Technology Park",
+      "localContext": "Eight Mile Plains sits at the southern motorway gateway, home to a large business park and a multicultural mix of families. The brick homes and townhouse estates mean family SUVs, commuter sedans and work utes share the streets. The Pacific Motorway and the South East Busway terminus run right through it.",
+      "housingNote": "1980s brick homes with extensive townhouse estates"
     },
     {
       "slug": "enoggera",
@@ -394,11 +484,15 @@
       "distanceFromBase": 24,
       "responseTime": "Usually next business day",
       "nearby": [
-        "bardon",
-        "cleveland",
-        "indooroopilly",
-        "nundah"
-      ]
+        "ashgrove",
+        "the-gap",
+        "mitchelton",
+        "keperra",
+        "newmarket"
+      ],
+      "landmark": "Gallipoli Barracks",
+      "localContext": "Enoggera is an inner-northwest suburb defined by the army barracks and the surrounding bushland reserves. Defence families, young couples and renovators live here, so you see family four-wheel drives, utes and practical wagons. Wardell Street and the Ferny Grove rail line carry the commute.",
+      "housingNote": "Post-war cottages and Queenslanders near bushland reserves"
     },
     {
       "slug": "everton-park",
@@ -410,11 +504,15 @@
       "distanceFromBase": 26,
       "responseTime": "Usually next business day",
       "nearby": [
-        "chermside",
-        "geebung",
-        "redbank",
-        "banyo"
-      ]
+        "stafford",
+        "mitchelton",
+        "keperra",
+        "enoggera",
+        "chermside"
+      ],
+      "landmark": "Brookside Shopping Centre",
+      "localContext": "Everton Park is a northwest suburb on the rise, with its older homes giving way to townhouses and a growing cafe scene. Young families and first-home buyers favour small SUVs, hatches and tradie utes. South Pine Road and Stafford Road are the main routes toward the city and the western suburbs.",
+      "housingNote": "Post-war homes increasingly replaced by townhouses"
     },
     {
       "slug": "fairfield",
@@ -426,11 +524,15 @@
       "distanceFromBase": 16,
       "responseTime": "Same-day available",
       "nearby": [
-        "cannon-hill",
-        "coorparoo",
-        "seven-hills",
-        "stones-corner"
-      ]
+        "annerley",
+        "yeronga",
+        "west-end",
+        "moorooka",
+        "st-lucia"
+      ],
+      "landmark": "Fairfield Gardens shopping centre",
+      "localContext": "Fairfield is a small riverside suburb near the university, popular with students and young families. Tight streets of Queenslanders and units mean small hatches, commuter cars and the odd renovated four-wheel drive line the kerbs. The rail line and the M3 give quick access to the city and the southside.",
+      "housingNote": "Workers cottages and Queenslanders on small riverside blocks"
     },
     {
       "slug": "forest-lake",
@@ -446,7 +548,10 @@
         "clayfield",
         "hamilton",
         "hendra"
-      ]
+      ],
+      "landmark": "Forest Lake and the lakeside Village shopping centre",
+      "localContext": "Forest Lake is a master-planned suburb around a man-made lake, one of Brisbane's first large estate developments. It is a diverse family suburb, so the driveways carry family SUVs, people-movers and commuter sedans. The Centenary Motorway and Logan Motorway link it to the city and the western corridor.",
+      "housingNote": "1990s and 2000s estate homes on planned suburban blocks"
     },
     {
       "slug": "fortitude-valley",
@@ -458,11 +563,15 @@
       "distanceFromBase": 20,
       "responseTime": "Same-day available",
       "nearby": [
-        "brisbane-cbd",
-        "milton",
         "new-farm",
-        "spring-hill"
-      ]
+        "newstead",
+        "bowen-hills",
+        "spring-hill",
+        "brisbane-cbd"
+      ],
+      "landmark": "Brunswick Street Mall and the James Street precinct",
+      "localContext": "Fortitude Valley is Brisbane's nightlife and entertainment district, a dense inner-city pocket of bars, music venues and apartment towers. Young professionals and renters dominate, so the streets carry compact cars, rideshare vehicles and very little detached parking. The Inner City Bypass and Valley rail station ring the edges.",
+      "housingNote": "High-density apartments above a heritage retail core"
     },
     {
       "slug": "geebung",
@@ -474,11 +583,15 @@
       "distanceFromBase": 26,
       "responseTime": "Usually next business day",
       "nearby": [
-        "chermside",
-        "everton-park",
-        "redbank",
-        "banyo"
-      ]
+        "zillmere",
+        "virginia",
+        "banyo",
+        "aspley",
+        "chermside"
+      ],
+      "landmark": "Geebung RSL",
+      "localContext": "Geebung is a practical northside suburb of older homes near rail and light industry, long popular with working families. The post-war houses and newer townhouses mean tradie utes, vans and family commuters are everyday sights. Newman Road and the Gympie Arterial keep it well connected.",
+      "housingNote": "Post-war homes with townhouse infill near the rail line"
     },
     {
       "slug": "graceville",
@@ -490,11 +603,14 @@
       "distanceFromBase": 23,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ashgrove",
-        "kedron",
-        "manly",
-        "newmarket"
-      ]
+        "sherwood",
+        "indooroopilly",
+        "yeronga",
+        "ashgrove"
+      ],
+      "landmark": "Graceville Memorial Park and the Honour Avenue shops",
+      "localContext": "Graceville is a leafy western riverside suburb with a heritage shopping strip and a settled, family feel. Established families favour SUVs, prestige sedans and renovated Queenslander daily drivers. The Brisbane River, the rail line and Honour Avenue shape the quiet, tree-lined streets.",
+      "housingNote": "Heritage Queenslanders and interwar homes on leafy blocks"
     },
     {
       "slug": "greenslopes",
@@ -506,11 +622,15 @@
       "distanceFromBase": 15,
       "responseTime": "Same-day available",
       "nearby": [
-        "annerley",
-        "camp-hill",
-        "yeronga",
-        "edens-landing"
-      ]
+        "coorparoo",
+        "holland-park",
+        "stones-corner",
+        "tarragindi",
+        "annerley"
+      ],
+      "landmark": "Greenslopes Private Hospital",
+      "localContext": "Greenslopes is an inner-southeast suburb built around the hospital, popular with medical staff, young families and renters. The post-war homes and unit blocks mean commuter cars, small SUVs and the occasional renovated Queenslander fill the streets. Logan Road and the busway give a fast run into the city.",
+      "housingNote": "Post-war homes and low-rise units near the hospital"
     },
     {
       "slug": "hamilton",
@@ -524,9 +644,13 @@
       "nearby": [
         "ascot",
         "clayfield",
-        "forest-lake",
-        "hendra"
-      ]
+        "albion",
+        "hendra",
+        "newstead"
+      ],
+      "landmark": "Portside Wharf",
+      "localContext": "Hamilton is a prestige riverside suburb climbing the hill above the river, home to some of Brisbane's most expensive properties. Affluent families and executives live here, so European marques, luxury SUVs and prestige sedans are the norm. Kingsford Smith Drive runs along the river toward the city and the airport.",
+      "housingNote": "Grand riverfront homes and high-end apartments"
     },
     {
       "slug": "hawthorne",
@@ -539,10 +663,14 @@
       "responseTime": "Same-day available",
       "nearby": [
         "bulimba",
-        "capalaba",
-        "springfield-lakes",
-        "balmoral"
-      ]
+        "balmoral",
+        "morningside",
+        "norman-park",
+        "cannon-hill"
+      ],
+      "landmark": "Hawthorne Garage cinema and dining precinct",
+      "localContext": "Hawthorne is a riverside inner-east suburb sharing the Oxford Street lifestyle with neighbouring Bulimba. Professionals and established families live in restored Queenslanders, driving European SUVs, prestige hatches and tidy wagons. The CityCat terminal and Wynnum Road give quick links to the city.",
+      "housingNote": "Restored Queenslanders close to the river and ferry"
     },
     {
       "slug": "hendra",
@@ -556,9 +684,13 @@
       "nearby": [
         "ascot",
         "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "nundah",
+        "hamilton",
+        "wavell-heights"
+      ],
+      "landmark": "Doomben Racecourse",
+      "localContext": "Hendra is a quiet, well-heeled inner-north suburb beside the racecourses, with wide streets and substantial homes. Established families and professionals favour late-model SUVs, prestige sedans and tidy four-wheel drives. Nudgee Road and the airport link sit close at hand.",
+      "housingNote": "Substantial pre-war and post-war homes on generous blocks"
     },
     {
       "slug": "holland-park",
@@ -570,11 +702,15 @@
       "distanceFromBase": 14,
       "responseTime": "Same-day available",
       "nearby": [
-        "carindale",
-        "moorooka",
-        "holmview",
-        "annerley"
-      ]
+        "greenslopes",
+        "mount-gravatt",
+        "tarragindi",
+        "coorparoo",
+        "camp-hill"
+      ],
+      "landmark": "Holland Park State High School",
+      "localContext": "Holland Park is a settled inner-southeast suburb on the hills around Logan Road, popular with families and a strong Greek-Australian community. The post-war homes and renovated Queenslanders mean family SUVs, work utes and commuter sedans line the streets. Logan Road and the M3 keep it close to the city.",
+      "housingNote": "Post-war homes and Queenslanders, many extended"
     },
     {
       "slug": "indooroopilly",
@@ -586,11 +722,14 @@
       "distanceFromBase": 24,
       "responseTime": "Usually next business day",
       "nearby": [
-        "bardon",
-        "cleveland",
-        "enoggera",
-        "nundah"
-      ]
+        "st-lucia",
+        "toowong",
+        "graceville",
+        "sherwood"
+      ],
+      "landmark": "Indooroopilly Shopping Centre",
+      "localContext": "Indooroopilly is a major western suburb hub centred on its large shopping centre and close to the university. Families, students and professionals live here, so the streets mix family SUVs, small commuter cars and rideshare vehicles. Moggill Road and the Western Freeway carry heavy daily traffic.",
+      "housingNote": "Queenslanders and post-war homes with mid-rise unit clusters"
     },
     {
       "slug": "kangaroo-point",
@@ -602,11 +741,15 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
-        "balmoral",
-        "morningside",
+        "woolloongabba",
+        "brisbane-cbd",
         "south-brisbane",
-        "tingalpa"
-      ]
+        "norman-park",
+        "new-farm"
+      ],
+      "landmark": "Kangaroo Point Cliffs",
+      "localContext": "Kangaroo Point is an inner-city peninsula across the river from the CBD, known for its cliffs and riverside parks. Young professionals and renters in apartments dominate, so compact cars and rideshare vehicles fill the kerbs. The Story Bridge and the new pedestrian bridge tie it to the city.",
+      "housingNote": "Riverside apartment towers with pockets of older cottages"
     },
     {
       "slug": "kedron",
@@ -618,11 +761,14 @@
       "distanceFromBase": 23,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ashgrove",
-        "graceville",
-        "manly",
-        "newmarket"
-      ]
+        "wavell-heights",
+        "chermside",
+        "stafford",
+        "lutwyche"
+      ],
+      "landmark": "Kedron Brook and Padua College",
+      "localContext": "Kedron is a settled northside suburb straddling Gympie Road and the brook, popular with families and downsizers. The post-war homes and renovated Queenslanders mean family SUVs, work utes and commuter sedans are common. Gympie Road and the busway keep it well connected to the city.",
+      "housingNote": "Post-war homes and Queenslanders along Kedron Brook"
     },
     {
       "slug": "kelvin-grove",
@@ -634,11 +780,14 @@
       "distanceFromBase": 21,
       "responseTime": "Usually next business day",
       "nearby": [
-        "albion",
-        "auchenflower",
-        "bowen-hills",
-        "newstead"
-      ]
+        "paddington",
+        "newmarket",
+        "spring-hill",
+        "albion"
+      ],
+      "landmark": "QUT Kelvin Grove campus",
+      "localContext": "Kelvin Grove is an inner-north suburb built around the university and its urban village, dense with students and young professionals. Apartments and terraces mean compact cars, scooters and rideshare vehicles dominate the streets. Kelvin Grove Road and the Inner City Bypass link it straight to the city.",
+      "housingNote": "Student apartments and terraces beside older cottages"
     },
     {
       "slug": "keperra",
@@ -650,11 +799,14 @@
       "distanceFromBase": 30,
       "responseTime": "Usually next business day",
       "nearby": [
-        "carseldine",
-        "sandgate",
-        "bundamba",
-        "ripley"
-      ]
+        "mitchelton",
+        "enoggera",
+        "the-gap",
+        "everton-park"
+      ],
+      "landmark": "Keperra Country Golf Club",
+      "localContext": "Keperra is a quiet northwest suburb near the bushland and golf course, settled and family-oriented. The post-war brick homes on decent blocks mean family wagons, utes and four-wheel drives are common. Samford Road and the Ferny Grove rail line carry the commute.",
+      "housingNote": "Post-war brick homes on larger blocks near bushland"
     },
     {
       "slug": "lutwyche",
@@ -666,11 +818,14 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "kedron",
+        "albion",
+        "wavell-heights",
+        "ascot"
+      ],
+      "landmark": "Lutwyche City shopping centre",
+      "localContext": "Lutwyche is a compact inner-north suburb on Gympie Road, increasingly dense with apartments around the shopping centre and busway. Young professionals and renters live here, driving compact cars and rideshare vehicles. The busway and Gympie Road give a fast city commute.",
+      "housingNote": "Older cottages giving way to mid-rise apartments"
     },
     {
       "slug": "macgregor",
@@ -683,10 +838,14 @@
       "responseTime": "Often same-day",
       "nearby": [
         "sunnybank",
-        "wishart",
-        "crestmead",
-        "loganlea"
-      ]
+        "eight-mile-plains",
+        "runcorn",
+        "upper-mount-gravatt",
+        "wishart"
+      ],
+      "landmark": "Griffith University Nathan and Sunnybank precincts",
+      "localContext": "MacGregor is a southside suburb with a strong Asian-Australian community and close ties to the university and Sunnybank dining. Families and students live here, so the streets carry family SUVs, commuter sedans and small hatches. Kessels Road and the Pacific Motorway keep it well linked.",
+      "housingNote": "Post-war brick homes with townhouse and unit infill"
     },
     {
       "slug": "manly",
@@ -698,11 +857,14 @@
       "distanceFromBase": 23,
       "responseTime": "Usually next business day",
       "nearby": [
+        "wynnum",
+        "tingalpa",
         "ashgrove",
-        "graceville",
-        "kedron",
-        "newmarket"
-      ]
+        "graceville"
+      ],
+      "landmark": "Manly Harbour and the boat harbour marina",
+      "localContext": "Manly is a bayside suburb built around its boat harbour, with a relaxed seaside village feel. Families, retirees and boaties live here, so the streets show four-wheel drives, boat trailers and family SUVs. The Esplanade and the rail line connect it back along the bay to the city.",
+      "housingNote": "Older bayside cottages and Queenslanders on the hill above the harbour"
     },
     {
       "slug": "mansfield",
@@ -714,11 +876,15 @@
       "distanceFromBase": 11,
       "responseTime": "Same-day available",
       "nearby": [
+        "wishart",
+        "mount-gravatt",
+        "carindale",
         "upper-mount-gravatt",
-        "hillcrest",
-        "meadowbrook",
-        "waterford"
-      ]
+        "rochedale"
+      ],
+      "landmark": "Mansfield State High School",
+      "localContext": "Mansfield is a settled southeast family suburb on the hills near Mount Gravatt, sought after for its school catchment. Established families favour family SUVs, people-movers and tidy four-wheel drives. Broadwater Road and the Gateway Motorway give quick routes across the city.",
+      "housingNote": "1970s and 80s brick homes on suburban blocks"
     },
     {
       "slug": "milton",
@@ -730,11 +896,15 @@
       "distanceFromBase": 20,
       "responseTime": "Same-day available",
       "nearby": [
+        "auchenflower",
+        "paddington",
+        "toowong",
         "brisbane-cbd",
-        "fortitude-valley",
-        "new-farm",
-        "spring-hill"
-      ]
+        "west-end"
+      ],
+      "landmark": "Suncorp Stadium and the Park Road precinct",
+      "localContext": "Milton is an inner-west suburb beside the stadium, mixing commercial offices, the Park Road dining strip and riverside apartments. Young professionals and renters dominate, so compact cars and rideshare vehicles fill the streets. Coronation Drive and the Milton rail line run along its edge.",
+      "housingNote": "Apartments and office conversions with a few surviving cottages"
     },
     {
       "slug": "mitchelton",
@@ -746,11 +916,15 @@
       "distanceFromBase": 27,
       "responseTime": "Usually next business day",
       "nearby": [
-        "banyo",
-        "collingwood-park",
-        "aspley",
-        "chermside"
-      ]
+        "everton-park",
+        "keperra",
+        "enoggera",
+        "stafford",
+        "the-gap"
+      ],
+      "landmark": "Brookside Shopping Centre and Mitchelton railway station",
+      "localContext": "Mitchelton is a northwest suburb on the Ferny Grove line, settled and increasingly popular with young families. The post-war homes and new townhouses mean family SUVs, hatches and tradie utes line the streets. Samford Road and the rail station make for an easy city commute.",
+      "housingNote": "Post-war homes with growing townhouse developments"
     },
     {
       "slug": "moorooka",
@@ -762,11 +936,15 @@
       "distanceFromBase": 14,
       "responseTime": "Same-day available",
       "nearby": [
-        "carindale",
-        "holland-park",
-        "holmview",
-        "annerley"
-      ]
+        "annerley",
+        "salisbury",
+        "yeronga",
+        "tarragindi",
+        "fairfield"
+      ],
+      "landmark": "The Magic Mile car dealerships on Beaudesert Road",
+      "localContext": "Moorooka is a southside suburb known for its strip of car dealerships and a diverse, multicultural community. Working families and first-home buyers live in post-war homes, so the streets carry commuter sedans, work utes and budget hatches. Beaudesert Road and the rail line keep it well connected.",
+      "housingNote": "Post-war homes on the hill with workers cottages below"
     },
     {
       "slug": "morningside",
@@ -778,11 +956,15 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
+        "cannon-hill",
         "balmoral",
-        "kangaroo-point",
-        "south-brisbane",
-        "tingalpa"
-      ]
+        "hawthorne",
+        "bulimba",
+        "norman-park"
+      ],
+      "landmark": "Morningside Panthers and the Seven Hills bushland",
+      "localContext": "Morningside is an inner-east suburb on the rise toward Seven Hills, a settled family area with a growing cafe scene. Families and professionals favour family SUVs, small hatches and renovated Queenslander daily drivers. Wynnum Road and the rail line link it to the city and the bay.",
+      "housingNote": "Queenslanders and post-war homes with townhouse infill"
     },
     {
       "slug": "mount-gravatt",
@@ -794,11 +976,15 @@
       "distanceFromBase": 12,
       "responseTime": "Same-day available",
       "nearby": [
-        "salisbury",
-        "browns-plains",
-        "logan-reserve",
+        "upper-mount-gravatt",
+        "holland-park",
+        "tarragindi",
+        "wishart",
         "mansfield"
-      ]
+      ],
+      "landmark": "Westfield Garden City and Griffith University Nathan campus",
+      "localContext": "Mount Gravatt is an established southside suburb wrapped around its namesake lookout, popular with families and university students. The post-war homes and unit blocks see plenty of daily-driver sedans, family SUVs and student hatchbacks on the streets. The Pacific Motorway and South East Busway put the city within easy reach.",
+      "housingNote": "Post-war homes on sloping blocks mixed with low-rise units"
     },
     {
       "slug": "new-farm",
@@ -810,11 +996,15 @@
       "distanceFromBase": 20,
       "responseTime": "Same-day available",
       "nearby": [
-        "brisbane-cbd",
         "fortitude-valley",
-        "milton",
-        "spring-hill"
-      ]
+        "newstead",
+        "kangaroo-point",
+        "bowen-hills",
+        "brisbane-cbd"
+      ],
+      "landmark": "New Farm Park and the Brisbane Powerhouse",
+      "localContext": "New Farm is a prestige inner-city riverside suburb of grand homes, leafy streets and the Powerhouse arts centre. Affluent professionals and established families live here, so European SUVs, prestige sedans and tidy hatches fill the streets. The CityCat and Brunswick Street tie it to the Valley and the city.",
+      "housingNote": "Grand Queenslanders and Art Deco apartments near the river"
     },
     {
       "slug": "newmarket",
@@ -826,11 +1016,14 @@
       "distanceFromBase": 23,
       "responseTime": "Usually next business day",
       "nearby": [
+        "kelvin-grove",
+        "enoggera",
         "ashgrove",
-        "graceville",
-        "kedron",
-        "manly"
-      ]
+        "graceville"
+      ],
+      "landmark": "Newmarket Village shopping centre",
+      "localContext": "Newmarket is an inner-north suburb on the rail line beside Enoggera Creek, popular with young families and professionals. The Queenslanders and post-war homes mean family SUVs, small hatches and renovated four-wheel drives line the streets. Enoggera Road and the rail station keep it close to the city.",
+      "housingNote": "Queenslanders and post-war cottages near the creek"
     },
     {
       "slug": "newstead",
@@ -842,11 +1035,15 @@
       "distanceFromBase": 21,
       "responseTime": "Usually next business day",
       "nearby": [
-        "albion",
-        "auchenflower",
+        "fortitude-valley",
         "bowen-hills",
-        "kelvin-grove"
-      ]
+        "new-farm",
+        "albion",
+        "hamilton"
+      ],
+      "landmark": "Gasworks Plaza",
+      "localContext": "Newstead is a redeveloped riverside suburb of new apartment towers and the Gasworks precinct, built on former industrial land. Young professionals and renters dominate, so the streets carry compact cars, rideshare vehicles and prestige hatches in basement parking. Breakfast Creek Road and the river ferries serve the area.",
+      "housingNote": "New riverside apartment towers on former industrial land"
     },
     {
       "slug": "norman-park",
@@ -858,11 +1055,15 @@
       "distanceFromBase": 17,
       "responseTime": "Same-day available",
       "nearby": [
-        "woolloongabba",
-        "eagleby",
+        "coorparoo",
+        "camp-hill",
+        "morningside",
         "balmoral",
         "cannon-hill"
-      ]
+      ],
+      "landmark": "Norman Park railway station and Heath Park",
+      "localContext": "Norman Park is an inner-east suburb on the rail line near the river, a quiet family area between Coorparoo and the riverside suburbs. Families and professionals favour family SUVs, small hatches and renovated Queenslander daily drivers. Wynnum Road and the rail station give a fast city commute.",
+      "housingNote": "Queenslanders and post-war homes on leafy streets"
     },
     {
       "slug": "northgate",
@@ -874,11 +1075,15 @@
       "distanceFromBase": 23,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ashgrove",
-        "graceville",
-        "kedron",
-        "manly"
-      ]
+        "nundah",
+        "banyo",
+        "wavell-heights",
+        "virginia",
+        "hendra"
+      ],
+      "landmark": "Northgate railway station",
+      "localContext": "Northgate is a modest northside suburb beside rail and light industry, long a working-family area now drawing younger buyers. The post-war homes and newer townhouses mean tradie utes, vans and commuter cars are everyday sights. Toombul Road and the Gateway Motorway keep it well linked.",
+      "housingNote": "Post-war homes with newer townhouse pockets"
     },
     {
       "slug": "nundah",
@@ -890,11 +1095,15 @@
       "distanceFromBase": 24,
       "responseTime": "Usually next business day",
       "nearby": [
-        "bardon",
-        "cleveland",
-        "enoggera",
-        "indooroopilly"
-      ]
+        "wavell-heights",
+        "northgate",
+        "banyo",
+        "clayfield",
+        "hendra"
+      ],
+      "landmark": "Nundah Village",
+      "localContext": "Nundah is a northside suburb built around its village shopping strip and busway station, increasingly dense with apartments. Young professionals and families live here, so compact cars, small SUVs and rideshare vehicles fill the streets. Sandgate Road and the busway give a fast city commute.",
+      "housingNote": "Older cottages with mid-rise apartments around the village"
     },
     {
       "slug": "paddington",
@@ -906,11 +1115,15 @@
       "distanceFromBase": 21,
       "responseTime": "Usually next business day",
       "nearby": [
-        "albion",
+        "bardon",
+        "milton",
         "auchenflower",
-        "bowen-hills",
-        "kelvin-grove"
-      ]
+        "kelvin-grove",
+        "ashgrove"
+      ],
+      "landmark": "Latrobe Terrace and the Paddington antique precinct",
+      "localContext": "Paddington is a hilly inner-west suburb famous for its Queenslanders, antique shops and cafes along Latrobe Terrace. Professionals and established families live in restored character homes, driving European SUVs, small hatches and tidy wagons. Steep streets and Given Terrace shape the drive into the city.",
+      "housingNote": "Iconic hillside Queenslanders, mostly heritage-protected"
     },
     {
       "slug": "rochedale",
@@ -922,11 +1135,15 @@
       "distanceFromBase": 9,
       "responseTime": "Often same-day",
       "nearby": [
-        "marsden",
-        "regents-park",
+        "rochedale-south",
         "eight-mile-plains",
-        "macgregor"
-      ]
+        "wishart",
+        "mansfield",
+        "springwood"
+      ],
+      "landmark": "Rochedale Village shopping centre",
+      "localContext": "Rochedale is a southside suburb that has transformed from acreage into large new estates beside the motorway. Families in newer homes favour late-model SUVs, dual-cab utes and people-movers. The Pacific Motorway and Gateway interchange sit right on the doorstep.",
+      "housingNote": "New estate homes built largely after 2010 on former acreage"
     },
     {
       "slug": "runcorn",
@@ -938,11 +1155,14 @@
       "distanceFromBase": 7,
       "responseTime": "Often same-day",
       "nearby": [
-        "woodridge",
+        "sunnybank",
         "eight-mile-plains",
-        "cornubia",
-        "kingston"
-      ]
+        "macgregor",
+        "rochedale"
+      ],
+      "landmark": "Runcorn railway station and Warrigal Road shops",
+      "localContext": "Runcorn is a southside suburb with a diverse, multicultural community near the motorway and rail line. Families live in post-war and brick homes, so the streets carry family SUVs, commuter sedans and work utes. Beaudesert Road and the Pacific Motorway keep it well connected.",
+      "housingNote": "Post-war and 1980s brick homes with townhouse infill"
     },
     {
       "slug": "salisbury",
@@ -954,11 +1174,14 @@
       "distanceFromBase": 12,
       "responseTime": "Same-day available",
       "nearby": [
+        "moorooka",
+        "tarragindi",
         "mount-gravatt",
-        "browns-plains",
-        "logan-reserve",
         "mansfield"
-      ]
+      ],
+      "landmark": "Salisbury railway station",
+      "localContext": "Salisbury is a southside suburb of post-war homes near light industry and the rail line, long popular with working families. The streets carry tradie utes, vans and budget commuters serving the nearby industrial estates. Beaudesert Road and the rail line link it to the city and the southside.",
+      "housingNote": "Post-war homes on regular blocks near industrial pockets"
     },
     {
       "slug": "sandgate",
@@ -970,11 +1193,14 @@
       "distanceFromBase": 30,
       "responseTime": "Usually next business day",
       "nearby": [
+        "bracken-ridge",
+        "bald-hills",
         "carseldine",
-        "keperra",
-        "bundamba",
-        "ripley"
-      ]
+        "keperra"
+      ],
+      "landmark": "Sandgate foreshore and the Shorncliffe Pier",
+      "localContext": "Sandgate is a bayside suburb with a heritage seaside village and a long foreshore, popular with families and retirees. The older cottages and Queenslanders mean family SUVs, four-wheel drives and boat trailers are common. The rail line and the Gateway Motorway connect it back to the city.",
+      "housingNote": "Heritage seaside cottages and Queenslanders near the foreshore"
     },
     {
       "slug": "seven-hills",
@@ -986,11 +1212,15 @@
       "distanceFromBase": 16,
       "responseTime": "Same-day available",
       "nearby": [
+        "morningside",
+        "camp-hill",
+        "norman-park",
         "cannon-hill",
-        "coorparoo",
-        "fairfield",
-        "stones-corner"
-      ]
+        "balmoral"
+      ],
+      "landmark": "Seven Hills Bushland Reserve",
+      "localContext": "Seven Hills is a small inner-east suburb of hilly streets and bushland, a quiet pocket between Morningside and Carina. Established families and professionals favour family SUVs, small hatches and renovated Queenslander daily drivers. Wynnum Road and Old Cleveland Road sit close by.",
+      "housingNote": "Post-war homes and Queenslanders on hilly, bushy streets"
     },
     {
       "slug": "sherwood",
@@ -1002,11 +1232,14 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
+        "graceville",
+        "indooroopilly",
         "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "clayfield"
+      ],
+      "landmark": "Sherwood Arboretum",
+      "localContext": "Sherwood is a leafy western riverside suburb with a heritage shopping strip and the riverside arboretum. Established families favour family SUVs, prestige sedans and renovated Queenslander daily drivers. The rail line, Oxley Road and the Brisbane River shape the quiet streets.",
+      "housingNote": "Heritage Queenslanders and interwar homes on leafy blocks"
     },
     {
       "slug": "south-brisbane",
@@ -1018,11 +1251,15 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
-        "balmoral",
+        "west-end",
+        "brisbane-cbd",
         "kangaroo-point",
-        "morningside",
-        "tingalpa"
-      ]
+        "woolloongabba",
+        "milton"
+      ],
+      "landmark": "South Bank Parklands and the Queensland Cultural Centre",
+      "localContext": "South Brisbane is a dense inner-city riverside suburb anchored by South Bank, the cultural precinct and convention centre. Young professionals and renters in towers dominate, so compact cars and rideshare vehicles fill the streets. The Riverside Expressway and the busway ring the edges.",
+      "housingNote": "High-rise apartments around the cultural and riverside precinct"
     },
     {
       "slug": "spring-hill",
@@ -1036,9 +1273,12 @@
       "nearby": [
         "brisbane-cbd",
         "fortitude-valley",
-        "milton",
-        "new-farm"
-      ]
+        "bowen-hills",
+        "kelvin-grove"
+      ],
+      "landmark": "Spring Hill Reservoirs and Wickham Terrace medical precinct",
+      "localContext": "Spring Hill is a historic inner-city suburb of steep streets, heritage terraces and the medical precinct on Wickham Terrace. Professionals and renters live here, so compact cars and rideshare vehicles fill the tight streets. The Inner City Bypass and the CBD edge sit right alongside.",
+      "housingNote": "Heritage terraces and cottages beside medical towers"
     },
     {
       "slug": "st-lucia",
@@ -1050,11 +1290,15 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "toowong",
+        "indooroopilly",
+        "auchenflower",
+        "fairfield",
+        "west-end"
+      ],
+      "landmark": "The University of Queensland",
+      "localContext": "St Lucia is a riverside western suburb dominated by the University of Queensland and its student population. Students, academics and affluent families live here, so the streets mix small hatches, rideshare vehicles and prestige SUVs near the river. Sir Fred Schonell Drive and the CityCat serve the area.",
+      "housingNote": "Grand riverfront homes alongside student apartment blocks"
     },
     {
       "slug": "stafford",
@@ -1066,11 +1310,15 @@
       "distanceFromBase": 24,
       "responseTime": "Usually next business day",
       "nearby": [
-        "bardon",
-        "cleveland",
-        "enoggera",
-        "indooroopilly"
-      ]
+        "everton-park",
+        "chermside",
+        "kedron",
+        "mitchelton",
+        "wavell-heights"
+      ],
+      "landmark": "Stafford City shopping centre",
+      "localContext": "Stafford is a northside suburb on the hills around Stafford Road, a settled family area with a growing cafe scene. The post-war homes and renovated Queenslanders mean family SUVs, work utes and commuter sedans line the streets. Stafford Road and Webster Road carry the commute.",
+      "housingNote": "Post-war homes and Queenslanders on hilly streets"
     },
     {
       "slug": "stones-corner",
@@ -1082,11 +1330,15 @@
       "distanceFromBase": 16,
       "responseTime": "Same-day available",
       "nearby": [
-        "cannon-hill",
+        "greenslopes",
         "coorparoo",
-        "fairfield",
-        "seven-hills"
-      ]
+        "woolloongabba",
+        "annerley",
+        "holland-park"
+      ],
+      "landmark": "Logan Road retail strip at Stones Corner",
+      "localContext": "Stones Corner is a compact inner-southeast suburb known for its retail strip at the Logan Road and Old Cleveland Road junction. Young professionals and renters live here, driving compact cars and rideshare vehicles. The busway and the M3 give a fast run into the city.",
+      "housingNote": "Older cottages and units around a busy retail strip"
     },
     {
       "slug": "sunnybank",
@@ -1099,10 +1351,13 @@
       "responseTime": "Often same-day",
       "nearby": [
         "macgregor",
-        "wishart",
-        "crestmead",
-        "loganlea"
-      ]
+        "runcorn",
+        "eight-mile-plains",
+        "wishart"
+      ],
+      "landmark": "Sunnybank Plaza and Market Square",
+      "localContext": "Sunnybank is a southside suburb famous as Brisbane's Asian dining and shopping hub, with a strong Chinese, Korean and Vietnamese community. Families and students live here, so the streets carry family SUVs, commuter sedans and small hatches. Mains Road and the Pacific Motorway keep it well linked.",
+      "housingNote": "Post-war brick homes with extensive townhouse and unit infill"
     },
     {
       "slug": "tarragindi",
@@ -1114,11 +1369,15 @@
       "distanceFromBase": 13,
       "responseTime": "Same-day available",
       "nearby": [
-        "bethania",
-        "carindale",
         "holland-park",
-        "moorooka"
-      ]
+        "annerley",
+        "greenslopes",
+        "moorooka",
+        "salisbury"
+      ],
+      "landmark": "Toohey Forest and the Tarragindi shops",
+      "localContext": "Tarragindi is a hilly inner-southside suburb backing onto Toohey Forest, a quiet and sought-after family area. Established families favour family SUVs, small hatches and renovated post-war daily drivers. Logan Road and the M3 sit close at hand for the city run.",
+      "housingNote": "Post-war homes and Queenslanders on leafy hillside blocks"
     },
     {
       "slug": "the-gap",
@@ -1130,11 +1389,15 @@
       "distanceFromBase": 28,
       "responseTime": "Usually next business day",
       "nearby": [
-        "aspley",
-        "zillmere",
-        "redbank-plains",
-        "banyo"
-      ]
+        "bardon",
+        "ashgrove",
+        "keperra",
+        "enoggera",
+        "mitchelton"
+      ],
+      "landmark": "Walkabout Creek and the D'Aguilar National Park entrance",
+      "localContext": "The Gap is a bushy outer-northwest suburb set against the national park, prized for its leafy, semi-rural feel. Established families favour four-wheel drives, family SUVs and dual-cab utes for the hilly bush blocks. Waterworks Road is the single main route in and out toward the city.",
+      "housingNote": "1970s and 80s homes on large bush blocks against the range"
     },
     {
       "slug": "tingalpa",
@@ -1146,11 +1409,14 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
-        "balmoral",
-        "kangaroo-point",
-        "morningside",
-        "south-brisbane"
-      ]
+        "cannon-hill",
+        "wynnum",
+        "capalaba",
+        "balmoral"
+      ],
+      "landmark": "Tingalpa Creek and the Capalaba Road industrial area",
+      "localContext": "Tingalpa is an eastern suburb mixing established homes, new estates and light industry near the creek. Families and tradespeople live here, so dual-cab utes, vans and family SUVs are common. Wynnum Road and the Gateway Motorway give fast access to the bay and the city.",
+      "housingNote": "Post-war homes alongside newer estate developments"
     },
     {
       "slug": "toowong",
@@ -1162,11 +1428,15 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "auchenflower",
+        "st-lucia",
+        "indooroopilly",
+        "milton",
+        "bardon"
+      ],
+      "landmark": "Toowong Village shopping centre",
+      "localContext": "Toowong is a western suburb hub on the river bend, a busy mix of offices, the shopping centre and apartment towers near the university. Young professionals, students and renters dominate, so compact cars and rideshare vehicles fill the streets. Coronation Drive and the Western Freeway run along its edge.",
+      "housingNote": "Apartment towers and Queenslanders on the hill above the river"
     },
     {
       "slug": "upper-mount-gravatt",
@@ -1178,11 +1448,15 @@
       "distanceFromBase": 11,
       "responseTime": "Same-day available",
       "nearby": [
-        "mansfield",
-        "hillcrest",
-        "meadowbrook",
-        "waterford"
-      ]
+        "mount-gravatt",
+        "macgregor",
+        "eight-mile-plains",
+        "wishart",
+        "mansfield"
+      ],
+      "landmark": "Westfield Garden City",
+      "localContext": "Upper Mount Gravatt is a major southside centre built around Westfield Garden City and the busway interchange. It is a busy family and commuter suburb, so the streets carry family SUVs, commuter sedans and trade vans. Logan Road and the Pacific Motorway keep traffic constant.",
+      "housingNote": "Post-war homes with apartments clustered near the centre"
     },
     {
       "slug": "virginia",
@@ -1194,11 +1468,15 @@
       "distanceFromBase": 25,
       "responseTime": "Usually next business day",
       "nearby": [
-        "wavell-heights",
-        "jimboomba",
-        "goodna",
-        "bardon"
-      ]
+        "banyo",
+        "geebung",
+        "northgate",
+        "nundah",
+        "wavell-heights"
+      ],
+      "landmark": "Virginia Golf Club",
+      "localContext": "Virginia is a northside suburb mixing older homes with a large industrial estate near the rail line. Working families and tradespeople live here, so the streets carry work utes, vans and commuter sedans. Sandgate Road and the Gateway Motorway keep it well connected.",
+      "housingNote": "Post-war homes beside a substantial industrial estate"
     },
     {
       "slug": "wavell-heights",
@@ -1210,11 +1488,15 @@
       "distanceFromBase": 25,
       "responseTime": "Usually next business day",
       "nearby": [
-        "virginia",
-        "jimboomba",
-        "goodna",
-        "bardon"
-      ]
+        "chermside",
+        "kedron",
+        "nundah",
+        "geebung",
+        "northgate"
+      ],
+      "landmark": "Wavell Heights State High School",
+      "localContext": "Wavell Heights is a settled northside family suburb on the rise near Chermside, popular with families and downsizers. The post-war brick homes and renovated Queenslanders mean family SUVs, work utes and commuter sedans line the streets. Hamilton Road and Gympie Road keep it close to the city.",
+      "housingNote": "Post-war brick homes and Queenslanders on tidy blocks"
     },
     {
       "slug": "west-end",
@@ -1226,11 +1508,14 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
-        "balmoral",
-        "kangaroo-point",
-        "morningside",
-        "south-brisbane"
-      ]
+        "south-brisbane",
+        "fairfield",
+        "st-lucia",
+        "milton"
+      ],
+      "landmark": "Boundary Street markets and dining strip",
+      "localContext": "West End is an eclectic inner-city riverside suburb known for its multicultural Boundary Street strip and bohemian character. Young professionals, students and long-time residents live here, so the streets carry small hatches, vintage cars and rideshare vehicles. The river, Montague Road and the CityCat shape the area.",
+      "housingNote": "Workers cottages and warehouses beside new riverside apartments"
     },
     {
       "slug": "wishart",
@@ -1242,11 +1527,15 @@
       "distanceFromBase": 10,
       "responseTime": "Often same-day",
       "nearby": [
-        "macgregor",
-        "sunnybank",
-        "crestmead",
-        "loganlea"
-      ]
+        "mansfield",
+        "mount-gravatt",
+        "upper-mount-gravatt",
+        "rochedale",
+        "macgregor"
+      ],
+      "landmark": "Wishart Village and Mimosa Creek bushland",
+      "localContext": "Wishart is a quiet southeast family suburb of brick homes near Toohey Forest and the creek reserves. Established families favour family SUVs, people-movers and tidy four-wheel drives. Newnham Road and the Pacific Motorway give quick routes across the city.",
+      "housingNote": "1970s and 80s brick homes on suburban blocks near bushland"
     },
     {
       "slug": "woolloongabba",
@@ -1258,11 +1547,15 @@
       "distanceFromBase": 17,
       "responseTime": "Same-day available",
       "nearby": [
-        "norman-park",
-        "eagleby",
-        "balmoral",
-        "cannon-hill"
-      ]
+        "kangaroo-point",
+        "south-brisbane",
+        "stones-corner",
+        "greenslopes",
+        "coorparoo"
+      ],
+      "landmark": "The Gabba cricket ground",
+      "localContext": "Woolloongabba is an inner-city suburb anchored by the Gabba stadium, mixing the antique strip, hospitals and new apartment towers. Young professionals and renters live here, so compact cars and rideshare vehicles fill the streets. The Clem7 tunnel, the M3 and the busway converge here.",
+      "housingNote": "Older cottages and warehouses with new high-rise apartments"
     },
     {
       "slug": "wynnum",
@@ -1274,11 +1567,14 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
+        "manly",
+        "tingalpa",
         "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "clayfield"
+      ],
+      "landmark": "Wynnum foreshore and the Pandanus Beach wading pool",
+      "localContext": "Wynnum is a bayside suburb with a heritage seaside esplanade and a relaxed coastal feel. Families, retirees and boaties live here, so the streets show four-wheel drives, boat trailers and family SUVs. The Esplanade, Wynnum Road and the rail line connect it back along the bay to the city.",
+      "housingNote": "Older bayside cottages and Queenslanders near the foreshore"
     },
     {
       "slug": "yeronga",
@@ -1290,11 +1586,14 @@
       "distanceFromBase": 15,
       "responseTime": "Same-day available",
       "nearby": [
+        "fairfield",
         "annerley",
-        "camp-hill",
-        "greenslopes",
-        "edens-landing"
-      ]
+        "graceville",
+        "moorooka"
+      ],
+      "landmark": "Yeronga Memorial Park",
+      "localContext": "Yeronga is a riverside southside suburb of Queenslanders and parkland near the rail line, popular with families and students. The character homes and unit blocks mean small hatches, family SUVs and commuter sedans line the streets. The rail line and the M3 give quick access to the city and university.",
+      "housingNote": "Queenslanders and post-war homes with riverside unit pockets"
     },
     {
       "slug": "zillmere",
@@ -1306,11 +1605,15 @@
       "distanceFromBase": 28,
       "responseTime": "Usually next business day",
       "nearby": [
+        "geebung",
         "aspley",
-        "the-gap",
-        "redbank-plains",
-        "banyo"
-      ]
+        "carseldine",
+        "chermside",
+        "virginia"
+      ],
+      "landmark": "Zillmere railway station",
+      "localContext": "Zillmere is a northside suburb of older homes and public housing near the rail line, a diverse and changing area. Working families live here, so the streets carry commuter sedans, work utes and budget hatches. Zillmere Road and the Gympie Arterial keep it well connected.",
+      "housingNote": "Post-war homes and public housing with townhouse infill"
     },
     {
       "slug": "arundel",
@@ -1322,11 +1625,15 @@
       "distanceFromBase": 44,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "nerang",
-        "hope-island",
+        "parkwood",
         "molendinar",
-        "parkwood"
-      ]
+        "labrador",
+        "biggera-waters",
+        "pacific-pines"
+      ],
+      "landmark": "Griffith University Gold Coast campus and the nearby Gold Coast University Hospital",
+      "localContext": "Arundel sits just inland from the Broadwater, bordered by the M1 and the Smith Street Motorway, so commuting north to Brisbane is easy. It is a settled family suburb with a lot of 1990s and 2000s brick homes on decent blocks, plus newer apartments near the hospital precinct. You see plenty of family SUVs and hatchbacks here, along with the odd ute belonging to tradies working the northern corridor.",
+      "housingNote": "1990s and 2000s brick-and-tile family homes with newer apartments near the hospital"
     },
     {
       "slug": "ashmore",
@@ -1338,11 +1645,14 @@
       "distanceFromBase": 48,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "labrador",
-        "merrimac",
-        "mudgeeraba",
-        "runaway-bay"
-      ]
+        "molendinar",
+        "benowa",
+        "southport",
+        "carrara"
+      ],
+      "landmark": "Ashmore City Shopping Centre on Cotlew Street",
+      "localContext": "Ashmore is a central, established suburb wedged between Southport and the Nerang River, handy to the Gold Coast Highway and the M1. Housing is a mix of older 1970s and 1980s lowset brick homes alongside canal-front properties on the Benowa side. The streets carry a typical suburban mix of family wagons, work utes and older second cars, with retirees common in the quieter pockets.",
+      "housingNote": "1970s-1980s lowset brick homes with some canal-front properties"
     },
     {
       "slug": "benowa",
@@ -1354,11 +1664,14 @@
       "distanceFromBase": 50,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "robina",
+        "ashmore",
         "southport",
-        "rosewood",
-        "worongary"
-      ]
+        "carrara",
+        "surfers-paradise"
+      ],
+      "landmark": "Benowa Gardens Shopping Centre and the Gold Coast Botanic Gardens",
+      "localContext": "Benowa is a leafy, affluent riverside suburb known for its canal estates and the Botanic Gardens along the Nerang River. It draws established families and professionals, and the homes range from large 1980s and 1990s waterfront builds to renovated low-sets. Expect to see late-model European SUVs and prestige sedans in the driveways here, a step up from the surrounding suburbs.",
+      "housingNote": "Large 1980s-1990s waterfront and canal-estate homes, many renovated"
     },
     {
       "slug": "biggera-waters",
@@ -1370,11 +1683,15 @@
       "distanceFromBase": 47,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "carrara",
-        "ashmore",
         "labrador",
-        "merrimac"
-      ]
+        "runaway-bay",
+        "arundel",
+        "parkwood",
+        "southport"
+      ],
+      "landmark": "Harbour Town Premium Outlets shopping centre",
+      "localContext": "Biggera Waters runs along the northern Broadwater foreshore, popular with retirees and downsizers drawn to the waterfront and the boat ramps. There is a strong mix of older units, villas and canal homes, with Harbour Town anchoring the retail. You see a lot of small sedans, caravans and tow vehicles here, reflecting the older demographic and the holiday-park trade nearby.",
+      "housingNote": "Older waterfront units, villas and canal homes"
     },
     {
       "slug": "broadbeach",
@@ -1387,10 +1704,13 @@
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
         "surfers-paradise",
-        "main-beach",
-        "benowa",
+        "carrara",
+        "merrimac",
         "robina"
-      ]
+      ],
+      "landmark": "Pacific Fair Shopping Centre and The Star Gold Coast casino",
+      "localContext": "Broadbeach is a dense beachside hub of high-rise apartments, dining strips and the casino precinct, sitting just south of Surfers Paradise. Residents are a mix of young professionals, holiday-let owners and well-off retirees in the towers. Parking is tight and you see prestige cars, scooters and a high turnover of rideshare and short-stay vehicles around Pacific Fair.",
+      "housingNote": "High-rise apartments and beachside units, very few houses"
     },
     {
       "slug": "carrara",
@@ -1402,11 +1722,15 @@
       "distanceFromBase": 47,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "biggera-waters",
+        "merrimac",
+        "nerang",
         "ashmore",
-        "labrador",
-        "merrimac"
-      ]
+        "broadbeach",
+        "benowa"
+      ],
+      "landmark": "People First Stadium (Carrara Stadium) and Emerald Lakes",
+      "localContext": "Carrara spreads across the central Gold Coast between the M1 and the Nerang River, taking in the stadium, light-industrial pockets and the Emerald Lakes estate. It is a working suburb with a strong tradie presence alongside established families. Toyota Hiluxes and Ford Rangers are common around the industrial streets, while the lake estates skew toward family SUVs.",
+      "housingNote": "1990s-2000s family homes plus the newer Emerald Lakes estate"
     },
     {
       "slug": "coomera",
@@ -1418,11 +1742,15 @@
       "distanceFromBase": 35,
       "responseTime": "Usually next business day",
       "nearby": [
-        "eastern-heights",
-        "ipswich-cbd",
-        "flinders-view",
-        "leichhardt"
-      ]
+        "upper-coomera",
+        "helensvale",
+        "oxenford",
+        "hope-island",
+        "pacific-pines"
+      ],
+      "landmark": "Westfield Coomera and the Coomera train station",
+      "localContext": "Coomera is one of the fastest-growing parts of the northern Gold Coast, built around the M1, the rail line and the newer Westfield. It draws young families and first-home buyers into estate housing, with marine industry along the Coomera River. The roads are full of late-model family SUVs and tradie utes servicing the constant construction across the growth corridor.",
+      "housingNote": "New estates, mostly built after 2010, with marine industry along the river"
     },
     {
       "slug": "helensvale",
@@ -1434,11 +1762,15 @@
       "distanceFromBase": 40,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
+        "coomera",
+        "oxenford",
         "pacific-pines",
         "hope-island",
-        "oxenford",
-        "brassall"
-      ]
+        "upper-coomera"
+      ],
+      "landmark": "Westfield Helensvale and the Helensvale rail and light-rail interchange",
+      "localContext": "Helensvale is an established northern hub anchored by its Westfield and the transport interchange where heavy rail meets the G:link tram. Housing is largely 1990s and 2000s family homes, with gated golf and lake estates nearby. The commuter crowd here runs family SUVs and sedans, with strong morning traffic heading to the station and onto the M1.",
+      "housingNote": "1990s-2000s family homes with gated golf and lake estates"
     },
     {
       "slug": "hope-island",
@@ -1450,11 +1782,15 @@
       "distanceFromBase": 42,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "arundel",
+        "coomera",
         "helensvale",
-        "pacific-pines",
-        "nerang"
-      ]
+        "oxenford",
+        "upper-coomera",
+        "runaway-bay"
+      ],
+      "landmark": "Hope Island Marketplace and the Sanctuary Cove resort and marina",
+      "localContext": "Hope Island is an affluent waterfront enclave of gated canal estates, golf courses and the Sanctuary Cove marina at the mouth of the Coomera River. It attracts retirees, professionals and boat owners into large modern homes. The driveways here carry prestige European SUVs, boats on trailers and golf carts, with a quiet, resort-style feel away from the M1 bustle.",
+      "housingNote": "Modern gated canal estates and golf-course homes, mostly post-2000"
     },
     {
       "slug": "labrador",
@@ -1466,11 +1802,15 @@
       "distanceFromBase": 48,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "ashmore",
-        "merrimac",
-        "mudgeeraba",
-        "runaway-bay"
-      ]
+        "southport",
+        "biggera-waters",
+        "runaway-bay",
+        "arundel",
+        "parkwood"
+      ],
+      "landmark": "The Broadwater Parklands and Charis Seafoods on the Esplanade",
+      "localContext": "Labrador hugs the western Broadwater just north of Southport, an older, denser suburb popular with renters, retirees and first-home buyers. Housing runs to walk-up units, post-war cottages and newer infill townhouses close to the water. You see a broad mix of small commuter cars and older vehicles here, with the Gold Coast Highway carrying steady through-traffic.",
+      "housingNote": "Walk-up units, post-war cottages and newer infill townhouses"
     },
     {
       "slug": "main-beach",
@@ -1482,11 +1822,14 @@
       "distanceFromBase": 52,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "benowa",
-        "robina",
         "southport",
-        "surfers-paradise"
-      ]
+        "surfers-paradise",
+        "labrador",
+        "broadbeach"
+      ],
+      "landmark": "Marina Mirage and Tedder Avenue dining precinct",
+      "localContext": "Main Beach sits on the spit between the Broadwater and the ocean, a compact, upmarket strip of high-rise towers and the Tedder Avenue cafe scene. It is home to well-off retirees, professionals and holiday-home owners. Prestige cars and marina traffic dominate the narrow streets, and most residents live in apartments rather than houses.",
+      "housingNote": "High-rise beachfront apartments and a few exclusive low-rise units"
     },
     {
       "slug": "merrimac",
@@ -1498,11 +1841,15 @@
       "distanceFromBase": 48,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "ashmore",
-        "labrador",
-        "mudgeeraba",
-        "runaway-bay"
-      ]
+        "carrara",
+        "robina",
+        "broadbeach",
+        "nerang",
+        "worongary"
+      ],
+      "landmark": "Q Super Centre on the Gold Coast Highway",
+      "localContext": "Merrimac is a central residential suburb between the M1 and Robina, built largely through the 1990s with lakeside and canal pockets. It suits established families and downsizers, handy to the motorway and the rail line. The streets carry a steady mix of family SUVs and work utes, with easy access to the Robina and Carrara employment areas.",
+      "housingNote": "1990s family homes with lakeside and canal pockets"
     },
     {
       "slug": "molendinar",
@@ -1514,11 +1861,15 @@
       "distanceFromBase": 46,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
+        "ashmore",
+        "arundel",
         "parkwood",
-        "biggera-waters",
-        "carrara",
-        "nerang"
-      ]
+        "southport",
+        "benowa"
+      ],
+      "landmark": "Gold Coast Hinterland Regional Park trails and the Molendinar industrial estate",
+      "localContext": "Molendinar is a quiet central suburb with a notable light-industrial estate sitting beside its residential streets, close to the M1 and Smith Street. It draws tradies, small-business owners and established families. The area sees a heavy run of work vehicles, vans and Hiluxes through the industrial pocket, with older lowset brick homes on the residential side.",
+      "housingNote": "1980s lowset brick homes beside a light-industrial estate"
     },
     {
       "slug": "mudgeeraba",
@@ -1530,11 +1881,15 @@
       "distanceFromBase": 48,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "ashmore",
-        "labrador",
+        "worongary",
+        "robina",
+        "nerang",
         "merrimac",
-        "runaway-bay"
-      ]
+        "carrara"
+      ],
+      "landmark": "Mudgeeraba village shops and the Gold Coast Turf Club's rural surrounds",
+      "localContext": "Mudgeeraba sits in the southern hinterland fringe, keeping a semi-rural village feel with acreage blocks and bushland alongside newer estates. It attracts families wanting space and a quieter pace within reach of the M1. Dual-cab utes, larger 4WDs and tow vehicles are common here given the acreage and horse properties dotted through the area.",
+      "housingNote": "Acreage and semi-rural blocks mixed with newer family estates"
     },
     {
       "slug": "nerang",
@@ -1546,11 +1901,15 @@
       "distanceFromBase": 45,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "arundel",
-        "molendinar",
-        "parkwood",
-        "biggera-waters"
-      ]
+        "carrara",
+        "pacific-pines",
+        "worongary",
+        "merrimac",
+        "mudgeeraba"
+      ],
+      "landmark": "Nerang Mall and the Nerang train station, gateway to the hinterland",
+      "localContext": "Nerang is a long-established town centre west of the M1, acting as the gateway to the hinterland and Hinze Dam. It is a practical, mixed suburb with older housing, light industry and a busy commuter rail station. The roads carry plenty of work utes, older sedans and 4WDs heading up to the hinterland, with steady traffic through the town centre.",
+      "housingNote": "Older town-centre homes mixed with light industry and acreage on the fringe"
     },
     {
       "slug": "oxenford",
@@ -1562,11 +1921,15 @@
       "distanceFromBase": 38,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "brassall",
-        "yamanto",
+        "coomera",
         "helensvale",
-        "pacific-pines"
-      ]
+        "upper-coomera",
+        "pacific-pines",
+        "hope-island"
+      ],
+      "landmark": "Movie World and the nearby theme-park strip on the Pacific Motorway",
+      "localContext": "Oxenford sits at the northern end of the Gold Coast beside the M1 and the theme-park corridor, a settled family suburb on rolling ground above the Coomera River. Housing is largely 1990s and 2000s brick homes on standard blocks. The streets are full of family SUVs and the work utes of tradies servicing the busy northern growth area.",
+      "housingNote": "1990s-2000s brick family homes on standard blocks"
     },
     {
       "slug": "pacific-pines",
@@ -1579,10 +1942,14 @@
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
         "helensvale",
-        "hope-island",
+        "nerang",
+        "arundel",
         "oxenford",
-        "brassall"
-      ]
+        "coomera"
+      ],
+      "landmark": "Pacific Pines Town Centre and the surrounding Nerang State Forest",
+      "localContext": "Pacific Pines is a master-planned family suburb tucked against the Nerang State Forest, built largely from the late 1990s onward. It is firmly family territory, with schools, parks and a strong community feel away from the highway noise. The driveways here are dominated by family SUVs, people-movers and the occasional tradie ute, with most trips funnelling out to Helensvale and the M1.",
+      "housingNote": "Master-planned estates from the late 1990s onward"
     },
     {
       "slug": "parkwood",
@@ -1594,11 +1961,15 @@
       "distanceFromBase": 46,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
+        "arundel",
         "molendinar",
-        "biggera-waters",
-        "carrara",
-        "nerang"
-      ]
+        "labrador",
+        "southport",
+        "biggera-waters"
+      ],
+      "landmark": "RACV Royal Pines and the Parkwood light-rail terminus",
+      "localContext": "Parkwood is a central suburb known for its golf course and the northern terminus of the G:link tram, close to Griffith University and the hospital. Housing is a mix of 1980s and 1990s homes with newer townhouses near the golf estate. The area draws students, families and golf-course residents, with a typical suburban spread of hatchbacks and SUVs on the streets.",
+      "housingNote": "1980s-1990s homes with newer townhouses near the golf estate"
     },
     {
       "slug": "robina",
@@ -1610,11 +1981,15 @@
       "distanceFromBase": 50,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "benowa",
-        "southport",
-        "rosewood",
-        "worongary"
-      ]
+        "merrimac",
+        "broadbeach",
+        "mudgeeraba",
+        "worongary",
+        "carrara"
+      ],
+      "landmark": "Robina Town Centre and CBUS Super Stadium",
+      "localContext": "Robina is a major master-planned centre built around its big Town Centre, the hospital, the stadium and the rail station. It is a hub for families and professionals, with lake estates, apartments and a strong commercial core. The roads carry a high volume of family SUVs and late-model sedans, and the rail station makes it a busy commuter point on the southern Gold Coast.",
+      "housingNote": "Master-planned lake estates, townhouses and apartments"
     },
     {
       "slug": "runaway-bay",
@@ -1626,11 +2001,15 @@
       "distanceFromBase": 48,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "ashmore",
+        "biggera-waters",
         "labrador",
-        "merrimac",
-        "mudgeeraba"
-      ]
+        "hope-island",
+        "southport",
+        "arundel"
+      ],
+      "landmark": "Runaway Bay Shopping Village and the Runaway Bay Marina",
+      "localContext": "Runaway Bay is a waterfront suburb on the northern Broadwater, well known for its canal homes, marina and the established shopping village. It appeals to retirees, boat owners and families in the canal estates. You see a fair share of tow vehicles, boats on trailers and comfortable family SUVs here, with a relaxed, water-focused feel along the Broadwater foreshore.",
+      "housingNote": "Canal homes and waterfront houses with some unit complexes"
     },
     {
       "slug": "southport",
@@ -1642,11 +2021,15 @@
       "distanceFromBase": 50,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "benowa",
-        "robina",
-        "rosewood",
-        "worongary"
-      ]
+        "labrador",
+        "main-beach",
+        "ashmore",
+        "molendinar",
+        "benowa"
+      ],
+      "landmark": "Australia Fair Shopping Centre and the Broadwater Parklands",
+      "localContext": "Southport is the Gold Coast's central business district, taking in the courts, the Broadwater foreshore and a growing cluster of high-rise towers around the light-rail line. It is a dense, mixed suburb of professionals, students and renters. The streets see heavy traffic, rideshare cars and a broad spread of vehicles, from older commuter cars to fleet and prestige cars near the CBD.",
+      "housingNote": "High-rise apartments and older units near a CBD core, houses on the fringe"
     },
     {
       "slug": "surfers-paradise",
@@ -1661,8 +2044,11 @@
         "broadbeach",
         "main-beach",
         "benowa",
-        "robina"
-      ]
+        "southport"
+      ],
+      "landmark": "Cavill Avenue and the Q1 Tower",
+      "localContext": "Surfers Paradise is the Gold Coast's iconic beachfront strip, packed with high-rise towers, the Cavill Avenue mall and a constant flow of tourists. Residents are largely apartment dwellers, from young renters to holiday-let owners and retirees in the towers. Parking is scarce and the streets see rideshares, scooters and short-stay vehicles, with traffic shaped by the tram line down the Esplanade.",
+      "housingNote": "Dense beachfront high-rise apartments, almost no houses"
     },
     {
       "slug": "upper-coomera",
@@ -1674,11 +2060,15 @@
       "distanceFromBase": 33,
       "responseTime": "Usually next business day",
       "nearby": [
-        "silkstone",
-        "bald-hills",
-        "booval",
-        "karalee"
-      ]
+        "coomera",
+        "oxenford",
+        "helensvale",
+        "pacific-pines",
+        "hope-island"
+      ],
+      "landmark": "Coomera City Centre shops and the nearby Dreamworld theme park",
+      "localContext": "Upper Coomera is a sprawling northern growth suburb on the hills above the Coomera River, beside the M1 and the theme-park strip. It is heavily family-oriented, built out rapidly through the 2000s and 2010s with estate housing and schools. The roads here are full of family SUVs, people-movers and tradie utes serving the constant new construction across the corridor.",
+      "housingNote": "Rapid 2000s-2010s estate housing on hilly ground"
     },
     {
       "slug": "worongary",
@@ -1690,11 +2080,15 @@
       "distanceFromBase": 49,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "ashmore",
-        "benowa",
-        "labrador",
-        "merrimac"
-      ]
+        "mudgeeraba",
+        "nerang",
+        "robina",
+        "merrimac",
+        "carrara"
+      ],
+      "landmark": "Worongary Town Centre and the surrounding hinterland acreage",
+      "localContext": "Worongary sits on the hinterland fringe west of Robina, blending acreage and rural-residential blocks with newer estate pockets. It draws families wanting larger land within reach of the M1 and Robina's amenities. Dual-cab utes, 4WDs and tow vehicles are common given the acreage lifestyle, and the area keeps a green, semi-rural feel close to the hills.",
+      "housingNote": "Acreage and rural-residential blocks with some newer estates"
     },
     {
       "slug": "augustine-heights",
@@ -1706,11 +2100,15 @@
       "distanceFromBase": 20,
       "responseTime": "Same-day available",
       "nearby": [
-        "brisbane-cbd",
-        "fortitude-valley",
-        "milton",
-        "new-farm"
-      ]
+        "springfield",
+        "springfield-lakes",
+        "bellbird-park",
+        "camira",
+        "redbank-plains"
+      ],
+      "landmark": "Orion Springfield Central nearby",
+      "localContext": "Augustine Heights is a master-planned residential pocket between Springfield and Brookwater, developed mostly through the 2000s. Households here are largely young families and professionals who commute to Brisbane via the Centenary Motorway, so the driveways are full of late-model SUVs and family wagons like the Mazda CX-5, Kia Sportage and Toyota RAV4. The streets are wide, the verges manicured, and the feel is quiet and suburban rather than industrial.",
+      "housingNote": "Modern brick-and-render homes, mostly built 2000 onwards"
     },
     {
       "slug": "bellbird-park",
@@ -1722,11 +2120,15 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "camira",
+        "augustine-heights",
+        "goodna",
+        "redbank-plains",
+        "springfield"
+      ],
+      "landmark": "Bellbird Park State Secondary College",
+      "localContext": "Bellbird Park sits between Camira and Goodna and has grown fast as newer estates filled in the bushland blocks. It draws a mix of established families on larger older blocks and first-home buyers in the newer cul-de-sacs. You see a broad spread of vehicles, from tradie Hiluxes and Rangers heading out early to family SUVs and older Commodores and Falcons on the established streets.",
+      "housingNote": "Older brick homes on big blocks mixed with newer estate builds"
     },
     {
       "slug": "booval",
@@ -1738,11 +2140,15 @@
       "distanceFromBase": 32,
       "responseTime": "Usually next business day",
       "nearby": [
-        "bald-hills",
-        "karalee",
-        "bracken-ridge",
-        "upper-coomera"
-      ]
+        "bundamba",
+        "silkstone",
+        "eastern-heights",
+        "ipswich-cbd",
+        "raceview"
+      ],
+      "landmark": "Booval Fair shopping centre",
+      "localContext": "Booval is a tight older suburb just east of the Ipswich CBD, built up around the rail line and the Brisbane Road shops. The housing is a mix of timber Queenslanders and post-war cottages, and the population skews older with a steady flow of working families. Daily traffic is dominated by older sedans, well-used utes and budget hatchbacks, reflecting a more modest, established part of Ipswich.",
+      "housingNote": "Pre-war Queenslanders and post-war cottages on small lots"
     },
     {
       "slug": "brassall",
@@ -1754,11 +2160,15 @@
       "distanceFromBase": 38,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "oxenford",
-        "yamanto",
-        "helensvale",
-        "pacific-pines"
-      ]
+        "north-ipswich",
+        "ipswich-cbd",
+        "leichhardt",
+        "one-mile",
+        "karalee"
+      ],
+      "landmark": "Brassall Shopping Centre",
+      "localContext": "Brassall is a large established suburb on the northern side of the Bremer River, a short hop over the bridge from the Ipswich CBD. It is a solid working-family area with a long history, so you get older brick-and-tile homes alongside infill townhouses. The streets carry plenty of dual-cab utes like the Hilux and Ranger driven by local tradies, plus family SUVs running the school run to Brassall State School.",
+      "housingNote": "1960s-70s brick-and-tile homes with newer townhouse infill"
     },
     {
       "slug": "bundamba",
@@ -1770,11 +2180,15 @@
       "distanceFromBase": 30,
       "responseTime": "Usually next business day",
       "nearby": [
-        "carseldine",
-        "keperra",
-        "sandgate",
-        "ripley"
-      ]
+        "booval",
+        "silkstone",
+        "collingwood-park",
+        "raceview",
+        "ipswich-cbd"
+      ],
+      "landmark": "Bundamba Racecourse",
+      "localContext": "Bundamba is an old coal-and-rail suburb east of the CBD, known for its racecourse and TAFE campus. The housing is largely modest post-war and older fibro and brick homes, and residents lean toward working families and longtime locals. The vehicle mix is practical and older, with plenty of well-worn utes, vans and second-hand sedans, and the Cunningham Highway runs close by for commuters.",
+      "housingNote": "Post-war fibro and brick homes, modest older stock"
     },
     {
       "slug": "camira",
@@ -1786,11 +2200,14 @@
       "distanceFromBase": 20,
       "responseTime": "Same-day available",
       "nearby": [
-        "brisbane-cbd",
-        "fortitude-valley",
-        "milton",
-        "new-farm"
-      ]
+        "bellbird-park",
+        "augustine-heights",
+        "springfield",
+        "goodna"
+      ],
+      "landmark": "White Rock Conservation Park",
+      "localContext": "Camira is a leafy 1970s-developed suburb that bridges the gap between Ipswich and the Springfield growth corridor. It attracts established families who like the larger blocks and mature trees, with newer arrivals filling pockets of recent subdivision. Driveways here hold a balance of family SUVs, older Commodores and the occasional tradie ute, and the Logan Motorway sits within easy reach for the Brisbane commute.",
+      "housingNote": "1970s lowset brick homes on generous leafy blocks"
     },
     {
       "slug": "collingwood-park",
@@ -1802,11 +2219,15 @@
       "distanceFromBase": 27,
       "responseTime": "Usually next business day",
       "nearby": [
-        "banyo",
-        "mitchelton",
-        "aspley",
-        "chermside"
-      ]
+        "redbank-plains",
+        "bundamba",
+        "goodna",
+        "redbank",
+        "springfield"
+      ],
+      "landmark": "Collingwood Park State School",
+      "localContext": "Collingwood Park is a residential suburb wedged between Redbank Plains and Bundamba, made up largely of estates developed from the 1980s onward. It is a value-focused family area, popular with first-home buyers and renters, so the driveways are full of practical family cars, mid-size SUVs and a fair share of working utes. The Centenary Highway is a short drive away for the run into Brisbane or Springfield.",
+      "housingNote": "1980s-90s lowset brick homes, value family stock"
     },
     {
       "slug": "eastern-heights",
@@ -1818,11 +2239,15 @@
       "distanceFromBase": 35,
       "responseTime": "Usually next business day",
       "nearby": [
-        "coomera",
+        "silkstone",
+        "raceview",
+        "booval",
         "ipswich-cbd",
-        "flinders-view",
-        "leichhardt"
-      ]
+        "yamanto"
+      ],
+      "landmark": "Queens Park Ipswich",
+      "localContext": "Eastern Heights is one of Ipswich's older and more elevated established suburbs, sitting just south-east of the CBD near Queens Park. It holds a good stock of period Queenslanders and character homes, and attracts families who want established streets close to town. The cars tend to be a mix of well-kept family sedans and SUVs, with older character-home owners often running second vehicles in the garage.",
+      "housingNote": "Character Queenslanders and post-war homes on leafy streets"
     },
     {
       "slug": "flinders-view",
@@ -1834,11 +2259,15 @@
       "distanceFromBase": 36,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "leichhardt",
-        "north-ipswich",
-        "one-mile",
-        "coomera"
-      ]
+        "raceview",
+        "yamanto",
+        "eastern-heights",
+        "ripley",
+        "silkstone"
+      ],
+      "landmark": "Flinders View State School",
+      "localContext": "Flinders View is a settled residential suburb on the southern edge of Ipswich, built out mostly through the 1980s and 1990s. It is a steady family area with lowset brick homes on regular suburban blocks and a quiet, established feel. You see family SUVs, dual-cab utes and the usual run of Toyotas and Mazdas, with the Cunningham Highway close by for the trip out toward Amberley and beyond.",
+      "housingNote": "1980s-90s lowset brick family homes"
     },
     {
       "slug": "goodna",
@@ -1850,11 +2279,15 @@
       "distanceFromBase": 25,
       "responseTime": "Usually next business day",
       "nearby": [
-        "virginia",
-        "wavell-heights",
-        "jimboomba",
-        "bardon"
-      ]
+        "redbank",
+        "collingwood-park",
+        "bellbird-park",
+        "camira",
+        "springfield"
+      ],
+      "landmark": "Goodna Aquatic Centre",
+      "localContext": "Goodna sits right on the Ipswich Motorway between Brisbane and Ipswich and is one of the older established towns in the corridor. Housing ranges from flood-aware older homes near the river flats to post-war cottages on the higher streets, and the population is diverse and working-class. The vehicle mix is older and practical, heavy on second-hand sedans, vans and tradie utes, with the motorway carrying constant commuter traffic.",
+      "housingNote": "Post-war cottages and older homes, some on river flats"
     },
     {
       "slug": "ipswich-cbd",
@@ -1866,11 +2299,15 @@
       "distanceFromBase": 35,
       "responseTime": "Usually next business day",
       "nearby": [
-        "coomera",
+        "north-ipswich",
+        "booval",
         "eastern-heights",
-        "flinders-view",
-        "leichhardt"
-      ]
+        "silkstone",
+        "brassall"
+      ],
+      "landmark": "Ipswich Central (Riverlink nearby)",
+      "localContext": "The Ipswich CBD is the historic heart of the city, with heritage commercial buildings, the courthouse precinct and a growing apartment presence. It serves workers, students and a small but rising population of inner-city renters, so parking turns over with hatchbacks, small SUVs and council and trade vehicles. The streets are tighter and older here, and the Warrego Highway feeds traffic straight through the centre.",
+      "housingNote": "Heritage commercial buildings with newer infill apartments"
     },
     {
       "slug": "karalee",
@@ -1882,11 +2319,14 @@
       "distanceFromBase": 32,
       "responseTime": "Usually next business day",
       "nearby": [
-        "bald-hills",
-        "booval",
-        "bracken-ridge",
-        "upper-coomera"
-      ]
+        "brassall",
+        "north-ipswich",
+        "leichhardt",
+        "booval"
+      ],
+      "landmark": "Karalee Shopping Village",
+      "localContext": "Karalee is a semi-rural residential pocket on the northern bank of the Brisbane River, just off the Warrego Highway toward Brisbane. It is an aspirational family area with larger acreage-style blocks and a quieter, greener feel than the Ipswich suburbs proper. Driveways here hold family 4WDs, dual-cab Rangers and Hiluxes, and the occasional boat or camper trailer, reflecting the room these blocks provide.",
+      "housingNote": "Larger lowset homes on semi-rural acreage blocks"
     },
     {
       "slug": "leichhardt",
@@ -1898,11 +2338,14 @@
       "distanceFromBase": 36,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "flinders-view",
-        "north-ipswich",
         "one-mile",
-        "coomera"
-      ]
+        "brassall",
+        "ipswich-cbd",
+        "north-ipswich"
+      ],
+      "landmark": "Leichhardt State School",
+      "localContext": "Leichhardt is an older inner suburb directly west of the Ipswich CBD, built around the rail line and the old industrial fringe. It is a modest working area with small post-war homes and a longtime local population, and recent years have brought renewal to parts of the housing stock. The cars are mostly older and practical, with well-used utes and budget sedans common on the narrow streets.",
+      "housingNote": "Small post-war cottages and fibro homes on tight lots"
     },
     {
       "slug": "north-ipswich",
@@ -1914,11 +2357,15 @@
       "distanceFromBase": 36,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "flinders-view",
+        "ipswich-cbd",
+        "brassall",
         "leichhardt",
-        "one-mile",
-        "coomera"
-      ]
+        "karalee",
+        "one-mile"
+      ],
+      "landmark": "North Ipswich Reserve",
+      "localContext": "North Ipswich sits across the Bremer River from the CBD and is home to the railway workshops heritage precinct and the sports reserve. It is an established suburb with a strong rail-history identity, mixing older workers' cottages with newer riverside development. The vehicle mix runs from older sedans and tradie utes near the workshops to family SUVs in the newer pockets, and the David Trumpy Bridge links it straight into town.",
+      "housingNote": "Workers' cottages and Queenslanders with riverside infill"
     },
     {
       "slug": "one-mile",
@@ -1930,11 +2377,14 @@
       "distanceFromBase": 36,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "flinders-view",
         "leichhardt",
-        "north-ipswich",
-        "coomera"
-      ]
+        "brassall",
+        "ipswich-cbd",
+        "yamanto"
+      ],
+      "landmark": "Ipswich Hospital nearby",
+      "localContext": "One Mile is a small older suburb just west of the Ipswich CBD, named for its distance from the original town centre. It is a quiet, modest residential area of post-war homes close to the Ipswich Hospital precinct, drawing a mix of longtime locals and hospital workers. The streets carry practical older cars, hatchbacks and the occasional ute, and the suburb feels tucked away despite being close to the centre.",
+      "housingNote": "Post-war and fibro homes on modest blocks"
     },
     {
       "slug": "raceview",
@@ -1946,11 +2396,15 @@
       "distanceFromBase": 34,
       "responseTime": "Usually next business day",
       "nearby": [
-        "coomera",
-        "upper-coomera",
+        "silkstone",
+        "flinders-view",
         "eastern-heights",
-        "ipswich-cbd"
-      ]
+        "bundamba",
+        "yamanto"
+      ],
+      "landmark": "Raceview Marketplace",
+      "localContext": "Raceview is a large established suburb south of the CBD that has grown steadily from older brick homes into newer infill estates. It is a popular middle-ground family area, neither inner-city nor outer-fringe, so the driveways carry a wide spread of family SUVs, dual-cab utes and everyday sedans. Schools and the local shopping centre anchor daily life, and Cunningham Highway access makes the commute straightforward.",
+      "housingNote": "1970s-80s brick homes with newer estate infill"
     },
     {
       "slug": "redbank",
@@ -1962,11 +2416,15 @@
       "distanceFromBase": 26,
       "responseTime": "Usually next business day",
       "nearby": [
-        "chermside",
-        "everton-park",
-        "geebung",
-        "banyo"
-      ]
+        "redbank-plains",
+        "goodna",
+        "collingwood-park",
+        "springfield",
+        "bellbird-park"
+      ],
+      "landmark": "Redbank Plaza",
+      "localContext": "Redbank is an older corridor suburb on the Ipswich Motorway, anchored by the long-standing Redbank Plaza shopping centre and the former rail and industrial uses nearby. It is a practical, value-driven area with a mix of older homes and newer townhouse developments, popular with renters and first-home buyers. The vehicle mix leans toward older sedans, work vans and tradie utes, with the motorway and rail giving easy access to both Brisbane and Ipswich.",
+      "housingNote": "Older homes and post-war stock with newer townhouses"
     },
     {
       "slug": "redbank-plains",
@@ -1978,11 +2436,15 @@
       "distanceFromBase": 28,
       "responseTime": "Usually next business day",
       "nearby": [
-        "aspley",
-        "the-gap",
-        "zillmere",
-        "banyo"
-      ]
+        "redbank",
+        "collingwood-park",
+        "bellbird-park",
+        "springfield",
+        "goodna"
+      ],
+      "landmark": "Town Square Redbank Plains",
+      "localContext": "Redbank Plains is one of the fastest-growing suburbs in the Ipswich corridor, with large new estates rolling out across former farmland. It is overwhelmingly a young-family suburb, full of first-home buyers, so the streets are packed with new SUVs, dual-cab Rangers and Hiluxes, and family wagons still wearing dealer plates. The roads are wide and the houses close together, with the Centenary Highway feeding the Brisbane and Springfield commute.",
+      "housingNote": "New estates, mostly built after 2010"
     },
     {
       "slug": "ripley",
@@ -1994,11 +2456,14 @@
       "distanceFromBase": 30,
       "responseTime": "Usually next business day",
       "nearby": [
-        "carseldine",
-        "keperra",
-        "sandgate",
+        "flinders-view",
+        "yamanto",
+        "raceview",
         "bundamba"
-      ]
+      ],
+      "landmark": "Ripley Town Centre",
+      "localContext": "Ripley is a designated greenfield growth area south of Ipswich, transforming rapidly from rural land into one of the largest master-planned communities in the country. Almost everything is new, drawing young families and first-home buyers, so nearly every driveway holds a recent-model SUV, dual-cab ute or family car. The streets are brand new, the estates are still expanding, and the Cunningham Highway links the area back to Ipswich and the wider corridor.",
+      "housingNote": "Brand-new estates, almost all built after 2015"
     },
     {
       "slug": "rosewood",
@@ -2010,11 +2475,14 @@
       "distanceFromBase": 50,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "benowa",
-        "robina",
-        "southport",
-        "worongary"
-      ]
+        "yamanto",
+        "brassall",
+        "flinders-view",
+        "leichhardt"
+      ],
+      "landmark": "Rosewood Railway Museum",
+      "localContext": "Rosewood is a historic rural town on the western edge of the Ipswich region, well beyond the suburban sprawl and still surrounded by farmland. It keeps a country-town character, with a heritage main street, older timber homes and a population of longtime locals and acreage owners. The vehicles reflect rural life, heavy on dual-cab 4WDs, work utes, farm trucks and older sedans, with the Rosewood rail line the main link back to Ipswich.",
+      "housingNote": "Heritage timber homes and rural acreage properties"
     },
     {
       "slug": "silkstone",
@@ -2026,11 +2494,15 @@
       "distanceFromBase": 33,
       "responseTime": "Usually next business day",
       "nearby": [
-        "upper-coomera",
-        "bald-hills",
         "booval",
-        "karalee"
-      ]
+        "eastern-heights",
+        "raceview",
+        "bundamba",
+        "ipswich-cbd"
+      ],
+      "landmark": "Silkstone State School",
+      "localContext": "Silkstone is a compact established suburb just south-east of the CBD, built up around the early Ipswich tramway and the Brisbane Road shops. It holds a dense mix of older Queenslanders and post-war cottages and draws working families and longtime residents. The streets are narrower and older, and the parked cars run to practical sedans, hatchbacks and well-used utes typical of an established inner Ipswich suburb.",
+      "housingNote": "Older Queenslanders and post-war cottages on small lots"
     },
     {
       "slug": "springfield",
@@ -2042,11 +2514,15 @@
       "distanceFromBase": 18,
       "responseTime": "Same-day available",
       "nearby": [
-        "balmoral",
-        "kangaroo-point",
-        "morningside",
-        "south-brisbane"
-      ]
+        "springfield-lakes",
+        "augustine-heights",
+        "bellbird-park",
+        "camira",
+        "redbank-plains"
+      ],
+      "landmark": "Orion Springfield Central",
+      "localContext": "Springfield is the commercial and education hub of the master-planned Greater Springfield community, home to the University of Southern Queensland campus, the Orion centre and a growing health precinct. It draws professionals, students and young families, so the car parks fill with late-model SUVs, hatchbacks and fleet vehicles rather than tradie utes. The streets are modern and well planned, with the Centenary Highway and the Springfield rail line giving fast access to Brisbane.",
+      "housingNote": "Modern apartments and townhouses around a planned centre"
     },
     {
       "slug": "springfield-lakes",
@@ -2058,11 +2534,15 @@
       "distanceFromBase": 19,
       "responseTime": "Same-day available",
       "nearby": [
-        "bulimba",
-        "capalaba",
-        "hawthorne",
-        "balmoral"
-      ]
+        "springfield",
+        "augustine-heights",
+        "redbank-plains",
+        "camira",
+        "bellbird-park"
+      ],
+      "landmark": "Springfield Lakes Nature Centre",
+      "localContext": "Springfield Lakes is the flagship residential estate of Greater Springfield, built around landscaped lakes and parklands from the 2000s onward. It is a strongly family-oriented suburb of newer homes, so driveways are dominated by family SUVs like the CX-5, Sorento and RAV4, plus the occasional dual-cab. The streets are wide and orderly with plenty of green space, and the Centenary Highway carries the daily commute toward Brisbane.",
+      "housingNote": "Modern estate homes built from the 2000s onward"
     },
     {
       "slug": "yamanto",
@@ -2074,11 +2554,15 @@
       "distanceFromBase": 37,
       "responseTime": "Within 1 to 2 business days",
       "nearby": [
-        "oxenford",
-        "brassall",
         "flinders-view",
-        "leichhardt"
-      ]
+        "raceview",
+        "ripley",
+        "eastern-heights",
+        "one-mile"
+      ],
+      "landmark": "Yamanto Central shopping centre",
+      "localContext": "Yamanto sits on the southern approach to Ipswich where the Cunningham Highway meets the Warrego, making it a key gateway suburb with a busy retail strip. It is a settled family area of lowset brick homes with newer estate growth pushing toward Ripley. The driveways hold a practical mix of family SUVs, dual-cab utes and everyday sedans, and the highway junction means plenty of through traffic passes the local shops.",
+      "housingNote": "1980s-90s lowset brick homes with newer estate edges"
     },
     {
       "slug": "beenleigh",
@@ -2090,11 +2574,14 @@
       "distanceFromBase": 16,
       "responseTime": "Same-day available",
       "nearby": [
-        "cannon-hill",
-        "coorparoo",
-        "fairfield",
-        "seven-hills"
-      ]
+        "eagleby",
+        "edens-landing",
+        "holmview",
+        "yarrabilba"
+      ],
+      "landmark": "Beenleigh Town Square",
+      "localContext": "Beenleigh sits on the southern edge of Logan where the Pacific Motorway and the Logan to Gold Coast rail line meet. It is an older working town centre with a mix of long-time residents and renters, and the streets carry plenty of ageing Commodores, Falcons and tradie utes heading to nearby industrial yards. The area feels practical and budget-minded rather than polished.",
+      "housingNote": "Older post-war and 1970s lowset homes mixed with newer infill townhouses near the station"
     },
     {
       "slug": "bethania",
@@ -2106,11 +2593,15 @@
       "distanceFromBase": 13,
       "responseTime": "Same-day available",
       "nearby": [
-        "tarragindi",
-        "carindale",
-        "holland-park",
-        "moorooka"
-      ]
+        "waterford",
+        "waterford-west",
+        "loganlea",
+        "edens-landing",
+        "holmview"
+      ],
+      "landmark": "Bethania railway station",
+      "localContext": "Bethania is a quiet pocket bounded by the Logan River and the railway line, sitting between Waterford and Loganlea. It draws families and older residents who want a settled riverside suburb away from the main arterials, and the driveways here lean toward family sedans, Camrys and the occasional caravan. The feel is low-key and residential with little through traffic.",
+      "housingNote": "1980s and 1990s brick lowset homes on standard suburban blocks"
     },
     {
       "slug": "browns-plains",
@@ -2122,11 +2613,15 @@
       "distanceFromBase": 12,
       "responseTime": "Same-day available",
       "nearby": [
-        "mount-gravatt",
-        "salisbury",
-        "logan-reserve",
-        "mansfield"
-      ]
+        "regents-park",
+        "hillcrest",
+        "crestmead",
+        "marsden",
+        "park-ridge"
+      ],
+      "landmark": "Grand Plaza Shopping Centre",
+      "localContext": "Browns Plains is a major retail and commercial hub for Logan's western side, anchored by Grand Plaza and a sprawl of bulky-goods stores along the Mount Lindesay Highway. It pulls a steady flow of shoppers and families, and the car parks are full of SUVs, Hiluxes and work vans. The suburb feels busy and commercial at its core with established housing on the fringes.",
+      "housingNote": "1980s brick-and-tile homes surrounded by retail and light commercial zones"
     },
     {
       "slug": "cornubia",
@@ -2138,11 +2633,14 @@
       "distanceFromBase": 6,
       "responseTime": "Often same-day",
       "nearby": [
-        "logan-central",
-        "underwood",
-        "runcorn",
-        "loganholme"
-      ]
+        "shailer-park",
+        "loganholme",
+        "tanah-merah",
+        "logan-central"
+      ],
+      "landmark": "Cornubia Forest Nature Refuge",
+      "localContext": "Cornubia is a leafy, higher-end residential suburb on Logan's bayside edge, known for larger blocks and pockets of bushland near the nature refuge. It attracts established families and professionals, and you will see plenty of newer SUVs, dual-cab utes and the odd boat on a trailer given the proximity to the bay. The area feels green, settled and quieter than the neighbouring commercial centres.",
+      "housingNote": "1990s and 2000s brick homes on generous landscaped blocks"
     },
     {
       "slug": "crestmead",
@@ -2154,11 +2652,15 @@
       "distanceFromBase": 10,
       "responseTime": "Often same-day",
       "nearby": [
-        "macgregor",
-        "sunnybank",
-        "wishart",
-        "loganlea"
-      ]
+        "marsden",
+        "browns-plains",
+        "hillcrest",
+        "park-ridge",
+        "waterford-west"
+      ],
+      "landmark": "Crestmead Industrial Estate",
+      "localContext": "Crestmead is a working-class suburb wrapped around a large industrial estate that employs much of the local area. Residents are largely families and shift workers, and the streets carry a heavy share of tradie utes, work vans and older family cars. The suburb feels functional and affordable, built around its factories and warehouses.",
+      "housingNote": "1980s and 1990s lowset brick homes near a major industrial estate"
     },
     {
       "slug": "daisy-hill",
@@ -2170,11 +2672,15 @@
       "distanceFromBase": 2,
       "responseTime": "Often same-day",
       "nearby": [
-        "slacks-creek",
-        "shailer-park",
         "springwood",
-        "tanah-merah"
-      ]
+        "shailer-park",
+        "slacks-creek",
+        "underwood",
+        "rochedale-south"
+      ],
+      "landmark": "Daisy Hill Conservation Park",
+      "localContext": "Daisy Hill is a green, hilly residential suburb best known for its koala-populated conservation park and forest reserve. It suits families and downsizers who want established trees and quiet cul-de-sacs close to the M1, and the driveways favour family SUVs and sedans. The area feels suburban and well-treed rather than commercial.",
+      "housingNote": "1980s and 1990s split-level and brick homes on bush-fringed blocks"
     },
     {
       "slug": "eagleby",
@@ -2186,11 +2692,14 @@
       "distanceFromBase": 17,
       "responseTime": "Same-day available",
       "nearby": [
-        "norman-park",
-        "woolloongabba",
-        "balmoral",
-        "cannon-hill"
-      ]
+        "beenleigh",
+        "holmview",
+        "edens-landing",
+        "bethania"
+      ],
+      "landmark": "Eagleby Wetlands",
+      "localContext": "Eagleby sits in a bend of the Logan and Albert Rivers on the far southern edge of the region, with wetlands and parkland along its waterways. It is an affordable, working suburb with a mix of long-term residents and renters, and the streets carry older sedans, utes and a fair few project cars. The feel is quiet and outer-suburban, somewhat cut off by the surrounding rivers.",
+      "housingNote": "1970s and 1980s lowset fibro and brick homes on flat blocks"
     },
     {
       "slug": "edens-landing",
@@ -2202,11 +2711,15 @@
       "distanceFromBase": 15,
       "responseTime": "Same-day available",
       "nearby": [
-        "annerley",
-        "camp-hill",
-        "greenslopes",
-        "yeronga"
-      ]
+        "holmview",
+        "beenleigh",
+        "bethania",
+        "waterford",
+        "eagleby"
+      ],
+      "landmark": "Edens Landing railway station",
+      "localContext": "Edens Landing is a small residential suburb on the rail line between Beenleigh and Bethania, sitting close to the Logan River. It appeals to commuting families who use the station for the run into Brisbane, and the driveways hold mostly family sedans and small SUVs. The suburb feels compact, settled and oriented around the station and river.",
+      "housingNote": "1990s brick lowset homes on modest suburban lots"
     },
     {
       "slug": "hillcrest",
@@ -2218,11 +2731,15 @@
       "distanceFromBase": 11,
       "responseTime": "Same-day available",
       "nearby": [
-        "mansfield",
-        "upper-mount-gravatt",
-        "meadowbrook",
-        "waterford"
-      ]
+        "browns-plains",
+        "regents-park",
+        "crestmead",
+        "park-ridge",
+        "marsden"
+      ],
+      "landmark": "Hillcrest Christian College",
+      "localContext": "Hillcrest is a small residential suburb tucked beside Browns Plains, sharing much of its retail catchment along the Mount Lindesay Highway. It is a family-oriented area with a quiet street network, and you will see family SUVs, hatchbacks and tradie utes parked at home. The feel is unassuming and suburban, close to the Grand Plaza shops but away from the main bustle.",
+      "housingNote": "1980s and 1990s brick-and-tile family homes"
     },
     {
       "slug": "holmview",
@@ -2234,11 +2751,15 @@
       "distanceFromBase": 14,
       "responseTime": "Same-day available",
       "nearby": [
-        "carindale",
-        "holland-park",
-        "moorooka",
-        "annerley"
-      ]
+        "edens-landing",
+        "beenleigh",
+        "bethania",
+        "eagleby",
+        "waterford"
+      ],
+      "landmark": "Holmview Central shopping centre",
+      "localContext": "Holmview is a fast-growing suburb beside Beenleigh that has seen new estates fill former rural land in recent years. It draws younger families and first-home buyers, and the newer streets are full of late-model SUVs, dual-cab utes and family hatchbacks. The area feels fresh and still-developing, with new shops and schools going in alongside older pockets.",
+      "housingNote": "New estates built largely after 2010 mixed with older 1980s homes"
     },
     {
       "slug": "jimboomba",
@@ -2250,11 +2771,14 @@
       "distanceFromBase": 25,
       "responseTime": "Usually next business day",
       "nearby": [
-        "virginia",
-        "wavell-heights",
-        "goodna",
-        "bardon"
-      ]
+        "logan-reserve",
+        "park-ridge",
+        "yarrabilba",
+        "eagleby"
+      ],
+      "landmark": "Jimboomba Convenience Centre",
+      "localContext": "Jimboomba is a semi-rural town on Logan's south-western fringe, with acreage blocks, horse properties and a country-town main street along the Mount Lindesay Highway. Residents lean toward rural families and tradespeople, and the area is dominated by dual-cab utes, four-wheel drives and vehicles towing floats or trailers. The feel is distinctly rural-residential rather than suburban.",
+      "housingNote": "Rural acreage homes and large-lot housing with newer estates expanding the town"
     },
     {
       "slug": "kingston",
@@ -2266,11 +2790,15 @@
       "distanceFromBase": 8,
       "responseTime": "Often same-day",
       "nearby": [
-        "eight-mile-plains",
-        "rochedale-south",
-        "rochedale",
-        "runcorn"
-      ]
+        "woodridge",
+        "logan-central",
+        "marsden",
+        "waterford-west",
+        "slacks-creek"
+      ],
+      "landmark": "Kingston railway station",
+      "localContext": "Kingston is a densely settled, affordable suburb in central Logan, served by its own station on the Beenleigh line. It is one of the most diverse and budget-conscious parts of the region, home to many renters and migrant families, and the streets carry older sedans, hatchbacks and well-used family cars. The feel is busy, urban and no-frills.",
+      "housingNote": "1960s and 1970s lowset homes mixed with public housing and townhouses"
     },
     {
       "slug": "logan-central",
@@ -2282,11 +2810,15 @@
       "distanceFromBase": 6,
       "responseTime": "Often same-day",
       "nearby": [
-        "cornubia",
-        "underwood",
-        "runcorn",
-        "loganholme"
-      ]
+        "woodridge",
+        "kingston",
+        "slacks-creek",
+        "marsden",
+        "logan-reserve"
+      ],
+      "landmark": "Logan Central Plaza",
+      "localContext": "Logan Central is the civic and retail heart of the City of Logan, home to the council offices, the marketplace and a major bus interchange. It is one of the most multicultural suburbs in the region with a strong renter population, and the busy streets carry older sedans, hatchbacks and plenty of commuter traffic. The feel is urban, dense and commercial.",
+      "housingNote": "1960s and 1970s lowset homes alongside unit blocks and townhouses"
     },
     {
       "slug": "logan-reserve",
@@ -2298,11 +2830,15 @@
       "distanceFromBase": 12,
       "responseTime": "Same-day available",
       "nearby": [
-        "mount-gravatt",
-        "salisbury",
-        "browns-plains",
-        "mansfield"
-      ]
+        "park-ridge",
+        "logan-central",
+        "marsden",
+        "crestmead",
+        "jimboomba"
+      ],
+      "landmark": "Logan Reserve State School",
+      "localContext": "Logan Reserve is a rapidly expanding growth suburb where former farmland is being turned into new housing estates. It draws young families and first-home buyers chasing newer, larger homes, and the driveways are packed with late-model SUVs, dual-cab utes and family wagons. The area feels brand-new and still under construction in places, with new roads and schools opening up.",
+      "housingNote": "Brand-new estates, mostly built after 2015 on smaller modern lots"
     },
     {
       "slug": "loganholme",
@@ -2314,11 +2850,15 @@
       "distanceFromBase": 5,
       "responseTime": "Often same-day",
       "nearby": [
-        "cornubia",
-        "logan-central",
         "shailer-park",
-        "tanah-merah"
-      ]
+        "tanah-merah",
+        "cornubia",
+        "slacks-creek",
+        "springwood"
+      ],
+      "landmark": "Logan Hyperdome",
+      "localContext": "Loganholme is a commercial and residential suburb straddling the M1 and the Logan River, anchored by the large Hyperdome shopping centre. It pulls heavy through-traffic and shoppers from across the region, and the car parks are full of family SUVs, utes and commercial vans. The feel is busy and motorway-oriented at its core with established housing tucked behind.",
+      "housingNote": "1980s and 1990s brick homes near major retail and the motorway"
     },
     {
       "slug": "loganlea",
@@ -2330,11 +2870,15 @@
       "distanceFromBase": 10,
       "responseTime": "Often same-day",
       "nearby": [
-        "macgregor",
-        "sunnybank",
-        "wishart",
-        "crestmead"
-      ]
+        "meadowbrook",
+        "waterford-west",
+        "bethania",
+        "kingston",
+        "marsden"
+      ],
+      "landmark": "Loganlea railway station",
+      "localContext": "Loganlea sits beside the hospital and university precinct of Meadowbrook and carries a steady mix of students, health workers and families. The station and the nearby TAFE bring a transient population, and the streets hold older sedans, small hatchbacks and the odd tradie ute. The feel is practical and affordable, shaped by the institutions next door.",
+      "housingNote": "1970s and 1980s lowset homes with student rentals near the campus"
     },
     {
       "slug": "marsden",
@@ -2346,11 +2890,15 @@
       "distanceFromBase": 9,
       "responseTime": "Often same-day",
       "nearby": [
-        "rochedale",
-        "regents-park",
-        "eight-mile-plains",
-        "macgregor"
-      ]
+        "crestmead",
+        "kingston",
+        "logan-central",
+        "browns-plains",
+        "waterford-west"
+      ],
+      "landmark": "Marsden Park Shopping Centre",
+      "localContext": "Marsden is a large, settled residential suburb in central Logan, popular with families for its schools and local shops. It is a solidly working-to-middle suburb where you will see family SUVs, hatchbacks and a good number of tradie utes parked at home. The feel is steady and suburban, busy with school traffic but away from the major commercial centres.",
+      "housingNote": "1980s and 1990s brick-and-tile family homes on standard blocks"
     },
     {
       "slug": "meadowbrook",
@@ -2362,11 +2910,15 @@
       "distanceFromBase": 11,
       "responseTime": "Same-day available",
       "nearby": [
-        "mansfield",
-        "upper-mount-gravatt",
-        "hillcrest",
-        "waterford"
-      ]
+        "loganlea",
+        "waterford",
+        "slacks-creek",
+        "springwood",
+        "bethania"
+      ],
+      "landmark": "Logan Hospital",
+      "localContext": "Meadowbrook is defined by its health and education precinct, home to Logan Hospital and a Griffith University campus. The suburb runs on hospital shifts and student life, and the car parks and streets carry plenty of small commuter cars, SUVs and staff vehicles. The feel is institutional and purpose-built, greener and more open than the older Logan suburbs.",
+      "housingNote": "1990s and 2000s homes and apartments built around the hospital and campus"
     },
     {
       "slug": "park-ridge",
@@ -2378,11 +2930,15 @@
       "distanceFromBase": 10,
       "responseTime": "Often same-day",
       "nearby": [
-        "macgregor",
-        "sunnybank",
-        "wishart",
-        "crestmead"
-      ]
+        "logan-reserve",
+        "browns-plains",
+        "regents-park",
+        "hillcrest",
+        "jimboomba"
+      ],
+      "landmark": "Park Ridge Town Centre",
+      "localContext": "Park Ridge is a major southern growth corridor where large new estates are replacing former rural and acreage land along the Mount Lindesay Highway. It attracts young families chasing new builds, and the streets are dominated by late-model SUVs, dual-cab utes and family wagons. The area feels new and rapidly changing, with construction and new infrastructure ongoing.",
+      "housingNote": "New estates built after 2010 alongside remaining older acreage blocks"
     },
     {
       "slug": "regents-park",
@@ -2394,11 +2950,14 @@
       "distanceFromBase": 9,
       "responseTime": "Often same-day",
       "nearby": [
-        "rochedale",
-        "marsden",
-        "eight-mile-plains",
-        "macgregor"
-      ]
+        "browns-plains",
+        "hillcrest",
+        "park-ridge",
+        "crestmead"
+      ],
+      "landmark": "Regents Park Plaza",
+      "localContext": "Regents Park is a quiet residential suburb beside Browns Plains, made up largely of homes built through the 1990s and 2000s. It suits families who want a settled estate close to the Grand Plaza shops, and the driveways favour family SUVs, hatchbacks and tradie utes. The feel is calm and residential with little through traffic.",
+      "housingNote": "1990s and 2000s brick lowset homes on suburban estates"
     },
     {
       "slug": "rochedale-south",
@@ -2410,11 +2969,14 @@
       "distanceFromBase": 8,
       "responseTime": "Often same-day",
       "nearby": [
-        "eight-mile-plains",
-        "kingston",
-        "rochedale",
-        "runcorn"
-      ]
+        "springwood",
+        "underwood",
+        "slacks-creek",
+        "rochedale"
+      ],
+      "landmark": "Rochedale South Shopping Village",
+      "localContext": "Rochedale South sits at the northern tip of Logan against the Brisbane boundary, an established and slightly leafier suburb close to the M1. It draws settled families and downsizers, and the streets carry family SUVs, sedans and a steady mix of commuter cars heading to the motorway. The feel is quiet and mature, more Brisbane-fringe than central Logan.",
+      "housingNote": "1970s and 1980s lowset brick homes on established, well-treed blocks"
     },
     {
       "slug": "shailer-park",
@@ -2426,11 +2988,15 @@
       "distanceFromBase": 4,
       "responseTime": "Often same-day",
       "nearby": [
-        "tanah-merah",
         "loganholme",
-        "slacks-creek",
-        "cornubia"
-      ]
+        "cornubia",
+        "tanah-merah",
+        "daisy-hill",
+        "springwood"
+      ],
+      "landmark": "Shailer Park State High School",
+      "localContext": "Shailer Park is a comfortable residential suburb beside Loganholme, with rolling streets and good schools that draw established families. It sits close to the Hyperdome and the M1 without the traffic, and the driveways favour family SUVs, sedans and the occasional boat or caravan. The feel is settled and middle-suburban, greener than its commercial neighbour.",
+      "housingNote": "1980s and 1990s brick-and-tile homes on landscaped blocks"
     },
     {
       "slug": "slacks-creek",
@@ -2442,11 +3008,15 @@
       "distanceFromBase": 3,
       "responseTime": "Often same-day",
       "nearby": [
-        "daisy-hill",
-        "shailer-park",
-        "tanah-merah",
-        "loganholme"
-      ]
+        "springwood",
+        "underwood",
+        "logan-central",
+        "kingston",
+        "daisy-hill"
+      ],
+      "landmark": "Logan Megacentre",
+      "localContext": "Slacks Creek is a mixed residential and commercial suburb straddling the Pacific Motorway, home to large showrooms and the Megacentre retail precinct. It carries a diverse, affordable population and heavy motorway frontage, and the streets see older sedans, work vans and dual-cab utes. The feel is busy and commercial along the highway with denser housing behind.",
+      "housingNote": "1960s and 1970s lowset homes mixed with townhouses and commercial frontage"
     },
     {
       "slug": "springwood",
@@ -2458,11 +3028,15 @@
       "distanceFromBase": 0,
       "responseTime": "Often same-day",
       "nearby": [
-        "daisy-hill",
         "slacks-creek",
-        "shailer-park",
-        "tanah-merah"
-      ]
+        "underwood",
+        "daisy-hill",
+        "rochedale-south",
+        "meadowbrook"
+      ],
+      "landmark": "Arndale Springwood Shopping Centre",
+      "localContext": "Springwood is a key commercial centre for northern Logan, sitting right on the M1 with offices, motels and the Arndale shopping strip. It is the owner's home base and the fastest suburb for call-outs, with a busy mix of business and residential traffic, and the streets carry family SUVs, fleet vehicles and tradie utes. The feel is established and commercial along the highway, leafier in the back streets.",
+      "housingNote": "1970s and 1980s brick homes with offices and motels near the motorway"
     },
     {
       "slug": "tanah-merah",
@@ -2474,11 +3048,15 @@
       "distanceFromBase": 4,
       "responseTime": "Often same-day",
       "nearby": [
-        "shailer-park",
         "loganholme",
-        "slacks-creek",
-        "cornubia"
-      ]
+        "shailer-park",
+        "cornubia",
+        "underwood",
+        "springwood"
+      ],
+      "landmark": "Tanah Merah Tavern",
+      "localContext": "Tanah Merah is a small residential suburb wedged between Loganholme and Shailer Park, close to the M1 and the Logan River. It is a quiet family area that flies under the radar next to its busier neighbours, and the driveways hold family SUVs, sedans and tradie utes. The feel is low-key and residential with easy motorway access.",
+      "housingNote": "1980s and 1990s lowset brick homes on standard suburban lots"
     },
     {
       "slug": "underwood",
@@ -2490,11 +3068,15 @@
       "distanceFromBase": 6,
       "responseTime": "Often same-day",
       "nearby": [
-        "cornubia",
-        "logan-central",
-        "runcorn",
-        "loganholme"
-      ]
+        "springwood",
+        "slacks-creek",
+        "rochedale-south",
+        "daisy-hill",
+        "tanah-merah"
+      ],
+      "landmark": "Underwood Marketplace",
+      "localContext": "Underwood sits at the northern end of Logan along Logan Road and the M1, blending retail strips with established housing. It draws families and shoppers using the local marketplace and bulky-goods stores, and the streets carry family SUVs, sedans and plenty of commercial vehicles. The feel is a mix of suburban and commercial, well connected to both Brisbane and Logan.",
+      "housingNote": "1970s and 1980s brick homes alongside retail and showroom frontage"
     },
     {
       "slug": "waterford",
@@ -2506,11 +3088,15 @@
       "distanceFromBase": 11,
       "responseTime": "Same-day available",
       "nearby": [
-        "mansfield",
-        "upper-mount-gravatt",
-        "hillcrest",
-        "meadowbrook"
-      ]
+        "waterford-west",
+        "bethania",
+        "meadowbrook",
+        "loganlea",
+        "edens-landing"
+      ],
+      "landmark": "Waterford Plaza",
+      "localContext": "Waterford is a riverside suburb on the Logan River, historically the old crossing point and now a quiet residential pocket. It suits families and older residents who like the riverside setting, and the driveways favour family sedans, SUVs and the occasional boat trailer. The feel is settled and green along the river, away from the busier arterials.",
+      "housingNote": "1980s and 1990s brick lowset homes near the river"
     },
     {
       "slug": "waterford-west",
@@ -2522,11 +3108,15 @@
       "distanceFromBase": 11,
       "responseTime": "Same-day available",
       "nearby": [
-        "mansfield",
-        "upper-mount-gravatt",
-        "hillcrest",
-        "meadowbrook"
-      ]
+        "waterford",
+        "loganlea",
+        "kingston",
+        "marsden",
+        "bethania"
+      ],
+      "landmark": "Waterford West State School",
+      "localContext": "Waterford West sits inland from the river beside Loganlea and Kingston, a settled residential suburb of older homes. It is a family-oriented, affordable area with a steady local population, and the streets carry older sedans, hatchbacks and a fair share of tradie utes. The feel is quiet and suburban, shaped by its schools and parks.",
+      "housingNote": "1970s and 1980s lowset brick-and-tile homes"
     },
     {
       "slug": "woodridge",
@@ -2538,11 +3128,15 @@
       "distanceFromBase": 7,
       "responseTime": "Often same-day",
       "nearby": [
-        "runcorn",
-        "eight-mile-plains",
-        "cornubia",
-        "kingston"
-      ]
+        "logan-central",
+        "kingston",
+        "slacks-creek",
+        "marsden",
+        "springwood"
+      ],
+      "landmark": "Woodridge railway station",
+      "localContext": "Woodridge is one of the most densely populated and multicultural suburbs in Logan, centred on its station and a busy local shopping strip. It has a large renter and migrant population and is among the most affordable parts of the region, with streets full of older sedans, hatchbacks and well-used family cars. The feel is urban, lively and budget-conscious.",
+      "housingNote": "1960s and 1970s lowset homes mixed with public housing and unit blocks"
     },
     {
       "slug": "yarrabilba",
@@ -2554,11 +3148,15 @@
       "distanceFromBase": 22,
       "responseTime": "Usually next business day",
       "nearby": [
-        "ascot",
-        "clayfield",
-        "forest-lake",
-        "hamilton"
-      ]
+        "beenleigh",
+        "jimboomba",
+        "logan-reserve",
+        "eagleby",
+        "holmview"
+      ],
+      "landmark": "Yarrabilba Town Centre",
+      "localContext": "Yarrabilba is a master-planned community on Logan's far southern edge, built from scratch on former plantation land over the past decade. It is overwhelmingly young families in brand-new homes, and the streets are full of late-model SUVs, dual-cab utes and family wagons. The feel is brand-new and self-contained, with schools, parks and a town centre all built to plan.",
+      "housingNote": "Brand-new master-planned estate, almost entirely built after 2012"
     }
   ]
 }

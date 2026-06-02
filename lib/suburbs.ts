@@ -10,6 +10,12 @@ export interface Suburb {
   distanceFromBase: number
   responseTime: string
   nearby: string[]
+  /** A recognisable local landmark, shopping centre or facility */
+  landmark: string
+  /** Unique 2-3 sentence description of the suburb's character */
+  localContext: string
+  /** Brief note on the suburb's housing stock */
+  housingNote: string
 }
 
 export interface SuburbWithMeta extends Suburb {

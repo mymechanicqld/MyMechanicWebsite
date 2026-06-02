@@ -350,18 +350,14 @@ export default async function ServiceSuburbPage({
             {service.nav_label} at your driveway in {suburb.name}
           </h2>
           <div className="space-y-4 text-[1.0625rem] text-muted leading-[1.7]">
+            <p>{suburb.localContext}</p>
             <p>
-              We bring mobile {service.nav_label.toLowerCase()} directly to
-              your address in {suburb.name}, {suburb.postcode}. No waiting
-              rooms, no Ubers, no lost half-days. The van is the workshop,
-              fully equipped with professional-grade tools and the right parts
-              for your vehicle.
-            </p>
-            <p>
-              We are based in Springwood, about {suburb.distanceFromBase} km
-              from {suburb.name}. When you book a{' '}
-              {service.nav_label.toLowerCase()} job, we load the van with
-              parts specific to your make and model and come straight to you.
+              We bring mobile {service.nav_label.toLowerCase()} directly to your
+              address in {suburb.name}, {suburb.postcode}, including the streets
+              around {suburb.landmark}. We are based in Springwood, about{' '}
+              {suburb.distanceFromBase} km away, so we load the van with parts
+              specific to your make and model and come straight to you. No
+              waiting rooms, no lost half-days.
             </p>
             <p>
               Every job starts with a fixed-price quote given in writing

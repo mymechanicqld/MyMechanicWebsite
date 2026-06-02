@@ -54,6 +54,10 @@ function getFaq(suburb: Suburb) {
       question: `Will a mobile service in ${suburb.name} void my warranty?`,
       answer: `No. Under the Australian Consumer Law, you are free to have your car serviced by any qualified mechanic, including a mobile one, as long as the service follows the manufacturer's specifications. We stamp your logbook and email the invoice, same as a dealership.`,
     },
+    {
+      question: `Where in ${suburb.name} do you cover?`,
+      answer: `All of ${suburb.name}, ${suburb.postcode}, including the streets around ${suburb.landmark}. We come to your home or workplace, so wherever your car is parked in the area, we can get to it.`,
+    },
   ]
 }
 
@@ -277,27 +281,22 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
       <section className="py-14 md:py-20 lg:py-24">
         <div className="container max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            How our mobile service works in {suburb.name}
+            Mobile mechanic across {suburb.name}
           </h2>
           <div className="space-y-4 text-[1.0625rem] text-muted leading-[1.7]">
+            <p>{suburb.localContext}</p>
             <p>
-              We are based in Springwood on Brisbane&apos;s Southside, about{' '}
-              {suburb.distanceFromBase} km from {suburb.name}. When you book a
-              job in {suburb.name}, we load the van with the right parts for your
-              vehicle and head straight to your address.
+              We are based in Springwood, about {suburb.distanceFromBase} km from{' '}
+              {suburb.name}. When you book a job near {suburb.landmark}, we load
+              the van with the right parts for your vehicle and come straight to
+              you. The van is the workshop, with professional-grade diagnostic
+              tools and the parts for the job on board.
             </p>
             <p>
-              The van is the workshop. We carry professional-grade diagnostic
-              tools, proper jack stands, torque wrenches and the consumables for
-              the job. The work is identical to what a bricks-and-mortar workshop
-              would do. The difference is you do not lose half a day sitting in a
-              waiting room.
-            </p>
-            <p>
-              We quote a fixed price before we start any work. If we find
-              something else while we are in there, we stop and call you with a
-              separate quote before touching it. Nothing appears on the bill that
-              you did not agree to.
+              We quote a fixed price before we start. If we find something else
+              while we are in there, we stop and call you with a separate quote
+              before touching it. Nothing appears on the bill that you did not
+              agree to.
             </p>
           </div>
 
