@@ -32,16 +32,23 @@ const BY_VEHICLE = [
 
 const COMPANY = [
   { label: 'About', href: '/about/' },
-  { label: 'Locations', href: '/areas/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
+]
+
+const LOCATIONS = [
+  { label: 'Brisbane', href: '/brisbane/' },
+  { label: 'Logan', href: '/logan/' },
+  { label: 'Ipswich', href: '/ipswich/' },
+  { label: 'Gold Coast', href: '/gold-coast/' },
+  { label: 'All areas', href: '/areas/' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-ink text-stone-400 pt-14 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_1fr] gap-8 sm:gap-10 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.4fr_repeat(6,1fr)] gap-8 sm:gap-10 mt-4">
           <div className="lg:col-span-1 md:col-span-3 sm:col-span-2">
             <Link
               href="/"
@@ -69,6 +76,7 @@ export default function Footer() {
           <FooterColumn title="Servicing" items={SERVICING} />
           <FooterColumn title="Why us" items={WHY_US} />
           <FooterColumn title="By vehicle" items={BY_VEHICLE} />
+          <FooterColumn title="Locations" items={LOCATIONS} />
           <FooterColumn title="Company" items={COMPANY} />
         </div>
 

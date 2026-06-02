@@ -20,26 +20,11 @@ export const metadata: Metadata = {
   },
 }
 
-const REGION_META: Record<
-  string,
-  { hint: string; image: string }
-> = {
-  brisbane: {
-    hint: 'Northside to Bayside, inner west to the Southside.',
-    image: '/images/coverage-onsite.webp',
-  },
-  logan: {
-    hint: 'Home base. Fastest response, often same-day.',
-    image: '/images/owner-on-job.webp',
-  },
-  ipswich: {
-    hint: 'Springfield through Brassall and west to Ipswich CBD.',
-    image: '/images/hero-van.webp',
-  },
-  'gold-coast': {
-    hint: 'Northern Gold Coast, from Coomera south to Robina.',
-    image: '/images/coverage-onsite.webp',
-  },
+const REGION_IMAGE: Record<string, string> = {
+  brisbane: '/images/coverage-onsite.webp',
+  logan: '/images/owner-on-job.webp',
+  ipswich: '/images/hero-van.webp',
+  'gold-coast': '/images/coverage-onsite.webp',
 }
 
 const breadcrumbLd = {
@@ -111,7 +96,7 @@ export default function AreasHubPage() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-5">
             {regions.map((r) => {
-              const meta = REGION_META[r.id]
+              const image = REGION_IMAGE[r.id]
               const suburbs = getSuburbsByRegion(r.id)
               return (
                 <div
@@ -119,24 +104,32 @@ export default function AreasHubPage() {
                   id={r.slug}
                   className="bg-surface border border-hairline rounded-2xl overflow-hidden flex flex-col scroll-mt-28"
                 >
-                  <div className="relative aspect-[16/9] border-b border-hairline">
+                  <Link
+                    href={`/${r.slug}/` as `/${string}`}
+                    className="relative aspect-[16/9] border-b border-hairline block group"
+                  >
                     <Image
-                      src={meta.image}
+                      src={image}
                       alt={`${r.name} service area`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
+                      className="object-cover transition-transform group-hover:scale-[1.02]"
                     />
-                  </div>
+                  </Link>
                   <div className="p-6 md:p-7 flex flex-col gap-4 flex-1">
                     <div>
                       <h2 className="text-2xl font-bold text-ink mb-1.5">
-                        {r.name}
+                        <Link
+                          href={`/${r.slug}/` as `/${string}`}
+                          className="text-ink no-underline hover:text-accent-bright"
+                        >
+                          Mobile mechanic {r.name}
+                        </Link>
                         <span className="text-subtle font-normal text-base ml-2">
                           {suburbs.length} suburbs
                         </span>
                       </h2>
-                      <p className="text-[0.9375rem] text-muted">{meta.hint}</p>
+                      <p className="text-[0.9375rem] text-muted">{r.hint}</p>
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-[0.06em] text-subtle font-semibold mb-2.5">
@@ -157,6 +150,13 @@ export default function AreasHubPage() {
                         ))}
                       </div>
                     </div>
+                    <Link
+                      href={`/${r.slug}/` as `/${string}`}
+                      className="mt-auto inline-flex items-center gap-1 text-accent-bright font-semibold text-[0.9375rem] no-underline hover:text-accent-hover"
+                    >
+                      See the {r.name} page
+                      <ArrowRight className="size-4" strokeWidth={2} />
+                    </Link>
                   </div>
                 </div>
               )

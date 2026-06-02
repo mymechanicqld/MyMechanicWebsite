@@ -99,6 +99,12 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
       {
         '@type': 'ListItem',
         position: 3,
+        name: suburb.regionName,
+        item: `${SITE_URL}/${suburb.regionSlug}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
         name: suburb.name,
         item: `${SITE_URL}/${suburb.slug}/`,
       },
@@ -118,6 +124,7 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
   const breadcrumbs = [
     { name: 'Home', url: '/' },
     { name: 'Service Areas', url: '/areas/' },
+    { name: suburb.regionName, url: `/${suburb.regionSlug}/` },
     { name: suburb.name, url: `/${suburb.slug}/` },
   ]
 
@@ -401,10 +408,10 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
             </div>
             <div className="mt-6 text-center">
               <Link
-                href="/areas/"
+                href={`/${suburb.regionSlug}/` as `/${string}`}
                 className="inline-flex items-center gap-1 text-accent-bright font-semibold no-underline hover:text-accent-hover"
               >
-                See all service areas
+                See all {suburb.regionName} suburbs
                 <ArrowRight className="size-4" strokeWidth={2} />
               </Link>
             </div>

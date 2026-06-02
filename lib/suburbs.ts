@@ -112,11 +112,71 @@ export function getNearbySuburbs(suburb: Suburb): Suburb[] {
     .filter((s): s is Suburb => s !== undefined)
 }
 
-export function getRegions() {
-  return [
-    { id: 'brisbane', name: 'Brisbane', slug: 'brisbane' },
-    { id: 'logan', name: 'Logan', slug: 'logan' },
-    { id: 'ipswich', name: 'Ipswich', slug: 'ipswich' },
-    { id: 'gold-coast', name: 'Gold Coast', slug: 'gold-coast' },
-  ]
+export interface Region {
+  id: string
+  name: string
+  slug: string
+  /** Short hint shown on the areas hub cards */
+  hint: string
+  /** Unique intro paragraph for the region hub page */
+  intro: string
+  /** Second paragraph: how we work in this region */
+  detail: string
+}
+
+export const REGIONS: Region[] = [
+  {
+    id: 'brisbane',
+    name: 'Brisbane',
+    slug: 'brisbane',
+    hint: 'Northside to Bayside, inner west to the Southside.',
+    intro:
+      'We cover Brisbane from the Bayside suburbs through the inner city to the leafy western suburbs, and right across the Southside. From character Queenslanders in Paddington to brick-and-tile family homes in Carindale, we bring the workshop to your driveway.',
+    detail:
+      'Working out of Springwood on the Southside, we reach most Brisbane suburbs comfortably. Inner-city and Southside jobs are often same-day, while northside and Bayside bookings are usually locked in within a day or two.',
+  },
+  {
+    id: 'logan',
+    name: 'Logan',
+    slug: 'logan',
+    hint: 'Home base. Fastest response, often same-day.',
+    intro:
+      'Logan is our home turf. We are based in Springwood, right in the middle of it, so Logan jobs get the fastest response of any region we cover. From Beenleigh to Browns Plains and out to Jimboomba, this is where we work most.',
+    detail:
+      'Because we are local, same-day service is common across Logan. We know the area, the traffic and the quickest routes, so we spend less time driving and more time fixing your car.',
+  },
+  {
+    id: 'ipswich',
+    name: 'Ipswich',
+    slug: 'ipswich',
+    hint: 'Springfield through Brassall and west to Ipswich CBD.',
+    intro:
+      'We service Ipswich from the fast-growing Springfield and Ripley estates through to the established suburbs around the CBD and out to Brassall. The area mixes brand-new family homes with older worker cottages, and we look after both.',
+    detail:
+      'Ipswich sits a short run down the Centenary and Logan motorways from our Springwood base. Springfield and Goodna jobs are often same-day, with the rest of Ipswich usually booked within a day or two.',
+  },
+  {
+    id: 'gold-coast',
+    name: 'Gold Coast',
+    slug: 'gold-coast',
+    hint: 'Northern Gold Coast, from Coomera south to Robina.',
+    intro:
+      'We cover the northern Gold Coast, from the booming Coomera and Pacific Pines growth corridor south through Southport and across to Robina. Plenty of new estates, family SUVs and tradie utes keeping the construction going.',
+    detail:
+      'The northern Gold Coast is a straight run down the M1 from Springwood. We service it regularly, with bookings usually confirmed within a day or two, and we will tell you straight if your suburb is past our usual reach.',
+  },
+]
+
+const regionById = new Map(REGIONS.map((r) => [r.id, r]))
+
+export function getRegion(id: string): Region | null {
+  return regionById.get(id) ?? null
+}
+
+export function getRegionSlugs(): string[] {
+  return REGIONS.map((r) => r.slug)
+}
+
+export function getRegions(): Region[] {
+  return REGIONS
 }

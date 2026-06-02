@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getServiceSlugs } from '@/lib/services'
 import { getAllPosts } from '@/lib/posts'
-import { getAllSuburbs, PRIORITY_SERVICES } from '@/lib/suburbs'
+import { getAllSuburbs, getRegionSlugs, PRIORITY_SERVICES } from '@/lib/suburbs'
 
 const SITE_URL = 'https://www.mymechanicqld.com.au'
 
@@ -54,6 +54,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }))
 
+  // ---- Region hub pages ----
+  const regionEntries: MetadataRoute.Sitemap = getRegionSlugs().map((slug) => ({
+    url: `${SITE_URL}/${slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.85,
+  }))
+
   // ---- Suburb pages ----
   const suburbs = getAllSuburbs()
   const suburbEntries: MetadataRoute.Sitemap = suburbs.map((s) => ({
@@ -98,6 +106,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticEntries,
     ...serviceEntries,
+    ...regionEntries,
     ...suburbEntries,
     ...serviceSuburbEntries,
     ...blogIndex,

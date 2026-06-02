@@ -181,6 +181,7 @@ export default async function ServiceSuburbPage({
   const breadcrumbs = [
     { name: 'Home', url: '/' },
     { name: service.nav_label, url: `/${service.slug}/` },
+    { name: suburb.regionName, url: `/${suburb.regionSlug}/` },
     { name: suburb.name, url: `/${service.slug}/${suburb.slug}/` },
   ]
 
