@@ -18,8 +18,15 @@ import {
 } from 'lucide-react'
 import type { Suburb } from '@/lib/suburbs'
 import { getNearbySuburbs, ALL_SERVICES } from '@/lib/suburbs'
-
-const SITE_URL = 'https://www.mymechanicqld.com.au'
+import {
+  SITE_URL,
+  BUSINESS_ID,
+  BUSINESS_NAME,
+  PHONE_E164,
+  BASE_ADDRESS,
+  BASE_GEO,
+  OPENING_HOURS,
+} from '@/lib/business'
 
 const ICON_MAP: Record<string, typeof Disc3> = {
   'brake-repairs': Disc3,
@@ -65,28 +72,30 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
   const nearby = getNearbySuburbs(suburb)
   const faq = getFaq(suburb)
 
-  // JSON-LD: LocalBusiness with areaServed
+  // JSON-LD: AutomotiveBusiness scoped to this suburb, referencing the
+  // sitewide business entity by @id, with geo, hours and scoped areaServed.
   const localBusinessLd = {
     '@context': 'https://schema.org',
-    '@type': ['AutoRepair', 'LocalBusiness'],
-    '@id': `${SITE_URL}/#business`,
-    name: 'My Mechanic QLD',
-    url: SITE_URL,
-    telephone: '+61451159954',
+    '@type': ['AutomotiveBusiness', 'AutoRepair', 'LocalBusiness'],
+    '@id': BUSINESS_ID,
+    name: BUSINESS_NAME,
+    url: `${SITE_URL}/${suburb.slug}/`,
+    telephone: PHONE_E164,
+    priceRange: '$$',
+    address: BASE_ADDRESS,
+    geo: { '@type': 'GeoCoordinates', ...BASE_GEO },
+    openingHoursSpecification: OPENING_HOURS,
     areaServed: {
       '@type': 'City',
-      name: suburb.regionName,
-      containsPlace: {
-        '@type': 'Place',
-        name: suburb.name,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: suburb.name,
-          addressRegion: 'QLD',
-          postalCode: String(suburb.postcode),
-          addressCountry: 'AU',
-        },
+      name: suburb.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: suburb.name,
+        addressRegion: 'QLD',
+        postalCode: String(suburb.postcode),
+        addressCountry: 'AU',
       },
+      containedInPlace: { '@type': 'State', name: 'Queensland' },
     },
   }
 

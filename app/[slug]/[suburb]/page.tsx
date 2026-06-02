@@ -19,8 +19,7 @@ import {
   PRIORITY_SERVICES,
   type Suburb,
 } from '@/lib/suburbs'
-
-const SITE_URL = 'https://www.mymechanicqld.com.au'
+import { SITE_URL, suburbServiceSchema } from '@/lib/business'
 
 // Generate pages for priority services x all suburbs
 const TARGET_SERVICE_SLUGS = PRIORITY_SERVICES.map((s) => s.slug)
@@ -185,37 +184,15 @@ export default async function ServiceSuburbPage({
     { name: suburb.name, url: `/${service.slug}/${suburb.slug}/` },
   ]
 
-  // JSON-LD
-  const serviceLd: Record<string, unknown> = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+  // JSON-LD: Service scoped to this suburb, provider references the sitewide
+  // business entity by @id (AutomotiveBusiness with geo, hours, address).
+  const serviceLd = suburbServiceSchema({
     serviceType: service.schema.service_type,
-    provider: {
-      '@type': 'AutoRepair',
-      name: 'My Mechanic QLD',
-      telephone: '+61451159954',
-      url: SITE_URL,
-    },
-    areaServed: {
-      '@type': 'Place',
-      name: suburb.name,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: suburb.name,
-        addressRegion: 'QLD',
-        postalCode: String(suburb.postcode),
-        addressCountry: 'AU',
-      },
-    },
-  }
-  if (service.price_from > 0) {
-    serviceLd.offers = {
-      '@type': 'Offer',
-      price: service.price_from,
-      priceCurrency: 'AUD',
-      availability: 'https://schema.org/InStock',
-    }
-  }
+    suburbName: suburb.name,
+    postcode: suburb.postcode,
+    hasOffer: service.price_from > 0,
+    price: service.price_from,
+  })
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',

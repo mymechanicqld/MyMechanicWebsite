@@ -16,8 +16,15 @@ import {
   ALL_SERVICES,
   type Region,
 } from '@/lib/suburbs'
-
-const SITE_URL = 'https://www.mymechanicqld.com.au'
+import {
+  SITE_URL,
+  BUSINESS_ID,
+  BUSINESS_NAME,
+  PHONE_E164,
+  BASE_ADDRESS,
+  BASE_GEO,
+  OPENING_HOURS,
+} from '@/lib/business'
 
 const PRIORITY_ICONS = [Disc3, BatteryCharging, ThermometerSun, Gauge]
 
@@ -48,9 +55,14 @@ export default function RegionHubContent({ region }: { region: Region }) {
     serviceType: 'Mobile mechanic',
     provider: {
       '@type': 'AutomotiveBusiness',
-      name: 'My Mechanic QLD',
-      telephone: '+61451159954',
+      '@id': BUSINESS_ID,
+      name: BUSINESS_NAME,
+      telephone: PHONE_E164,
       url: SITE_URL,
+      address: BASE_ADDRESS,
+      geo: { '@type': 'GeoCoordinates', ...BASE_GEO },
+      openingHoursSpecification: OPENING_HOURS,
+      priceRange: '$$',
     },
     areaServed: {
       '@type': 'City',
