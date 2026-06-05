@@ -9,6 +9,7 @@ Production Next.js site for [mymechanicqld.com.au](https://www.mymechanicqld.com
 - **Public website** — 843+ routes, Next.js App Router, fully prerendered
 - **Quote-request pipeline** — form → Supabase + Resend email (parallel writes)
 - **Operations dashboard** — standalone HTML, live Supabase reads, brand-styled
+- **Google Ads MCP server** — standalone Python harness (`google-ads-mcp/`) that lets Claude manage the Google Ads account directly (git-ignored, credentials never pushed)
 - **AI-readable indexes** — `llms.txt` + `llms-full.txt` for citation in ChatGPT, Claude, Perplexity, Gemini
 - **301 redirects** — full URL preservation from the legacy site
 - **Brand & SEO documentation** — six playbooks under `docs/`
@@ -192,6 +193,34 @@ The publishable key is in plain text in the file — RLS allows only `select` an
 
 ---
 
+## Google Ads MCP server
+
+A standalone [Model Context Protocol](https://modelcontextprotocol.io) server at [`google-ads-mcp/`](google-ads-mcp/) that turns Google Ads management into tools Claude can call directly — a **harness** for running the account from chat. Pull live performance, create and pause campaigns, manage budgets, ad groups, keywords and bids. Write actions default to **PAUSED** so nothing spends until reviewed.
+
+> **Not part of the website build, and git-ignored in full.** It holds live API credentials (`google-ads.yaml`), so the whole folder is excluded from this repo (root `.gitignore`), with its own nested `.gitignore` as a second layer. It lives in the working tree for local use only.
+
+```
+google-ads-mcp/
+├── server.py              MCP entry point — 16 tools (read + write)
+├── requirements.txt       google-ads 31.x, mcp[cli], python-dotenv, PyYAML
+├── google-ads.yaml.example   credential template (copy → google-ads.yaml)
+├── config/client.py       builds GoogleAdsClient (API v24) from yaml/env
+├── services/              reporting · campaigns · ad_groups · keywords
+└── scripts/generate_refresh_token.py   OAuth flow → refresh token
+```
+
+| Layer | Detail |
+|---|---|
+| API | Google Ads API `v24` (pinned in `config/client.py`) |
+| Library | `google-ads` 31.x (Python 3.9–3.14) |
+| Transport | stdio (Claude Desktop / Claude Code MCP config) |
+| Credentials | Developer token, OAuth client ID/secret, refresh token, customer ID |
+| Safety | New campaigns/ads created PAUSED; host confirms write actions |
+
+Setup, the full tool list, and step-by-step instructions for obtaining each credential are in [`google-ads-mcp/README.md`](google-ads-mcp/README.md).
+
+---
+
 ## Brand & content rules (critical)
 
 **Single biggest landmine on this project**: never mention services the business does not actually offer. See `.claude/skills/mymechanicqld-project/SKILL.md` for the full list and [docs/BUSINESS.md](docs/BUSINESS.md) for the source of truth.
@@ -305,4 +334,4 @@ Vercel dashboard → Deployments → find last known-good → `…` menu → **P
 
 ---
 
-_Last updated: 2026-05-26_
+_Last updated: 2026-06-03_

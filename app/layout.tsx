@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { Inter, Fraunces } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import TelClickTracker from '@/components/TelClickTracker'
 import './globals.css'
 
 // ── GA4 ──────────────────────────────────────────────────────────────
@@ -13,7 +14,10 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-6YSECEQTDG'
 // ── Google Ads ────────────────────────────────────────────────────────
 // Conversion-tracking tag from Google Ads (starts with AW-). Runs off the
 // same gtag.js instance as GA4 — we just register a second `config` ID.
-const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17575487896'
+// This is the account's REAL conversion-tracking ID. (The old AW-17575487896
+// held no conversion actions, so nothing was ever recorded — see
+// google-ads-mcp/audit/04-conversion-tracking.md.)
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17735133165'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -399,6 +403,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
+        <TelClickTracker />
         <main id="main">{children}</main>
         <Footer />
       </body>

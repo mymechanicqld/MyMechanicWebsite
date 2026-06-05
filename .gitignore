@@ -72,6 +72,12 @@ invoice-report-generator/
 tools/
 dashboard/
 
+# Google Ads MCP server — standalone Python harness for managing Google Ads.
+# Contains live API credentials (google-ads.yaml, .env). Operational tooling,
+# never part of the website bundle, and MUST NOT be pushed. The folder also
+# has its own .gitignore as a second layer protecting just the secrets.
+google-ads-mcp/
+
 # Early-stage design concepts — one-off HTML mockups that informed the build.
 # Useful local reference, not part of the live site.
 concepts/

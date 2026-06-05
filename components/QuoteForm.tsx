@@ -9,6 +9,8 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { submitQuoteAction } from '@/app/actions'
+import ConversionOnSuccess from './ConversionOnSuccess'
+import LeadDataCapture from './LeadDataCapture'
 
 /**
  * Public booking-request form.
@@ -53,6 +55,7 @@ export default function QuoteForm({
   if (submitted) {
     return (
       <div className="text-center py-8">
+        <ConversionOnSuccess />
         <div className="size-14 mx-auto rounded-full bg-emerald-100 text-emerald-700 grid place-items-center mb-5">
           <CheckCircle2 className="size-7" strokeWidth={1.75} />
         </div>
@@ -69,7 +72,8 @@ export default function QuoteForm({
   }
 
   return (
-    <form action={submitQuoteAction} className="grid gap-0">
+    <form action={submitQuoteAction} className="grid gap-0" data-lead-form>
+      <LeadDataCapture />
       <input type="hidden" name="redirect_to" value={redirectTo} />
 
       {/* ── Section 1: Your details ─────────────────────────────── */}
