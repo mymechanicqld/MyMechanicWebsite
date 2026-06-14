@@ -9,7 +9,11 @@ import './globals.css'
 // ── GA4 ──────────────────────────────────────────────────────────────
 // Replace with your real Measurement ID from analytics.google.com
 // Admin > Data Streams > Web > Measurement ID (starts with G-)
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-6YSECEQTDG'
+// Guard: a GA4 ID must start with "G-". If the env var is wrong (e.g. the
+// Google Ads number was pasted in by mistake), fall back to the real GA4 ID
+// so analytics never silently sends data to an invalid property.
+const RAW_GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-6YSECEQTDG'
+const GA_MEASUREMENT_ID = RAW_GA_ID.startsWith('G-') ? RAW_GA_ID : 'G-6YSECEQTDG'
 
 // ── Google Ads ────────────────────────────────────────────────────────
 // Conversion-tracking tag from Google Ads (starts with AW-). Runs off the
@@ -17,7 +21,9 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-6YSECEQTDG'
 // This is the account's REAL conversion-tracking ID. (The old AW-17575487896
 // held no conversion actions, so nothing was ever recorded — see
 // google-ads-mcp/audit/04-conversion-tracking.md.)
-const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17735133165'
+// Guard: an Ads ID must start with "AW-"; otherwise fall back to the real one.
+const RAW_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17735133165'
+const GOOGLE_ADS_ID = RAW_ADS_ID.startsWith('AW-') ? RAW_ADS_ID : 'AW-17735133165'
 
 const inter = Inter({
   subsets: ['latin'],
