@@ -100,6 +100,17 @@ async function saveToSupabase(submission: QuoteSubmissionInsert) {
   if (error) throw error
 }
 
+/**
+ * Build a safe `"Display Name" <email>` header value. Quotes the display name
+ * so commas/special characters don't break the header, and strips characters
+ * that could be used for header injection.
+ */
+function formatAddress(name: string, email: string): string {
+  const cleanEmail = String(email).replace(/[\r\n,<>\s]/g, '')
+  const cleanName = String(name).replace(/[\r\n"\\]/g, ' ').replace(/\s+/g, ' ').trim()
+  return cleanName ? `"${cleanName}" <${cleanEmail}>` : cleanEmail
+}
+
 async function sendNotificationEmail(submission: QuoteSubmissionInsert) {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey || apiKey === 're_xxxxxxxxx') {
@@ -107,11 +118,15 @@ async function sendNotificationEmail(submission: QuoteSubmissionInsert) {
     return
   }
 
-  const from = process.env.QUOTE_SENDER_EMAIL ?? 'onboarding@resend.dev'
+  const senderEmail = process.env.QUOTE_SENDER_EMAIL ?? 'bookings@mymechanicqld.com.au'
   const to = process.env.QUOTE_RECIPIENT_EMAIL ?? 'mymechanicqld@gmail.com'
 
   const { subject, html, text } = renderQuoteNotificationEmail(submission)
-  const replyTo = submission.email
+
+  // Sender shows the customer's name in your inbox; Reply-To routes a reply
+  // straight to the customer, so Gmail's own "Reply" keeps one clean thread.
+  const from = formatAddress(`${submission.full_name} via My Mechanic QLD`, senderEmail)
+  const replyTo = formatAddress(submission.full_name, submission.email)
 
   const resend = new Resend(apiKey)
   const { data, error } = await resend.emails.send({
