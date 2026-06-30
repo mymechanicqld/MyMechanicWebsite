@@ -86,6 +86,7 @@ function parseFormData(formData: FormData): QuoteSubmissionInsert {
     email:           get('email'),
     vehicle_rego:    get('rego').toUpperCase(),       // normalise plates to upper-case
     suburb:          get('suburb'),
+    address:         get('address') || null,            // street address for the mobile call-out
     service_needed:  get('service_needed'),            // dropdown slug value
     vehicle_make:    get('car_make') || null,           // optional
     symptoms:        get('message') || null,            // optional free-text
@@ -97,7 +98,16 @@ function parseFormData(formData: FormData): QuoteSubmissionInsert {
 
 async function saveToSupabase(submission: QuoteSubmissionInsert) {
   const { error } = await supabase.from('quote_submissions').insert(submission)
-  if (error) throw error
+  if (!error) return
+  // Forward-compatible: if the `address` column has not been added to the DB
+  // yet, drop it and retry so the submission is still recorded.
+  if (/could not find the 'address' column/i.test(error.message)) {
+    const { address: _omit, ...rest } = submission
+    const retry = await supabase.from('quote_submissions').insert(rest)
+    if (retry.error) throw retry.error
+    return
+  }
+  throw error
 }
 
 /**

@@ -38,6 +38,7 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
   const phoneTel = submission.phone.replace(/\s/g, '')
   const rego     = escape(submission.vehicle_rego).toUpperCase()
   const suburb   = escape(submission.suburb)
+  const address  = submission.address ? escape(submission.address) : ''
   const message  = submission.symptoms ? escape(submission.symptoms) : ''
   const carMake  = submission.vehicle_make ? escape(submission.vehicle_make) : ''
   const service  = submission.service_needed
@@ -68,6 +69,7 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
   const rows: string[] = [
     row('Phone', `<a href="tel:${phoneTel}" style="color:#1D4ED8;text-decoration:none;">${phone}</a>`),
     row('Email', `<a href="mailto:${escape(submission.email)}" style="color:#1D4ED8;text-decoration:none;">${escape(submission.email)}</a>`),
+    ...(address ? [row('Address', address)] : []),
     row('Suburb', suburb),
     row('Rego', rego || '—'),
   ]
@@ -151,6 +153,7 @@ Saved to the dashboard · ${new Date().toLocaleString('en-AU', { dateStyle: 'med
     `Name:    ${submission.full_name}`,
     `Phone:   ${submission.phone}`,
     `Email:   ${submission.email}`,
+    ...(submission.address ? [`Address: ${submission.address}`] : []),
     `Suburb:  ${submission.suburb}`,
     `Rego:    ${rego || '—'}`,
   ]

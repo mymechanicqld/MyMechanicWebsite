@@ -22,6 +22,7 @@ create table if not exists public.quote_submissions (
   email           text not null,
   phone           text,
   suburb          text,
+  address         text,
 
   -- Vehicle
   vehicle_make    text,

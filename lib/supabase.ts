@@ -33,6 +33,7 @@ export type QuoteSubmissionInsert = {
   phone: string             // "Phone Number"
   vehicle_rego: string      // "Registration" — licence plate
   suburb: string            // "Suburb"
+  address?: string | null   // "Street address" — for the mobile call-out
   service_needed: string    // "Service" — dropdown selection (slug value)
   consent_privacy: boolean  // True when the privacy-policy box was ticked
 

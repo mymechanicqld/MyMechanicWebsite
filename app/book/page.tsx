@@ -72,11 +72,10 @@ export default async function BookPage({
           <div className="lg:sticky lg:top-28">
             <span className="eyebrow">Get a quote</span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4">
-              Tell us what&apos;s happening with your car.
+              How can we help you?
             </h1>
             <p className="lead mt-6">
               Send us your details and we come back with a fixed-price quote during business hours.
-              The more detail you give us up front, the more accurate the quote.
             </p>
 
             <ul className="grid gap-3 mt-8">
@@ -92,10 +91,10 @@ export default async function BookPage({
 
             <div className="mt-8 p-5 rounded-xl bg-soft border border-hairline">
               <div className="text-xs font-semibold text-ink uppercase tracking-[0.05em] mb-2">
-                In a hurry?
+                Rather talk to us?
               </div>
               <p className="text-[0.9375rem] text-muted leading-relaxed mb-4">
-                For breakdowns and same-day callouts, the phone is faster than the form.
+                To connect quickly, give us a call.
               </p>
               <a href="tel:0451159954" className="btn btn-primary inline-flex">
                 <Phone className="size-4" strokeWidth={2} />

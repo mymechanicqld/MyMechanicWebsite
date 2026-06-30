@@ -85,6 +85,7 @@ export default function QuoteForm({
         </div>
         <Field label="Email" name="email" type="email" placeholder="you@example.com" required />
         <Field label="Suburb" name="suburb" placeholder="e.g. Sunnybank" required />
+        <Field label="Street address" name="address" placeholder="e.g. 12 Smith St, Sunnybank" required />
       </div>
 
       <Divider />
@@ -93,7 +94,7 @@ export default function QuoteForm({
       <SectionHeader icon={Car} title="Vehicle" />
       <div className="grid gap-4">
         <div className="grid sm:grid-cols-2 gap-4">
-          <Field label="Car Make" name="car_make" placeholder="e.g. Toyota, Holden" />
+          <Field label="Make & model" name="car_make" placeholder="e.g. Toyota Hilux SR5" />
           <Field label="Registration Number" name="rego" placeholder="ABC123" required uppercase />
         </div>
 
