@@ -371,7 +371,7 @@ export default async function HomePage({
                   <Phone className="size-4" strokeWidth={2} />
                   Call now
                 </a>
-                <Link href="/emergency-call-outs/" className="btn btn-secondary">
+                <Link href="/services/" className="btn btn-secondary">
                   Learn more
                   <ArrowRight className="size-4" strokeWidth={2} />
                 </Link>

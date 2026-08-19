@@ -1,15 +1,5 @@
 [
   {
-    "source": "/brisbane",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
-    "source": "/brisbane/",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
     "source": "/does-a-mobile-logbook-service-void-your-new-car-warranty",
     "destination": "/blog/does-a-mobile-logbook-service-void-your-new-car-warranty/",
     "permanent": true
@@ -46,16 +36,6 @@
   },
   {
     "source": "/ipswich/",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
-    "source": "/logan",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
-    "source": "/logan/",
     "destination": "/areas/",
     "permanent": true
   },

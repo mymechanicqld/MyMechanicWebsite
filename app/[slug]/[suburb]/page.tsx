@@ -24,6 +24,11 @@ import { SITE_URL, suburbServiceSchema } from '@/lib/business'
 // Generate pages for priority services x all suburbs
 const TARGET_SERVICE_SLUGS = PRIORITY_SERVICES.map((s) => s.slug)
 
+// Only the combinations listed in generateStaticParams may exist. Without this,
+// all 8 services resolve for all 160 suburbs, producing ~640 near-duplicate
+// pages that are live and indexable but absent from the sitemap.
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   const suburbSlugs = getSuburbSlugs()
   const params: { slug: string; suburb: string }[] = []
