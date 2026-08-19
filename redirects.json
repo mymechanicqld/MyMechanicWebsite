@@ -10,16 +10,6 @@
     "permanent": true
   },
   {
-    "source": "/gold-coast",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
-    "source": "/gold-coast/",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
     "source": "/home-old",
     "destination": "/",
     "permanent": true
@@ -27,16 +17,6 @@
   {
     "source": "/home-old/",
     "destination": "/",
-    "permanent": true
-  },
-  {
-    "source": "/ipswich",
-    "destination": "/areas/",
-    "permanent": true
-  },
-  {
-    "source": "/ipswich/",
-    "destination": "/areas/",
     "permanent": true
   },
   {
