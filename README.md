@@ -55,7 +55,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://depduvjclelykqcnhlsm.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr
 RESEND_API_KEY=re_xxx                    # https://resend.com/api-keys
 QUOTE_RECIPIENT_EMAIL=gursahib99888@gmail.com
-QUOTE_SENDER_EMAIL=onboarding@resend.dev # switch to contact@mymechanicqld.com.au after domain verified
+QUOTE_SENDER_EMAIL=bookings@mymechanicqld.com.au # verified sending domain at Resend
 ```
 
 `NEXT_PUBLIC_GA4_MEASUREMENT_ID` and `NEXT_PUBLIC_GSC_VERIFICATION` are launch-only — see [docs/DEPLOY.md](docs/DEPLOY.md).
@@ -174,7 +174,7 @@ The Supabase project is created and credentials are in `.env.local`. To apply th
 
 ### Email: domain verification
 
-Until `mymechanicqld.com.au` is verified at [resend.com/domains](https://resend.com/domains), emails must send from `onboarding@resend.dev`. Once the DNS records are in place, switch `QUOTE_SENDER_EMAIL` in `.env.local` (and Vercel env vars) to `contact@mymechanicqld.com.au`.
+`mymechanicqld.com.au` is verified at [resend.com/domains](https://resend.com/domains), so `QUOTE_SENDER_EMAIL` is `bookings@mymechanicqld.com.au`. The *sending* address has to sit on a domain Resend has verified, which is why it is not the gmail address. The public contact address shown across the site is `mymechanicqld@gmail.com`, and that is also where notifications land via `QUOTE_RECIPIENT_EMAIL`.
 
 ---
 

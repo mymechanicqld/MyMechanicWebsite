@@ -9,7 +9,7 @@ export const SITE_URL = 'https://www.mymechanicqld.com.au'
 export const BUSINESS_ID = `${SITE_URL}/#business`
 export const BUSINESS_NAME = 'My Mechanic QLD'
 export const PHONE_E164 = '+61451159954'
-export const EMAIL = 'contact@mymechanicqld.com.au'
+export const EMAIL = 'mymechanicqld@gmail.com'
 
 export const BASE_GEO = {
   latitude: -27.6125,

@@ -54,8 +54,8 @@ below. Apply to **Production**, **Preview**, and **Development** unless noted.
 | `NEXT_PUBLIC_SUPABASE_URL`              | `https://depduvjclelykqcnhlsm.supabase.co`                             | Yes — quote form storage           |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`  | `sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr`                       | Yes — quote form storage           |
 | `RESEND_API_KEY`                        | https://resend.com/api-keys (the real `re_...` key)                    | Yes — owner email notification     |
-| `QUOTE_RECIPIENT_EMAIL`                 | `gursahib99888@gmail.com` (or wherever the owner reads quote requests) | Yes                                |
-| `QUOTE_SENDER_EMAIL`                    | `onboarding@resend.dev` initially; `contact@mymechanicqld.com.au` once domain is verified at Resend | Yes |
+| `QUOTE_RECIPIENT_EMAIL`                 | `mymechanicqld@gmail.com` (where the owner reads quote requests) | Yes                                |
+| `QUOTE_SENDER_EMAIL`                    | `bookings@mymechanicqld.com.au` (verified sending domain at Resend) | Yes |
 | `NEXT_PUBLIC_GA4_MEASUREMENT_ID`        | analytics.google.com → Admin → Data Streams                            | Recommended, can be blank pre-launch |
 | `NEXT_PUBLIC_GSC_VERIFICATION`          | search.google.com/search-console verification token                    | Recommended, can be blank pre-launch |
 

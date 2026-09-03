@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
               Mechanic QLD, a mobile mechanic business operating across South East Queensland. You
               can contact us on{' '}
               <a href="tel:0451159954">0451 159 954</a> or at{' '}
-              <a href="mailto:contact@mymechanicqld.com.au">contact@mymechanicqld.com.au</a>.
+              <a href="mailto:mymechanicqld@gmail.com">mymechanicqld@gmail.com</a>.
             </p>
 
             <h2>2. What we collect</h2>
@@ -137,7 +137,7 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>
               To exercise any of these rights, email us at{' '}
-              <a href="mailto:contact@mymechanicqld.com.au">contact@mymechanicqld.com.au</a> or call{' '}
+              <a href="mailto:mymechanicqld@gmail.com">mymechanicqld@gmail.com</a> or call{' '}
               <a href="tel:0451159954">0451 159 954</a>. If you are not satisfied with our response,
               you can make a complaint to the Office of the Australian Information Commissioner at{' '}
               <a href="https://www.oaic.gov.au" target="_blank" rel="noreferrer">oaic.gov.au</a>.
@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
 
             <h2>9. Contact us</h2>
             <p>
-              For any privacy question, email <a href="mailto:contact@mymechanicqld.com.au">contact@mymechanicqld.com.au</a>{' '}
+              For any privacy question, email <a href="mailto:mymechanicqld@gmail.com">mymechanicqld@gmail.com</a>{' '}
               or call <a href="tel:0451159954">0451 159 954</a>.
             </p>
 

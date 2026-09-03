@@ -40,7 +40,7 @@ const fraunces = Fraunces({
 const SITE_URL = 'https://www.mymechanicqld.com.au'
 const PHONE = '0451 159 954'
 const PHONE_E164 = '+61451159954'
-const EMAIL = 'contact@mymechanicqld.com.au'
+const EMAIL = 'mymechanicqld@gmail.com'
 
 const DEFAULT_TITLE = 'Mobile Mechanic Brisbane, Logan, Ipswich & Gold Coast | My Mechanic QLD'
 // Description is symptom-led where possible: most customers search by what's

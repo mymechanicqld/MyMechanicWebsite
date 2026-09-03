@@ -160,7 +160,7 @@ export default function TermsConditionsPage() {
             <h2>12. Contact</h2>
             <p>
               Questions about these terms? Email{' '}
-              <a href="mailto:contact@mymechanicqld.com.au">contact@mymechanicqld.com.au</a> or call{' '}
+              <a href="mailto:mymechanicqld@gmail.com">mymechanicqld@gmail.com</a> or call{' '}
               <a href="tel:0451159954">0451 159 954</a>.
             </p>
 

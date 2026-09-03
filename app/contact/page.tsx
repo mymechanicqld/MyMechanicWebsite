@@ -37,8 +37,8 @@ const CONTACTS = [
   {
     Icon: Mail,
     label: 'Email',
-    value: 'contact@mymechanicqld.com.au',
-    href: 'mailto:contact@mymechanicqld.com.au',
+    value: 'mymechanicqld@gmail.com',
+    href: 'mailto:mymechanicqld@gmail.com',
     hint: 'We reply to email within one business day.',
   },
   {

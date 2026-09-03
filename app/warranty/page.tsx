@@ -306,10 +306,10 @@ export default function WarrantyPage() {
           <p className="text-[0.9375rem] text-muted mt-8">
             Have a warranty question we have not covered? Email{' '}
             <a
-              href="mailto:contact@mymechanicqld.com.au"
+              href="mailto:mymechanicqld@gmail.com"
               className="text-accent-bright font-semibold"
             >
-              contact@mymechanicqld.com.au
+              mymechanicqld@gmail.com
             </a>{' '}
             or call <a href="tel:0451159954" className="text-accent-bright font-semibold">0451 159 954</a>.
           </p>

@@ -22,7 +22,7 @@ QUOTE_RECIPIENT_EMAIL=mymechanicqld@gmail.com
 # https://resend.com/domains, sends will FAIL with anything other than
 # `onboarding@resend.dev`. Use the verified address once DNS is set up.
 QUOTE_SENDER_EMAIL=onboarding@resend.dev
-# QUOTE_SENDER_EMAIL=contact@mymechanicqld.com.au   # ← use after domain verified
+# QUOTE_SENDER_EMAIL=bookings@mymechanicqld.com.au   # verified sending domain at Resend
 
 # Google Analytics 4 — measurement ID from analytics.google.com
 NEXT_PUBLIC_GA4_MEASUREMENT_ID=

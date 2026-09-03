@@ -153,7 +153,7 @@ All set in **Vercel → Project Settings → Environment Variables** (Production
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_cgK1KYRlLrYrn1YjhQTVcg_hSJzcOxr` | Public anon key — security is RLS, not key secrecy |
 | `RESEND_API_KEY` | `re_...` (real key) | Server-only — get from [resend.com/api-keys](https://resend.com/api-keys) |
 | `QUOTE_RECIPIENT_EMAIL` | `mymechanicqld@gmail.com` | Where quote notifications land |
-| `QUOTE_SENDER_EMAIL` | `onboarding@resend.dev` | Switch to `contact@mymechanicqld.com.au` once domain is verified at Resend |
+| `QUOTE_SENDER_EMAIL` | `bookings@mymechanicqld.com.au` | Verified sending domain at Resend. Must stay on `mymechanicqld.com.au` — Resend cannot send from a gmail.com address |
 
 ### Optional / for analytics
 
@@ -222,7 +222,7 @@ Legacy (nullable, retained for historical rows):
 
 **API key:** stored in `RESEND_API_KEY` env var. Generate at [resend.com/api-keys](https://resend.com/api-keys).
 
-**Domain verification:** `mymechanicqld.com.au` needs to be verified at [resend.com/domains](https://resend.com/domains) to send from a custom address. Until then `QUOTE_SENDER_EMAIL` must be `onboarding@resend.dev`. Once DNS records (SPF / DKIM) are added at VentraIP and Resend confirms verification, switch the env var to `contact@mymechanicqld.com.au`.
+**Domain verification:** `mymechanicqld.com.au` is verified at [resend.com/domains](https://resend.com/domains), so `QUOTE_SENDER_EMAIL` is `bookings@mymechanicqld.com.au`. The sending address has to stay on a domain Resend has verified, which is why it is not the gmail address. Replies still route to the customer via the Reply-To header, and the notification itself lands in `mymechanicqld@gmail.com` via `QUOTE_RECIPIENT_EMAIL`.
 
 **Free tier limits:** 3,000 emails/month, 100/day — well above current volume.
 

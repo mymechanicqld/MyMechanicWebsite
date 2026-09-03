@@ -21,7 +21,7 @@ Source of truth for the website rebuild. Confirmed answers from the owner are ca
 | Channel | Value |
 |---|---|
 | Phone | **0451 159 954** |
-| Email | **contact@mymechanicqld.com.au** |
+| Email | **mymechanicqld@gmail.com** |
 | Trading hours | Monday to Friday 7am to 6pm. Saturday 8am to 5pm. Sunday closed. |
 | Emergency / after-hours | TBD: confirm policy |
 | Social media | TBD: confirm Facebook, Instagram, Google Business profile URLs |
