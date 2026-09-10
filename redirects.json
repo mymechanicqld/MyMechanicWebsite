@@ -91,12 +91,12 @@
   },
   {
     "source": "/my-mechanic-qld/parkinson",
-    "destination": "/parkinson/",
+    "destination": "/brisbane/",
     "permanent": true
   },
   {
     "source": "/my-mechanic-qld/parkinson/",
-    "destination": "/parkinson/",
+    "destination": "/brisbane/",
     "permanent": true
   },
   {
