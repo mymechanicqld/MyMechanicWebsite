@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import {
   ArrowRight,
   CheckCircle2,
@@ -47,12 +50,29 @@ const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Australia/Bris
 
 export default function QuoteForm({
   submitted,
+  error,
   redirectTo = '/',
 }: {
   submitted?: boolean
+  error?: 'required' | 'delivery'
   redirectTo?: string
 }) {
-  if (submitted) {
+  const [resolvedSubmitted, setResolvedSubmitted] = useState(submitted ?? false)
+  const [resolvedError, setResolvedError] = useState<'required' | 'delivery' | undefined>(error)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (submitted === undefined) {
+      setResolvedSubmitted(params.get('submitted') === 'true')
+    }
+
+    if (error === undefined) {
+      const urlError = params.get('error')
+      setResolvedError(urlError === 'required' || urlError === 'delivery' ? urlError : undefined)
+    }
+  }, [submitted, error])
+
+  if (resolvedSubmitted) {
     return (
       <div className="text-center py-8">
         <ConversionOnSuccess />
@@ -75,6 +95,17 @@ export default function QuoteForm({
     <form action={submitQuoteAction} className="grid gap-0" data-lead-form>
       <LeadDataCapture />
       <input type="hidden" name="redirect_to" value={redirectTo} />
+
+      {resolvedError && (
+        <div
+          role="alert"
+          className="mb-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm leading-relaxed text-red-800"
+        >
+          {resolvedError === 'required'
+            ? 'We could not submit that request because a required field was missing. Please check the form and try again.'
+            : 'We could not deliver your request. Nothing has been counted as sent. Please try again, or call 0451 159 954.'}
+        </div>
+      )}
 
       {/* ── Section 1: Your details ─────────────────────────────── */}
       <SectionHeader icon={User} title="Your details" />

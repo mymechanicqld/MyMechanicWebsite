@@ -329,17 +329,18 @@ const localBusinessSchema = {
     'Engine diagnostics',
     'Suspension repair',
   ],
-  // sameAs URLs go here once social profiles are confirmed:
-  // sameAs: [
-  //   'https://www.facebook.com/mymechanicqld',
-  //   'https://www.google.com/maps/place/...',
-  // ],
-  // aggregateRating goes here once we have verified Google review stats:
-  // aggregateRating: {
-  //   '@type': 'AggregateRating',
-  //   ratingValue: '4.9',
-  //   reviewCount: '237',
-  // },
+  sameAs: [
+    'https://www.facebook.com/mymechanicqld',
+    'https://g.page/r/CSJT8_It4K0WEAI',
+  ],
+  // Live-verified against the retained Brisbane South profile on 19 Sep 2026.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '229',
+    bestRating: '5',
+    worstRating: '1',
+  },
 }
 
 const webSiteSchema = {

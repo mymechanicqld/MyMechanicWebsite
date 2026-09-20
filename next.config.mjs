@@ -37,9 +37,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60 * 60 * 24 * 7,
   },
-  experimental: {
-    typedRoutes: false,
-  },
+  typedRoutes: false,
 
   async redirects() {
     return redirectsConfig

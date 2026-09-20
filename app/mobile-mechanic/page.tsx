@@ -53,13 +53,7 @@ const AREAS = [
   'Springwood', 'Hamilton', 'Greenslopes', 'Ipswich', 'Goodna', 'Helensvale', 'Ormeau',
 ]
 
-export default async function MobileMechanicLanding({
-  searchParams,
-}: {
-  searchParams: Promise<{ submitted?: string }>
-}) {
-  const { submitted } = await searchParams
-
+export default function MobileMechanicLanding() {
   return (
     <main className="pb-24 lg:pb-0">
       {/* ── Hero + form (above the fold) ─────────────────────────── */}
@@ -77,15 +71,20 @@ export default async function MobileMechanicLanding({
             </p>
 
             {/* Rating line (real Google reviews) */}
-            <div className="flex items-center gap-2.5 mt-6">
+            <a
+              href="https://g.page/r/CSJT8_It4K0WEAI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 mt-6 w-fit hover:opacity-80 transition-opacity"
+              aria-label="View 229 Google reviews rated 4.9 out of 5"
+            >
               <span className="text-gold inline-flex gap-px">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-[18px] fill-current" strokeWidth={1.5} />
                 ))}
               </span>
-              <span className="text-[0.9375rem] text-ink font-semibold">5-star rated</span>
-              <span className="text-[0.9375rem] text-subtle">by drivers across SE Queensland</span>
-            </div>
+              <span className="text-[0.9375rem] text-ink font-semibold">4.9 from 229 Google reviews</span>
+            </a>
 
             {/* Primary actions */}
             <div className="flex flex-wrap gap-3 mt-7">
@@ -113,15 +112,13 @@ export default async function MobileMechanicLanding({
 
           {/* Right: form */}
           <div id="quote" className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 scroll-mt-24">
-            {!submitted && (
-              <div className="mb-5">
-                <h2 className="text-xl font-bold text-ink">Get your fixed-price quote</h2>
-                <p className="text-[0.9375rem] text-muted mt-1">
-                  Tell us about your car. We reply during business hours, or call for same-day.
-                </p>
-              </div>
-            )}
-            <QuoteForm submitted={!!submitted} redirectTo="/mobile-mechanic/" />
+            <div className="mb-5">
+              <h2 className="text-xl font-bold text-ink">Get your fixed-price quote</h2>
+              <p className="text-[0.9375rem] text-muted mt-1">
+                Tell us about your car. We reply during business hours, or call for same-day.
+              </p>
+            </div>
+            <QuoteForm redirectTo="/mobile-mechanic/" />
           </div>
         </div>
       </section>

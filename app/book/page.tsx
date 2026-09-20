@@ -42,13 +42,7 @@ const NEXT_STEPS = [
 
 const SITE_URL = 'https://www.mymechanicqld.com.au'
 
-export default async function BookPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ submitted?: string }>
-}) {
-  const { submitted } = await searchParams
-
+export default function BookPage() {
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -105,14 +99,13 @@ export default async function BookPage({
 
           {/* Right: form */}
           <div className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 lg:p-10">
-            <QuoteForm submitted={!!submitted} redirectTo="/book/" />
+            <QuoteForm redirectTo="/book/" />
           </div>
         </div>
       </section>
 
       {/* What happens next */}
-      {!submitted && (
-        <section className="py-14 md:py-20 bg-surface border-y border-hairline">
+      <section className="py-14 md:py-20 bg-surface border-y border-hairline">
           <div className="container max-w-4xl">
             <div className="mb-10 text-center">
               <span className="eyebrow">After you submit</span>
@@ -134,8 +127,7 @@ export default async function BookPage({
               ))}
             </div>
           </div>
-        </section>
-      )}
+      </section>
 
       {/* CTA */}
       <section className="py-14 md:py-20 bg-accent text-white text-center">

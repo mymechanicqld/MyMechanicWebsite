@@ -57,13 +57,7 @@ const CONTACTS = [
 
 const SITE_URL = 'https://www.mymechanicqld.com.au'
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ submitted?: string }>
-}) {
-  const { submitted } = await searchParams
-
+export default function ContactPage() {
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -126,7 +120,7 @@ export default async function ContactPage({
 
           {/* Right: form */}
           <div className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 lg:p-10">
-            <QuoteForm submitted={!!submitted} redirectTo="/contact/" />
+            <QuoteForm redirectTo="/contact/" />
           </div>
         </div>
       </section>

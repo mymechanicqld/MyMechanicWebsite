@@ -7,7 +7,7 @@ import { supabase, type QuoteSubmissionInsert } from '@/lib/supabase'
 import { renderQuoteNotificationEmail } from '@/lib/email-templates'
 
 /** Pages that are allowed as redirect targets after submission. */
-const ALLOWED_REDIRECTS = ['/', '/book/', '/contact/']
+const ALLOWED_REDIRECTS = ['/', '/book/', '/contact/', '/mobile-mechanic/']
 
 /**
  * Quote / booking-request submission from the public form.
@@ -43,11 +43,14 @@ export async function submitQuoteAction(formData: FormData) {
     !submission.phone ||
     !submission.vehicle_rego ||
     !submission.suburb ||
+    !submission.address ||
     !submission.service_needed ||
     !submission.consent_privacy
   ) {
     console.warn('[quote-request] missing required fields, ignoring', submission)
-    redirect(`${redirectPath}?submitted=true#quote`)
+    // Do not show success or fire a Google Ads conversion for a request that
+    // was never accepted by either delivery channel.
+    redirect(`${redirectPath}?error=required#quote`)
   }
 
   // Capture request metadata for audit / spam triage
@@ -68,9 +71,14 @@ export async function submitQuoteAction(formData: FormData) {
     console.error('[quote-request] resend email failed:', emailResult.reason)
   }
 
-  // Always redirect the customer to success — internal failures are recovered
-  // from the email backup (if Supabase failed) or the Supabase record (if
-  // email failed). If both fail, the customer can still call us.
+  if (supabaseResult.status === 'rejected' && emailResult.status === 'rejected') {
+    // Both copies failed, so keep the form visible and do not fire the success
+    // conversion. The customer receives a clear retry/call message instead.
+    redirect(`${redirectPath}?error=delivery#quote`)
+  }
+
+  // One successful channel is sufficient: Supabase is the operations record;
+  // email is the independent notification/backup.
   redirect(`${redirectPath}?submitted=true#quote`)
 }
 

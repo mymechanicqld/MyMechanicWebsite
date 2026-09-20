@@ -174,13 +174,7 @@ const FAQS = [
 /*  Page                                                                 */
 /* ────────────────────────────────────────────────────────────────────── */
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: Promise<{ submitted?: string }>
-}) {
-  const { submitted } = await searchParams
-
+export default function HomePage() {
   return (
     <>
       {/* ══════════ 1. Hero ══════════ */}
@@ -257,15 +251,20 @@ export default async function HomePage({
                   Hear it from our customers.
                 </h2>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted">
+              <a
+                href="https://g.page/r/CSJT8_It4K0WEAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors"
+                aria-label="View 229 Google reviews rated 4.9 out of 5"
+              >
                 <div className="text-gold inline-flex gap-px">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="size-4 fill-current" strokeWidth={1.5} />
                   ))}
                 </div>
-                <span className="font-medium text-ink">Highly rated</span>
-                <span>on Google</span>
-              </div>
+                <span className="font-medium text-ink">4.9 from 229 Google reviews</span>
+              </a>
             </div>
           </Reveal>
           <Reveal variant="up" delay={0.1}>
@@ -569,7 +568,7 @@ export default async function HomePage({
 
           <Reveal variant="up" delay={0.15} duration={0.7}>
             <div className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 lg:p-10 form-glow">
-              <QuoteForm submitted={!!submitted} redirectTo="/" />
+              <QuoteForm redirectTo="/" />
             </div>
           </Reveal>
         </div>
