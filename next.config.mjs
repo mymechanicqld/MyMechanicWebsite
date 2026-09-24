@@ -40,7 +40,16 @@ const nextConfig = {
   typedRoutes: false,
 
   async redirects() {
-    return redirectsConfig
+    return [
+      // One canonical host: the bare domain was serving a duplicate copy of the site.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'mymechanicqld.com.au' }],
+        destination: 'https://www.mymechanicqld.com.au/:path*',
+        permanent: true,
+      },
+      ...redirectsConfig,
+    ]
   },
 
   async headers() {

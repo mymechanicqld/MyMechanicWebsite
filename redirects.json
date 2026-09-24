@@ -30,16 +30,6 @@
     "permanent": true
   },
   {
-    "source": "/Wynnum",
-    "destination": "/wynnum/",
-    "permanent": true
-  },
-  {
-    "source": "/Wynnum/",
-    "destination": "/wynnum/",
-    "permanent": true
-  },
-  {
     "source": "/redcliffe",
     "destination": "/areas/",
     "permanent": true
@@ -71,12 +61,12 @@
   },
   {
     "source": "/emergency-call-outs",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
     "source": "/emergency-call-outs/",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
@@ -101,22 +91,22 @@
   },
   {
     "source": "/mobile-auto-mechanic",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
     "source": "/mobile-auto-mechanic/",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
     "source": "/professional-mobile-mechanic",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
     "source": "/professional-mobile-mechanic/",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
@@ -131,12 +121,12 @@
   },
   {
     "source": "/top-rated-mobile-car-mechanic",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
     "source": "/top-rated-mobile-car-mechanic/",
-    "destination": "/mobile-mechanic/",
+    "destination": "/",
     "permanent": true
   },
   {
@@ -206,6 +196,1206 @@
   },
   {
     "source": "/make-the-most-of-the-season-by-following-these-simple-guidelines/",
+    "destination": "/blog/",
+    "permanent": true
+  },
+  {
+    "source": "/affordable-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/affordable-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/affordable-mobile-mechanic-logan-qld",
+    "destination": "/logan/",
+    "permanent": true
+  },
+  {
+    "source": "/affordable-mobile-mechanic-logan-qld/",
+    "destination": "/logan/",
+    "permanent": true
+  },
+  {
+    "source": "/battery-installation-brisbane",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/battery-installation-brisbane/",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/battery-replacement-mobile",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/battery-replacement-mobile/",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/best-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/best-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/best-mobile-mechanic-2",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/best-mobile-mechanic-2/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/best-mobile-mechanic-in-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/best-mobile-mechanic-in-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/book-mobile-car-service",
+    "destination": "/book/",
+    "permanent": true
+  },
+  {
+    "source": "/book-mobile-car-service/",
+    "destination": "/book/",
+    "permanent": true
+  },
+  {
+    "source": "/book-mobile-car-service-logan-qld",
+    "destination": "/book/",
+    "permanent": true
+  },
+  {
+    "source": "/book-mobile-car-service-logan-qld/",
+    "destination": "/book/",
+    "permanent": true
+  },
+  {
+    "source": "/brake-repair-mobile-mechanic",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/brake-repair-mobile-mechanic/",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/brake-repair-mobile-service",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/brake-repair-mobile-service/",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/brake-repair-mobile-service-logan-qld",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/brake-repair-mobile-service-logan-qld/",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane-mobile-mechanic-reviews",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane-mobile-mechanic-reviews/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane-mobile-mechanic-reviews-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane-mobile-mechanic-reviews-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane-region",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/brisbane-region/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/car-battery-replacement",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/car-battery-replacement/",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/car-diagnostics-logan-qld",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/car-diagnostics-logan-qld/",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/car-maintenance-services",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/car-maintenance-services/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/car-mechanic-at-home",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/car-mechanic-at-home/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/car-mechanic-at-home-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/car-mechanic-at-home-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/car-repair-expert",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/car-repair-expert/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/car-repair-expert-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/car-repair-expert-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/car-repairs",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/car-repairs/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/car-wont-start-mechanic",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/car-wont-start-mechanic/",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/car-wont-start-mechanic-gold-coast",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/car-wont-start-mechanic-gold-coast/",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mechanic-comes-to-you",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mechanic-comes-to-you/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mechanic-comes-to-you-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mechanic-comes-to-you-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mobile-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/certified-mobile-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/cheap-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/cheap-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/cheap-mobile-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/cheap-mobile-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-repair",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-repair/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-repair-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-repair-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-start-service",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-start-service/",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-start-service-brisbane",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/emergency-car-start-service-brisbane/",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/engine-diagnostics-onsite",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/engine-diagnostics-onsite/",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/engine-diagnostics-onsite-logan-qld",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/engine-diagnostics-onsite-logan-qld/",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/fast-mobile-car-repair",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/fast-mobile-car-repair/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/fast-mobile-car-repair-in-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/fast-mobile-car-repair-in-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast-affordable-mechanic",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast-affordable-mechanic/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast-affordable-mechanic-ipswich",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast-affordable-mechanic-ipswich/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast-mobile-car-check",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/gold-coast-mobile-car-check/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/home/contact",
+    "destination": "/contact/",
+    "permanent": true
+  },
+  {
+    "source": "/home/contact/",
+    "destination": "/contact/",
+    "permanent": true
+  },
+  {
+    "source": "/how-much-is-mobile-car-service",
+    "destination": "/pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/how-much-is-mobile-car-service/",
+    "destination": "/pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/how-much-is-mobile-car-service-brisbane",
+    "destination": "/pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/how-much-is-mobile-car-service-brisbane/",
+    "destination": "/pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/logbook-servicing-at-home",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/logbook-servicing-at-home/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/logbook-servicing-at-home-gold-coast",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/logbook-servicing-at-home-gold-coast/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-alternator-repair",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-alternator-repair/",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-alternator-repair-logan-qld",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-alternator-repair-logan-qld/",
+    "destination": "/starter-alternator/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-auto-mechanic-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-auto-mechanic-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-auto-repair",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-auto-repair/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-auto-repair-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-auto-repair-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-north",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-north/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-north-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-north-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-south",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-south/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-south-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-repair-south-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-servicing",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-servicing/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-servicing-gold-coast",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-servicing-gold-coast/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-tune-up",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-tune-up/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-tune-up-logan-qld",
+    "destination": "/logan/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-car-tune-up-logan-qld/",
+    "destination": "/logan/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-clutch-repair",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-clutch-repair/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-clutch-repair-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-clutch-repair-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-engine-diagnostics",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-engine-diagnostics/",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-engine-diagnostics-gold-coast",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-engine-diagnostics-gold-coast/",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-brisbane-we-come-to-you",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-brisbane-we-come-to-you/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-for-breakdown",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-for-breakdown/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-for-breakdown-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-for-breakdown-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-ipswich-2",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-ipswich-2/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-near-me",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-near-me/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-near-me-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-near-me-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-service",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-service/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-service-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-mechanic-service-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-suspension-repair",
+    "destination": "/steering-suspension/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-suspension-repair/",
+    "destination": "/steering-suspension/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair-2",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair-2/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair-3",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair-3/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-transmission-repair-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-inspections",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-inspections/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-inspections-logan-qld",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-inspections-logan-qld/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-repair",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-repair/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-repair-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/mobile-vehicle-repair-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld-blog",
+    "destination": "/blog/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld-blog/",
+    "destination": "/blog/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/battery-replacement",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/battery-replacement/",
+    "destination": "/battery-replacement/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/brake-repairs",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/brake-repairs/",
+    "destination": "/brake-repairs/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/car-diagnostics",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/car-diagnostics/",
+    "destination": "/car-diagnostics/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/car-repairs",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/car-repairs/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/emergency-repairs",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/emergency-repairs/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/general-car-servicing",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/general-car-servicing/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/logbook-car-servicing",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/logbook-car-servicing/",
+    "destination": "/logbook-servicing/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/pre-purchase-inspections",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/pre-purchase-inspections/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/reviews",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/reviews/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/steering-suspension-repairs",
+    "destination": "/steering-suspension/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/steering-suspension-repairs/",
+    "destination": "/steering-suspension/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/terms-conditions",
+    "destination": "/terms-conditions/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/terms-conditions/",
+    "destination": "/terms-conditions/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/thank-you",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/my-mechanic-qld/thank-you/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mymechanicqld-home",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/mymechanicqld-home/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/onsite-car-repairs",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/onsite-car-repairs/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/onsite-car-repairs-brisbane",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/onsite-car-repairs-brisbane/",
+    "destination": "/brisbane/",
+    "permanent": true
+  },
+  {
+    "source": "/pre-purchase-car-inspection",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/pre-purchase-car-inspection/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/pre-purchase-car-inspection-logan-qld",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/pre-purchase-car-inspection-logan-qld/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/pre-purchase-inspections",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/pre-purchase-inspections/",
+    "destination": "/pre-purchase-inspection/",
+    "permanent": true
+  },
+  {
+    "source": "/professional-mobile-mechanic-2",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/professional-mobile-mechanic-2/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/professional-mobile-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/professional-mobile-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/reliable-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/reliable-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/reliable-mobile-mechanic-logan-qld",
+    "destination": "/logan/",
+    "permanent": true
+  },
+  {
+    "source": "/reliable-mobile-mechanic-logan-qld/",
+    "destination": "/logan/",
+    "permanent": true
+  },
+  {
+    "source": "/roadside-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/roadside-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/roadside-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/roadside-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/same-day-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/same-day-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/southport-mobile-mechanic",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/southport-mobile-mechanic/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/southport-mobile-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/southport-mobile-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/thank-you",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/thank-you/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/top-rated-mobile-car-mechanic-gold-coast",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/top-rated-mobile-car-mechanic-gold-coast/",
+    "destination": "/gold-coast/",
+    "permanent": true
+  },
+  {
+    "source": "/trusted-mobile-mechanic",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/trusted-mobile-mechanic/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/trusted-mobile-mechanic-2",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/trusted-mobile-mechanic-2/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/trusted-mobile-mechanic-ipswich",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/trusted-mobile-mechanic-ipswich/",
+    "destination": "/ipswich/",
+    "permanent": true
+  },
+  {
+    "source": "/vehicle-breakdown",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/vehicle-breakdown/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/vehicle-cooling-systems",
+    "destination": "/radiator-cooling-system/",
+    "permanent": true
+  },
+  {
+    "source": "/vehicle-cooling-systems/",
+    "destination": "/radiator-cooling-system/",
+    "permanent": true
+  },
+  {
+    "source": "/what-services-does-a-mobile-mechanic-offer-in-brisbane",
+    "destination": "/services/",
+    "permanent": true
+  },
+  {
+    "source": "/what-services-does-a-mobile-mechanic-offer-in-brisbane/",
+    "destination": "/services/",
+    "permanent": true
+  },
+  {
+    "source": "/why-brisbane-drivers-are-choosing-mobile-mechanics",
+    "destination": "/blog/",
+    "permanent": true
+  },
+  {
+    "source": "/why-brisbane-drivers-are-choosing-mobile-mechanics/",
     "destination": "/blog/",
     "permanent": true
   }
