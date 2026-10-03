@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import type { ServiceCategory } from './quote-services'
 
 /**
  * Server-side Supabase client.
@@ -35,6 +36,7 @@ export type QuoteSubmissionInsert = {
   suburb: string            // "Suburb"
   address?: string | null   // "Street address" — for the mobile call-out
   service_needed: string    // "Service" — dropdown selection (slug value)
+  service_category?: ServiceCategory | null  // group of service_needed, set server-side (Oct 2026)
   consent_privacy: boolean  // True when the privacy-policy box was ticked
 
   // ── Optional form fields (May 2026 redesign) ──────────────────────────

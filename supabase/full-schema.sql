@@ -31,6 +31,7 @@ create table if not exists public.quote_submissions (
 
   -- Request
   service_needed  text,
+  service_category text check (service_category is null or service_category in ('standard-servicing', 'diagnosis', 'pre-purchase-inspection', 'maintenance')),  -- group of service_needed (Oct 2026)
   symptoms        text,
   preferred_time  text,
 

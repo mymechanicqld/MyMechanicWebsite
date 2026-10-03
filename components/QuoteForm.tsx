@@ -9,9 +9,11 @@ import {
   Car,
   MessageSquare,
   CalendarDays,
+  Info,
   type LucideIcon,
 } from 'lucide-react'
 import { submitQuoteAction } from '@/app/actions'
+import { SERVICE_GROUPS } from '@/lib/quote-services'
 import ConversionOnSuccess from './ConversionOnSuccess'
 import LeadDataCapture from './LeadDataCapture'
 
@@ -20,7 +22,7 @@ import LeadDataCapture from './LeadDataCapture'
  *
  * Four grouped sections (inspired by competitor layout):
  *   1. Your details    — name, phone, email, suburb
- *   2. Vehicle         — car make, rego, service dropdown
+ *   2. Vehicle         — car make, rego, service dropdown grouped by category
  *   3. Additional details — optional free-text message
  *   4. Appointment     — preferred date picker
  *
@@ -28,22 +30,10 @@ import LeadDataCapture from './LeadDataCapture'
  * fires a notification email via Resend. The same submission lands in
  * the operations dashboard at `/dashboard/`.
  *
- * This is a server component. All interactive elements (select, date picker,
- * radio buttons) use native HTML, styled with Tailwind peer selectors.
+ * A client component only so it can read ?submitted / ?error from the URL.
+ * The inputs themselves are native HTML. The service picker is a native
+ * <select> with <optgroup>s, so phones show their own grouped picker.
  */
-
-const SERVICES = [
-  { value: 'brake-repair', label: 'Brake repair' },
-  { value: 'alternator-starter', label: 'Alternator and starter motor' },
-  { value: 'radiator-water-pump', label: 'Radiator and water pump' },
-  { value: 'logbook-servicing', label: 'Logbook and general servicing' },
-  { value: 'pre-purchase-inspection', label: 'Pre-purchase inspection' },
-  { value: 'battery-replacement', label: 'Battery replacement' },
-  { value: 'warning-light-diagnostics', label: 'Warning-light diagnostics' },
-  { value: 'steering-suspension', label: 'Steering and suspension' },
-  { value: 'emergency-breakdown', label: 'Emergency / breakdown' },
-  { value: 'not-sure', label: 'Not sure / general enquiry' },
-]
 
 // Minimum date for the date picker (today in AEST)
 const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Australia/Brisbane' })
@@ -129,7 +119,8 @@ export default function QuoteForm({
           <Field label="Registration Number" name="rego" placeholder="ABC123" required uppercase />
         </div>
 
-        {/* Service dropdown */}
+        {/* Service dropdown, grouped by category */}
+        <div>
         <label className="block">
           <span className="block text-xs font-semibold text-ink uppercase tracking-[0.05em] mb-1.5">
             Service <span className="text-accent-bright">*</span>
@@ -138,8 +129,9 @@ export default function QuoteForm({
             name="service_needed"
             required
             defaultValue=""
+            aria-describedby="parts-note"
             className={
-              'w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-[0.9375rem] text-ink ' +
+              'w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-base sm:text-[0.9375rem] text-ink ' +
               'focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors ' +
               'appearance-none bg-[url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2378716C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22/%3E%3C/svg%3E")] ' +
               'bg-[length:16px_16px] bg-[position:right_12px_center] bg-no-repeat pr-10'
@@ -148,13 +140,29 @@ export default function QuoteForm({
             <option value="" disabled>
               Select a service
             </option>
-            {SERVICES.map((s) => (
-              <option key={s.value} value={s.value}>
-                {s.label}
-              </option>
+            {SERVICE_GROUPS.map((g) => (
+              <optgroup key={g.category} label={g.label}>
+                {g.options.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </label>
+
+        <p
+          id="parts-note"
+          className="mt-2.5 flex gap-2.5 items-start rounded-lg bg-accent-tint px-3.5 py-3 text-[0.8125rem] leading-relaxed text-ink/80"
+        >
+          <Info className="size-4 text-accent shrink-0 mt-[3px]" strokeWidth={2} aria-hidden="true" />
+          <span>
+            Please note, we supply all parts ourselves and are unable to fit parts supplied by
+            customers. It means we can stand behind every job with our warranty.
+          </span>
+        </p>
+        </div>
       </div>
 
       <Divider />
@@ -254,8 +262,9 @@ function Field({
   min?: string
   hideLabel?: boolean
 }) {
+  // text-base (16px) on phones: iOS Safari zooms the page into any field under 16px.
   const baseInput =
-    'w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-[0.9375rem] text-ink ' +
+    'w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-base sm:text-[0.9375rem] text-ink ' +
     'placeholder:text-subtle/70 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent transition-colors'
 
   return (

@@ -1,21 +1,8 @@
 import type { QuoteSubmissionInsert } from './supabase'
+import { SERVICE_LABELS, serviceCategoryLabel } from './quote-services'
 
-/**
- * Human-readable labels for service dropdown slug values.
- * Used in the notification email and anywhere else a slug needs display text.
- */
-export const SERVICE_LABELS: Record<string, string> = {
-  'brake-repair': 'Brake repair',
-  'alternator-starter': 'Alternator and starter motor',
-  'radiator-water-pump': 'Radiator and water pump',
-  'logbook-servicing': 'Logbook and general servicing',
-  'pre-purchase-inspection': 'Pre-purchase inspection',
-  'battery-replacement': 'Battery replacement',
-  'warning-light-diagnostics': 'Warning-light diagnostics',
-  'steering-suspension': 'Steering and suspension',
-  'emergency-breakdown': 'Emergency / breakdown',
-  'not-sure': 'Not sure / general enquiry',
-}
+// Re-exported so existing imports from this module keep working.
+export { SERVICE_LABELS }
 
 /**
  * Builds the HTML email body for a booking-request notification.
@@ -73,6 +60,8 @@ export function renderQuoteNotificationEmail(submission: QuoteSubmissionInsert):
     row('Suburb', suburb),
     row('Rego', rego || '—'),
   ]
+  const category = escape(serviceCategoryLabel(submission.service_category))
+  if (category)    rows.push(row('Category', category))
   if (service)     rows.push(row('Service', service))
   if (carMake)     rows.push(row('Car make', carMake))
   if (dateDisplay) rows.push(row('Preferred date', dateDisplay))
@@ -158,6 +147,7 @@ Saved to the dashboard · ${new Date().toLocaleString('en-AU', { dateStyle: 'med
     `Rego:    ${rego || '—'}`,
   ]
 
+  if (category)     lines.push(`Category: ${serviceCategoryLabel(submission.service_category)}`)
   if (service)      lines.push(`Service: ${SERVICE_LABELS[submission.service_needed!] ?? submission.service_needed}`)
   if (carMake)      lines.push(`Car:     ${submission.vehicle_make}`)
   if (dateDisplay)  lines.push(`Date:    ${dateDisplay}`)

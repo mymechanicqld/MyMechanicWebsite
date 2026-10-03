@@ -5,6 +5,7 @@ import { headers } from 'next/headers'
 import { Resend } from 'resend'
 import { supabase, type QuoteSubmissionInsert } from '@/lib/supabase'
 import { renderQuoteNotificationEmail } from '@/lib/email-templates'
+import { isKnownService, serviceCategoryFor } from '@/lib/quote-services'
 
 /** Pages that are allowed as redirect targets after submission. */
 const ALLOWED_REDIRECTS = ['/', '/book/', '/contact/', '/mobile-mechanic/']
@@ -44,7 +45,7 @@ export async function submitQuoteAction(formData: FormData) {
     !submission.vehicle_rego ||
     !submission.suburb ||
     !submission.address ||
-    !submission.service_needed ||
+    !isKnownService(submission.service_needed) ||
     !submission.consent_privacy
   ) {
     console.warn('[quote-request] missing required fields, ignoring', submission)
@@ -96,6 +97,7 @@ function parseFormData(formData: FormData): QuoteSubmissionInsert {
     suburb:          get('suburb'),
     address:         get('address') || null,            // street address for the mobile call-out
     service_needed:  get('service_needed'),            // dropdown slug value
+    service_category: serviceCategoryFor(get('service_needed')), // derived, never trusted from the client
     vehicle_make:    get('car_make') || null,           // optional
     symptoms:        get('message') || null,            // optional free-text
     preferred_date:  get('preferred_date') || null,     // YYYY-MM-DD or null
@@ -104,18 +106,24 @@ function parseFormData(formData: FormData): QuoteSubmissionInsert {
   }
 }
 
+/** Columns added after launch. If a migration has not been applied yet, the
+ *  insert is retried without that column so the lead is still recorded. */
+const OPTIONAL_COLUMNS = ['address', 'service_category'] as const
+
 async function saveToSupabase(submission: QuoteSubmissionInsert) {
-  const { error } = await supabase.from('quote_submissions').insert(submission)
-  if (!error) return
-  // Forward-compatible: if the `address` column has not been added to the DB
-  // yet, drop it and retry so the submission is still recorded.
-  if (/could not find the 'address' column/i.test(error.message)) {
-    const { address: _omit, ...rest } = submission
-    const retry = await supabase.from('quote_submissions').insert(rest)
-    if (retry.error) throw retry.error
-    return
+  let row: Record<string, unknown> = { ...submission }
+  for (let attempt = 0; attempt <= OPTIONAL_COLUMNS.length; attempt++) {
+    const { error } = await supabase.from('quote_submissions').insert(row)
+    if (!error) return
+    // PostgREST: "Could not find the 'service_category' column of 'quote_submissions' in the schema cache"
+    const missing = /could not find the '([a-z_]+)' column/i.exec(error.message)?.[1]
+    if (!missing || !(OPTIONAL_COLUMNS as readonly string[]).includes(missing) || !(missing in row)) {
+      throw error
+    }
+    console.warn(`[quote-request] column '${missing}' not in DB yet, retrying without it`)
+    const { [missing]: _omit, ...rest } = row
+    row = rest
   }
-  throw error
 }
 
 /**
