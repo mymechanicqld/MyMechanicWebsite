@@ -1,4 +1,5 @@
 import suburbData from '@/content/suburbs.json'
+import overrideData from '@/content/suburb-overrides.json'
 
 export interface Suburb {
   slug: string
@@ -16,6 +17,44 @@ export interface Suburb {
   localContext: string
   /** Brief note on the suburb's housing stock */
   housingNote: string
+  /** Hand-written content that replaces the shared template copy, if any */
+  override?: SuburbOverride
+}
+
+/**
+ * Optional hand-written copy for a single suburb page, kept in
+ * content/suburb-overrides.json (suburbs.json is a tool export, so it is not
+ * edited by hand). Every field is optional and falls back to the template.
+ */
+export interface SuburbOverride {
+  metaTitle?: string
+  metaDescription?: string
+  ogTitle?: string
+  eyebrow?: string
+  /** Full H1 text. The suburb name inside it is highlighted. */
+  h1?: string
+  heroLead?: string
+  servicesEyebrow?: string
+  servicesHeading?: string
+  servicesIntro?: string
+  /** Per-service card text, keyed by service slug */
+  serviceNotes?: Record<string, string>
+  localHeading?: string
+  localParagraphs?: string[]
+  trustPoints?: { title: string; body: string }[]
+  /** Replaces the generic nearby-suburbs grid with annotated links */
+  coverage?: {
+    eyebrow: string
+    heading: string
+    intro: string
+    items: { slug: string; note: string }[]
+    footer?: string
+    footerLink?: { href: string; label: string }
+  }
+  faqHeading?: string
+  faq?: { question: string; answer: string }[]
+  ctaHeading?: string
+  ctaBody?: string
 }
 
 export interface SuburbWithMeta extends Suburb {
@@ -78,7 +117,11 @@ export const ALL_SERVICES = [
   },
 ] as const
 
-const suburbs: Suburb[] = suburbData.suburbs as Suburb[]
+const overrides = (overrideData as unknown as { suburbs: Record<string, SuburbOverride> }).suburbs
+
+const suburbs: Suburb[] = (suburbData.suburbs as Suburb[]).map((s) =>
+  overrides[s.slug] ? { ...s, override: overrides[s.slug] } : s
+)
 
 const bySlug = new Map<string, Suburb>()
 const byRegion = new Map<string, Suburb[]>()

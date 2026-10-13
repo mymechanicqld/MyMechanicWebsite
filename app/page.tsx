@@ -493,6 +493,79 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ══════════ 8b. Where we work ══════════ */}
+      <section className="py-14 md:py-20 lg:py-24 bg-surface border-t border-hairline">
+        <div className="container grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+          <Reveal variant="up" className="min-w-0">
+            <span className="eyebrow">Where we work</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-3 mb-4">
+              Based in Springwood, out across the southside.
+            </h2>
+            <p className="text-[1.0625rem] text-muted leading-relaxed">
+              Springwood in Logan is our home base, so it and the suburbs around it get our
+              quickest response. From there it is a short run up the M1 to Brisbane&apos;s southside,
+              and we also cover the rest of Brisbane, Ipswich and the northern Gold Coast.
+            </p>
+          </Reveal>
+          <Reveal variant="up" delay={0.1} className="min-w-0">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link
+                href="/springwood/"
+                className="group bg-bg border border-hairline rounded-2xl p-6 no-underline text-ink
+                           card-hover hover:border-accent flex flex-col gap-2"
+              >
+                <span className="text-xs uppercase tracking-[0.06em] font-semibold text-subtle">
+                  Home base
+                </span>
+                <span className="text-lg font-semibold leading-snug">Mobile mechanic Springwood</span>
+                <span className="text-[0.875rem] text-muted leading-relaxed">
+                  Daisy Hill, Slacks Creek, Underwood and Shailer Park are minutes away.
+                </span>
+                <span className="text-sm font-semibold text-accent-bright inline-flex items-center gap-1 mt-1">
+                  Springwood page
+                  <ArrowRight className="size-3.5 card-arrow" strokeWidth={2} />
+                </span>
+              </Link>
+              <Link
+                href="/brisbane-south/"
+                className="group bg-bg border border-hairline rounded-2xl p-6 no-underline text-ink
+                           card-hover hover:border-accent flex flex-col gap-2"
+              >
+                <span className="text-xs uppercase tracking-[0.06em] font-semibold text-subtle">
+                  Up the M1
+                </span>
+                <span className="text-lg font-semibold leading-snug">Mobile mechanic Brisbane South</span>
+                <span className="text-[0.875rem] text-muted leading-relaxed">
+                  Mount Gravatt, Sunnybank, Eight Mile Plains, Carindale and more.
+                </span>
+                <span className="text-sm font-semibold text-accent-bright inline-flex items-center gap-1 mt-1">
+                  Southside page
+                  <ArrowRight className="size-3.5 card-arrow" strokeWidth={2} />
+                </span>
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 mt-5 text-[0.9375rem]">
+              {[
+                { label: 'Logan', href: '/logan/' },
+                { label: 'Brisbane', href: '/brisbane/' },
+                { label: 'Ipswich', href: '/ipswich/' },
+                { label: 'Gold Coast', href: '/gold-coast/' },
+                { label: 'All service areas', href: '/areas/' },
+              ].map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href as `/${string}`}
+                  className="inline-flex items-center gap-1 text-accent-bright font-semibold no-underline hover:text-accent-hover"
+                >
+                  <MapPin className="size-4" strokeWidth={2} />
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ══════════ 9. FAQ ══════════ */}
       <section className="py-14 md:py-20 lg:py-24 bg-soft border-y border-hairline">
         <div className="container max-w-3xl">

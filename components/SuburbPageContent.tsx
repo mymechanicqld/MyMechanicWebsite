@@ -17,16 +17,8 @@ import {
   MoveVertical,
 } from 'lucide-react'
 import type { Suburb } from '@/lib/suburbs'
-import { getNearbySuburbs, ALL_SERVICES } from '@/lib/suburbs'
-import {
-  SITE_URL,
-  BUSINESS_ID,
-  BUSINESS_NAME,
-  PHONE_E164,
-  BASE_ADDRESS,
-  BASE_GEO,
-  OPENING_HOURS,
-} from '@/lib/business'
+import { getNearbySuburbs, getSuburb, ALL_SERVICES } from '@/lib/suburbs'
+import { SITE_URL, businessRef } from '@/lib/business'
 
 const ICON_MAP: Record<string, typeof Disc3> = {
   'brake-repairs': Disc3,
@@ -39,7 +31,40 @@ const ICON_MAP: Record<string, typeof Disc3> = {
   'steering-suspension': MoveVertical,
 }
 
+const DEFAULT_TRUST_POINTS = [
+  {
+    title: 'Fixed-price quote upfront',
+    body: 'You see the full cost before we lift a spanner. No surprises.',
+  },
+  {
+    title: 'Workmanship warranty',
+    body: 'Every repair is backed by our workmanship warranty per our terms.',
+  },
+  {
+    title: 'OEM-spec parts',
+    body: 'Quality parts sized for your vehicle, not whatever was cheapest.',
+  },
+  {
+    title: 'Warranty-safe servicing',
+    body: 'Logbook stamped, invoice emailed. Your new-car warranty stays intact.',
+  },
+]
+
+/** Render a heading with the suburb name highlighted in the accent colour. */
+function highlightName(text: string, name: string) {
+  const i = text.indexOf(name)
+  if (i === -1) return text
+  return (
+    <>
+      {text.slice(0, i)}
+      <span className="text-accent">{name}</span>
+      {text.slice(i + name.length)}
+    </>
+  )
+}
+
 function getFaq(suburb: Suburb) {
+  if (suburb.override?.faq?.length) return suburb.override.faq
   return [
     {
       question: `Do you service ${suburb.name}?`,
@@ -69,22 +94,32 @@ function getFaq(suburb: Suburb) {
 }
 
 export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
+  const o = suburb.override
   const nearby = getNearbySuburbs(suburb)
   const faq = getFaq(suburb)
+  const trustPoints = o?.trustPoints?.length ? o.trustPoints : DEFAULT_TRUST_POINTS
+  const coverage = o?.coverage
+    ? {
+        ...o.coverage,
+        items: o.coverage.items
+          .map((item) => {
+            const s = getSuburb(item.slug)
+            return s ? { suburb: s, note: item.note } : null
+          })
+          .filter((x): x is { suburb: Suburb; note: string } => x !== null),
+      }
+    : null
 
-  // JSON-LD: AutomotiveBusiness scoped to this suburb, referencing the
-  // sitewide business entity by @id, with geo, hours and scoped areaServed.
-  const localBusinessLd = {
+  // JSON-LD: a Service scoped to this suburb. The business itself is defined
+  // once in app/layout.tsx and referenced here by @id only, so the page carries
+  // a single business entity instead of two conflicting copies.
+  const serviceLd = {
     '@context': 'https://schema.org',
-    '@type': ['AutomotiveBusiness', 'AutoRepair', 'LocalBusiness'],
-    '@id': BUSINESS_ID,
-    name: BUSINESS_NAME,
+    '@type': 'Service',
+    serviceType: 'Mobile mechanic',
+    name: `Mobile mechanic in ${suburb.name}`,
     url: `${SITE_URL}/${suburb.slug}/`,
-    telephone: PHONE_E164,
-    priceRange: '$$',
-    address: BASE_ADDRESS,
-    geo: { '@type': 'GeoCoordinates', ...BASE_GEO },
-    openingHoursSpecification: OPENING_HOURS,
+    provider: businessRef,
     areaServed: {
       '@type': 'City',
       name: suburb.name,
@@ -141,7 +176,7 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
       />
       <script
         type="application/ld+json"
@@ -182,25 +217,29 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
       <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="container max-w-4xl">
           <span className="eyebrow">
-            Mobile mechanic · {suburb.regionName}
+            {o?.eyebrow ?? `Mobile mechanic · ${suburb.regionName}`}
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4 text-balance">
-            Mobile mechanic in{' '}
-            <span className="text-accent">{suburb.name}</span>
+            {highlightName(o?.h1 ?? `Mobile mechanic in ${suburb.name}`, suburb.name)}
           </h1>
           <p className="lead mt-6 max-w-[56ch]">
-            We bring workshop-standard car servicing and repairs to your driveway
-            in {suburb.name}, {suburb.postcode}. Qualified mechanics, fixed-price
-            quotes, and a workmanship warranty on every job.
+            {o?.heroLead ??
+              `We bring workshop-standard car servicing and repairs to your driveway in ${suburb.name}, ${suburb.postcode}. Qualified mechanics, fixed-price quotes, and a workmanship warranty on every job.`}
           </p>
 
           <div className="flex flex-wrap gap-6 mt-7 text-[0.9375rem] text-muted">
             <span className="inline-flex items-center gap-2">
               <MapPin className="size-4 text-accent-bright" strokeWidth={2} />
-              <strong className="text-ink font-semibold">
-                {suburb.distanceFromBase} km
-              </strong>
-              from our base
+              {suburb.distanceFromBase === 0 ? (
+                <strong className="text-ink font-semibold">Our home base</strong>
+              ) : (
+                <>
+                  <strong className="text-ink font-semibold">
+                    {suburb.distanceFromBase} km
+                  </strong>
+                  from our base
+                </>
+              )}
             </span>
             <span className="inline-flex items-center gap-2">
               <Clock className="size-4 text-accent-bright" strokeWidth={2} />
@@ -235,14 +274,15 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
       {/* Services available */}
       <section className="py-14 md:py-20 lg:py-24 bg-soft border-y border-hairline">
         <div className="container">
-          <span className="eyebrow">What we do in {suburb.name}</span>
+          <span className="eyebrow">
+            {o?.servicesEyebrow ?? `What we do in ${suburb.name}`}
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-3 mb-4 max-w-[26ch]">
-            Every service, mobile to {suburb.name}.
+            {o?.servicesHeading ?? `Every service, mobile to ${suburb.name}.`}
           </h2>
           <p className="lead mb-10 max-w-[56ch]">
-            From brake repairs to logbook servicing, we bring the workshop to
-            your driveway. All services below are available in {suburb.name},{' '}
-            {suburb.postcode}.
+            {o?.servicesIntro ??
+              `From brake repairs to logbook servicing, we bring the workshop to your driveway. All services below are available in ${suburb.name}, ${suburb.postcode}.`}
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -276,7 +316,7 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
                       {s.label}
                     </h3>
                     <p className="text-[0.875rem] text-muted leading-relaxed">
-                      {s.shortDesc}
+                      {o?.serviceNotes?.[s.slug] ?? s.shortDesc}
                     </p>
                   </div>
                   <span className="text-sm font-semibold text-accent-bright inline-flex items-center gap-1 mt-auto">
@@ -297,8 +337,15 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
       <section className="py-14 md:py-20 lg:py-24">
         <div className="container max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Mobile mechanic across {suburb.name}
+            {o?.localHeading ?? `Mobile mechanic across ${suburb.name}`}
           </h2>
+          {o?.localParagraphs?.length ? (
+            <div className="space-y-4 text-[1.0625rem] text-muted leading-[1.7]">
+              {o.localParagraphs.map((p) => (
+                <p key={p.slice(0, 32)}>{p}</p>
+              ))}
+            </div>
+          ) : (
           <div className="space-y-4 text-[1.0625rem] text-muted leading-[1.7]">
             <p>{suburb.localContext}</p>
             <p>
@@ -315,26 +362,10 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
               agree to.
             </p>
           </div>
+          )}
 
           <div className="mt-10 grid sm:grid-cols-2 gap-4">
-            {[
-              {
-                title: 'Fixed-price quote upfront',
-                body: 'You see the full cost before we lift a spanner. No surprises.',
-              },
-              {
-                title: 'Workmanship warranty',
-                body: 'Every repair is backed by our workmanship warranty per our terms.',
-              },
-              {
-                title: 'OEM-spec parts',
-                body: 'Quality parts sized for your vehicle, not whatever was cheapest.',
-              },
-              {
-                title: 'Warranty-safe servicing',
-                body: 'Logbook stamped, invoice emailed. Your new-car warranty stays intact.',
-              },
-            ].map((item) => (
+            {trustPoints.map((item) => (
               <div
                 key={item.title}
                 className="flex gap-3.5 items-start p-5 bg-surface border border-hairline rounded-xl"
@@ -362,7 +393,7 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
         <div className="container max-w-3xl">
           <span className="eyebrow">Frequently asked</span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-3 mb-8">
-            Mobile mechanic in {suburb.name}: your questions.
+            {o?.faqHeading ?? `Mobile mechanic in ${suburb.name}: your questions.`}
           </h2>
           <div className="space-y-3">
             {faq.map((item) => (
@@ -386,8 +417,67 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
         </div>
       </section>
 
+      {/* Annotated nearby suburbs (hand-written override) */}
+      {coverage && coverage.items.length > 0 && (
+        <section className="py-14 md:py-20 lg:py-24">
+          <div className="container">
+            <span className="eyebrow">{coverage.eyebrow}</span>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-3 mb-3">
+              {coverage.heading}
+            </h2>
+            <p className="text-[1.0625rem] text-muted leading-relaxed mb-8 max-w-[60ch]">
+              {coverage.intro}
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {coverage.items.map(({ suburb: n, note }) => (
+                <Link
+                  key={n.slug}
+                  href={`/${n.slug}/` as `/${string}`}
+                  className="group flex flex-col gap-2 p-5 bg-surface border border-hairline
+                             rounded-xl no-underline text-ink hover:border-accent transition-colors"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="font-semibold">Mobile mechanic {n.name}</div>
+                    <ArrowRight
+                      className="size-4 text-subtle group-hover:text-accent shrink-0"
+                      strokeWidth={2}
+                    />
+                  </div>
+                  <div className="text-[0.8125rem] text-subtle">
+                    {n.postcode} · {n.distanceFromBase} km from our base
+                  </div>
+                  <p className="text-[0.875rem] text-muted leading-relaxed">{note}</p>
+                </Link>
+              ))}
+            </div>
+            {coverage.footer && (
+              <p className="mt-8 text-[1rem] text-muted leading-relaxed max-w-[60ch]">
+                {coverage.footer}{' '}
+                {coverage.footerLink && (
+                  <Link
+                    href={coverage.footerLink.href as `/${string}`}
+                    className="text-accent-bright font-semibold no-underline hover:text-accent-hover"
+                  >
+                    {coverage.footerLink.label}
+                  </Link>
+                )}
+              </p>
+            )}
+            <div className="mt-6">
+              <Link
+                href={`/${suburb.regionSlug}/` as `/${string}`}
+                className="inline-flex items-center gap-1 text-accent-bright font-semibold no-underline hover:text-accent-hover"
+              >
+                See all {suburb.regionName} suburbs
+                <ArrowRight className="size-4" strokeWidth={2} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Nearby suburbs */}
-      {nearby.length > 0 && (
+      {!coverage && nearby.length > 0 && (
         <section className="py-14 md:py-20 lg:py-24">
           <div className="container">
             <span className="eyebrow">Nearby suburbs</span>
@@ -432,10 +522,10 @@ export default function SuburbPageContent({ suburb }: { suburb: Suburb }) {
       <section className="py-14 md:py-20 bg-accent text-white text-center">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-bold text-white max-w-[22ch] mx-auto mb-4">
-            Book your mobile mechanic in {suburb.name}.
+            {o?.ctaHeading ?? `Book your mobile mechanic in ${suburb.name}.`}
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Fixed-price quote before we start. {suburb.responseTime}.
+            {o?.ctaBody ?? `Fixed-price quote before we start. ${suburb.responseTime}.`}
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link

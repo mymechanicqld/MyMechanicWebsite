@@ -5,6 +5,7 @@ import {
   getRegionSlugs,
   PRIORITY_SERVICES,
 } from '@/lib/suburbs'
+import { getAreaHubSlugs } from '@/lib/area-hubs'
 
 const SITE_URL = 'https://www.mymechanicqld.com.au'
 
@@ -74,7 +75,11 @@ export async function coreEntries(now: string): Promise<SitemapEntry[]> {
     priority: 0.9,
   }))
 
-  const regionHubEntries: SitemapEntry[] = getRegionSlugs().map((slug) => ({
+  // Region hubs plus cross-region area hubs such as /brisbane-south/
+  const regionHubEntries: SitemapEntry[] = [
+    ...getRegionSlugs(),
+    ...getAreaHubSlugs(),
+  ].map((slug) => ({
     loc: `${SITE_URL}/${slug}/`,
     lastmod: now,
     changefreq: 'monthly',

@@ -62,21 +62,27 @@ export async function generateMetadata({
   // Check suburb
   const suburb = getSuburb(slug)
   if (suburb) {
-    const title = `Mobile Mechanic ${suburb.name} | Brake Repair, Servicing & More | My Mechanic QLD`
-    const description = `Mobile mechanic in ${suburb.name}, ${suburb.postcode}. Brake repair, logbook servicing, alternator replacement and more at your driveway. Fixed-price quotes, workmanship warranty on every job.`
+    const o = suburb.override
+    const title =
+      o?.metaTitle ??
+      `Mobile Mechanic ${suburb.name} | Brake Repair, Servicing & More | My Mechanic QLD`
+    const description =
+      o?.metaDescription ??
+      `Mobile mechanic in ${suburb.name}, ${suburb.postcode}. Brake repair, logbook servicing, alternator replacement and more at your driveway. Fixed-price quotes, workmanship warranty on every job.`
+    const ogTitle = o?.ogTitle ?? `Mobile mechanic in ${suburb.name} | My Mechanic QLD`
     return {
       title,
       description,
       alternates: { canonical: `/${suburb.slug}/` },
       openGraph: {
-        title: `Mobile mechanic in ${suburb.name} | My Mechanic QLD`,
+        title: ogTitle,
         description,
         url: `/${suburb.slug}/`,
         type: 'website',
       },
       twitter: {
         card: 'summary_large_image',
-        title: `Mobile mechanic in ${suburb.name} | My Mechanic QLD`,
+        title: ogTitle,
         description,
       },
     }

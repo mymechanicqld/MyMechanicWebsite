@@ -91,6 +91,50 @@ export default function AreasHubPage() {
         </div>
       </section>
 
+      {/* Home base and southside hub */}
+      <section className="pb-8 md:pb-10">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-5">
+            <Link
+              href={"/springwood/" as `/${string}`}
+              className="group bg-accent-tint border border-accent/20 rounded-2xl p-6 md:p-7 no-underline text-ink
+                         hover:border-accent transition-colors flex flex-col gap-2"
+            >
+              <span className="text-xs uppercase tracking-[0.06em] font-semibold text-accent">
+                Our home base
+              </span>
+              <span className="text-2xl font-bold">Mobile mechanic Springwood</span>
+              <span className="text-[0.9375rem] text-muted">
+                Where the van starts each day. Springwood and the suburbs next door get our
+                quickest response.
+              </span>
+              <span className="mt-1 inline-flex items-center gap-1 text-accent-bright font-semibold text-[0.9375rem]">
+                See the Springwood page
+                <ArrowRight className="size-4" strokeWidth={2} />
+              </span>
+            </Link>
+            <Link
+              href={"/brisbane-south/" as `/${string}`}
+              className="group bg-surface border border-hairline rounded-2xl p-6 md:p-7 no-underline text-ink
+                         hover:border-accent transition-colors flex flex-col gap-2"
+            >
+              <span className="text-xs uppercase tracking-[0.06em] font-semibold text-subtle">
+                Brisbane&apos;s southside
+              </span>
+              <span className="text-2xl font-bold">Mobile mechanic Brisbane South</span>
+              <span className="text-[0.9375rem] text-muted">
+                Mount Gravatt, Sunnybank, Eight Mile Plains, Carindale and the suburbs between,
+                a short run up the M1 from Springwood.
+              </span>
+              <span className="mt-1 inline-flex items-center gap-1 text-accent-bright font-semibold text-[0.9375rem]">
+                See the Brisbane South page
+                <ArrowRight className="size-4" strokeWidth={2} />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Region cards with linked suburbs */}
       <section className="pb-14 md:pb-20 lg:pb-24">
         <div className="container">
