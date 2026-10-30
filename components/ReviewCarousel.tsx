@@ -7,7 +7,7 @@ type Review = {
   quote: string
   name: string
   place: string
-  when: string
+  when?: string
   stars: number
 }
 
@@ -86,7 +86,7 @@ export default function ReviewCarousel({ reviews }: { reviews: readonly Review[]
                 <strong className="text-ink font-semibold">{r.name}</strong>
                 <span className="block text-xs text-subtle mt-0.5">{r.place}</span>
               </div>
-              <div className="text-xs text-subtle">{r.when}</div>
+              {r.when && <div className="text-xs text-subtle">{r.when}</div>}
             </div>
           </div>
         ))}

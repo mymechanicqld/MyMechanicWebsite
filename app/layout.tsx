@@ -4,6 +4,7 @@ import { Inter, Fraunces } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TelClickTracker from '@/components/TelClickTracker'
+import { OPENING_HOURS } from '@/lib/business'
 import './globals.css'
 
 // ── GA4 ──────────────────────────────────────────────────────────────
@@ -244,20 +245,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Ipswich', sameAs: 'https://en.wikipedia.org/wiki/Ipswich,_Queensland' },
     { '@type': 'City', name: 'Gold Coast', sameAs: 'https://en.wikipedia.org/wiki/Gold_Coast,_Queensland' },
   ],
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:00',
-      closes: '18:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '08:00',
-      closes: '17:00',
-    },
-  ],
+  openingHoursSpecification: OPENING_HOURS,
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Mobile mechanic services',

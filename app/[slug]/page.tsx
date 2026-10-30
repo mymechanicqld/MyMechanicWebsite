@@ -20,8 +20,30 @@ import {
 } from '@/lib/services'
 import { getSuburb, getSuburbSlugs } from '@/lib/suburbs'
 import SuburbPageContent from '@/components/SuburbPageContent'
+import StickyCallBar from '@/components/StickyCallBar'
+import WhyBookStrip from '@/components/WhyBookStrip'
 
 const SITE_URL = 'https://www.mymechanicqld.com.au'
+
+/** Which quote-form option each service page preselects, and its button text. */
+const QUOTE_CTA: Record<string, { service: string; label: string }> = {
+  'logbook-servicing': { service: 'logbook-servicing', label: 'Get my service price' },
+  'pre-purchase-inspection': { service: 'pre-purchase-inspection', label: 'Book an inspection' },
+  'brake-repairs': { service: 'brake-pads', label: 'Get a brake quote' },
+  'battery-replacement': { service: 'battery-replacement', label: 'Get a battery quote' },
+  'steering-suspension': { service: 'steering-suspension', label: 'Get a fixed quote' },
+  'car-diagnostics': { service: 'diagnosis', label: 'Book a diagnosis' },
+  'starter-alternator': { service: 'alternator-replacement', label: 'Get a fixed quote' },
+  'radiator-cooling-system': { service: 'radiator-water-pump', label: 'Get a fixed quote' },
+}
+
+function quoteCta(slug: string) {
+  const cta = QUOTE_CTA[slug]
+  return {
+    href: cta ? `/book/?service=${cta.service}` : '/book/',
+    label: cta?.label ?? 'Get a fixed quote',
+  }
+}
 
 export async function generateStaticParams() {
   const serviceSlugs = getServiceSlugs().map((slug) => ({ slug }))
@@ -119,6 +141,7 @@ export default async function SlugPage({
 
 async function ServicePageContent({ service }: { service: Service }) {
   const all = await getAllServices()
+  const cta = quoteCta(service.slug)
   const related = service.related_services
     .map((s) => all.find((x) => x.slug === s))
     .filter((x): x is Service => x !== undefined)
@@ -168,7 +191,7 @@ async function ServicePageContent({ service }: { service: Service }) {
   }
 
   return (
-    <>
+    <div className="pb-24 lg:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
@@ -214,23 +237,27 @@ async function ServicePageContent({ service }: { service: Service }) {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4 text-balance">
               {service.hero_title}
             </h1>
-            <p className="lead mt-6">{service.hero_subtitle}</p>
+            <p className="lead mt-5">{service.hero_subtitle}</p>
 
-            <div className="grid sm:grid-cols-3 gap-4 mt-8 py-6 border-y border-hairline">
-              <Spec icon={DollarSign} label="Pricing" value={service.price_label} />
-              <Spec icon={Clock} label="Duration" value={service.duration} />
-              <Spec icon={ShieldCheck} label="Warranty" value={service.warranty} />
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-7">
-              <Link href={"/book/" as `/${string}`} className="btn btn-primary">
-                Get a fixed-price quote
+            {/* Primary actions sit above the spec strip so they land on the
+                first phone screen. */}
+            <div className="flex flex-wrap gap-3 mt-6">
+              <Link href={cta.href as `/${string}`} className="btn btn-primary">
+                {cta.label}
                 <ArrowRight className="size-4" strokeWidth={2} />
               </Link>
               <a href="tel:0451159954" className="btn btn-secondary">
                 <Phone className="size-4" strokeWidth={2} />
-                0451 159 954
+                Call now, 24/7
               </a>
+            </div>
+
+            <WhyBookStrip className="mt-7" />
+
+            <div className="grid sm:grid-cols-3 gap-4 mt-7 pt-6 border-t border-hairline">
+              <Spec icon={DollarSign} label="Pricing" value={service.price_label} />
+              <Spec icon={Clock} label="Duration" value={service.duration} />
+              <Spec icon={ShieldCheck} label="Warranty" value={service.warranty} />
             </div>
           </div>
 
@@ -340,14 +367,14 @@ async function ServicePageContent({ service }: { service: Service }) {
             Book your {service.nav_label.toLowerCase()} today.
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Fixed-price quote upfront. Same-day service available.
+            Open 24/7. Fixed upfront quote, same day where available.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
-              href={"/book/" as `/${string}`}
+              href={cta.href as `/${string}`}
               className="btn bg-white text-accent hover:bg-accent-tint hover:text-accent"
             >
-              Get a quote
+              {cta.label}
               <ArrowRight className="size-4" strokeWidth={2} />
             </Link>
             <a
@@ -360,7 +387,9 @@ async function ServicePageContent({ service }: { service: Service }) {
           </div>
         </div>
       </section>
-    </>
+
+      <StickyCallBar quoteHref={cta.href} />
+    </div>
   )
 }
 

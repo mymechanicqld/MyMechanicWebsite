@@ -13,18 +13,21 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { submitQuoteAction } from '@/app/actions'
-import { SERVICE_GROUPS } from '@/lib/quote-services'
+import { SERVICE_GROUPS, isCurrentService } from '@/lib/quote-services'
 import ConversionOnSuccess from './ConversionOnSuccess'
 import LeadDataCapture from './LeadDataCapture'
 
 /**
  * Public booking-request form.
  *
- * Four grouped sections (inspired by competitor layout):
- *   1. Your details    — name, phone, email, suburb
- *   2. Vehicle         — car make, rego, service dropdown grouped by category
- *   3. Additional details — optional free-text message
- *   4. Appointment     — preferred date picker
+ * Four grouped sections, quick and specific fields first:
+ *   1. Your car        service (grouped by category), rego, make and model
+ *   2. Your details    name, phone, email, suburb, street address
+ *   3. Additional details, optional free text
+ *   4. Appointment     preferred date
+ *
+ * ?service=<slug> in the URL preselects the service, so service-page buttons
+ * can link to /book/?service=brake-pads and save the customer a step.
  *
  * On submit, `submitQuoteAction` (server action) writes to Supabase and
  * fires a notification email via Resend. The same submission lands in
@@ -49,9 +52,12 @@ export default function QuoteForm({
 }) {
   const [resolvedSubmitted, setResolvedSubmitted] = useState(submitted ?? false)
   const [resolvedError, setResolvedError] = useState<'required' | 'delivery' | undefined>(error)
+  const [service, setService] = useState('')
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
+    const wanted = params.get('service') ?? ''
+    if (isCurrentService(wanted)) setService(wanted)
     if (submitted === undefined) {
       setResolvedSubmitted(params.get('submitted') === 'true')
     }
@@ -71,8 +77,8 @@ export default function QuoteForm({
         </div>
         <h3 className="text-2xl font-bold text-ink mb-2">Thanks, we&apos;ve got it.</h3>
         <p className="text-muted max-w-[40ch] mx-auto">
-          We&apos;ll come back with a fixed-price quote during business hours. If
-          it&apos;s urgent, call us on 0451 159 954.
+          We&apos;ll email a fixed-price quote by the next business day. If it&apos;s
+          urgent, call any time, 24/7, on 0451 159 954.
         </p>
         <Link href={redirectTo as `/${string}`} className="btn btn-secondary mt-6 inline-flex">
           Send another request
@@ -97,28 +103,9 @@ export default function QuoteForm({
         </div>
       )}
 
-      {/* ── Section 1: Your details ─────────────────────────────── */}
-      <SectionHeader icon={User} title="Your details" />
+      {/* ── Section 1: Your car (quick, specific fields first) ───── */}
+      <SectionHeader icon={Car} title="Your car" />
       <div className="grid gap-4">
-        <div className="grid sm:grid-cols-2 gap-4">
-          <Field label="Full Name" name="name" placeholder="Your name" required />
-          <Field label="Phone Number" name="phone" type="tel" placeholder="04XX XXX XXX" required />
-        </div>
-        <Field label="Email" name="email" type="email" placeholder="you@example.com" required />
-        <Field label="Suburb" name="suburb" placeholder="e.g. Sunnybank" required />
-        <Field label="Street address" name="address" placeholder="e.g. 12 Smith St, Sunnybank" required />
-      </div>
-
-      <Divider />
-
-      {/* ── Section 2: Vehicle ──────────────────────────────────── */}
-      <SectionHeader icon={Car} title="Vehicle" />
-      <div className="grid gap-4">
-        <div className="grid sm:grid-cols-2 gap-4">
-          <Field label="Make & model" name="car_make" placeholder="e.g. Toyota Hilux SR5" />
-          <Field label="Registration Number" name="rego" placeholder="ABC123" required uppercase />
-        </div>
-
         {/* Service dropdown, grouped by category */}
         <div>
         <label className="block">
@@ -128,7 +115,8 @@ export default function QuoteForm({
           <select
             name="service_needed"
             required
-            defaultValue=""
+            value={service}
+            onChange={(e) => setService(e.target.value)}
             aria-describedby="parts-note"
             className={
               'w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-base sm:text-[0.9375rem] text-ink ' +
@@ -163,6 +151,30 @@ export default function QuoteForm({
           </span>
         </p>
         </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Field label="Registration Number" name="rego" placeholder="ABC123" required uppercase
+                 hint="So we order the right parts." />
+          <Field label="Make & model" name="car_make" placeholder="e.g. Toyota Hilux SR5" />
+        </div>
+      </div>
+
+      <Divider />
+
+      {/* ── Section 2: Your details ─────────────────────────────── */}
+      <SectionHeader icon={User} title="Your details" />
+      <div className="grid gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Field label="Full Name" name="name" placeholder="Your name" required />
+          <Field label="Phone Number" name="phone" type="tel" placeholder="04XX XXX XXX" required />
+        </div>
+        <Field label="Email" name="email" type="email" placeholder="you@example.com" required
+               hint="Your written quote goes here." />
+        <div className="grid sm:grid-cols-[2fr_3fr] gap-4">
+          <Field label="Suburb" name="suburb" placeholder="e.g. Sunnybank" required />
+          <Field label="Street address" name="address" placeholder="e.g. 12 Smith St" required
+                 hint="Where the car will be parked." />
+        </div>
       </div>
 
       <Divider />
@@ -196,13 +208,14 @@ export default function QuoteForm({
       <Divider />
 
       {/* ── Bottom: consent + submit ────────────────────────────── */}
-      <label className="flex items-start gap-3 text-[0.8125rem] text-muted cursor-pointer">
+      {/* Whole row is the tap target, with a larger box than the default. */}
+      <label className="flex items-start gap-3 -mx-2 px-2 py-2 rounded-lg text-[0.875rem] text-muted cursor-pointer hover:bg-soft">
         <input
           type="checkbox"
           name="consent_privacy"
           value="yes"
           required
-          className="mt-[3px] size-4 accent-accent rounded border border-border flex-shrink-0"
+          className="mt-[2px] size-5 accent-accent rounded border border-border flex-shrink-0"
         />
         <span>
           By checking this box, you agree to our{' '}
@@ -219,7 +232,7 @@ export default function QuoteForm({
       </p>
 
       <button type="submit" className="btn btn-primary justify-center w-full mt-4 py-3.5 text-base">
-        Submit booking request
+        Send for my fixed quote
         <ArrowRight className="size-4" strokeWidth={2} />
       </button>
     </form>
@@ -252,6 +265,7 @@ function Field({
   uppercase,
   min,
   hideLabel,
+  hint,
 }: {
   label: string
   name: string
@@ -261,6 +275,8 @@ function Field({
   uppercase?: boolean
   min?: string
   hideLabel?: boolean
+  /** Short helper line under the field explaining why we ask. */
+  hint?: string
 }) {
   // text-base (16px) on phones: iOS Safari zooms the page into any field under 16px.
   const baseInput =
@@ -294,6 +310,7 @@ function Field({
           className={baseInput + (uppercase ? ' uppercase tracking-[0.04em] font-mono' : '')}
         />
       )}
+      {hint && <span className="block text-xs text-subtle mt-1.5">{hint}</span>}
     </label>
   )
 }

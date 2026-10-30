@@ -61,7 +61,6 @@ const REVIEWS = [
       'Over the last two weeks I had My Mechanic QLD replace the rear brake pads and rotors and the front control arms on my 2011 Hyundai iX35. Shanty and Norman did an exceptional job. Same-day callout, spot-on pricing and timeframes. I cannot praise Shanty enough.',
     name: 'Greg Gillham',
     place: 'Brisbane',
-    when: '4 months ago',
     stars: 5,
   },
   {
@@ -69,7 +68,6 @@ const REVIEWS = [
       "My car wasn't working on Christmas Eve and everywhere was closed. They came out within 2 hours and diagnosed and fixed the issue within 10 minutes. Definitely paying for convenience, but also great service.",
     name: 'Holly Wilkinson',
     place: 'Brisbane',
-    when: '4 months ago',
     stars: 5,
   },
   {
@@ -77,7 +75,6 @@ const REVIEWS = [
       'Car brakes decided to die, one call and they were there within 2 hours all fixed and on our way. Very reasonable pricing for the service they provide. Will definitely use again.',
     name: 'Jake',
     place: 'Brisbane',
-    when: '3 months ago',
     stars: 5,
   },
   {
@@ -85,7 +82,6 @@ const REVIEWS = [
       'Thank you for a fast and reliable service. Really appreciate your help replacing my new car battery.',
     name: 'Miriama Tiatia',
     place: 'Brisbane',
-    when: '3 months ago',
     stars: 5,
   },
   {
@@ -93,7 +89,6 @@ const REVIEWS = [
       'Shanty was so kind and honest when he came to look at my car. Appreciate the help from the phone calls with the lovely lady in admin organising everything, to Shanty and the other worker being thorough but quick when they arrived.',
     name: 'Soph Denholm',
     place: 'Brisbane',
-    when: '2 months ago',
     stars: 5,
   },
   {
@@ -101,7 +96,6 @@ const REVIEWS = [
       'Responded to my inquiry within 15 minutes. They had my car back in operation 2 hours later. They were friendly and quick and I will definitely use them again.',
     name: 'Douglas Woolard',
     place: 'Brisbane',
-    when: '2 months ago',
     stars: 5,
   },
 ] as const
@@ -256,14 +250,14 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors"
-                aria-label="View 229 Google reviews rated 4.9 out of 5"
+                aria-label="Read our reviews on Google"
               >
                 <div className="text-gold inline-flex gap-px">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="size-4 fill-current" strokeWidth={1.5} />
                   ))}
                 </div>
-                <span className="font-medium text-ink">4.9 from 229 Google reviews</span>
+                <span className="font-medium text-ink underline underline-offset-2">Read our Google reviews</span>
               </a>
             </div>
           </Reveal>
@@ -621,7 +615,7 @@ export default function HomePage() {
             </h2>
             <p className="lead mt-5">
               Send us your details and we will come back with a fixed-price quote.
-              Same-day service is available during business hours.
+              Open 24/7. Call any time.
             </p>
 
             <div className="space-y-4 mt-8">
@@ -629,7 +623,7 @@ export default function HomePage() {
               <ContactRow
                 Icon={Clock}
                 label="Hours"
-                value="Mon to Fri 7am to 6pm, Sat 8am to 5pm"
+                value="Open 24/7. Call any time"
               />
               <ContactRow
                 Icon={MapPin}

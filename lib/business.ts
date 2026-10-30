@@ -24,18 +24,14 @@ export const BASE_ADDRESS = {
   addressCountry: 'AU',
 } as const
 
+/** Open 24/7 for calls since 30 Oct 2026. 00:00 to 23:59 on every day is
+ *  Google's documented way to mark a business as open 24 hours. */
 export const OPENING_HOURS = [
   {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '07:00',
-    closes: '18:00',
-  },
-  {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: 'Saturday',
-    opens: '08:00',
-    closes: '17:00',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
   },
 ] as const
 

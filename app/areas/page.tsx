@@ -240,7 +240,7 @@ export default function AreasHubPage() {
             Local mobile mechanic, in your suburb.
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Get a fixed-price quote for any job during business hours.
+            Call any time, 24/7. Online requests are answered by the next business day.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link

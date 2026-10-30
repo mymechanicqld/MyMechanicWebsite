@@ -12,6 +12,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import QuoteForm from '@/components/QuoteForm'
+import WhyBookStrip from '@/components/WhyBookStrip'
 
 export const metadata: Metadata = {
   title: 'Contact My Mechanic QLD | Phone 0451 159 954',
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact/' },
   openGraph: {
     title: 'Contact My Mechanic QLD',
-    description: 'Phone 0451 159 954 or send a quote request. Mon to Fri 7am to 6pm, Sat 8am to 5pm.',
+    description: 'Open 24/7. Call any time on 0451 159 954 or send a quote request.',
     url: '/contact/',
     type: 'website',
   },
@@ -32,7 +33,7 @@ const CONTACTS = [
     label: 'Phone',
     value: '0451 159 954',
     href: 'tel:0451159954',
-    hint: 'Call us during business hours for a same-day quote.',
+    hint: 'Call any time, 24/7. You speak directly with a mechanic.',
   },
   {
     Icon: Mail,
@@ -44,8 +45,8 @@ const CONTACTS = [
   {
     Icon: Clock,
     label: 'Hours',
-    value: 'Mon to Fri 7am to 6pm. Sat 8am to 5pm.',
-    hint: 'Closed Sundays. After-hours emergency call-outs case by case.',
+    value: 'Phone: 24 hours, 7 days.',
+    hint: 'Email: we reply within one business day.',
   },
   {
     Icon: MapPin,
@@ -77,14 +78,19 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
         <div className="container max-w-3xl">
-          <span className="eyebrow">Contact</span>
+          <span className="eyebrow">Open 24/7</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4">
-            Talk to a mechanic, not a call centre.
+            Call any time, or book online
           </h1>
           <p className="lead mt-6">
-            When you call, you get one of the mechanics on the van. Tell us what&apos;s happening
-            and we come back with a fixed-price quote during business hours.
+            Open 24/7. Call any time and we arrange a mechanic in your area. You speak directly
+            with a mechanic. Online requests are answered by the next business day.
           </p>
+          <a href="tel:0451159954" className="btn btn-primary mt-7 inline-flex">
+            <Phone className="size-4" strokeWidth={2} />
+            Call now, 24/7: 0451 159 954
+          </a>
+          <WhyBookStrip className="mt-8 sm:grid-cols-4" />
         </div>
       </section>
 

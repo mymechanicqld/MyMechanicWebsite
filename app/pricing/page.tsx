@@ -5,6 +5,7 @@ import {
   Phone,
   Check,
   X,
+  Scale,
   DollarSign,
   FileText,
   ShieldCheck,
@@ -14,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: 'Pricing | Mobile Mechanic Brisbane, Logan, Ipswich & Gold Coast | My Mechanic QLD',
   description:
-    "How our pricing works. Fixed-price quotes in writing before any spanners come out. OEM-spec parts and labour included, no surprise additions. Call us with your make and model for a real number.",
+    "How our pricing works. Fixed-price quotes in writing before any work begins, and we price match written quotes from another business for the same job. Open 24/7 on 0451 159 954.",
   alternates: { canonical: '/pricing/' },
   openGraph: {
     title: 'Transparent pricing | My Mechanic QLD',
@@ -97,6 +98,21 @@ export default function PricingPage() {
             exactly how we put a price together, what is included, and how to get a real number for
             your specific vehicle without a callout.
           </p>
+          {/* Price match: the "We Price Match Quotes" sitelink lands here, so the
+              promise has to be visible near the top. */}
+          <div className="mt-7 flex gap-4 items-start rounded-2xl border border-accent/20 bg-accent-tint p-5 md:p-6">
+            <div className="size-11 rounded-xl bg-accent text-white grid place-items-center shrink-0">
+              <Scale className="size-[22px]" strokeWidth={1.75} aria-hidden="true" />
+            </div>
+            <div>
+              <h2 className="text-lg md:text-xl font-bold text-ink">We price match</h2>
+              <p className="text-[0.9375rem] text-ink/85 mt-1 leading-relaxed">
+                If you have a written quote from another business for the same job, we will match
+                it. Send it through with your booking request or read it out when you call.
+              </p>
+            </div>
+          </div>
+
           <div className="flex flex-wrap gap-3 mt-7">
             <Link href={"/book/" as `/${string}`} className="btn btn-primary">
               Get a quote
@@ -104,7 +120,7 @@ export default function PricingPage() {
             </Link>
             <a href="tel:0451159954" className="btn btn-secondary">
               <Phone className="size-4" strokeWidth={2} />
-              0451 159 954
+              Call now, 24/7
             </a>
           </div>
         </div>

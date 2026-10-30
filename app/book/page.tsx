@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { ArrowRight, Phone, ShieldCheck, DollarSign, Clock, BadgeCheck } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import QuoteForm from '@/components/QuoteForm'
+import WhyBookStrip from '@/components/WhyBookStrip'
 
 export const metadata: Metadata = {
   title: 'Get a Quote | Book a Mobile Mechanic Brisbane, Logan & Gold Coast',
   description:
-    'Tell us about your car and we come back with a fixed-price quote during business hours. Same-day service available.',
+    'Tell us about your car and we come back with a fixed-price quote. Open 24/7 for calls on 0451 159 954.',
   alternates: { canonical: '/book/' },
   openGraph: {
     title: 'Book a mobile mechanic | My Mechanic QLD',
@@ -15,23 +16,16 @@ export const metadata: Metadata = {
   },
 }
 
-const TRUST = [
-  { Icon: DollarSign, label: 'Fixed-price quote upfront' },
-  { Icon: ShieldCheck, label: 'Workmanship warranty on every job' },
-  { Icon: BadgeCheck, label: 'Warranty-safe logbook servicing' },
-  { Icon: Clock, label: 'Same-day service available' },
-]
-
 const NEXT_STEPS = [
   {
     n: 1,
     title: 'We confirm your quote',
-    body: 'During business hours, we will email you a fixed price plus the soonest time we can come out.',
+    body: 'By the next business day, we email you a fixed price plus the soonest time we can come out.',
   },
   {
     n: 2,
     title: 'We agree a time',
-    body: 'You pick the day and place. Home driveway, office car park, kerbside. Most weekdays we can fit you in inside the week.',
+    body: 'You pick the day and place. Home driveway, office car park, kerbside. Same day where available.',
   },
   {
     n: 3,
@@ -59,29 +53,35 @@ export default function BookPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* Hero + form */}
-      <section className="py-14 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
-        <div className="container grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
-          {/* Left: intro */}
-          <div className="lg:sticky lg:top-28">
-            <span className="eyebrow">Get a quote</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4">
-              How can we help you?
+      {/* Hero + form. DOM order is intro, form, extras so the form starts on the
+          first phone screen; on desktop the grid puts the extras back in the
+          left column under the intro. */}
+      <section className="py-8 md:py-20 lg:py-24 bg-gradient-to-b from-bg to-surface">
+        <div className="container grid lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-x-16 lg:gap-y-8 items-start">
+          {/* Intro */}
+          <div className="lg:col-start-1 lg:row-start-1">
+            <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter">
+              Get a fixed-price quote
             </h1>
-            <p className="lead mt-6">
-              Send us your details and we come back with a fixed-price quote during business hours.
+            <p className="lead mt-4 lg:mt-6">
+              Tell us about your car and we email you a fixed price by the next business day.
             </p>
+            <p className="mt-3 text-[0.9375rem] text-ink">
+              Need help now? Call any time, 24/7:{' '}
+              <a href="tel:0451159954" className="font-semibold text-accent-bright whitespace-nowrap">
+                0451 159 954
+              </a>
+            </p>
+          </div>
 
-            <ul className="grid gap-3 mt-8">
-              {TRUST.map(({ Icon, label }) => (
-                <li key={label} className="flex items-center gap-3 text-[0.9375rem] text-ink">
-                  <div className="size-9 rounded-lg bg-accent-tint text-accent grid place-items-center shrink-0">
-                    <Icon className="size-[18px]" strokeWidth={2} />
-                  </div>
-                  {label}
-                </li>
-              ))}
-            </ul>
+          {/* Form */}
+          <div className="bg-surface border border-hairline rounded-2xl p-5 md:p-8 lg:p-10 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+            <QuoteForm redirectTo="/book/" />
+          </div>
+
+          {/* Extras: below the form on phones, under the intro on desktop */}
+          <div className="lg:col-start-1 lg:row-start-2">
+            <WhyBookStrip />
 
             <div className="mt-8 p-5 rounded-xl bg-soft border border-hairline">
               <div className="text-xs font-semibold text-ink uppercase tracking-[0.05em] mb-2">
@@ -95,11 +95,6 @@ export default function BookPage() {
                 0451 159 954
               </a>
             </div>
-          </div>
-
-          {/* Right: form */}
-          <div className="bg-surface border border-hairline rounded-2xl p-6 md:p-8 lg:p-10">
-            <QuoteForm redirectTo="/book/" />
           </div>
         </div>
       </section>
@@ -136,8 +131,7 @@ export default function BookPage() {
             Prefer to call?
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Mon to Fri 7am to 6pm, Sat 8am to 5pm. You&apos;ll get one of the mechanics, not a call
-            centre.
+            Open 24/7. You speak directly with a mechanic.
           </p>
           <a
             href="tel:0451159954"

@@ -147,7 +147,7 @@ function getServiceSuburbFaq(
       },
       {
         question: `How much is a car service in ${suburb.name}?`,
-        answer: `Pricing depends on make, model and whether it is a minor or major service. We quote a fixed price for your specific vehicle before we start. Call us with the details and we come back with the number during business hours.`,
+        answer: `Pricing depends on make, model and whether it is a minor or major service. We quote a fixed price for your specific vehicle before we start. Call any time, 24/7, or send the details online and we come back with the number by the next business day.`,
       },
       {
         question: `How often should I service my car?`,
@@ -159,7 +159,7 @@ function getServiceSuburbFaq(
   // Common question for all service-suburb pages
   faqs.push({
     question: `How quickly can you get to ${suburb.name}?`,
-    answer: `${suburb.distanceFromBase <= 10 ? `${suburb.name} is close to our Springwood base. Same-day service is often available, sometimes within a couple of hours.` : suburb.distanceFromBase <= 25 ? `${suburb.name} is a regular stop for us. Same-day bookings are available during business hours.` : `We service ${suburb.name} regularly. Bookings are usually confirmed within one to two business days, though we can sometimes fit in urgent work sooner.`}`,
+    answer: `${suburb.distanceFromBase <= 10 ? `${suburb.name} is close to our Springwood base. Same-day service is often available, sometimes within a couple of hours.` : suburb.distanceFromBase <= 25 ? `${suburb.name} is a regular stop for us. Same-day bookings are available where we can fit them in.` : `We service ${suburb.name} regularly. Bookings are usually confirmed within one to two business days, though we can sometimes fit in urgent work sooner.`}`,
   })
 
   return faqs

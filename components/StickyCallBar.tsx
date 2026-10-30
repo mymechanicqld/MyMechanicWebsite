@@ -5,8 +5,10 @@ import { Phone, ArrowRight } from 'lucide-react'
  * Phone taps are caught by the global TelClickTracker (fires the call conversion).
  * Hidden on large screens. Pages that use it should add bottom padding on mobile
  * (e.g. pb-24 lg:pb-0) so it doesn't cover content.
+ *
+ * quoteHref: "#quote" on pages with an inline form, otherwise /book/?service=...
  */
-export default function StickyCallBar() {
+export default function StickyCallBar({ quoteHref = '#quote' }: { quoteHref?: string }) {
   return (
     <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 border-t border-white/10
                     bg-accent/95 backdrop-blur supports-[backdrop-filter]:bg-accent/90
@@ -21,7 +23,7 @@ export default function StickyCallBar() {
         Call 0451 159 954
       </a>
       <a
-        href="#quote"
+        href={quoteHref}
         className="inline-flex items-center justify-center gap-1 rounded-lg border border-white/40
                    text-white font-semibold py-3 px-4 text-[0.95rem]"
       >

@@ -68,11 +68,11 @@ function getFaq(suburb: Suburb) {
   return [
     {
       question: `Do you service ${suburb.name}?`,
-      answer: `Yes. ${suburb.name} is within our regular service area in ${suburb.regionName}. We are based in Springwood, about ${suburb.distanceFromBase} km away. ${suburb.responseTime === 'Often same-day' ? 'Same-day service is often available for your suburb.' : suburb.responseTime === 'Same-day available' ? 'Same-day service is available during business hours.' : 'Bookings are usually confirmed within one to two business days.'}`,
+      answer: `Yes. ${suburb.name} is within our regular service area in ${suburb.regionName}. We are based in Springwood, about ${suburb.distanceFromBase} km away. ${suburb.responseTime === 'Often same-day' ? 'Same-day service is often available for your suburb.' : suburb.responseTime === 'Same-day available' ? 'Same-day service is available where we can fit it in.' : 'Bookings are usually confirmed within one to two business days.'}`,
     },
     {
       question: `How much does a mobile mechanic cost in ${suburb.name}?`,
-      answer: `Pricing depends on the job. We quote a fixed price in writing before any work begins. Call us with the make, model and year of your vehicle plus what is happening, and we come back with the exact figure during business hours. No surprises on the bill.`,
+      answer: `Pricing depends on the job. We quote a fixed price in writing before any work begins. Call us with the make, model and year of your vehicle plus what is happening, and we come back with the exact figure by the next business day. No surprises on the bill.`,
     },
     {
       question: `What services do you offer in ${suburb.name}?`,
@@ -80,7 +80,7 @@ function getFaq(suburb: Suburb) {
     },
     {
       question: `How quickly can you get to ${suburb.name}?`,
-      answer: `${suburb.distanceFromBase <= 10 ? `${suburb.name} is close to our Springwood base. Same-day service is often available, sometimes within a couple of hours.` : suburb.distanceFromBase <= 25 ? `${suburb.name} is a regular stop for us. Same-day service is available during business hours, and we can usually lock in a time within 24 hours of your call.` : `We get out to ${suburb.name} regularly. Bookings are usually confirmed within one to two business days, though we can sometimes fit in urgent jobs sooner.`}`,
+      answer: `${suburb.distanceFromBase <= 10 ? `${suburb.name} is close to our Springwood base. Same-day service is often available, sometimes within a couple of hours.` : suburb.distanceFromBase <= 25 ? `${suburb.name} is a regular stop for us. Same day where available, and we can usually lock in a time within 24 hours of your call.` : `We get out to ${suburb.name} regularly. Bookings are usually confirmed within one to two business days, though we can sometimes fit in urgent jobs sooner.`}`,
     },
     {
       question: `Will a mobile service in ${suburb.name} void my warranty?`,

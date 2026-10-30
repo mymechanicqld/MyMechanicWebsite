@@ -104,7 +104,7 @@ export default function CheckCoveragePage() {
             Confirmed we cover you? Book a quote.
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Fixed-price quote during business hours. Same-day appointments common.
+            Call any time, 24/7. Online requests are answered by the next business day.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link

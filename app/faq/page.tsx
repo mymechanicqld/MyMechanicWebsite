@@ -26,15 +26,11 @@ const CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: 'How do I book a mobile mechanic?',
-        a: 'Call us on 0451 159 954 during business hours, or send your details through the quote form. We come back with a fixed-price quote during business hours. Once you confirm, we book a day and a time and turn up.',
+        a: 'Call us on 0451 159 954 any time, 24/7, or send your details through the quote form. Online requests are answered by the next business day with a fixed-price quote. Once you confirm, we book a day and a time and turn up.',
       },
       {
         q: 'Are your prices really fixed?',
         a: 'Yes. We quote you a fixed price before we lift a spanner. If something else turns up during the job, we stop and call you with a separate fixed quote before doing anything extra. Nothing appears on the bill that you did not agree to.',
-      },
-      {
-        q: 'Do you charge a call-out fee?',
-        a: 'No call-out fee within our coverage area. The price you see in the quote is the full price for the job.',
       },
       {
         q: 'Can I get a quote without you coming out first?',
@@ -63,8 +59,8 @@ const CATEGORIES: FaqCategory[] = [
         a: 'It depends on where you are and what is happening on the day. We text you with an ETA on the day of the booking. Logan and southern Brisbane are closest to our home base, so they typically see the fastest response.',
       },
       {
-        q: 'Do you work Saturdays?',
-        a: 'Yes, Saturday 8am to 5pm. Sundays we are closed.',
+        q: 'Do you work weekends and after hours?',
+        a: 'Yes. We are open 24/7. Call any time and we arrange a mechanic in your area.',
       },
     ],
   },
@@ -262,7 +258,7 @@ export default function FAQPage() {
             Got a question we haven&apos;t answered?
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Call us during business hours and one of the mechanics will pick up.
+            Call any time, 24/7. You speak directly with a mechanic.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

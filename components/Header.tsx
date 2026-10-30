@@ -4,6 +4,7 @@ import { Clock, Phone, ArrowRight } from 'lucide-react'
 import MobileDrawer from './MobileDrawer'
 import ServicesDropdown from './ServicesDropdown'
 import { PLAIN_NAV_ITEMS } from '@/lib/navigation'
+import { UnlessPaidPage, PaidPageQuoteButton } from './PaidPageNav'
 
 export default function Header() {
   return (
@@ -14,7 +15,7 @@ export default function Header() {
           <div className="flex gap-6 flex-wrap items-center">
             <span className="inline-flex items-center gap-2">
               <Clock className="size-[14px]" strokeWidth={1.75} />
-              Mon–Fri 7am–6pm · Sat 8am–5pm
+              Open 24/7. Call any time
             </span>
           </div>
           <a
@@ -32,7 +33,7 @@ export default function Header() {
         <div className="container flex items-center justify-between py-4 gap-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2.5 font-bold text-[1.0625rem] text-ink no-underline tracking-tight hover:text-ink"
+            className="inline-flex items-center gap-2.5 font-bold text-[1.0625rem] text-ink no-underline tracking-tight hover:text-ink whitespace-nowrap"
             aria-label="My Mechanic QLD home"
           >
             <span className="size-9 rounded-md bg-accent grid place-items-center shadow-sm shrink-0">
@@ -48,6 +49,7 @@ export default function Header() {
             My Mechanic QLD
           </Link>
 
+          <UnlessPaidPage>
           <nav className="hidden lg:flex gap-7 items-center" aria-label="Primary">
             <ServicesDropdown />
             {PLAIN_NAV_ITEMS.map((item) => (
@@ -72,6 +74,8 @@ export default function Header() {
           </div>
 
           <MobileDrawer />
+          </UnlessPaidPage>
+          <PaidPageQuoteButton />
         </div>
       </header>
     </>

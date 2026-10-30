@@ -313,8 +313,7 @@ export default async function BlogPostPage({
             Got a specific question about your car?
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Call us during business hours and one of the mechanics will pick up. No call-out fee
-            for a chat.
+            Call any time, 24/7. You speak directly with a mechanic.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

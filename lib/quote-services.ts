@@ -46,7 +46,11 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
   {
     category: 'diagnosis',
     label: 'Diagnosis',
-    options: [{ value: 'diagnosis', label: 'Fault diagnosis' }],
+    options: [
+      { value: 'diagnosis', label: 'Fault diagnosis' },
+      // Existing slug, reused: same meaning, and the owner app already knows it.
+      { value: 'emergency-breakdown', label: "Car won't start or breakdown" },
+    ],
   },
   {
     category: 'pre-purchase-inspection',
@@ -62,23 +66,25 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
       { value: 'alternator-replacement', label: 'Alternator replacement' },
       { value: 'starter-motor-replacement', label: 'Starter motor replacement' },
       { value: 'radiator-water-pump', label: 'Radiator and water pump' },
+      // Existing slugs, reused for the same meaning (Oct 2026 landing-page review).
+      { value: 'battery-replacement', label: 'Battery replacement' },
+      { value: 'steering-suspension', label: 'Steering and suspension' },
     ],
   },
 ]
 
 /**
- * Slugs the form offered before the October 2026 regroup. Over a thousand
- * stored inquiries use them, and a customer with an old copy of the page open
- * can still submit one, so they stay accepted and labelled. They get no
- * category, since they do not map cleanly onto the new groups.
+ * Slugs the form offered before the October 2026 regroup and no longer shows.
+ * Over a thousand stored inquiries use them, and a customer with an old copy
+ * of the page open can still submit one, so they stay accepted and labelled.
+ * They get no category, since they do not map cleanly onto the new groups.
+ * (battery-replacement, steering-suspension and emergency-breakdown were
+ * brought back as current options on 30 Oct 2026.)
  */
 export const LEGACY_SERVICE_LABELS: Record<string, string> = {
   'brake-repair': 'Brake repair',
   'alternator-starter': 'Alternator and starter motor',
-  'battery-replacement': 'Battery replacement',
   'warning-light-diagnostics': 'Warning-light diagnostics',
-  'steering-suspension': 'Steering and suspension',
-  'emergency-breakdown': 'Emergency / breakdown',
   'not-sure': 'Not sure / general enquiry',
 }
 
@@ -99,6 +105,11 @@ export const SERVICE_LABELS: Record<string, string> = {
 /** True for any slug the server should accept, current or legacy. */
 export function isKnownService(slug: string): boolean {
   return slug in SERVICE_LABELS
+}
+
+/** True only for options the form currently shows (used for ?service= prefill). */
+export function isCurrentService(slug: string): boolean {
+  return CATEGORY_BY_SERVICE.has(slug)
 }
 
 /** The group a current option belongs to, or null for legacy or unknown slugs. */

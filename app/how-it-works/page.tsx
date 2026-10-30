@@ -42,7 +42,7 @@ const STEPS = [
     Icon: ClipboardCheck,
     title: 'Get a fixed-price quote',
     body: "We come back with a written fixed-price quote. The quote covers parts, labour, fluids and any consumables. If the job needs an on-site diagnostic first, the quote will say so and the diagnostic fee is credited against the repair.",
-    duration: 'During business hours',
+    duration: 'By the next business day',
   },
   {
     n: 3,
@@ -317,7 +317,7 @@ export default function HowItWorksPage() {
             Now you know how it works.
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Send us your details and we come back with a fixed-price quote during business hours.
+            Call any time, 24/7. Online requests are answered by the next business day.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link

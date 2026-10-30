@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import {
-  Phone, ArrowRight, MapPin, Clock, DollarSign, ShieldCheck, BadgeCheck,
-  Wrench, Car, Star, CheckCircle2,
+  Phone, ArrowRight, MapPin, Clock, DollarSign, ShieldCheck, Scale, CreditCard,
+  Wrench, Car, Star, CheckCircle2, MessageSquare,
 } from 'lucide-react'
 import QuoteForm from '@/components/QuoteForm'
 import ReviewCarousel from '@/components/ReviewCarousel'
@@ -10,7 +10,7 @@ import StickyCallBar from '@/components/StickyCallBar'
 export const metadata: Metadata = {
   title: 'Mobile Mechanic Near You | We Come To You | My Mechanic QLD',
   description:
-    'Qualified mobile mechanic across Brisbane, Logan, Ipswich and the Gold Coast. We come to your home or work. Fixed-price quote upfront, same-day service available. Call 0451 159 954.',
+    'Mobile mechanic across Brisbane, Logan, Ipswich and the Gold Coast. Open 24/7. We come to your home or work, quote a fixed price upfront and price match written quotes. Call 0451 159 954.',
   alternates: { canonical: '/mobile-mechanic/' },
   // Paid-traffic landing page — keep out of the organic index to avoid
   // duplicate-content competition with the homepage and area pages.
@@ -18,27 +18,31 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mobile Mechanic Near You | My Mechanic QLD',
     description:
-      'We come to your home or work across SE Queensland. Fixed-price quote upfront, same-day service available.',
+      'Open 24/7. We come to your home or work across SE Queensland. Fixed upfront quote, and we price match written quotes.',
     url: '/mobile-mechanic/',
     type: 'website',
   },
 }
 
-// 6 real Google reviews (kept in sync with the homepage).
+// 6 real Google reviews (kept in sync with the homepage). No dates: they go stale.
 const REVIEWS = [
-  { quote: 'Over the last two weeks I had My Mechanic QLD replace the rear brake pads and rotors and the front control arms on my 2011 Hyundai iX35. Shanty and Norman did an exceptional job. Same-day callout, spot-on pricing and timeframes. I cannot praise Shanty enough.', name: 'Greg Gillham', place: 'Brisbane', when: '4 months ago', stars: 5 },
-  { quote: "My car wasn't working on Christmas Eve and everywhere was closed. They came out within 2 hours and diagnosed and fixed the issue within 10 minutes. Definitely paying for convenience, but also great service.", name: 'Holly Wilkinson', place: 'Brisbane', when: '4 months ago', stars: 5 },
-  { quote: 'Car brakes decided to die, one call and they were there within 2 hours all fixed and on our way. Very reasonable pricing for the service they provide. Will definitely use again.', name: 'Jake', place: 'Brisbane', when: '3 months ago', stars: 5 },
-  { quote: 'Thank you for a fast and reliable service. Really appreciate your help replacing my new car battery.', name: 'Miriama Tiatia', place: 'Brisbane', when: '3 months ago', stars: 5 },
-  { quote: 'Shanty was so kind and honest when he came to look at my car. Appreciate the help from the phone calls with the lovely lady in admin organising everything, to Shanty and the other worker being thorough but quick when they arrived.', name: 'Soph Denholm', place: 'Brisbane', when: '2 months ago', stars: 5 },
-  { quote: 'Responded to my inquiry within 15 minutes. They had my car back in operation 2 hours later. They were friendly and quick and I will definitely use them again.', name: 'Douglas Woolard', place: 'Brisbane', when: '2 months ago', stars: 5 },
+  { quote: 'Over the last two weeks I had My Mechanic QLD replace the rear brake pads and rotors and the front control arms on my 2011 Hyundai iX35. Shanty and Norman did an exceptional job. Same-day callout, spot-on pricing and timeframes. I cannot praise Shanty enough.', name: 'Greg Gillham', place: 'Brisbane', stars: 5 },
+  { quote: "My car wasn't working on Christmas Eve and everywhere was closed. They came out within 2 hours and diagnosed and fixed the issue within 10 minutes. Definitely paying for convenience, but also great service.", name: 'Holly Wilkinson', place: 'Brisbane', stars: 5 },
+  { quote: 'Car brakes decided to die, one call and they were there within 2 hours all fixed and on our way. Very reasonable pricing for the service they provide. Will definitely use again.', name: 'Jake', place: 'Brisbane', stars: 5 },
+  { quote: 'Thank you for a fast and reliable service. Really appreciate your help replacing my new car battery.', name: 'Miriama Tiatia', place: 'Brisbane', stars: 5 },
+  { quote: 'Shanty was so kind and honest when he came to look at my car. Appreciate the help from the phone calls with the lovely lady in admin organising everything, to Shanty and the other worker being thorough but quick when they arrived.', name: 'Soph Denholm', place: 'Brisbane', stars: 5 },
+  { quote: 'Responded to my inquiry within 15 minutes. They had my car back in operation 2 hours later. They were friendly and quick and I will definitely use them again.', name: 'Douglas Woolard', place: 'Brisbane', stars: 5 },
 ] as const
 
+// Mirrors the offers in the ads. Price match is always "written quotes, same job".
 const TRUST = [
-  { Icon: Car, label: 'We come to your home or work' },
-  { Icon: DollarSign, label: 'Fixed-price quote upfront' },
-  { Icon: Clock, label: 'Same-day service available' },
+  { Icon: Clock, label: 'Open 24/7. Call any time' },
+  { Icon: DollarSign, label: 'Fixed upfront quote' },
+  { Icon: Scale, label: 'We price match written quotes for the same job' },
+  { Icon: Car, label: 'Same day where available' },
+  { Icon: MessageSquare, label: 'Talk directly with the mechanic' },
   { Icon: ShieldCheck, label: 'Workmanship guaranteed' },
+  { Icon: CreditCard, label: 'Afterpay available' },
 ]
 
 const SERVICES = [
@@ -61,13 +65,13 @@ export default function MobileMechanicLanding() {
         <div className="container grid lg:grid-cols-[1fr_1.05fr] gap-9 lg:gap-14 items-start">
           {/* Left: pitch */}
           <div className="lg:sticky lg:top-28">
-            <span className="eyebrow">Mobile mechanic, we come to you</span>
+            <span className="eyebrow">Brisbane, Logan, Ipswich and Gold Coast</span>
             <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tighter mt-4">
-              A qualified mechanic at your driveway, today.
+              Mobile mechanic, we come to you
             </h1>
             <p className="lead mt-5">
-              No towing, no workshop wait. We service and repair your car at your home or work
-              across Brisbane, Logan, Ipswich and the Gold Coast. Fixed-price quote upfront.
+              Open 24/7. Call any time and we arrange a mechanic in your area. Servicing and repairs
+              at your home or work across Brisbane, Logan, Ipswich and the northern Gold Coast.
             </p>
 
             {/* Rating line (real Google reviews) */}
@@ -76,24 +80,24 @@ export default function MobileMechanicLanding() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 mt-6 w-fit hover:opacity-80 transition-opacity"
-              aria-label="View 229 Google reviews rated 4.9 out of 5"
+              aria-label="Read our reviews on Google"
             >
               <span className="text-gold inline-flex gap-px">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-[18px] fill-current" strokeWidth={1.5} />
                 ))}
               </span>
-              <span className="text-[0.9375rem] text-ink font-semibold">4.9 from 229 Google reviews</span>
+              <span className="text-[0.9375rem] text-ink font-semibold underline underline-offset-2">Read our Google reviews</span>
             </a>
 
             {/* Primary actions */}
             <div className="flex flex-wrap gap-3 mt-7">
               <a href="tel:0451159954" className="btn btn-primary text-base px-6 py-3.5">
                 <Phone className="size-[18px]" strokeWidth={2} />
-                Call 0451 159 954
+                Call now, 24/7
               </a>
               <a href="#quote" className="btn btn-secondary text-base px-6 py-3.5">
-                Get a fixed-price quote
+                Get a fixed quote
                 <ArrowRight className="size-[18px]" strokeWidth={2} />
               </a>
             </div>
@@ -115,7 +119,7 @@ export default function MobileMechanicLanding() {
             <div className="mb-5">
               <h2 className="text-xl font-bold text-ink">Get your fixed-price quote</h2>
               <p className="text-[0.9375rem] text-muted mt-1">
-                Tell us about your car. We reply during business hours, or call for same-day.
+                Call any time, 24/7. Online requests are answered by the next business day.
               </p>
             </div>
             <QuoteForm redirectTo="/mobile-mechanic/" />
@@ -147,7 +151,7 @@ export default function MobileMechanicLanding() {
           <div className="text-center mb-9">
             <span className="eyebrow">What local drivers say</span>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-3">
-              Real reviews from real customers.
+              Reviews from our customers.
             </h2>
           </div>
           <ReviewCarousel reviews={REVIEWS} />
@@ -171,9 +175,6 @@ export default function MobileMechanicLanding() {
                 {a}
               </span>
             ))}
-            <span className="inline-block px-3 py-1.5 rounded-md text-[0.875rem] text-subtle">
-              + many more nearby
-            </span>
           </div>
         </div>
       </section>
@@ -185,7 +186,7 @@ export default function MobileMechanicLanding() {
             Car trouble? We will come to you.
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Call now for same-day service, or send your details for a fixed-price quote.
+            Call any time, 24/7, or send your details for a fixed-price quote.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a href="tel:0451159954" className="btn bg-white text-accent hover:bg-accent-tint hover:text-accent text-base px-6 py-3.5">
