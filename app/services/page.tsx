@@ -13,6 +13,7 @@ import {
   ScanLine,
   TriangleAlert,
 } from 'lucide-react'
+import WhyBookStrip from '@/components/WhyBookStrip'
 
 // Note: TriangleAlert / Phone used in the emergency phone-CTA card rendered in the SERVICES grid.
 
@@ -178,9 +179,10 @@ export default function ServicesHubPage() {
             </Link>
             <a href="tel:0451159954" className="btn btn-secondary">
               <Phone className="size-4" strokeWidth={2} />
-              0451 159 954
+              Call now, 24/7
             </a>
           </div>
+          <WhyBookStrip className="mt-8 sm:grid-cols-4" />
         </div>
       </section>
 
