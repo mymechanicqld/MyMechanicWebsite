@@ -76,6 +76,13 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
     title: 'Servicing & Inspections',
     items: [
       {
+        slug: 'car-service',
+        label: 'Car service',
+        href: '/car-service/',
+        Icon: Gauge,
+        desc: 'Minor, major and logbook services from $369.',
+      },
+      {
         slug: 'logbook-servicing',
         label: 'Logbook & general servicing',
         href: '/logbook-servicing/',
@@ -110,12 +117,11 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
         desc: 'Delivered, fitted and old one recycled.',
       },
       {
-        slug: 'emergency-call-outs',
-        label: 'Emergency call-outs',
-        href: 'tel:0451159954',
+        slug: 'emergency-mobile-mechanic',
+        label: '24 hour breakdowns',
+        href: '/emergency-mobile-mechanic/',
         Icon: TriangleAlert,
-        desc: 'Broken down? Call us for same-day response.',
-        callOnly: true,
+        desc: "Car won't start? Open 24/7, call any time.",
       },
     ],
   },

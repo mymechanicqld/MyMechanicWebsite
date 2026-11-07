@@ -154,10 +154,10 @@ export const metadata: Metadata = {
     url: '/',
     images: [
       {
-        url: '/images/og-default.webp',
+        url: '/images/og-default-real.webp',
         width: 1200,
         height: 630,
-        alt: 'My Mechanic QLD mobile mechanic service van in a Brisbane driveway',
+        alt: 'My Mechanic QLD service van on a job behind a customer car on a Brisbane street',
       },
     ],
   },
@@ -166,7 +166,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: ['/images/og-default.webp'],
+    images: ['/images/og-default-real.webp'],
   },
 
   robots: {
@@ -211,7 +211,7 @@ const localBusinessSchema = {
   url: SITE_URL,
   telephone: PHONE_E164,
   email: EMAIL,
-  image: [`${SITE_URL}/images/hero-van.webp`, `${SITE_URL}/images/owner-on-job.webp`],
+  image: [`${SITE_URL}/images/hero-van-real.webp`, `${SITE_URL}/images/owner-on-job-real.webp`],
   logo: `${SITE_URL}/images/logo.png`,
   priceRange: '$$',
   paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer, EFTPOS',
@@ -317,18 +317,15 @@ const localBusinessSchema = {
     'Engine diagnostics',
     'Suspension repair',
   ],
+  // Add each directory listing (AutoGuru, Oneflare, hipages ...) here once it
+  // is live, using the exact business name, Springwood QLD 4127 and phone.
   sameAs: [
     'https://www.facebook.com/mymechanicqld',
     'https://g.page/r/CSJT8_It4K0WEAI',
   ],
-  // Live-verified against the retained Brisbane South profile on 19 Sep 2026.
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '229',
-    bestRating: '5',
-    worstRating: '1',
-  },
+  // No aggregateRating on purpose. A hard-coded rating that no page shows
+  // breaks Google's review-snippet rules and goes stale. If stars are wanted
+  // later, use a live reviews widget and mark up only what it displays.
 }
 
 const webSiteSchema = {

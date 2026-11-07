@@ -6,9 +6,11 @@ const REPAIRS = [
   { label: 'Alternator & starter', href: '/starter-alternator/' },
   { label: 'Radiator & water pump', href: '/radiator-cooling-system/' },
   { label: 'Steering & suspension', href: '/steering-suspension/' },
+  { label: '24 hour breakdowns', href: '/emergency-mobile-mechanic/' },
 ]
 
 const SERVICING = [
+  { label: 'Car service', href: '/car-service/' },
   { label: 'Logbook & general', href: '/logbook-servicing/' },
   { label: 'Pre-purchase inspection', href: '/pre-purchase-inspection/' },
   { label: 'Diagnostics', href: '/car-diagnostics/' },

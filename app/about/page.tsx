@@ -94,8 +94,8 @@ export default function AboutPage() {
           </div>
           <div className="relative aspect-[4/5] min-h-[340px] lg:min-h-[440px] rounded-xl overflow-hidden border border-hairline">
             <Image
-              src="/images/owner-on-job.webp"
-              alt="My Mechanic QLD on a job beside the service van"
+              src="/images/owner-on-job-real.webp"
+              alt="Mechanic working under the bonnet of a silver car at a roadside job"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"

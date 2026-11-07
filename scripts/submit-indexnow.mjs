@@ -5,88 +5,45 @@
  * page is new or updated, with no crawl-budget wait.
  *
  * Usage:
- *   node scripts/submit-indexnow.mjs                 # submit every live URL
- *   node scripts/submit-indexnow.mjs --region logan  # only one region's pages
+ *   node scripts/submit-indexnow.mjs                 # every URL in the live sitemap
+ *   node scripts/submit-indexnow.mjs --region logan  # only /sitemap-logan.xml
  *   node scripts/submit-indexnow.mjs https://www.mymechanicqld.com.au/sunnybank/ ...
  *
  * The key file must be live at https://<host>/<key>.txt before running.
  */
-
-import { readFileSync, readdirSync } from 'node:fs'
-import { join, dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const ROOT = join(__dirname, '..')
 
 const HOST = 'www.mymechanicqld.com.au'
 const SITE_URL = `https://${HOST}`
 const KEY = '7f1e86871dd8fe55bbdaee180c6c8302'
 const KEY_LOCATION = `${SITE_URL}/${KEY}.txt`
 
-const PRIORITY_SERVICES = [
-  'brake-repairs',
-  'starter-alternator',
-  'radiator-cooling-system',
-  'logbook-servicing',
-]
-
-function loadSuburbs() {
-  const raw = readFileSync(join(ROOT, 'content/suburbs.json'), 'utf8')
-  return JSON.parse(raw).suburbs
+/**
+ * URLs come from the live sitemap, so this only ever submits pages we want
+ * indexed. (It used to build the list from content/suburbs.json, which would
+ * push the ~800 noindexed template pages back at search engines.)
+ */
+async function fetchLocs(url) {
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`)
+  const xml = await res.text()
+  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim())
 }
 
-function staticUrls() {
-  const paths = [
-    '/',
-    '/services/',
-    '/areas/',
-    '/pricing/',
-    '/warranty/',
-    '/how-it-works/',
-    '/check-coverage/',
-    '/toyota-mechanic/',
-    '/hilux-service/',
-    '/mazda-service/',
-    '/ford-ranger/',
-    '/about/',
-    '/contact/',
-    '/faq/',
-    '/book/',
-    '/brisbane/',
-    '/logan/',
-    '/ipswich/',
-    '/gold-coast/',
-  ]
-  return paths.map((p) => `${SITE_URL}${p}`)
+async function sitemapUrls(segment) {
+  if (segment) return fetchLocs(`${SITE_URL}/sitemap-${segment}.xml`)
+  const segments = await fetchLocs(`${SITE_URL}/sitemap.xml`)
+  const lists = await Promise.all(segments.map(fetchLocs))
+  return lists.flat()
 }
 
-function localUrls(regionFilter) {
-  const suburbs = loadSuburbs().filter(
-    (s) => !regionFilter || s.region === regionFilter
-  )
-  const urls = []
-  for (const s of suburbs) {
-    urls.push(`${SITE_URL}/${s.slug}/`)
-    for (const svc of PRIORITY_SERVICES) {
-      urls.push(`${SITE_URL}/${svc}/${s.slug}/`)
-    }
-  }
-  return urls
-}
-
-function buildUrlList(args) {
+async function buildUrlList(args) {
   // Explicit URLs passed on the command line
   const explicit = args.filter((a) => a.startsWith('http'))
   if (explicit.length) return explicit
 
   const regionIdx = args.indexOf('--region')
   const regionFilter = regionIdx !== -1 ? args[regionIdx + 1] : null
-
-  if (regionFilter) return localUrls(regionFilter)
-
-  // Default: everything
-  return [...staticUrls(), ...localUrls(null)]
+  return sitemapUrls(regionFilter)
 }
 
 async function submitBatch(urlList) {
@@ -105,7 +62,7 @@ async function submitBatch(urlList) {
 
 async function main() {
   const args = process.argv.slice(2)
-  const urls = buildUrlList(args)
+  const urls = await buildUrlList(args)
 
   console.log(`IndexNow: submitting ${urls.length} URLs as ${HOST}`)
   console.log(`Key file: ${KEY_LOCATION}`)

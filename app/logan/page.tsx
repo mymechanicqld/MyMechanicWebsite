@@ -10,7 +10,7 @@ export function generateMetadata(): Metadata {
   if (!region) return {}
   const count = getSuburbsByRegion(REGION_ID).length
   return {
-    title: `Mobile Mechanic Logan | ${count} Suburbs, Same-Day Available | My Mechanic QLD`,
+    title: 'Mobile Mechanic Logan | Open 24/7 | My Mechanic QLD',
     description: `Logan is our home base. Fast mobile mechanic service across ${count} Logan suburbs, often same-day. Brake repair, servicing, batteries and more at your driveway.`,
     alternates: { canonical: `/${REGION_ID}/` },
     openGraph: {

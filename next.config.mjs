@@ -42,10 +42,25 @@ const nextConfig = {
   async redirects() {
     return [
       // One canonical host: the bare domain was serving a duplicate copy of the site.
+      // Redirect straight to the final www URL, trailing slash included, so it
+      // is one hop rather than two (bare -> www/x -> www/x/). Files such as
+      // /sitemap.xml keep no slash.
       {
-        source: '/:path*',
+        source: '/',
         has: [{ type: 'host', value: 'mymechanicqld.com.au' }],
-        destination: 'https://www.mymechanicqld.com.au/:path*',
+        destination: 'https://www.mymechanicqld.com.au/',
+        permanent: true,
+      },
+      {
+        source: '/:path(.*\\.[a-zA-Z0-9]+)',
+        has: [{ type: 'host', value: 'mymechanicqld.com.au' }],
+        destination: 'https://www.mymechanicqld.com.au/:path',
+        permanent: true,
+      },
+      {
+        source: '/:path((?!.*\\.[a-zA-Z0-9]+$).*[^/])',
+        has: [{ type: 'host', value: 'mymechanicqld.com.au' }],
+        destination: 'https://www.mymechanicqld.com.au/:path/',
         permanent: true,
       },
       ...redirectsConfig,

@@ -101,8 +101,8 @@ export const AREA_HUBS: AreaHub[] = [
       {
         name: 'Sunnybank and MacGregor',
         blurb:
-          'Busy shopping strips around Sunnybank Plaza and Market Square, with plenty of townhouse complexes. Sunnybank Hills is covered too. In a complex, a visitor park usually works if the body corporate allows it.',
-        suburbs: ['sunnybank', 'macgregor', 'salisbury'],
+          'Busy shopping strips around Sunnybank Plaza and Market Square, with plenty of townhouse complexes, and south to Stretton on the Logan border. Sunnybank Hills is covered too. In a complex, a visitor park usually works if the body corporate allows it.',
+        suburbs: ['sunnybank', 'macgregor', 'salisbury', 'stretton'],
       },
       {
         name: 'Carindale, Coorparoo and the inner southside',

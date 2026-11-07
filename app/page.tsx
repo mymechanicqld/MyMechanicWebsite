@@ -29,29 +29,29 @@ const SERVICES = [
     slug: 'brake-repairs',
     title: 'Brake repairs',
     desc: 'Pads, rotors, calipers and fluid. We replace what needs replacing and leave what does not.',
-    image: '/images/service-brakes.webp',
-    alt: 'Mechanic fitting a new brake pad onto a disc rotor',
+    image: '/images/service-brakes-real.webp',
+    alt: 'Mechanic working on the front brake rotor of a van with the wheel removed',
   },
   {
     slug: 'starter-alternator',
     title: 'Alternator and starter motor',
     desc: 'Slow crank, no start, or a flat battery that keeps coming back. We test, diagnose and replace on-site.',
-    image: '/images/service-alternator.webp',
-    alt: 'Mechanic working under the bonnet on an alternator with the branded van in the background',
+    image: '/images/service-alternator-real.webp',
+    alt: 'Mechanic working in the engine bay of a red Toyota hatchback in a carport',
   },
   {
     slug: 'radiator-cooling-system',
     title: 'Radiator and cooling system',
     desc: 'Overheating or losing coolant? Pressure test, diagnose and fix at your location.',
-    image: '/images/service-radiator.webp',
-    alt: 'Mechanic performing a cooling system pressure test with gauge',
+    image: '/images/service-radiator-real.webp',
+    alt: 'Mechanic kneeling beside a Nissan Patrol with the bonnet up at a roadside job',
   },
   {
     slug: 'logbook-servicing',
     title: 'Services and maintenance',
     desc: 'Manufacturer-spec servicing using OEM-quality parts. Warranty-safe under Australian Consumer Law.',
-    image: '/images/service-logbook.webp',
-    alt: 'Oil being poured during a logbook service with Penrite and Ryco products visible',
+    image: '/images/service-logbook-real.webp',
+    alt: 'Service van with tool drawers open behind a red car with its bonnet up on a suburban street',
   },
 ] as const
 
@@ -176,8 +176,8 @@ export default function HomePage() {
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/hero-bg.webp"
-            alt="My Mechanic QLD mechanic standing beside the branded service van in a Queensland driveway"
+            src="/images/hero-bg-real.webp"
+            alt="Service van with its tool drawers open beside a car being worked on in a home driveway"
             fill
             priority
             sizes="100vw"
@@ -190,8 +190,8 @@ export default function HomePage() {
           <Reveal variant="up" duration={0.8}>
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tighter">
-                Your Mobile Mechanic.<br />
-                <span className="text-accent-bright">We come to you.</span>
+                Mobile mechanic in Brisbane and Logan,{' '}
+                <span className="text-accent-bright">we come to you.</span>
               </h1>
               <p className="text-lg text-white/80 mt-5 max-w-[48ch] leading-relaxed">
                 Experienced mechanics with 15+ years in the trade, now fully mobile across Brisbane, Logan, Ipswich and the Gold Coast. Fixed-price quotes before we start.
@@ -322,6 +322,14 @@ export default function HomePage() {
                 View all 9 services
                 <ArrowRight className="size-4" strokeWidth={2} />
               </Link>
+              <span className="text-subtle mx-3" aria-hidden="true">·</span>
+              <Link
+                href="/car-service/"
+                className="inline-flex items-center gap-1.5 text-accent-bright font-semibold no-underline hover:text-accent-hover"
+              >
+                Car service from $369
+                <ArrowRight className="size-4" strokeWidth={2} />
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -333,8 +341,8 @@ export default function HomePage() {
           <Reveal variant="scale" duration={0.9} className="min-w-0">
             <div className="relative aspect-video lg:aspect-[3/2] rounded-xl overflow-hidden border border-hairline">
               <Image
-                src="/images/section-emergency.webp"
-                alt="My Mechanic QLD van arriving at a roadside breakdown at golden hour"
+                src="/images/section-emergency-real.webp"
+                alt="Service van parked behind a ute with its bonnet up at a roadside job"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -364,8 +372,8 @@ export default function HomePage() {
                   <Phone className="size-4" strokeWidth={2} />
                   Call now
                 </a>
-                <Link href="/services/" className="btn btn-secondary">
-                  Learn more
+                <Link href="/emergency-mobile-mechanic/" className="btn btn-secondary">
+                  24 hour breakdowns
                   <ArrowRight className="size-4" strokeWidth={2} />
                 </Link>
               </div>
@@ -407,8 +415,8 @@ export default function HomePage() {
           <Reveal variant="scale" delay={0.1} duration={0.9} className="order-1 lg:order-2 min-w-0">
             <div className="relative aspect-video lg:aspect-[3/2] rounded-xl overflow-hidden border border-hairline">
               <Image
-                src="/images/section-inspection.webp"
-                alt="Mechanic inspecting a used car with a torch and clipboard while the buyer watches"
+                src="/images/section-inspection-real.webp"
+                alt="Small blue hatchback on a jack in a driveway with the service van behind it"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

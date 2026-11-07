@@ -50,13 +50,17 @@ export async function generateMetadata({
   const suburb = getSuburb(suburbSlug)
   if (!service || !suburb) return {}
 
-  const title = `${service.nav_label} ${suburb.name} | Mobile ${service.nav_label} | My Mechanic QLD`
+  const title = `${service.nav_label} in ${suburb.name} | My Mechanic QLD`
   const description = `Mobile ${service.nav_label.toLowerCase()} in ${suburb.name}, ${suburb.postcode}. ${service.hero_subtitle.split('.')[0]}. Fixed-price quote upfront, workmanship warranty.`
 
   return {
     title,
     description,
     alternates: { canonical: `/${slug}/${suburb.slug}/` },
+    // Nov 2026 audit: these 640 service x suburb pages are near-duplicates with
+    // no internal links, a doorway-page pattern. Kept live for anyone who has
+    // the URL, but never indexed and not in the sitemap.
+    robots: { index: false, follow: true },
     openGraph: {
       title: `${service.nav_label} in ${suburb.name} | My Mechanic QLD`,
       description,

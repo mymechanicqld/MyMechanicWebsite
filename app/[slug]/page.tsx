@@ -18,7 +18,7 @@ import {
   getAllServices,
   type Service,
 } from '@/lib/services'
-import { getSuburb, getSuburbSlugs } from '@/lib/suburbs'
+import { getSuburb, getSuburbSlugs, isIndexableSuburb } from '@/lib/suburbs'
 import SuburbPageContent from '@/components/SuburbPageContent'
 import StickyCallBar from '@/components/StickyCallBar'
 import WhyBookStrip from '@/components/WhyBookStrip'
@@ -85,9 +85,7 @@ export async function generateMetadata({
   const suburb = getSuburb(slug)
   if (suburb) {
     const o = suburb.override
-    const title =
-      o?.metaTitle ??
-      `Mobile Mechanic ${suburb.name} | Brake Repair, Servicing & More | My Mechanic QLD`
+    const title = o?.metaTitle ?? `Mobile Mechanic ${suburb.name} | My Mechanic QLD`
     const description =
       o?.metaDescription ??
       `Mobile mechanic in ${suburb.name}, ${suburb.postcode}. Brake repair, logbook servicing, alternator replacement and more at your driveway. Fixed-price quotes, workmanship warranty on every job.`
@@ -96,6 +94,9 @@ export async function generateMetadata({
       title,
       description,
       alternates: { canonical: `/${suburb.slug}/` },
+      // Template-only suburb pages stay reachable but out of the index until
+      // they get hand-written copy (see isIndexableSuburb).
+      ...(isIndexableSuburb(suburb) ? {} : { robots: { index: false, follow: true } }),
       openGraph: {
         title: ogTitle,
         description,

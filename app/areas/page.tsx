@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 
 const REGION_IMAGE: Record<string, string> = {
   brisbane: '/images/coverage-onsite.webp',
-  logan: '/images/owner-on-job.webp',
-  ipswich: '/images/hero-van.webp',
+  logan: '/images/owner-on-job-real.webp',
+  ipswich: '/images/hero-van-real.webp',
   'gold-coast': '/images/coverage-onsite.webp',
 }
 

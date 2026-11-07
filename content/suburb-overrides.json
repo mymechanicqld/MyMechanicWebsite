@@ -1,113 +1,450 @@
 {
-  "_note": "Hand-written per-suburb content. suburbs.json is exported from the suburb selector tool, so suburb-specific copy lives here and is merged in lib/suburbs.ts. Any field left out falls back to the shared suburb template.",
-  "suburbs": {
-    "springwood": {
-      "metaTitle": "Mobile Mechanic Springwood 4127 | Our Home Base | My Mechanic QLD",
-      "metaDescription": "Springwood is our home base. Mobile brake repairs, servicing, alternators and radiators at your home or work, with Daisy Hill, Underwood and Shailer Park minutes away.",
-      "ogTitle": "Mobile mechanic in Springwood, our home base | My Mechanic QLD",
-      "eyebrow": "Home base · Springwood, Logan",
-      "h1": "Your local mobile mechanic in Springwood",
-      "heroLead": "Springwood is our home base and where the van starts every morning. If you have searched for a mobile mechanic near me from a Springwood address, you are about as close to us as it gets. We fix the car in your driveway or at your work car park, with a fixed price agreed first.",
-      "servicesEyebrow": "Most-booked in Springwood",
-      "servicesHeading": "What Springwood drivers call us for.",
-      "servicesIntro": "Brakes, flat batteries, alternators and logbook services make up most of our Springwood work. Every job on this list is done at your place, so the car never has to leave the street.",
-      "serviceNotes": {
-        "brake-repairs": "Stop-start runs on Rochedale Road and the motorway ramps wear pads quickly. Pads, rotors, calipers and fluid, replaced on your driveway.",
-        "starter-alternator": "Clicking, slow cranking or a battery light on the dash? We test the starter and charging system where the car sits and replace what has failed.",
-        "radiator-cooling-system": "Temperature gauge creeping up in M1 traffic? We pressure test the system and replace radiators, water pumps, thermostats and hoses on-site.",
-        "logbook-servicing": "Manufacturer-spec servicing at home or at the office, logbook stamped and invoice emailed so your new-car warranty stays intact.",
-        "pre-purchase-inspection": "Looking at a used car from a private seller around Logan? We inspect it where it is parked and send you a written report.",
-        "battery-replacement": "Flat at home or in the work car park? We bring a battery to suit, fit it and test the charging system.",
-        "car-diagnostics": "Check-engine light on? We scan the codes, then check the fault by hand and explain what it means before quoting.",
-        "steering-suspension": "Clunks over speed humps or a car that wanders on the motorway. We check ball joints, bushes, shocks and control arms."
-      },
-      "localHeading": "Why Springwood gets our quickest response",
-      "localParagraphs": [
-        "Springwood sits on the M1 about 20 km south-east of the Brisbane CBD, wedged between Daisy Hill, Slacks Creek, Underwood and Rochedale South. It is our home base, so a Springwood job is usually a short drive from where the van is parked overnight rather than a run across town. When your car will not start at 7am, that difference matters.",
-        "The suburb has two sides to it. Along the motorway and around Springwood Mall, Arndale and the bus interchange there are offices, medical suites, motels and shops, so a fair share of our Springwood work happens in a staff car park while the owner is at their desk. Back from the highway, the streets towards the conservation park are quieter, with 1970s and 1980s brick homes and flat driveways that suit a mobile workshop well.",
-        "Living here means we know how the area moves. When the M1 is banked up we come in the back way, so a Springwood breakdown does not sit waiting while we crawl along the motorway. It also means we are easy to find again. If something we fitted needs a second look, we are around the corner.",
-        "Every job starts with a fixed price in writing. If we find something else while the wheels are off or the bonnet is up, we stop, show you, and quote it separately. You decide whether we go ahead. Nothing lands on the invoice that you did not agree to first."
-      ],
-      "trustPoints": [
-        {
-          "title": "Price agreed before we start",
-          "body": "A fixed quote in writing first. Anything extra gets its own quote and your OK."
-        },
-        {
-          "title": "Office car parks welcome",
-          "body": "Leave us the keys at work near the M1 and get on with your day."
-        },
-        {
-          "title": "Logbook stamped on the spot",
-          "body": "Serviced to manufacturer spec, so your new-car warranty is protected."
-        },
-        {
-          "title": "Workmanship warranty",
-          "body": "Every repair is backed by our workmanship warranty, per our terms."
-        }
-      ],
-      "coverage": {
-        "eyebrow": "Around Springwood",
-        "heading": "The suburbs next door, a few minutes away.",
-        "intro": "Springwood is the middle of our patch. These are the suburbs we drive through most days, with the distance from our base.",
-        "items": [
-          {
-            "slug": "daisy-hill",
-            "note": "Just east of us past the conservation park and koala centre. One of the quickest call-outs we do."
-          },
-          {
-            "slug": "slacks-creek",
-            "note": "The other side of the motorway, around the Logan Megacentre. Often a same-morning job."
-          },
-          {
-            "slug": "shailer-park",
-            "note": "South-east through Daisy Hill. Quiet streets and family homes with good driveway access."
-          },
-          {
-            "slug": "loganholme",
-            "note": "Down the M1 to where the Logan Motorway joins it, around the Logan Hyperdome."
-          },
-          {
-            "slug": "underwood",
-            "note": "North-west towards Underwood Marketplace. Plenty of showroom and staff car park jobs."
-          },
-          {
-            "slug": "rochedale-south",
-            "note": "North along the motorway corridor, around the Rochedale South shopping village."
-          }
-        ],
-        "footer": "Heading further north up the M1? Mount Gravatt, Sunnybank, Carindale and the rest of the southside are covered on our Brisbane South page.",
-        "footerLink": { "href": "/brisbane-south/", "label": "Mobile mechanic Brisbane South" }
-      },
-      "faqHeading": "Springwood mobile mechanic questions.",
-      "faq": [
-        {
-          "question": "Are you actually based in Springwood?",
-          "answer": "Yes. Springwood, 4127, is our home base and where the van sets off from each day. That is why Springwood and the suburbs right around it, like Daisy Hill and Slacks Creek, get our quickest response."
-        },
-        {
-          "question": "How fast can a mobile mechanic get to me in Springwood?",
-          "answer": "Same-day service is often available in Springwood, and for a breakdown we can sometimes be there within a couple of hours. Call 0451 159 954 and we will give you a realistic time straight away rather than a vague window."
-        },
-        {
-          "question": "Can you fix my car at my office instead of at home?",
-          "answer": "Usually, yes. A lot of our Springwood work happens in staff car parks near the motorway. We need safe, level ground and the OK from whoever manages the car park. Brakes, batteries, servicing and most alternator and starter jobs suit an office car park well. Many shopping centre car parks do not allow repairs, so home or work is normally the better spot."
-        },
-        {
-          "question": "What does a mobile mechanic in Springwood cost?",
-          "answer": "It depends on the car and the job, so we quote a fixed price before we start. Send us the make, model and year plus what the car is doing, and we come back with the figure. Nothing is added without your OK."
-        },
-        {
-          "question": "Will a mobile logbook service affect my new-car warranty?",
-          "answer": "No. Under the Australian Consumer Law you can have your car serviced by any qualified mechanic, as long as the work follows the manufacturer's schedule and specifications. We stamp the logbook and email the invoice, so your service history stays complete."
-        },
-        {
-          "question": "Do you cover the suburbs around Springwood too?",
-          "answer": "Yes. Daisy Hill, Slacks Creek, Shailer Park, Loganholme, Underwood and Rochedale South are all a few minutes away, and we work right across Logan and Brisbane's southside from here."
-        }
-      ],
-      "ctaHeading": "Need a mechanic in Springwood today?",
-      "ctaBody": "We are local, so call early and we can often fit you in the same day. Fixed-price quote before we start."
+ "_note": "Hand-written per-suburb content. suburbs.json is exported from the suburb selector tool, so suburb-specific copy lives here and is merged in lib/suburbs.ts. Any field left out falls back to the shared suburb template.",
+ "suburbs": {
+  "springwood": {
+   "metaTitle": "Mobile Mechanic Springwood 4127 | Our Home Base | My Mechanic QLD",
+   "metaDescription": "Springwood is our home base. Mobile brake repairs, servicing, alternators and radiators at your home or work, with Daisy Hill, Underwood and Shailer Park minutes away.",
+   "ogTitle": "Mobile mechanic in Springwood, our home base | My Mechanic QLD",
+   "eyebrow": "Home base · Springwood, Logan",
+   "h1": "Your local mobile mechanic in Springwood",
+   "heroLead": "Springwood is our home base and where the van starts every morning. If you have searched for a mobile mechanic near me from a Springwood address, you are about as close to us as it gets. We fix the car in your driveway or at your work car park, with a fixed price agreed first.",
+   "servicesEyebrow": "Most-booked in Springwood",
+   "servicesHeading": "What Springwood drivers call us for.",
+   "servicesIntro": "Brakes, flat batteries, alternators and logbook services make up most of our Springwood work. Every job on this list is done at your place, so the car never has to leave the street.",
+   "serviceNotes": {
+    "brake-repairs": "Stop-start runs on Rochedale Road and the motorway ramps wear pads quickly. Pads, rotors, calipers and fluid, replaced on your driveway.",
+    "starter-alternator": "Clicking, slow cranking or a battery light on the dash? We test the starter and charging system where the car sits and replace what has failed.",
+    "radiator-cooling-system": "Temperature gauge creeping up in M1 traffic? We pressure test the system and replace radiators, water pumps, thermostats and hoses on-site.",
+    "logbook-servicing": "Manufacturer-spec servicing at home or at the office, logbook stamped and invoice emailed so your new-car warranty stays intact.",
+    "pre-purchase-inspection": "Looking at a used car from a private seller around Logan? We inspect it where it is parked and send you a written report.",
+    "battery-replacement": "Flat at home or in the work car park? We bring a battery to suit, fit it and test the charging system.",
+    "car-diagnostics": "Check-engine light on? We scan the codes, then check the fault by hand and explain what it means before quoting.",
+    "steering-suspension": "Clunks over speed humps or a car that wanders on the motorway. We check ball joints, bushes, shocks and control arms."
+   },
+   "localHeading": "Why Springwood gets our quickest response",
+   "localParagraphs": [
+    "Springwood sits on the M1 about 20 km south-east of the Brisbane CBD, wedged between Daisy Hill, Slacks Creek, Underwood and Rochedale South. It is our home base, so a Springwood job is usually a short drive from where the van is parked overnight rather than a run across town. When your car will not start at 7am, that difference matters.",
+    "The suburb has two sides to it. Along the motorway and around Springwood Mall, Arndale and the bus interchange there are offices, medical suites, motels and shops, so a fair share of our Springwood work happens in a staff car park while the owner is at their desk. Back from the highway, the streets towards the conservation park are quieter, with 1970s and 1980s brick homes and flat driveways that suit a mobile workshop well.",
+    "Living here means we know how the area moves. When the M1 is banked up we come in the back way, so a Springwood breakdown does not sit waiting while we crawl along the motorway. It also means we are easy to find again. If something we fitted needs a second look, we are around the corner.",
+    "Every job starts with a fixed price in writing. If we find something else while the wheels are off or the bonnet is up, we stop, show you, and quote it separately. You decide whether we go ahead. Nothing lands on the invoice that you did not agree to first."
+   ],
+   "trustPoints": [
+    {
+     "title": "Price agreed before we start",
+     "body": "A fixed quote in writing first. Anything extra gets its own quote and your OK."
+    },
+    {
+     "title": "Office car parks welcome",
+     "body": "Leave us the keys at work near the M1 and get on with your day."
+    },
+    {
+     "title": "Logbook stamped on the spot",
+     "body": "Serviced to manufacturer spec, so your new-car warranty is protected."
+    },
+    {
+     "title": "Workmanship warranty",
+     "body": "Every repair is backed by our workmanship warranty, per our terms."
     }
+   ],
+   "coverage": {
+    "eyebrow": "Around Springwood",
+    "heading": "The suburbs next door, a few minutes away.",
+    "intro": "Springwood is the middle of our patch. These are the suburbs we drive through most days, with the distance from our base.",
+    "items": [
+     {
+      "slug": "daisy-hill",
+      "note": "Just east of us past the conservation park and koala centre. One of the quickest call-outs we do."
+     },
+     {
+      "slug": "slacks-creek",
+      "note": "The other side of the motorway, around the Logan Megacentre. Often a same-morning job."
+     },
+     {
+      "slug": "shailer-park",
+      "note": "South-east through Daisy Hill. Quiet streets and family homes with good driveway access."
+     },
+     {
+      "slug": "loganholme",
+      "note": "Down the M1 to where the Logan Motorway joins it, around the Logan Hyperdome."
+     },
+     {
+      "slug": "underwood",
+      "note": "North-west towards Underwood Marketplace. Plenty of showroom and staff car park jobs."
+     },
+     {
+      "slug": "rochedale-south",
+      "note": "North along the motorway corridor, around the Rochedale South shopping village."
+     }
+    ],
+    "footer": "Heading further north up the M1? Mount Gravatt, Sunnybank, Carindale and the rest of the southside are covered on our Brisbane South page.",
+    "footerLink": {
+     "href": "/brisbane-south/",
+     "label": "Mobile mechanic Brisbane South"
+    }
+   },
+   "faqHeading": "Springwood mobile mechanic questions.",
+   "faq": [
+    {
+     "question": "Are you actually based in Springwood?",
+     "answer": "Yes. Springwood, 4127, is our home base and where the van sets off from each day. That is why Springwood and the suburbs right around it, like Daisy Hill and Slacks Creek, get our quickest response."
+    },
+    {
+     "question": "How fast can a mobile mechanic get to me in Springwood?",
+     "answer": "Same-day service is often available in Springwood, and for a breakdown we can sometimes be there within a couple of hours. Call 0451 159 954 and we will give you a realistic time straight away rather than a vague window."
+    },
+    {
+     "question": "Can you fix my car at my office instead of at home?",
+     "answer": "Usually, yes. A lot of our Springwood work happens in staff car parks near the motorway. We need safe, level ground and the OK from whoever manages the car park. Brakes, batteries, servicing and most alternator and starter jobs suit an office car park well. Many shopping centre car parks do not allow repairs, so home or work is normally the better spot."
+    },
+    {
+     "question": "What does a mobile mechanic in Springwood cost?",
+     "answer": "It depends on the car and the job, so we quote a fixed price before we start. Send us the make, model and year plus what the car is doing, and we come back with the figure. Nothing is added without your OK."
+    },
+    {
+     "question": "Will a mobile logbook service affect my new-car warranty?",
+     "answer": "No. Under the Australian Consumer Law you can have your car serviced by any qualified mechanic, as long as the work follows the manufacturer's schedule and specifications. We stamp the logbook and email the invoice, so your service history stays complete."
+    },
+    {
+     "question": "Do you cover the suburbs around Springwood too?",
+     "answer": "Yes. Daisy Hill, Slacks Creek, Shailer Park, Loganholme, Underwood and Rochedale South are all a few minutes away, and we work right across Logan and Brisbane's southside from here."
+    }
+   ],
+   "ctaHeading": "Need a mechanic in Springwood today?",
+   "ctaBody": "We are local, so call early and we can often fit you in the same day. Fixed-price quote before we start.",
+   "updated": "2026-10-13"
+  },
+  "stretton": {
+   "metaTitle": "Mobile Mechanic Stretton 4116 | My Mechanic QLD",
+   "metaDescription": "Mobile mechanic in Stretton. Brakes, servicing, batteries and alternators done in your driveway, with a fixed price first. Open 24/7. Call 0451 159 954.",
+   "ogTitle": "Mobile mechanic in Stretton | My Mechanic QLD",
+   "eyebrow": "Stretton, Brisbane southside",
+   "h1": "Mobile mechanic in Stretton",
+   "heroLead": "Stretton is about 12 km from our Springwood base, a short run along the Logan Motorway. We repair and service your car in your driveway, with a fixed price agreed before any work starts. Open 24/7, so call any time and we arrange a mechanic in your area.",
+   "servicesEyebrow": "Popular in Stretton",
+   "servicesHeading": "What Stretton drivers book us for.",
+   "servicesIntro": "Most Stretton jobs are family cars and SUVs that need servicing, brakes or a battery. Every job below is done at your home, so the car stays in the driveway.",
+   "serviceNotes": {
+    "brake-repairs": "School runs and stop-start traffic on Gowan Road and Compton Road wear pads steadily. Pads, rotors and calipers, replaced in your driveway.",
+    "starter-alternator": "Clicking, slow cranking or a battery light? We test the starter and charging system where the car is parked and replace what has failed.",
+    "radiator-cooling-system": "Temperature climbing in motorway traffic? We check the cooling system and replace radiators, water pumps, thermostats and hoses on site.",
+    "logbook-servicing": "Serviced to your manufacturer's schedule at home, logbook stamped and invoice emailed, so your new-car warranty stays intact.",
+    "pre-purchase-inspection": "Buying a used car privately on the southside? We inspect and road-test it where it is parked and email you a written report.",
+    "battery-replacement": "Flat battery before the school run? We bring a battery to suit, fit it and test the charging system.",
+    "car-diagnostics": "Warning light on? We read the codes, check the fault by hand and explain it before quoting the repair.",
+    "steering-suspension": "Clunks over speed humps or a car that wanders? We check ball joints, bushes, shocks and control arms."
+   },
+   "localHeading": "Working in Stretton",
+   "localParagraphs": [
+    "Stretton sits on the southern edge of Brisbane, between Calamvale to the north, Kuraby and Karawatha Forest to the east, and Browns Plains and Regents Park across the Logan border to the south. From our base in Springwood it is about 12 km, usually reached along the Logan Motorway, so it is a regular part of our southside run rather than a long trip.",
+    "The suburb suits mobile work well. Homes here are mostly larger family houses on generous blocks, many with double garages and wide, flat driveways. That gives us room to work safely around the car, whether it is a logbook service, a set of brakes or a radiator replacement, and you can stay home while it is done.",
+    "Most cars we see around Stretton are family SUVs, people movers and dual-cab utes that do school runs, sport drop-offs and commuting along the motorways. Those trips are hard on brakes and batteries, and long idling in heat is hard on cooling systems, so those are the jobs we are booked for most often in this part of the southside.",
+    "Every job starts with a fixed price in writing. If we find something else while the wheels are off or the bonnet is up, we stop, show you and quote it separately, and nothing is added without your agreement. If you have a written quote from another business for the same job, we will match it."
+   ],
+   "trustPoints": [
+    {
+     "title": "Fixed price first",
+     "body": "A written quote before work starts. Anything extra gets its own quote and your OK."
+    },
+    {
+     "title": "Open 24/7",
+     "body": "Call any time and we arrange a mechanic in your area."
+    },
+    {
+     "title": "Price match",
+     "body": "Show us a written quote from another business for the same job and we will match it."
+    },
+    {
+     "title": "Logbook stamped",
+     "body": "Serviced to manufacturer spec, so your new-car warranty is protected."
+    }
+   ],
+   "coverage": {
+    "eyebrow": "Around Stretton",
+    "heading": "Nearby suburbs we cover.",
+    "intro": "Stretton sits where Brisbane's southside meets Logan. These are the suburbs around it that we work in regularly.",
+    "items": [
+     {
+      "slug": "runcorn",
+      "note": "North-east past Kuraby, around the Runcorn shops and the railway line."
+     },
+     {
+      "slug": "sunnybank",
+      "note": "North along Gowan and Mains Roads, around Market Square and Sunnybank Plaza."
+     },
+     {
+      "slug": "eight-mile-plains",
+      "note": "North-east towards the M1 and the Gateway Motorway interchange."
+     },
+     {
+      "slug": "regents-park",
+      "note": "Just south over the Logan Motorway, quiet family streets."
+     },
+     {
+      "slug": "browns-plains",
+      "note": "South-west across the border, around Grand Plaza."
+     }
+    ],
+    "footer": "Further north? Sunnybank, Mount Gravatt and the rest of the southside are on our Brisbane South page.",
+    "footerLink": {
+     "href": "/brisbane-south/",
+     "label": "Mobile mechanic Brisbane South"
+    }
+   },
+   "faqHeading": "Stretton mobile mechanic questions.",
+   "faq": [
+    {
+     "question": "Do you come to Stretton?",
+     "answer": "Yes. Stretton is about 12 km from our Springwood base and part of our regular southside area. Same-day service is often available."
+    },
+    {
+     "question": "Are you open after hours?",
+     "answer": "Yes. We are open 24/7. Call 0451 159 954 any time and we arrange a mechanic in your area. We give you a realistic time when you call."
+    },
+    {
+     "question": "Can you work in my driveway?",
+     "answer": "Yes, that is how most of our Stretton jobs are done. We need safe, level ground and enough room to work around the car. A driveway or garage is ideal."
+    },
+    {
+     "question": "How much will it cost?",
+     "answer": "It depends on the car and the job, so we quote a fixed price before we start. Send us the make, model and year and what the car is doing. If you have a written quote from another business for the same job, we will match it."
+    },
+    {
+     "question": "Will a mobile logbook service affect my new-car warranty?",
+     "answer": "No. Under the Australian Consumer Law you can have your car serviced by any qualified mechanic, as long as the work follows the manufacturer's schedule and specifications. We stamp the logbook and email the invoice."
+    }
+   ],
+   "ctaHeading": "Need a mechanic in Stretton?",
+   "ctaBody": "Call any time, 24/7, or send your details for a fixed-price quote. We price match written quotes for the same job.",
+   "updated": "2026-11-06"
+  },
+  "rochedale": {
+   "metaTitle": "Mobile Mechanic Rochedale 4123 | My Mechanic QLD",
+   "metaDescription": "Mobile mechanic in Rochedale, minutes from our Springwood base. Brakes, logbook servicing, batteries and alternators at your home. Open 24/7, fixed price first.",
+   "ogTitle": "Mobile mechanic in Rochedale | My Mechanic QLD",
+   "eyebrow": "Rochedale, Brisbane southside",
+   "h1": "Mobile mechanic in Rochedale",
+   "heroLead": "Rochedale is one of the closest Brisbane suburbs to our Springwood base, just across the Logan border. We service and repair your car in your driveway, with a fixed price agreed first. Open 24/7, so call any time and we arrange a mechanic in your area.",
+   "servicesEyebrow": "Popular in Rochedale",
+   "servicesHeading": "What Rochedale drivers book us for.",
+   "servicesIntro": "Newer cars under warranty make logbook servicing our most common Rochedale job, followed by brakes and batteries. Everything below is done at your place.",
+   "serviceNotes": {
+    "brake-repairs": "Motorway merges and stop-start runs on Underwood and Miles Platting Roads wear pads. Pads, rotors and calipers, replaced at home.",
+    "starter-alternator": "Car clicking or slow to crank? We test the starter and charging system in your driveway and replace what has failed.",
+    "radiator-cooling-system": "Running hot in M1 traffic? We check the cooling system and replace radiators, water pumps, thermostats and hoses on site.",
+    "logbook-servicing": "Plenty of Rochedale cars are still under new-car warranty. We service to the manufacturer's schedule and stamp the logbook.",
+    "pre-purchase-inspection": "Looking at a used car? We inspect and road-test it where it is parked and email you a written report the same day.",
+    "battery-replacement": "Flat battery on a busy morning? We bring the right battery, fit it and test the charging system.",
+    "car-diagnostics": "Warning light on? We read the codes, check the fault by hand and explain it before quoting.",
+    "steering-suspension": "Clunks or a wandering steering wheel? We check ball joints, bushes, shocks and control arms."
+   },
+   "localHeading": "Working in Rochedale",
+   "localParagraphs": [
+    "Rochedale sits on the Brisbane side of the Logan border, next to Rochedale South, Eight Mile Plains, Wishart and Mansfield. The Pacific Motorway and the Gateway Motorway meet on its western side, and our base in Springwood is only a few minutes south. That makes Rochedale one of the quickest Brisbane suburbs for us to reach.",
+    "Much of Rochedale was acreage until recent years and is now newer housing estates, alongside older homes on larger blocks. Most homes have a garage and a flat driveway, which suits mobile work, so a service, brake job or battery replacement can be done while you are at home or working from home.",
+    "Because so many homes here are newer, so are many of the cars. Plenty are still under new-car warranty, which is why logbook servicing is our most common Rochedale job. A mobile service done to the manufacturer's schedule, with the right parts and fluids, keeps that warranty intact under the Australian Consumer Law.",
+    "Every job starts with a fixed price in writing. If we find something else during the job, we stop and quote it separately, and nothing is added without your agreement. If you have a written quote from another business for the same job, we will match it."
+   ],
+   "trustPoints": [
+    {
+     "title": "Minutes from our base",
+     "body": "Springwood is just south of Rochedale, so same-day service is often available."
+    },
+    {
+     "title": "Open 24/7",
+     "body": "Call any time and we arrange a mechanic in your area."
+    },
+    {
+     "title": "Price match",
+     "body": "Show us a written quote from another business for the same job and we will match it."
+    },
+    {
+     "title": "Warranty-safe servicing",
+     "body": "Serviced to manufacturer spec and logbook stamped."
+    }
+   ],
+   "coverage": {
+    "eyebrow": "Around Rochedale",
+    "heading": "Nearby suburbs we cover.",
+    "intro": "Rochedale sits between our Springwood base and the southside. These are the suburbs around it we work in most.",
+    "items": [
+     {
+      "slug": "rochedale-south",
+      "note": "Just south, around the Rochedale South shops and the motorway."
+     },
+     {
+      "slug": "springwood",
+      "note": "Our home base, a few minutes down the M1."
+     },
+     {
+      "slug": "underwood",
+      "note": "South-west along Underwood Road, plenty of showroom and staff car park jobs."
+     },
+     {
+      "slug": "eight-mile-plains",
+      "note": "West across the motorway interchange."
+     },
+     {
+      "slug": "wishart",
+      "note": "North, quiet family streets towards Mansfield."
+     },
+     {
+      "slug": "mansfield",
+      "note": "North-east towards Carindale."
+     }
+    ],
+    "footer": "Heading further north? Mount Gravatt, Sunnybank, Carindale and the rest of the southside are on our Brisbane South page.",
+    "footerLink": {
+     "href": "/brisbane-south/",
+     "label": "Mobile mechanic Brisbane South"
+    }
+   },
+   "faqHeading": "Rochedale mobile mechanic questions.",
+   "faq": [
+    {
+     "question": "How quickly can you get to Rochedale?",
+     "answer": "Rochedale is only a few minutes from our Springwood base, so same-day service is often available. Call 0451 159 954 and we give you a realistic time straight away."
+    },
+    {
+     "question": "Are you open after hours?",
+     "answer": "Yes. We are open 24/7. Call any time and we arrange a mechanic in your area."
+    },
+    {
+     "question": "Will a mobile logbook service affect my new-car warranty?",
+     "answer": "No. Under the Australian Consumer Law you can have your car serviced by any qualified mechanic, as long as the work follows the manufacturer's schedule and specifications. We stamp the logbook and email the invoice."
+    },
+    {
+     "question": "How much will it cost?",
+     "answer": "It depends on the car and the job, so we quote a fixed price before we start. A standard service starts from $369 for most cars. If you have a written quote from another business for the same job, we will match it."
+    },
+    {
+     "question": "Can you do the job at my work instead?",
+     "answer": "Often, yes. We need safe, level ground and permission from whoever manages the car park. Servicing, brakes and batteries suit a staff car park well."
+    }
+   ],
+   "ctaHeading": "Need a mechanic in Rochedale?",
+   "ctaBody": "Call any time, 24/7, or send your details for a fixed-price quote. We price match written quotes for the same job.",
+   "updated": "2026-11-06"
+  },
+  "new-farm": {
+   "metaTitle": "Mobile Mechanic New Farm 4005 | My Mechanic QLD",
+   "metaDescription": "Mobile mechanic in New Farm. Servicing, brakes, batteries and diagnostics at your home, unit car park or office, with a fixed price first. Open 24/7.",
+   "ogTitle": "Mobile mechanic in New Farm | My Mechanic QLD",
+   "eyebrow": "New Farm, inner Brisbane",
+   "h1": "Mobile mechanic in New Farm",
+   "heroLead": "New Farm streets are tight and many cars live in unit car parks, so getting to a workshop is a hassle. We come to you instead and fix the car where it is parked, with a fixed price agreed first. Open 24/7, so call any time and we arrange a mechanic in your area.",
+   "servicesEyebrow": "Popular in New Farm",
+   "servicesHeading": "What New Farm drivers book us for.",
+   "servicesIntro": "Many New Farm cars do short city trips, which is hard on batteries, so battery and charging jobs are common here, along with servicing and brakes.",
+   "serviceNotes": {
+    "brake-repairs": "City driving means a lot of braking. Pads, rotors and calipers replaced where the car is parked, space permitting.",
+    "starter-alternator": "Short trips around the inner city can leave a battery undercharged. We test the starter and charging system before replacing anything.",
+    "radiator-cooling-system": "Running hot in city traffic? We check the cooling system and replace radiators, water pumps, thermostats and hoses on site.",
+    "logbook-servicing": "Serviced to your manufacturer's schedule in your driveway or building car park, logbook stamped and invoice emailed.",
+    "pre-purchase-inspection": "Buying a used car in the inner city? We inspect and road-test it where it is parked and email a written report the same day.",
+    "battery-replacement": "Flat battery after the car sat in the garage? We bring a battery to suit, fit it and test the charging system.",
+    "car-diagnostics": "Warning light on? We read the codes, check the fault by hand and explain it before quoting.",
+    "steering-suspension": "Clunks over speed humps and car park ramps? We check ball joints, bushes, shocks and control arms."
+   },
+   "localHeading": "Working in New Farm",
+   "localParagraphs": [
+    "New Farm sits on a bend of the Brisbane River next to Teneriffe, Fortitude Valley and the CBD, around New Farm Park and the Brisbane Powerhouse. It is about 20 km from our Springwood base, so we plan New Farm jobs ahead where we can, and same-day service is available depending on the day's bookings.",
+    "Housing here is a mix of older Queenslanders, Art Deco blocks and modern riverside apartments. Street parking is tight and many cars are kept in building car parks, which is exactly why a mobile mechanic suits the suburb. You do not have to drive the car across town, find a park or wait at a workshop.",
+    "Working in an apartment building car park usually needs the OK from building management or the body corporate, and enough space to work safely around the car. Tell us where the car is parked when you book. Servicing, batteries, diagnostics and most brake jobs can be done in a basement car park, and we tell you upfront if a job needs more room.",
+    "Every job starts with a fixed price in writing. If we find something else during the job, we stop and quote it separately, and nothing is added without your agreement. If you have a written quote from another business for the same job, we will match it."
+   ],
+   "trustPoints": [
+    {
+     "title": "Unit car parks welcome",
+     "body": "With building approval, we work where the car is parked."
+    },
+    {
+     "title": "Open 24/7",
+     "body": "Call any time and we arrange a mechanic in your area."
+    },
+    {
+     "title": "Price match",
+     "body": "Show us a written quote from another business for the same job and we will match it."
+    },
+    {
+     "title": "Fixed price first",
+     "body": "A written quote before work starts, and nothing added without your OK."
+    }
+   ],
+   "coverage": {
+    "eyebrow": "Around New Farm",
+    "heading": "Nearby inner-city suburbs we cover.",
+    "intro": "We work across the inner city around New Farm. These are the neighbouring suburbs.",
+    "items": [
+     {
+      "slug": "fortitude-valley",
+      "note": "Next door, around Brunswick Street and James Street."
+     },
+     {
+      "slug": "newstead",
+      "note": "North past Teneriffe, riverside apartments and offices."
+     },
+     {
+      "slug": "kangaroo-point",
+      "note": "Across the river, with apartment and unit car parks."
+     },
+     {
+      "slug": "brisbane-cbd",
+      "note": "Office and building car parks in the city."
+     },
+     {
+      "slug": "bowen-hills",
+      "note": "North of the Valley, near the RNA Showgrounds."
+     }
+    ]
+   },
+   "faqHeading": "New Farm mobile mechanic questions.",
+   "faq": [
+    {
+     "question": "Can you work in my apartment building car park?",
+     "answer": "Usually, yes, with permission from building management or the body corporate and enough room to work safely. Tell us where the car is parked when you book and we confirm whether the job suits the space."
+    },
+    {
+     "question": "Do you come to New Farm?",
+     "answer": "Yes. New Farm is about 20 km from our Springwood base. We plan inner-city jobs ahead where we can, and same-day service is available depending on the day's bookings."
+    },
+    {
+     "question": "Are you open after hours?",
+     "answer": "Yes. We are open 24/7. Call 0451 159 954 any time and we arrange a mechanic in your area."
+    },
+    {
+     "question": "How much will it cost?",
+     "answer": "It depends on the car and the job, so we quote a fixed price before we start. If you have a written quote from another business for the same job, we will match it."
+    },
+    {
+     "question": "My car keeps going flat. Is it the battery?",
+     "answer": "Not always. Short city trips can leave a healthy battery undercharged, and a failing alternator or something draining power can look the same. We test the battery and charging system before recommending anything."
+    }
+   ],
+   "ctaHeading": "Need a mechanic in New Farm?",
+   "ctaBody": "Call any time, 24/7, or send your details for a fixed-price quote. We price match written quotes for the same job.",
+   "updated": "2026-11-06"
   }
+ },
+ "addedSuburbs": [
+  {
+   "slug": "stretton",
+   "name": "Stretton",
+   "region": "brisbane",
+   "regionName": "Brisbane",
+   "regionSlug": "brisbane",
+   "postcode": 4116,
+   "distanceFromBase": 12,
+   "responseTime": "Often same-day",
+   "nearby": [
+    "runcorn",
+    "sunnybank",
+    "regents-park",
+    "browns-plains",
+    "eight-mile-plains"
+   ],
+   "landmark": "Karawatha Forest",
+   "localContext": "Stretton is a leafy southside suburb on the Brisbane and Logan border, with large family homes on generous blocks and Karawatha Forest along its eastern edge. Gowan Road and Compton Road carry most of the local traffic, and the Logan Motorway sits just to the south.",
+   "housingNote": "Large family homes on generous blocks, many with double garages and wide driveways"
+  }
+ ]
 }

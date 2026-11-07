@@ -13,9 +13,11 @@ import {
 } from 'lucide-react'
 import {
   getSuburbsByRegion,
+  getSuburb,
   ALL_SERVICES,
   type Region,
 } from '@/lib/suburbs'
+import WhyBookStrip from '@/components/WhyBookStrip'
 import {
   SITE_URL,
   BUSINESS_ID,
@@ -71,12 +73,30 @@ export default function RegionHubContent({ region }: { region: Region }) {
     },
   }
 
+  const faqLd = region.faq?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: region.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
@@ -128,8 +148,8 @@ export default function RegionHubContent({ region }: { region: Region }) {
             </span>
             <span className="inline-flex items-center gap-2">
               <Clock className="size-4 text-accent-bright" strokeWidth={2} />
-              <strong className="text-ink font-semibold">Same-day</strong>
-              service available
+              <strong className="text-ink font-semibold">Open 24/7</strong>
+              for calls
             </span>
             <span className="inline-flex items-center gap-2">
               <ShieldCheck className="size-4 text-accent-bright" strokeWidth={2} />
@@ -146,9 +166,11 @@ export default function RegionHubContent({ region }: { region: Region }) {
             </Link>
             <a href="tel:0451159954" className="btn btn-secondary">
               <Phone className="size-4" strokeWidth={2} />
-              0451 159 954
+              Call now, 24/7
             </a>
           </div>
+
+          <WhyBookStrip className="mt-8 sm:grid-cols-4" />
         </div>
       </section>
 
@@ -209,8 +231,57 @@ export default function RegionHubContent({ region }: { region: Region }) {
               work, so most repairs are finished in your driveway in one visit.
             </p>
           </div>
+
+          {region.sections?.map((sec) => (
+            <div key={sec.heading} className="mt-12">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-5">{sec.heading}</h2>
+              <div className="space-y-4 text-[1.0625rem] text-muted leading-[1.7]">
+                {sec.paragraphs.map((p) => (
+                  <p key={p.slice(0, 40)}>{p}</p>
+                ))}
+              </div>
+              {sec.suburbs && sec.suburbs.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {sec.suburbs
+                    .map((slug) => getSuburb(slug))
+                    .filter((s) => s !== null)
+                    .map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/${s.slug}/` as `/${string}`}
+                        className="inline-block px-3 py-1.5 rounded-md text-[0.875rem] bg-surface border border-hairline text-ink no-underline hover:border-accent"
+                      >
+                        {s.name}
+                      </Link>
+                    ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
+
+      {region.faq && region.faq.length > 0 && (
+        <section className="py-14 md:py-20 border-t border-hairline">
+          <div className="container max-w-3xl">
+            <span className="eyebrow">Frequently asked</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-3 mb-8">
+              {region.name} mobile mechanic questions.
+            </h2>
+            <div className="space-y-3">
+              {region.faq.map((f) => (
+                <details key={f.question} className="group bg-surface border border-hairline rounded-xl p-5 md:p-6">
+                  <summary className="cursor-pointer font-semibold text-ink list-none flex justify-between items-start gap-4">
+                    <span className="flex-1">{f.question}</span>
+                    <ChevronRight className="size-5 text-subtle shrink-0 mt-0.5 transition-transform group-open:rotate-90" strokeWidth={2} />
+                  </summary>
+                  <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted">{f.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* All suburbs in region */}
       <section className="py-14 md:py-20 lg:py-24 bg-soft border-y border-hairline">
@@ -250,7 +321,7 @@ export default function RegionHubContent({ region }: { region: Region }) {
             Mobile mechanic anywhere in {region.name}.
           </h2>
           <p className="text-white/85 max-w-[46ch] mx-auto mb-8 text-[1.0625rem]">
-            Fixed-price quote before we start. Same-day service available.
+            Open 24/7. Fixed-price quote before we start, and we price match written quotes for the same job.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
